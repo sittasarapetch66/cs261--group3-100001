@@ -11,6 +11,25 @@
     <link rel="stylesheet" href="./css/webstyle.css">
     <link rel="icon" type="image/x-icon" href="./picture/favicon.jpg">
     <script src="./js/webscript.js"></script> 
+
+    <style>
+        .checkmark {
+      width: 100px;
+      height: 100px;
+      background-color: #4CAF50;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .checkmark::before {
+      content: "✔";
+      font-size: 50px;
+      color: white;
+    }
+    </style>
 </head>
 <body onload="startFunction()">
 
@@ -49,6 +68,7 @@
             <br>
             <button type="button" id="submitbutton" onclick="APIRequest()">Login</button>
     <p id="output"></p>
+
 
     
 </body>
