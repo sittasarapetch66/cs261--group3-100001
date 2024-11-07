@@ -1,0 +1,100 @@
+@font-face {
+    font-family: notosans_med;
+    src: url(../font/notosans/NotoSansThai-Medium.ttf);
+}
+
+@font-face {
+    font-family: comic_sans;
+    src: url(../font/comicsans/COMIC.TTF);
+}
+
+@font-face {
+    font-family: laithai;
+    src: url(../font/laithai/sathaporn.ttf);
+}
+
+
+.login-container {
+    margin: auto;
+    right : 0px;
+    text-align: center;
+    padding: 70px 0;
+    border: 1px solid #ccc;
+    width: 500px;
+    background-color: #ffffffc0;
+    animation-name: openpage;
+    animation-duration: 0.75s ;
+    animation-timing-function: linear;
+    padding-top: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    margin-top: 75px;
+    margin-bottom: 75px;
+    box-shadow: 0px 0px 15px #000000; 
+}
+
+.login-input{
+    padding-top: 40px;
+    
+}
+
+
+.login-show{
+    position: absolute;
+    float: right;
+    margin-top: 20px;
+    margin-right: -10px;
+
+
+}
+
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+#submitbutton {
+    padding: 10px 20px;
+    background-color: #2D3142;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: notosans_med;
+    font-size: 20px;
+    width: 500px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+button {
+
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: notosans_med;
+    font-size: 15px;
+    width : 125px;
+    padding: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+#table1{
+    margin: 20px;
+}
+
+
+body{
+    /*background: rgb(229,229,244);
+    background: linear-gradient(90deg, rgba(229,229,244,1) 0%, rgba(164,201,242,1) 100%);
+    */
+    background-image : url("../picture/favicon.jpg");
+    background-size : 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    
+}
