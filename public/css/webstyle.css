@@ -58,7 +58,7 @@ input {
 
 #submitbutton {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #D9D9D9;
     color: white;
     border: none;
     border-radius: 5px;
@@ -153,21 +153,21 @@ body{
 #studentlogin{
     padding: 50px 0;
     text-align: center;
-    background-color: rgb(199, 250, 195);
+    background-color: #D9D9D9;
     margin-top: 20px;
 }
 
 #teacherlogin{
     padding: 50px 0;
     text-align: center;
-    background-color: rgb(199, 250, 195);
+    background-color: #D9D9D9;
     margin-top: 20px;
 }
 
 #adminlogin{
     padding: 50px 0;
     text-align: center;
-    background-color: rgb(199, 250, 195);
+    background-color: #D9D9D9;
     margin-top: 20px;
     font-family: notosans_med;
     text-align: left;
