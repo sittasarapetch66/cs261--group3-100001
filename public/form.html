@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คำร้องนักศึกษา</title>
+    
+    <!-- ลิงก์ฟ้อนต์จาก Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&family=Prompt:wght@400;700&family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS */
+        * {
+            box-sizing: border-box;
+            font-family: 'IBM Plex Sans Thai', sans-serif; /* ใช้ฟ้อนต์ IBM Plex Sans Thai เป็นฟ้อนต์หลัก */
+        }
+
+        body {
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #2c2c3e;
+            padding: 10px;
+            color: #ffffff;
+            font-family: 'Prompt', sans-serif; /* ใช้ฟ้อนต์ Prompt กับส่วน header */
+        }
+
+        h1 {
+            font-size: 1.2em;
+            margin: 0;
+        }
+
+        .form-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #333;
+            font-family: 'Prompt', sans-serif; /* ใช้ฟ้อนต์ Prompt กับหัวข้อ */
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            font-family: 'Prompt', sans-serif; /* ใช้ฟ้อนต์ Prompt กับปุ่ม */
+        }
+
+        .save-draft {
+            background-color: #e0e0e0;
+            color: #333;
+        }
+
+        .submit {
+            background-color: #4caf50;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="back-arrow">◀</div>
+            <h1>คำร้องนักศึกษา</h1>
+            <div class="menu-icon">☰</div>
+        </header>
+
+        <section class="form-section">
+            <div class="form-group">
+                <h2>1. ข้อมูลส่วนตัว</h2>
+                <label>ชื่อ-นามสกุล</label>
+                <input type="text">
+                <label>เลขทะเบียน</label>
+                <input type="text">
+                <label>ชั้นปี</label>
+                <input type="text">
+                <label>เบอร์โทร</label>
+                <input type="text">
+                <label>เบอร์โทรผู้ปกครอง</label>
+                <input type="text">
+                
+                <label>ที่อยู่</label>
+                <input type="text" placeholder="บ้านเลขที่">
+                <input type="text" placeholder="แขวง/ตำบล">
+                <input type="text" placeholder="เขต/อำเภอ">
+                <input type="text" placeholder="จังหวัด">
+            </div>
+
+            <div class="form-group">
+                <h2>2. ประสงค์คำร้อง</h2>
+                <label>อาจารย์ที่ปรึกษา</label>
+                <input type="text">
+                <label>ประเภทคำร้อง</label>
+                <input type="text">
+                <label>แนบไฟล์</label>
+                <input type="file">
+            </div>
+
+            <div class="buttons">
+                <button class="save-draft">บันทึกแบบร่าง</button>
+                <button class="submit">ยืนยัน</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
