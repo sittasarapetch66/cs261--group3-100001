@@ -53,6 +53,15 @@ docker run -d --name node-js --network mynetwork -p 3000:3000 node-js-image
 
 * You can stop or run container in docker desktop application
 
+
+### github 
+git init
+git add -A
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/sittasarapetch66/cs261-group3-100001.git
+git push -u origin main
+
 Version 0.1.2
 
 
