@@ -32,13 +32,13 @@
 
     <div class="selection">
 
-        <div class="list">
+        <div class="list" onclick="showMyListSection()">
             <p>รายการของฉัน</p>
         </div>
-        <div class="list">
+        <div class="list" onclick="showHistorySection()">
             <p>ตรวจสอบสถานะคำร้อง</p>
         </div>
-        <div class="list">
+        <div class="list" onclick="showHistorySection()">
             <p>ประวัติการยื่นคำร้อง</p>
         </div>
     
@@ -88,6 +88,75 @@
                 <p>ลาออก</p>
             </div>
         </div>
+    </div>
+
+</div>
+
+<!-- Section 3 : Mylist Section -->
+<div id="mylistsection">
+
+    <div class="navbar">
+        <button class="back-button" onclick="showHomeSection()">&lt;</button>
+        <h1>รายการ</h1>
+        <div class="menu-icon" onclick="showMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="item-card">
+            <h2>ถอนรายวิชา</h2>
+            <p>แก้ไขล่าสุดวันที่ XX เดือน XX ปี XX เวลา 00:00</p>
+            <div class="buttons">
+                <button class="edit-button">แก้ไข</button>
+                <button class="cancel-button">ยกเลิก</button>
+            </div>
+        </div>
+
+        <div class="item-card">
+            <h2>จดทะเบียนล่าช้า</h2>
+            <p>แก้ไขล่าสุดวันที่ XX เดือน XX ปี XX เวลา 00:00</p>
+            <div class="buttons">
+                <button class="edit-button">แก้ไข</button>
+                <button class="cancel-button">ยกเลิก</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Section 4 : History Section -->
+<div id="trackhistorysection">
+    <div class="navbar">
+        <button class="back-button">&lt;</button>
+        <h1>ประวัติ</h1>
+        <div class="menu-icon" onclick="showMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="item-card">
+            <h2>ถอนรายวิชา</h2>
+            <p>แก้ไขล่าสุดวันที่ XX เดือน XX ปี XX เวลา 00:00</p>
+            <div class="buttons">
+                <button class="unapprove-button">ไม่อนุมัติ</button>
+            </div>
+        </div>
+
+        <div class="item-card">
+            <h2>จดทะเบียนล่าช้า</h2>
+            <p>แก้ไขล่าสุดวันที่ XX เดือน XX ปี XX เวลา 00:00</p>
+            <div class="buttons">
+                <button class="approve-button">อนุมัติ</button>
+            </div>
+        </div>
+
     </div>
 
 </div>

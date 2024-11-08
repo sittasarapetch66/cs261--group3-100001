@@ -33,9 +33,12 @@ body{
 }
 
 /*
-Section 2 : Home
+Section 2 : Homesection
 */
 
+#homesection{
+    display: none;
+}
 .header {
     background-color: #2c2c3e;
     color: white;
@@ -44,7 +47,7 @@ Section 2 : Home
     justify-content: space-between;
     padding: 10px 20px;
     font-size: 1em;
-    max-height: 50px;
+    height: 10vh;
 }
 
 .header .profile {
@@ -142,7 +145,7 @@ Section 1 : Menu
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-height: 49px;
+    height : 10vh
 
 }
 
@@ -177,4 +180,222 @@ Section 0 : Overlay
     background-color : #6d6e70aa;
     display: none;
     
+}
+
+/*
+Section 3 : Mylist Section
+*/
+
+#mylistsection{
+    display : none
+}
+
+#mylistsection .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2D3142;
+    color: #F5F5F5;
+    padding: 10px 20px;
+    max-height: 10vh;
+}
+
+#mylistsection .back-button {
+    background: none;
+    border: none;
+    color: #F5F5F5;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+}
+
+#mylistsection .menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+#mylistsection .menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #F5F5F5;
+    margin: 3px 0;
+}
+
+#mylistsection .content {
+    width: 60%;
+    /* ปรับความกว้างให้เหมาะสมกับหน้าจอ */
+    max-width: 800px;
+    /* จำกัดความกว้างสูงสุด */
+    margin: auto;
+    /* จัดกึ่งกลาง */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mylistsection .item-card {
+    width: 100%;
+    /* ให้กล่องมีความกว้างเต็มที่ภายใน .content */
+    background-color: #E0E0E0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+}
+
+#mylistsection .item-card:hover {
+    transform: translateY(-3px);
+}
+
+#mylistsection .item-card h2 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+}
+
+#mylistsection .item-card p {
+    margin: 5px 0;
+    color: #7D7D7D;
+    font-size: 14px;
+}
+
+#mylistsection .buttons {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    /* justify-content: flex-end; */
+    gap: 10px;
+}
+
+#mylistsection .edit-button,
+.cancel-button {
+    border: none;
+    width: 120px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    outline: none;
+}
+
+#mylistsection .edit-button {
+    background-color: #7D7D7D;
+    color: #F5F5F5;
+}
+
+#mylistsection .cancel-button {
+    background-color: #F44336;
+    color: #F5F5F5;
+}
+
+
+/* Section 4 History
+*/
+#trackhistorysection{
+
+    display : none;
+}
+#trackhistorysection .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2D3142;
+    color: #F5F5F5;
+    padding: 10px 20px;
+}
+
+#trackhistorysection .back-button {
+    background: none;
+    border: none;
+    color: #F5F5F5;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+}
+
+#trackhistorysection .menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+#trackhistorysection .menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #F5F5F5;
+    margin: 3px 0;
+}
+
+#trackhistorysection .content {
+    width: 60%;
+    /* ปรับความกว้างให้เหมาะสมกับหน้าจอ */
+    max-width: 800px;
+    /* จำกัดความกว้างสูงสุด */
+    margin: auto;
+    /* จัดกึ่งกลาง */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#trackhistorysection .item-card {
+    width: 100%;
+    /* ให้กล่องมีความกว้างเต็มที่ภายใน .content */
+    background-color: #E0E0E0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+}
+
+#trackhistorysection .item-card:hover {
+    transform: translateY(-3px);
+}
+
+#trackhistorysection .item-card h2 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+}
+
+#trackhistorysection .item-card p {
+    margin: 5px 0;
+    color: #7D7D7D;
+    font-size: 14px;
+}
+
+#trackhistorysection .buttons {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    /* justify-content: flex-end; */
+    gap: 10px;
+}
+
+#trackhistorysection .approve-button,
+#trackhistorysection .unapprove-button {
+    border: none;
+    width: 120px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    outline: none;
+}
+
+#trackhistorysection .approve-button {
+    background-color: #4CAF50;
+    color: #F5F5F5;
+}
+
+#trackhistorysection .unapprove-button {
+    background-color: #F44336;
+    color: #F5F5F5;
 }
