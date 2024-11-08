@@ -577,3 +577,112 @@ Section 3 : Mylist Section
     font-size: 50px;
     color: white;
   }
+
+  /*
+  Section 7 : checkstatus
+  */
+
+  #checkstatus{
+    //display : none;
+  }
+
+  #checkstatus .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2D3142;
+    color: #F5F5F5;
+    padding: 10px 20px;
+}
+
+#checkstatus .back-button {
+    background: none;
+    border: none;
+    color: #F5F5F5;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+}
+
+#checkstatus .menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+#checkstatus .menu-icon .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #F5F5F5;
+    margin: 3px 0;
+}
+
+#checkstatus .content {
+    width: 60%;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#checkstatus .item-card {
+    width: 100%;
+    background-color: #E0E0E0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#checkstatus .item-card h2 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+}
+
+#checkstatus .item-card p {
+    margin: 5px 0 20px;
+    color: #7D7D7D;
+    font-size: 14px;
+}
+
+#checkstatus #checkstatus .status-flow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.status-circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    color: #333333;
+}
+
+#checkstatus .circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    color: #F5F5F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#checkstatus .line {
+    height: 2px;
+    width: 40px;
+    background-color: #4CAF50;
+}
+
+  
+
