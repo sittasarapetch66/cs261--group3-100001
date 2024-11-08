@@ -28,16 +28,22 @@ function toggleSomething(mode){
   var2 = document.getElementById("overlaysection");
 
   var3 = document.getElementById("homesection");
+  var4 = document.getElementById("mylistsection");
+  var5 = document.getElementById("trackhistorysection");
+  var6 = document.getElementById("requestformtemplate");
+  var7 = document.getElementById("successend");
+  var8 = document.getElementById("checkstatus");
 
   /*
   1 : show filter and the menu
   2 : hide filter and the menu
 
   10 : show only homesection
-  11 : 
-  12 :
-
-
+  11 : show only mylistsection
+  12 : show only trackhistorysection
+  13 : show only requestformtemplate
+  14 : show only successend
+  15 : show only checkstatus
 
   */
 
