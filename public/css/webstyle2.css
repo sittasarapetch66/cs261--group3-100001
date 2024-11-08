@@ -188,23 +188,6 @@ Section 1 : Menu
 
 }
 
-#menusection .header h1{
-
-font-size: 5vh;
-cursor: pointer;
-padding-left : 10px;
-padding-right : 20px;
-border-radius : 50%;
-transition: 0.5s;
-
-}
-
-#menusection .header h1:hover {
-    background-color: #c4c4c4a9;
-}
-
-
-
 #menusection .selection{
     padding-top : 30px;
     background-color: #f5f5f5;
@@ -239,10 +222,8 @@ Section 0 : Overlay
     top : 0%;
     background-color : #6d6e70aa;
     display: none;
-    transition : 0.5s;
     
 }
-
 
 /*
 Section 3 : Mylist Section
@@ -598,41 +579,11 @@ Section 3 : Mylist Section
     height: 12vh;
 }
 
-<<<<<<< HEAD
   #successend .header .back {
     color: white;
     font-size: 5vh;
     text-decoration: none;
   }
-=======
-#successend .back-button {
-    margin-left: 5vh;
-    background: none;
-    border: none;
-    color: #F5F5F5;
-    font-size: 24px;
-    cursor: pointer;
-    outline: none;
-}
-
-#successend .header .profile {
-    display: flex;
-    align-items: center;
-}
-
-#successend .profile-pic {
-    width: 40px;
-    height: 40px;
-    background-color: #F5F5F5;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-#successend .menu-icon {
-    margin-right: 5vh;
-    font-size: 1.5em;
-}
->>>>>>> f73008777896a34cc8be81567bb5ded1a2a6d476
 
 
   #successend .content {
@@ -690,7 +641,6 @@ Section 3 : Mylist Section
   
   #checkstatus {
     //display : none;
-<<<<<<< HEAD
   }
 
   #checkstatus .navbar {
@@ -710,8 +660,6 @@ Section 3 : Mylist Section
     font-size: 5vh;
     cursor: pointer;
     outline: none;
-=======
->>>>>>> a0f7ad3e44401c70a5261a2f221f9d82a2377e88
 }
 
 #checkstatus .menu-icon {
