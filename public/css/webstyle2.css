@@ -319,7 +319,7 @@ Section 3 : Mylist Section
 */
 #trackhistorysection{
 
-    display : none;
+    //display : none;
 }
 #trackhistorysection .navbar {
     display: flex;
@@ -427,7 +427,7 @@ Section 3 : Mylist Section
 */
 #requestformtemplate{
 
-    display : none;
+    //display : none;
 }
 
 #requestformtemplate .container {
@@ -512,7 +512,7 @@ Section 3 : Mylist Section
 
 #successend{
 
-    display : none;
+    //display : none;
 }
 
 #successend .header {
