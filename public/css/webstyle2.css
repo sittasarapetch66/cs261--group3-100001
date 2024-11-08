@@ -124,6 +124,7 @@ Section 2 : Homesection
     width : 12vw;
     padding-top: 2vw;   
     transition: transform 0.2s;
+    transition: 0.5s;
     cursor : pointer;
     border-radius : 25px;
 }
@@ -197,6 +198,8 @@ Section 1 : Menu
     padding-top : 1px;
     padding-left : 40px;
     border : 1px solid green;
+    transition: 0.5s;
+    cursor: pointer;
 }
 
 #menusection .selection .list p{
@@ -204,8 +207,9 @@ Section 1 : Menu
 }
 
 #menusection .selection .list:hover{
-    background-color: #39ff40;
-	transition: 0.5s;
+    background-color: #dbf5b0;
+	
+    box-shadow: inset;
 }
 
 /*
