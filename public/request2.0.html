@@ -10,49 +10,86 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/webstyle2.css">
     <link rel="icon" type="image/x-icon" href="./picture/favicon.jpg">
-    <script src="./js/webscript.js"></script> 
+    <script src="./js/webscript2.js"></script> 
 </head>
-<body>
+
+<body onload="startFunction()">
+
+<!-- Section 0 : Overlay Section -->
+ <div id="overlaysection">
+
+ </div>
 
 
-<!-- Header Section -->
-<div class="header">
-    <div class="profile">
-        <div>
-            <img class="profile-pic" src="./picture/favicon.jpg">
-        </div>
-        <div>
-            ชื่อ นามสกุล<br>
-            <small>Log out</small>
-        </div>
+<!-- Section 1 : Menu Section -->
+<div id="menusection">
+    
+    <div class="header">
+        <h1 onclick="hideMenu()"><
+        </h1>
+        <h2>MENU</h2>
     </div>
-    <div class="menu-icon">☰</div>
+
+    <div class="selection">
+
+        <div class="list">
+            <p>รายการของฉัน</p>
+        </div>
+        <div class="list">
+            <p>ตรวจสอบสถานะคำร้อง</p>
+        </div>
+        <div class="list">
+            <p>ประวัติการยื่นคำร้อง</p>
+        </div>
+    
+
+    </div>
+
 </div>
 
-<!-- Content Section -->
-<div class="content">
-    <h1>คำร้องสำหรับนักศึกษามหาวิทยาลัยธรรมศาสตร์</h1>
-    <p>โปรดเลือกประเภทคำร้อง</p>
-    
-    <!-- Icons Section -->
-    <div class="icon-container">
-        <div class="icon-item">
-            <div class="icon">📝</div>
-            <p>จดทะเบียนล่าช้า</p>
+<!-- Section 2 : Home Section -->
+
+<div id="homesection">
+    <!-- Header Section -->
+    <div class="header">
+        <div class="profile">
+            <div>
+                <img class="profile-pic" src="./picture/favicon.jpg">
+            </div>
+            <div>
+                ชื่อ นามสกุล<br>
+                <small>Log out</small>
+            </div>
         </div>
-        <div class="icon-item">
-            <div class="icon">🗑️</div>
-            <p>ถอนรายวิชา</p>
-        </div>
-        <div class="icon-item">
-            <div class="icon">📑</div>
-            <p>จดทะเบียนศึกษารายวิชานอกหลักสูตร</p>
-        </div>
-        <div class="icon-item">
-            <div class="icon">➡️</div>
-            <p>ลาออก</p>
+        <div class="menu-icon" onclick="showMenu()">☰</div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content">
+        <h1>คำร้องสำหรับนักศึกษามหาวิทยาลัยธรรมศาสตร์</h1>
+        <p>โปรดเลือกประเภทคำร้อง</p>
+        
+        <!-- Icons Section -->
+        <div class="icon-container">
+            <div class="icon-item">
+                <div class="icon">📝</div>
+                <p>จดทะเบียนล่าช้า</p>
+            </div>
+            <div class="icon-item">
+                <div class="icon">🗑️</div>
+                <p>ถอนรายวิชา</p>
+            </div>
+            <div class="icon-item">
+                <div class="icon">📑</div>
+                <p>จดทะเบียนศึกษารายวิชานอกหลักสูตร</p>
+            </div>
+            <div class="icon-item">
+                <div class="icon">➡️</div>
+                <p>ลาออก</p>
+            </div>
         </div>
     </div>
+
 </div>
 
 </body>
