@@ -109,9 +109,14 @@ Section 2 : Homesection
     align-items: center;
     text-align: center;
     color: #333;
-    border : 2px dashed black;
+    border : 1px solid black;
     width : 12vw;
-    padding-top: 2vw;
+    padding-top: 2vw;   
+    transition: transform 0.2s;
+}
+
+#homesection .icon-item:hover {
+    transform: translateY(-0.5vh);
 }
 
 #homesection .icon-item .icon {
