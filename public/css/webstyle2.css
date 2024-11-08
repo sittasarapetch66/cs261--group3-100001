@@ -164,7 +164,8 @@ Section 1 : Menu
     font-size: 20px;
     height: 100%;
     top : 0%;
-    display: block;
+    width: 30%;
+    display: none;
     transition: margin-left .5s;
     background-color: #f5f5f5;
     transition: 1s;
