@@ -39,7 +39,7 @@ Section 2 : Homesection
 #homesection{
     display: none;
 }
-.header {
+#homesection .header {
     background-color: #2c2c3e;
     color: white;
     display: flex;
@@ -50,56 +50,71 @@ Section 2 : Homesection
     height: 10vh;
 }
 
-.header .profile {
+#homesection .header .profile {
     display: flex;
     align-items: center;
 }
 
-.profile-pic {
-    width: 40px;
-    height: 40px;
+#homesection .textinfo {
+    font-size: 3vh;
+    margin-left : 2vh;
+}
+
+#homesection .textinfo small{
+    font-size: 2vh;
+    padding : 0.5vh;
+    background-color : blueviolet;
+}
+
+#homesection .profile-pic {
+    height: 8vh;
     background-color: #c4c4c4;
     border-radius: 50%;
     margin-right: 10px;
     border : 1px solid white;
 }
 
-.menu-icon {
+#homesection .menu-icon {
     font-size: 1.5em;
 }
 
-.content {
+#homesection .content {
     text-align: center;
     padding: 40px 20px;
 }
 
-.content h1 {
-    font-size: 1.2em;
-    margin-bottom: 5px;
+#homesection .content h1 {
+    font-size: 5vh;
+    margin-bottom: 1vh;
 }
 
-.content p {
-    font-size: 0.9em;
+#homesection .content p {
+    font-size: 3vh;
     color: #666;
-    margin-bottom: 30px;
+    margin-bottom: 8vh;
 }
 
-.icon-container {
+#homesection .icon-container {
+    width : 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border : 1px solid black;
     display: flex;
     justify-content: space-evenly; /* ทำให้ไอคอนมีระยะห่างเท่ากัน */
 }
 
-.icon-item {
+#homesection .icon-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     color: #333;
     border : 2px dashed black;
-    padding : 10px;
+    width : 12vw;
+    padding-top: 2vw;
 }
 
-.icon-item .icon {
+#homesection .icon-item .icon {
     width: 80px;
     height: 80px;
     background-color: #e0e0e0;
@@ -107,12 +122,12 @@ Section 2 : Homesection
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
+    margin-bottom: 1vw;
     font-size: 2em;
 }
 
-.icon-item p {
-    font-size: 0.9em;
+#homesection .icon-item p {
+    font-size: 1.2vw;
 }
 
 /*
@@ -124,12 +139,13 @@ Section 1 : Menu
     margin-right : 0px;
     right : 0px;
     width : 15em;
-    background-color : white;
+    
     font-size: 20px;
     height: 100%;
     top : 0%;
     display: none;
     transition: margin-left .5s;
+    background-color: #ffffff;
 
     /*
     TO DISPLAY PLEASE UNCOMMENT
@@ -141,16 +157,18 @@ Section 1 : Menu
 
 #menusection .header{
 
-    color: white;
+    
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height : 10vh
+    height : 12vh;
+    background-color: #2c2c3e;
 
 }
 
 #menusection .selection{
     padding-top : 30px;
+    background-color: #ffffff;
 }
 
 
