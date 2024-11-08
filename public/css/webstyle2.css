@@ -355,7 +355,6 @@ Section 3 : Mylist Section
 */
 #trackhistorysection{
 
-    //display : none;
 }
 #trackhistorysection .navbar {
     display: flex;
@@ -465,7 +464,6 @@ Section 3 : Mylist Section
 */
 #requestformtemplate{
 
-    //display : none;
 }
 
 #requestformtemplate .container {
@@ -564,7 +562,6 @@ Section 3 : Mylist Section
 */
 #successend {
 
-    //display : none;
 }
 
 #successend .header {
@@ -662,7 +659,7 @@ Section 3 : Mylist Section
 
   
   #checkstatus {
-    //display : none;
+
   }
 
   #checkstatus .navbar {

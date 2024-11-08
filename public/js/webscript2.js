@@ -1,8 +1,13 @@
 
 
 function startFunction(){
-  document.getElementById("homesection").style.display = "block";
-  //document.getElementById("menusection").style.width = "0px";
+  var setorginal = "block"
+  document.getElementById("homesection").style.display = setorginal;
+  document.getElementById("mylistsection").style.display = setorginal;
+  document.getElementById("trackhistorysection").style.display = setorginal;
+  document.getElementById("requestformtemplate").style.display = setorginal;
+  document.getElementById("successend").style.display = setorginal;
+  document.getElementById("checkstatus").style.display = setorginal;
 }
 
 function toggleSomething(mode){
@@ -19,7 +24,7 @@ function toggleSomething(mode){
   10 : show only homesection
   11 : 
   12 :
-  
+
 
 
   */
