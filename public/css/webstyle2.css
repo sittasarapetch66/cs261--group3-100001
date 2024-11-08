@@ -124,6 +124,7 @@ Section 2 : Homesection
     width : 12vw;
     padding-top: 2vw;   
     transition: transform 0.2s;
+    transition: 0.5s;
     cursor : pointer;
     border-radius : 25px;
 }
@@ -197,6 +198,8 @@ Section 1 : Menu
     padding-top : 1px;
     padding-left : 40px;
     border : 1px solid green;
+    transition: 0.5s;
+    cursor: pointer;
 }
 
 #menusection .selection .list p{
@@ -204,8 +207,9 @@ Section 1 : Menu
 }
 
 #menusection .selection .list:hover{
-    background-color: #39ff40;
-	transition: 0.5s;
+    background-color: #dbf5b0;
+	
+    box-shadow: inset;
 }
 
 /*
@@ -543,8 +547,7 @@ Section 3 : Mylist Section
 
 /* Section 6 sucesssend
 */
-
-#successend{
+#successend {
 
     //display : none;
 }
@@ -566,41 +569,61 @@ Section 3 : Mylist Section
 
 
 #successend .header {
+    background-color: #2c2c3e;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height : 10vh;
-    background-color: #2D3142;
     padding: 10px 20px;
-  }
+    font-size: 1em;
+    height: 12vh;
+}
 
+<<<<<<< HEAD
   #successend .header .back {
     color: white;
     font-size: 5vh;
     text-decoration: none;
   }
-
-  #successend .header .menu {
-    color: white;
+=======
+#successend .back-button {
+    margin-left: 5vh;
+    background: none;
+    border: none;
+    color: #F5F5F5;
     font-size: 24px;
-    padding: 0 100px;
-  }
+    cursor: pointer;
+    outline: none;
+}
+
+#successend .header .profile {
+    display: flex;
+    align-items: center;
+}
+
+#successend .profile-pic {
+    width: 40px;
+    height: 40px;
+    background-color: #F5F5F5;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#successend .menu-icon {
+    margin-right: 5vh;
+    font-size: 1.5em;
+}
+>>>>>>> f73008777896a34cc8be81567bb5ded1a2a6d476
+
 
   #successend .content {
-    text-align: center;
+    display: flex;
+    margin-top: 2%;
+    flex-direction: column;
     align-items: center;
-    justify-items: center;
-    margin-top: 5%;
-  }
-
-  #successend .content h2 {
-    font-size: 1.5em;
-    color: #333;
-  }
-
-  #successend .content p {
-    font-size: 1em;
-    color: #666;
+    /* justify-content: center; */
+    text-align: center;
+    height: 80vh;
   }
 
   #successend .checkmark {
@@ -612,7 +635,6 @@ Section 3 : Mylist Section
     align-items: center;
     justify-content: center;
     margin-top: 20px;
-
   }
 
   #successend .checkmark::before {
@@ -621,6 +643,27 @@ Section 3 : Mylist Section
     color: white;
   }
 
+  #successend h1 {
+    font-size: 24px;
+    color: #333333;
+  }
+
+  #successend p {
+    color: #333333;
+    font-size: 16px;
+  }
+
+  #successend .return-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #E0E0E0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333333;
+    text-decoration: none;
+  }
   /*
   Section 7 : checkstatus
   */
