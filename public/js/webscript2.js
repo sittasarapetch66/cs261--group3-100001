@@ -4,6 +4,32 @@ function startFunction(){
   document.getElementById("homesection").style.display = "block";
 }
 
+function toggleSomething(mode){
+
+  var1 = document.getElementById("menusection");
+  var2 = document.getElementById("overlaysection");
+  var3 = document.getElementById("homesection");
+
+  var1.style.display = "none";
+  var2.style.display = "none";
+  var3.style.display = "none";
+
+
+  switch(mode){
+  case 1:
+    var1.style.display = "block"
+    break;
+  case 2:
+    var2.style.display = "block"
+    break;
+  case 3:
+    var3.style.display = "block"
+    break;
+  
+  }
+
+
+}
 
 function showMenu(){
 
