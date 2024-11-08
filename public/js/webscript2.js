@@ -2,6 +2,7 @@
 
 function startFunction(){
   document.getElementById("homesection").style.display = "block";
+  document.getElementById("menusection").style.width = "0px";
 }
 
 function toggleSomething(mode){
@@ -32,17 +33,17 @@ function toggleSomething(mode){
 }
 
 function showMenu(){
+document.getElementById("menusection").style.width = "30%";
 
-  variable = document.getElementById("menusection");
-  variable.style.display = "block";
   variable2 = document.getElementById("overlaysection");
   variable2.style.display = "block";
+
+  
 }
 
 function hideMenu(){
+  document.getElementById("menusection").style.width = "0px";
 
-  variable = document.getElementById("menusection");
-  variable.style.display = "none";
   variable2 = document.getElementById("overlaysection");
   variable2.style.display = "none";
 }

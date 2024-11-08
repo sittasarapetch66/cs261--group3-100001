@@ -160,13 +160,14 @@ Section 1 : Menu
     position : absolute;
     margin-right : 0px;
     right : 0px;
-    width : 30%;
+
     font-size: 20px;
     height: 100%;
     top : 0%;
-    display: none;
+    display: block;
     transition: margin-left .5s;
     background-color: #f5f5f5;
+    transition: 1s;
 
     /*
     TO DISPLAY PLEASE UNCOMMENT
@@ -552,22 +553,6 @@ Section 3 : Mylist Section
     //display : none;
 }
 
-#successend .menu-icon {
-    font-size: 5vh;
-    cursor: pointer;
-    padding-left : 15px;
-    padding-right : 15px;
-    border-radius : 50%;
-    transition: 0.5s;
-    color: #f5f5f5;
-}
-
-#successend .menu-icon:hover {
-    background-color: #c4c4c4a9;
-}
-
-
-
 #successend .header {
     background-color: #2c2c3e;
     color: white;
@@ -579,24 +564,45 @@ Section 3 : Mylist Section
     height: 12vh;
 }
 
-  #successend .header .back {
-    color: white;
-    font-size: 5vh;
-    text-decoration: none;
-  }
+#successend .back-button {
+    margin-left: 5vh;
+    background: none;
+    border: none;
+    color: #F5F5F5;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+}
 
-
-  #successend .content {
+#successend .header .profile {
     display: flex;
-    margin-top: 2%;
+    align-items: center;
+}
+
+#successend .profile-pic {
+    width: 40px;
+    height: 40px;
+    background-color: #F5F5F5;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#successend .menu-icon {
+    margin-right: 5vh;
+    font-size: 1.5em;
+}
+
+#successend .content {
+    display: flex;
     flex-direction: column;
+    margin-top: 2%;
     align-items: center;
     /* justify-content: center; */
     text-align: center;
     height: 80vh;
-  }
+}
 
-  #successend .checkmark {
+#successend .checkmark {
     width: 100px;
     height: 100px;
     background-color: #4CAF50;
@@ -605,23 +611,23 @@ Section 3 : Mylist Section
     align-items: center;
     justify-content: center;
     margin-top: 20px;
-  }
+}
 
-  #successend .checkmark::before {
+#successend .checkmark::before {
     content: "✔";
     font-size: 50px;
     color: white;
-  }
+}
 
-  #successend h1 {
+#successend h1 {
     font-size: 24px;
     color: #333333;
-  }
+}
 
-  #successend p {
-    color: #333333;
+#successend p {
+    color: #7D7D7D;
     font-size: 16px;
-  }
+}
 
   #successend .return-button {
     margin-top: 20px;
@@ -634,6 +640,8 @@ Section 3 : Mylist Section
     color: #333333;
     text-decoration: none;
   }
+
+
   /*
   Section 7 : checkstatus
   */
