@@ -63,6 +63,7 @@ Section 2 : Homesection
     font-size: 2vh;
     padding : 0.5vh;
     background-color : blueviolet;
+    cursor: pointer;
 }
 
 #homesection .profile-pic {
@@ -74,7 +75,17 @@ Section 2 : Homesection
 }
 
 #homesection .menu-icon {
-    font-size: 1.5em;
+    font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+
+}
+
+#homesection .menu-icon:hover {
+    background-color: #c4c4c4a9;
 }
 
 #homesection .content {
@@ -238,16 +249,16 @@ Section 3 : Mylist Section
 }
 
 #mylistsection .menu-icon {
-    display: flex;
-    flex-direction: column;
+    font-size: 5vh;
     cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
 }
 
-#mylistsection .menu-icon .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #F5F5F5;
-    margin: 3px 0;
+#mylistsection .menu-icon:hover {
+    background-color: #c4c4c4a9;
 }
 
 #mylistsection .content {
@@ -346,17 +357,18 @@ Section 3 : Mylist Section
 }
 
 #trackhistorysection .menu-icon {
-    display: flex;
-    flex-direction: column;
+    font-size: 5vh;
     cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
 }
 
-#trackhistorysection .menu-icon .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #F5F5F5;
-    margin: 3px 0;
+#trackhistorysection .menu-icon:hover {
+    background-color: #c4c4c4a9;
 }
+
 
 #trackhistorysection .content {
     width: 60%;
@@ -452,6 +464,21 @@ Section 3 : Mylist Section
     font-family: 'Prompt', sans-serif; /* ใช้ฟ้อนต์ Prompt กับส่วน header */
 }
 
+#requestformtemplate .menu-icon {
+    font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+}
+
+#requestformtemplate .menu-icon:hover {
+    background-color: #c4c4c4a9;
+}
+
+
+
 #requestformtemplate h1 {
     font-size: 1.2em;
     margin: 0;
@@ -520,6 +547,21 @@ Section 3 : Mylist Section
 
     //display : none;
 }
+
+#successend .menu-icon {
+    font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+}
+
+#successend .menu-icon:hover {
+    background-color: #c4c4c4a9;
+}
+
+
 
 #successend .header {
     display: flex;
@@ -605,16 +647,16 @@ Section 3 : Mylist Section
 }
 
 #checkstatus .menu-icon {
-    display: flex;
-    flex-direction: column;
+    font-size: 5vh;
     cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
 }
 
-#checkstatus .menu-icon .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #F5F5F5;
-    margin: 3px 0;
+#checkstatus .menu-icon:hover {
+    background-color: #c4c4c4a9;
 }
 
 #checkstatus .content {
@@ -657,7 +699,7 @@ Section 3 : Mylist Section
     margin-top: 20px;
 }
 
-.status-circle {
+#checkstatus .status-circle {
     display: flex;
     flex-direction: column;
     align-items: center;

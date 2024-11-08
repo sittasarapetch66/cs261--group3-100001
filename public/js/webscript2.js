@@ -76,3 +76,7 @@ function showHistorySection(){
 function toggleSection(number){
 
 }
+
+function whatAlert(){
+  alert("คุณไม่สามารถออกได้ในอีก 98454578763423 วัน เนื่องด้วยปัญหา @*#^*&%*#(7 ");
+}
