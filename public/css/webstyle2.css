@@ -399,3 +399,154 @@ Section 3 : Mylist Section
     background-color: #F44336;
     color: #F5F5F5;
 }
+
+
+/* Section 5 form template
+*/
+#requestformtemplate{
+
+    display : none;
+}
+
+#requestformtemplate .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#requestformtemplate header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2c2c3e;
+    padding: 10px;
+    color: #ffffff;
+    font-family: 'Prompt', sans-serif; /* ใช้ฟ้อนต์ Prompt กับส่วน header */
+}
+
+#requestformtemplate h1 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+#requestformtemplate .form-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+#requestformtemplate h2 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #333;
+    font-family: 'Prompt', sans-serif; /* ใช้ฟ้อนต์ Prompt กับหัวข้อ */
+}
+
+#requestformtemplate label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+#requestformtemplate input[type="text"], input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#requestformtemplate .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#requestformtemplate button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    font-family: 'Prompt', sans-serif; /* ใช้ฟ้อนต์ Prompt กับปุ่ม */
+}
+
+#requestformtemplate .save-draft {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+#requestformtemplate .submit {
+    background-color: #4caf50;
+    color: #ffffff;
+}
+
+
+/* Section 6 sucesssend
+*/
+
+#successend{
+
+    display : none;
+}
+
+#successend .header {
+    width: 100%;
+    display: flex;
+    margin-top: 0%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+  }
+
+  #successend .header .back {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    padding: 0 100px;
+  }
+
+  #successend .header .menu {
+    color: white;
+    font-size: 24px;
+    padding: 0 100px;
+  }
+
+  #successend .content {
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    margin-top: 5%;
+  }
+
+  #successend .content h2 {
+    font-size: 1.5em;
+    color: #333;
+  }
+
+  #successend .content p {
+    font-size: 1em;
+    color: #666;
+  }
+
+  #successend .checkmark {
+    width: 100px;
+    height: 100px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+
+  }
+
+  #successend .checkmark::before {
+    content: "✔";
+    font-size: 50px;
+    color: white;
+  }
