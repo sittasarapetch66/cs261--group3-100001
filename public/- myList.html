@@ -1,28 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>รายการ</title>
+    <title>คำร้องนักศึกษา</title>
+
+    <!-- ลิงก์ฟ้อนต์จาก Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500&display=swap" rel="stylesheet">
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* CSS */
+        * {
+            box-sizing: border-box;
+            font-family: 'IBM Plex Sans Thai', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
         }
 
-        .navbar {
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .header {
+            background-color: #2c2c3e;
+            color: white;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: #2D3142;
-            color: #F5F5F5;
             padding: 10px 20px;
+            font-size: 1em;
+            height: 12vh;
         }
 
         .back-button {
+            margin-left: 5vh;
             background: none;
             border: none;
             color: #F5F5F5;
@@ -31,35 +45,38 @@
             outline: none;
         }
 
-        .menu-icon {
+        .header .profile {
             display: flex;
-            flex-direction: column;
-            cursor: pointer;
+            align-items: center;
         }
 
-        .menu-icon .bar {
-            width: 25px;
-            height: 3px;
-            background-color: #F5F5F5;
-            margin: 3px 0;
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            background-color: #c4c4c4;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .menu-icon {
+            margin-right: 5vh;
+            font-size: 1.5em;
         }
 
         .content {
             width: 60%;
-            /* ปรับความกว้างให้เหมาะสมกับหน้าจอ */
             max-width: 800px;
-            /* จำกัดความกว้างสูงสุด */
             margin: auto;
-            /* จัดกึ่งกลาง */
             padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-
+        .title {
+            padding: 20px;
+        }
         .item-card {
             width: 100%;
-            /* ให้กล่องมีความกว้างเต็มที่ภายใน .content */
             background-color: #E0E0E0;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -68,7 +85,7 @@
             transition: transform 0.2s;
         }
 
-        โ .item-card:hover {
+        .item-card:hover {
             transform: translateY(-3px);
         }
 
@@ -89,7 +106,6 @@
             display: flex;
             margin-top: 20px;
             margin-bottom: 10px;
-            /* justify-content: flex-end; */
             gap: 10px;
         }
 
@@ -115,19 +131,22 @@
         }
     </style>
 </head>
-
 <body>
-    <div class="navbar">
-        <button class="back-button">&lt;</button>
-        <h1>รายการ</h1>
-        <div class="menu-icon">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+
+    <!-- Header Section -->
+    <div class="header">
+        
+        <div class="profile">
+            <button class="back-button">&lt;</button>
         </div>
+        <div class="menu-icon">☰</div>
     </div>
 
+    <!-- Content Section -->
     <div class="content">
+        <div class="title">
+            <h1>รายการ</h1>
+        </div>
         <div class="item-card">
             <h2>ถอนรายวิชา</h2>
             <p>แก้ไขล่าสุดวันที่ XX เดือน XX ปี XX เวลา 00:00</p>
@@ -147,6 +166,6 @@
         </div>
 
     </div>
-</body>
 
+</body>
 </html>
