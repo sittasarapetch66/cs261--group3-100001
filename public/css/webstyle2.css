@@ -243,7 +243,7 @@ Section 3 : Mylist Section
     background: none;
     border: none;
     color: #F5F5F5;
-    font-size: 24px;
+    font-size: 5vh;
     cursor: pointer;
     outline: none;
 }
@@ -344,6 +344,7 @@ Section 3 : Mylist Section
     justify-content: space-between;
     background-color: #2D3142;
     color: #F5F5F5;
+    height: 10vh;
     padding: 10px 20px;
 }
 
@@ -351,7 +352,7 @@ Section 3 : Mylist Section
     background: none;
     border: none;
     color: #F5F5F5;
-    font-size: 24px;
+    font-size: 5vh;
     cursor: pointer;
     outline: none;
 }
@@ -555,6 +556,7 @@ Section 3 : Mylist Section
     padding-right : 15px;
     border-radius : 50%;
     transition: 0.5s;
+    color: #f5f5f5;
 }
 
 #successend .menu-icon:hover {
@@ -574,9 +576,8 @@ Section 3 : Mylist Section
 
   #successend .header .back {
     color: white;
-    font-size: 24px;
+    font-size: 5vh;
     text-decoration: none;
-    padding: 0 100px;
   }
 
   #successend .header .menu {
@@ -630,6 +631,7 @@ Section 3 : Mylist Section
 
   #checkstatus .navbar {
     display: flex;
+    height : 10vh;
     align-items: center;
     justify-content: space-between;
     background-color: #2D3142;
@@ -641,7 +643,7 @@ Section 3 : Mylist Section
     background: none;
     border: none;
     color: #F5F5F5;
-    font-size: 24px;
+    font-size: 5vh;
     cursor: pointer;
     outline: none;
 }
