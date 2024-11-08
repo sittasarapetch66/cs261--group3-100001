@@ -98,7 +98,7 @@ Section 2 : Homesection
     width : 90%;
     margin-left: auto;
     margin-right: auto;
-    border : 1px solid black;
+    /*border : 1px solid black;*/
     display: flex;
     justify-content: space-evenly; /* ทำให้ไอคอนมีระยะห่างเท่ากัน */
 }
@@ -109,14 +109,20 @@ Section 2 : Homesection
     align-items: center;
     text-align: center;
     color: #333;
+    background-color: #ffffff;
     border : 1px solid black;
     width : 12vw;
     padding-top: 2vw;   
     transition: transform 0.2s;
+    cursor : pointer;
+    border-radius : 25px;
 }
 
 #homesection .icon-item:hover {
     transform: translateY(-0.5vh);
+    background-color: #eafad1;
+    box-shadow: 10px 10px #888888;
+
 }
 
 #homesection .icon-item .icon {
