@@ -39,7 +39,7 @@ Section 2 : Homesection
     display: none;
 }
 #homesection .header {
-    background-color: #2c2c3e;
+    background-color: #2D3142;
     color: white;
     display: flex;
     align-items: center;
@@ -97,7 +97,7 @@ Section 2 : Homesection
     width : 90%;
     margin-left: auto;
     margin-right: auto;
-    border : 1px solid black;
+    /*border : 1px solid black;*/
     display: flex;
     justify-content: space-evenly; /* ทำให้ไอคอนมีระยะห่างเท่ากัน */
 }
@@ -108,14 +108,20 @@ Section 2 : Homesection
     align-items: center;
     text-align: center;
     color: #333;
+    background-color: #ffffff;
     border : 1px solid black;
     width : 12vw;
     padding-top: 2vw;   
     transition: transform 0.2s;
+    cursor : pointer;
+    border-radius : 25px;
 }
 
 #homesection .icon-item:hover {
     transform: translateY(-0.5vh);
+    background-color: #eafad1;
+    box-shadow: 10px 10px #888888;
+
 }
 
 #homesection .icon-item .icon {
@@ -164,8 +170,9 @@ Section 1 : Menu
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height : 12vh;
-    background-color: #2c2c3e;
+    height : 10vh;
+    background-color: #2D3142;
+    padding: 10px 20px;
 
 }
 
@@ -439,7 +446,7 @@ Section 3 : Mylist Section
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #2c2c3e;
+    background-color: #2D3142;
     padding: 10px;
     color: #ffffff;
     font-family: 'Prompt', sans-serif; /* ใช้ฟ้อนต์ Prompt กับส่วน header */
@@ -520,8 +527,9 @@ Section 3 : Mylist Section
     margin-top: 0%;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    padding: 10px;
+    background-color: #2D3142;
+    padding: 10px 20px;
+    max-height: 10vh;
   }
 
   #successend .header .back {
