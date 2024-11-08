@@ -673,6 +673,7 @@ Section 3 : Mylist Section
     background-color: #2D3142;
     color: #F5F5F5;
     padding: 10px 20px;
+    
 }
 
 #checkstatus .back-button {
@@ -707,7 +708,7 @@ Section 3 : Mylist Section
     justify-content: space-between;
     padding: 10px 20px;
     font-size: 1em;
-    height: 12vh;
+    height: 10vh;
 }
 
 #checkstatus .back-button {
@@ -715,14 +716,19 @@ Section 3 : Mylist Section
     background: none;
     border: none;
     color: #F5F5F5;
-    font-size: 24px;
+    font-size: 5vh;
     cursor: pointer;
     outline: none;
 }
 
 #checkstatus .header .profile {
     display: flex;
+    height : 10vh;
     align-items: center;
+    justify-content: space-between;
+    background-color: #2D3142;
+    color: #F5F5F5;
+    padding: 10px 20px;
 }
 
 #checkstatus .profile-pic {
@@ -734,8 +740,8 @@ Section 3 : Mylist Section
 }
 
 #checkstatus .menu-icon {
-    margin-right: 5vh;
-    font-size: 1.5em;
+    color: #F5F5F5;
+    font-size: 5vh;
 }
 
 
