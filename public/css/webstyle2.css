@@ -210,7 +210,20 @@ Section 1 : Menu
 
 #menusection .selection .list:hover{
     background-color: #dbf5b0;
-	
+    box-shadow: inset;
+}
+
+#menusection .header h1{
+    padding-left : 10px;
+    padding-right : 20px;
+    transition: 0.5s;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+
+#menusection .header h1:hover{
+    background-color: #c8c8c8;
     box-shadow: inset;
 }
 

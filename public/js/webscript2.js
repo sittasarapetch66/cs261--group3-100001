@@ -12,13 +12,14 @@ function toggleSomething(mode){
 
   var3 = document.getElementById("homesection");
 
-  var1.style.display = "none";
-  var2.style.display = "none";
-  var3.style.display = "none";
-
   /*
   1 : show filter and the menu
   2 : hide filter and the menu
+
+  10 : show only homesection
+  11 : 
+  12 :
+  
 
 
   */
@@ -27,9 +28,12 @@ function toggleSomething(mode){
   case 1:
     var1.style.display = "block";
     var2.style.display = "block";
+
     break;
   case 2:
-    
+    var1.style.display = "none";
+    var2.style.display = "none";
+
     break;
   case 3:
     var3.style.display = "block";
