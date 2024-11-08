@@ -1,13 +1,25 @@
 
 
 function startFunction(){
-  var setorginal = "block"
+  var experimental = "none";
+  document.getElementById("menusection").style.display = experimental;
+  document.getElementById("overlaysection").style.display = experimental;
+
+  var setorginal = "block";
   document.getElementById("homesection").style.display = setorginal;
   document.getElementById("mylistsection").style.display = setorginal;
   document.getElementById("trackhistorysection").style.display = setorginal;
   document.getElementById("requestformtemplate").style.display = setorginal;
   document.getElementById("successend").style.display = setorginal;
   document.getElementById("checkstatus").style.display = setorginal;
+
+  var setorginal = "2px dashed yellow";
+  document.getElementById("homesection").style.border = setorginal;
+  document.getElementById("mylistsection").style.border = setorginal;
+  document.getElementById("trackhistorysection").style.border = setorginal;
+  document.getElementById("requestformtemplate").style.border = setorginal;
+  document.getElementById("successend").style.border = setorginal;
+  document.getElementById("checkstatus").style.border = setorginal;
 }
 
 function toggleSomething(mode){

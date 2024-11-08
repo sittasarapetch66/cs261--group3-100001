@@ -264,8 +264,18 @@ Section 3 : Mylist Section
     color: #F5F5F5;
     font-size: 5vh;
     cursor: pointer;
-    outline: none;
+    border-radius: 50%;
+    padding-left : 5px;
+    padding-right : 15px;
+    transition: 0.5s;
 }
+
+#mylistsection .back-button:hover{
+    background-color: #c8c8c8;
+    box-shadow: inset;
+}
+
+
 
 #mylistsection .menu-icon {
     font-size: 5vh;
@@ -372,7 +382,15 @@ Section 3 : Mylist Section
     color: #F5F5F5;
     font-size: 5vh;
     cursor: pointer;
-    outline: none;
+    border-radius: 50%;
+    padding-left : 5px;
+    padding-right : 15px;
+    transition: 0.5s;
+}
+
+#trackhistorysection .back-button:hover{
+    background-color: #c8c8c8;
+    box-shadow: inset;
 }
 
 #trackhistorysection .menu-icon {
@@ -576,13 +594,20 @@ Section 3 : Mylist Section
 }
 
 #successend .back-button {
-    margin-left: 5vh;
     background: none;
     border: none;
     color: #F5F5F5;
     font-size: 5vh;
     cursor: pointer;
-    outline: none;
+    border-radius: 50%;
+    padding-left : 5px;
+    padding-right : 15px;
+    transition: 0.5s;
+}
+
+#successend .back-button:hover{
+    background-color: #c8c8c8;
+    box-shadow: inset;
 }
 
 #successend .header .profile {
@@ -599,8 +624,16 @@ Section 3 : Mylist Section
 }
 
 #successend .menu-icon {
-    margin-right: 5vh;
     font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+}
+
+#successend .menu-icon:hover {
+    background-color: #c4c4c4a9;
 }
 
 #successend .content {
@@ -673,13 +706,22 @@ Section 3 : Mylist Section
     
 }
 
+
 #checkstatus .back-button {
     background: none;
     border: none;
     color: #F5F5F5;
     font-size: 5vh;
     cursor: pointer;
-    outline: none;
+    border-radius: 50%;
+    padding-left : 5px;
+    padding-right : 15px;
+    transition: 0.5s;
+}
+
+#checkstatus .back-button:hover{
+    background-color: #c8c8c8;
+    box-shadow: inset;
 }
 
 #checkstatus .menu-icon {
