@@ -668,8 +668,10 @@ Section 3 : Mylist Section
   Section 7 : checkstatus
   */
 
-  #checkstatus{
+  
+  #checkstatus {
     //display : none;
+<<<<<<< HEAD
   }
 
   #checkstatus .navbar {
@@ -689,6 +691,8 @@ Section 3 : Mylist Section
     font-size: 5vh;
     cursor: pointer;
     outline: none;
+=======
+>>>>>>> a0f7ad3e44401c70a5261a2f221f9d82a2377e88
 }
 
 #checkstatus .menu-icon {
@@ -704,6 +708,48 @@ Section 3 : Mylist Section
     background-color: #c4c4c4a9;
 }
 
+
+
+#checkstatus .header {
+    background-color: #2c2c3e;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 1em;
+    height: 12vh;
+}
+
+#checkstatus .back-button {
+    margin-left: 5vh;
+    background: none;
+    border: none;
+    color: #F5F5F5;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+}
+
+#checkstatus .header .profile {
+    display: flex;
+    align-items: center;
+}
+
+#checkstatus .profile-pic {
+    width: 40px;
+    height: 40px;
+    background-color: #F5F5F5;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#checkstatus .menu-icon {
+    margin-right: 5vh;
+    font-size: 1.5em;
+}
+
+
 #checkstatus .content {
     width: 60%;
     max-width: 800px;
@@ -712,63 +758,60 @@ Section 3 : Mylist Section
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-#checkstatus .item-card {
-    width: 100%;
-    background-color: #E0E0E0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-bottom: 20px;
     text-align: center;
 }
 
-#checkstatus .item-card h2 {
-    margin: 0 0 10px 0;
-    font-size: 18px;
-    font-weight: bold;
-    color: #333333;
+#checkstatus .title {
+    padding: 20px;
+}
+#checkstatus .status-card {
+    background-color: #E0E0E0;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#checkstatus .item-card p {
-    margin: 5px 0 20px;
+#checkstatus .status-card h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+#checkstatus .status-card p {
+    margin: 10px 0;
     color: #7D7D7D;
     font-size: 14px;
 }
 
-#checkstatus #checkstatus .status-flow {
+#checkstatus .progress-bar {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     margin-top: 20px;
 }
 
-#checkstatus .status-circle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 12px;
-    color: #333333;
-}
-
-#checkstatus .circle {
-    width: 40px;
-    height: 40px;
+#checkstatus .progress-bar .circle {
+    width: 20px;
+    height: 20px;
+    background-color: #2D3142;
     border-radius: 50%;
-    background-color: #4CAF50;
-    color: #F5F5F5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    margin-bottom: 5px;
 }
 
-#checkstatus .line {
-    height: 2px;
-    width: 40px;
-    background-color: #4CAF50;
+#checkstatus .progress-bar .line {
+    flex: 1;
+    height: 3px;
+    background-color: #2D3142;
+    margin: 0 5px;
+}
+
+#checkstatus .progress-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #333;
 }
 
   
