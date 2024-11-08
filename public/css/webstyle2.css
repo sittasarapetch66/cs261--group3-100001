@@ -571,22 +571,6 @@ Section 3 : Mylist Section
     //display : none;
 }
 
-#successend .menu-icon {
-    font-size: 5vh;
-    cursor: pointer;
-    padding-left : 15px;
-    padding-right : 15px;
-    border-radius : 50%;
-    transition: 0.5s;
-    color: #f5f5f5;
-}
-
-#successend .menu-icon:hover {
-    background-color: #c4c4c4a9;
-}
-
-
-
 #successend .header {
     background-color: #2c2c3e;
     color: white;
@@ -598,13 +582,6 @@ Section 3 : Mylist Section
     height: 12vh;
 }
 
-<<<<<<< HEAD
-  #successend .header .back {
-    color: white;
-    font-size: 5vh;
-    text-decoration: none;
-  }
-=======
 #successend .back-button {
     margin-left: 5vh;
     background: none;
@@ -632,20 +609,18 @@ Section 3 : Mylist Section
     margin-right: 5vh;
     font-size: 1.5em;
 }
->>>>>>> f73008777896a34cc8be81567bb5ded1a2a6d476
 
-
-  #successend .content {
+#successend .content {
     display: flex;
-    margin-top: 2%;
     flex-direction: column;
+    margin-top: 2%;
     align-items: center;
     /* justify-content: center; */
     text-align: center;
     height: 80vh;
-  }
+}
 
-  #successend .checkmark {
+#successend .checkmark {
     width: 100px;
     height: 100px;
     background-color: #4CAF50;
@@ -654,23 +629,23 @@ Section 3 : Mylist Section
     align-items: center;
     justify-content: center;
     margin-top: 20px;
-  }
+}
 
-  #successend .checkmark::before {
+#successend .checkmark::before {
     content: "✔";
     font-size: 50px;
     color: white;
-  }
+}
 
-  #successend h1 {
+#successend h1 {
     font-size: 24px;
     color: #333333;
-  }
+}
 
-  #successend p {
-    color: #333333;
+#successend p {
+    color: #7D7D7D;
     font-size: 16px;
-  }
+}
 
   #successend .return-button {
     margin-top: 20px;
@@ -683,6 +658,8 @@ Section 3 : Mylist Section
     color: #333333;
     text-decoration: none;
   }
+
+
   /*
   Section 7 : checkstatus
   */
@@ -690,7 +667,6 @@ Section 3 : Mylist Section
   
   #checkstatus {
     //display : none;
-<<<<<<< HEAD
   }
 
   #checkstatus .navbar {
@@ -710,8 +686,6 @@ Section 3 : Mylist Section
     font-size: 5vh;
     cursor: pointer;
     outline: none;
-=======
->>>>>>> a0f7ad3e44401c70a5261a2f221f9d82a2377e88
 }
 
 #checkstatus .menu-icon {
