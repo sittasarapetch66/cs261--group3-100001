@@ -160,13 +160,14 @@ Section 1 : Menu
     position : absolute;
     margin-right : 0px;
     right : 0px;
-    width : 30%;
+
     font-size: 20px;
     height: 100%;
     top : 0%;
-    display: none;
+    display: block;
     transition: margin-left .5s;
     background-color: #f5f5f5;
+    transition: 1s;
 
     /*
     TO DISPLAY PLEASE UNCOMMENT
