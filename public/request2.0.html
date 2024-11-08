@@ -16,7 +16,7 @@
 <body onload="startFunction()">
 
 <!-- Section 0 : Overlay Section -->
- <div id="overlaysection">
+ <div id="overlaysection" onclick="toggleSomething(2)">
 
  </div>
 
@@ -25,7 +25,7 @@
 <div id="menusection">
     
     <div class="header">
-        <h1 onclick="hideMenu()"><
+        <h1 onclick="toggleSomething(2)">◀
         </h1>
         <h2>MENU</h2>
     </div>
@@ -58,7 +58,7 @@
             </div>
             <div class="textinfo">
                 ทรงศักดิ์ รองวิริยะพานิช<br>
-                <small>Log out</small>
+                <small onclick="whatAlert()">Log out</small>
             </div>
         </div>
         <div class="menu-icon" onclick="showMenu()">☰</div>
@@ -96,13 +96,9 @@
 <div id="mylistsection">
 
     <div class="navbar">
-        <button class="back-button" onclick="showHomeSection()">&lt;</button>
+        <button class="back-button" onclick="showHomeSection()">◀</button>
         <h1>รายการ</h1>
-        <div class="menu-icon" onclick="showMenu()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
+        <div class="menu-icon" onclick="showMenu()">☰</div>
     </div>
 
     <div class="content">
@@ -131,13 +127,9 @@
 <!-- Section 4 : History Section -->
 <div id="trackhistorysection">
     <div class="navbar">
-        <button class="back-button">&lt;</button>
+        <button class="back-button">◀</button>
         <h1>ประวัติ</h1>
-        <div class="menu-icon" onclick="showMenu()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
+        <div class="menu-icon" onclick="showMenu()">☰</div>
     </div>
 
     <div class="content">
@@ -168,7 +160,7 @@
         <header>
             <div class="back-arrow">◀</div>
             <h1>คำร้องนักศึกษา</h1>
-            <div class="menu-icon">☰</div>
+            <div class="menu-icon" onclick="showMenu()">☰</div>
         </header>
 
         <section class="form-section">
@@ -220,16 +212,25 @@
 
 <div id="successend">
 
-    <div class="header">
-        <a href="#" class="back">&lt;</a>
-        <div class="menu">☰</div>
-      </div>
-    
-      <div class="content">
-        <h2>คำร้องของคุณได้รับการบันทึกเรียบร้อยแล้ว</h2>
-        <p>รอการดำเนินการเพื่ออนุมัติคำร้อง</p>
-        <div class="checkmark"></div>
-      </div>
+    <!-- Header Section -->
+  <div class="header">
+
+    <div class="profile">
+      <button class="back-button">◀</button>
+    </div>
+    <div class="menu-icon">☰</div>
+  </div>
+
+  <!-- Content Section -->
+  <div class="content">
+    <div class="content">
+      <h1>คำร้องของคุณได้รับการบันทึกเรียบร้อยแล้ว</h1>
+      <p>รอดำเนินการเพื่ออนุมัติคำร้อง</p>
+      <div class="checkmark"></div>
+      <a href="#" class="return-button">กลับไปยังหน้า “ตรวจสอบคำร้อง”</a>
+    </div>
+
+  </div>
 
     
 </div>
@@ -237,36 +238,33 @@
 <!-- Section 7 : Request check-->
 
 <div id="checkstatus">
+    <!-- Header Section -->
+    <div class="header">
 
-    <div class="navbar">
-        <button class="back-button">&lt;</button>
-        <h1>ตรวจสอบสถานะคำร้อง</h1>
-        <div class="menu-icon">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
+        <div class="profile">
+            <button class="back-button">◀</button>
         </div>
+        <div class="menu-icon">☰</div>
     </div>
 
     <div class="content">
-        <div class="item-card">
-            <h2>ลาออก</h2>
-            <p>ขึ้นเมื่อวันที่ XX เดือน XX ปี XX เวลา 00:00</p>
-            <div class="status-flow">
-                <div class="status-circle">
-                    <div class="circle">1</div>
-                    <span>ตรวจสอบเบื้องต้น</span>
-                </div>
+        <div class="title">
+            <h1>ตรวจสอบสถานะคำร้อง</h1>
+        </div>
+        <div class="status-card">
+            <h2>ลางาน</h2>
+            <p>ยื่นเมื่อวันที่ XX เดือน XX ปี XX เวลา 00:00</p>
+            <div class="progress-bar">
+                <div class="circle"></div>
                 <div class="line"></div>
-                <div class="status-circle">
-                    <div class="circle">2</div>
-                    <span>อนุมัติจากคณบดี</span>
-                </div>
+                <div class="circle"></div>
                 <div class="line"></div>
-                <div class="status-circle">
-                    <div class="circle">3</div>
-                    <span>อนุมัติคำร้อง</span>
-                </div>
+                <div class="circle"></div>
+            </div>
+            <div class="progress-labels">
+                <span>ตรวจสอบเบื้องต้น</span>
+                <span>อนุมัติจากคณบดี</span>
+                <span>อนุมัติสำเร็จ</span>
             </div>
         </div>
     </div>

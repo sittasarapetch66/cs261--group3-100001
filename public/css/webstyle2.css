@@ -63,6 +63,7 @@ Section 2 : Homesection
     font-size: 2vh;
     padding : 0.5vh;
     background-color : blueviolet;
+    cursor: pointer;
 }
 
 #homesection .profile-pic {
@@ -74,7 +75,17 @@ Section 2 : Homesection
 }
 
 #homesection .menu-icon {
-    font-size: 1.5em;
+    font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+
+}
+
+#homesection .menu-icon:hover {
+    background-color: #c4c4c4a9;
 }
 
 #homesection .content {
@@ -113,6 +124,7 @@ Section 2 : Homesection
     width : 12vw;
     padding-top: 2vw;   
     transition: transform 0.2s;
+    transition: 0.5s;
     cursor : pointer;
     border-radius : 25px;
 }
@@ -148,13 +160,15 @@ Section 1 : Menu
     position : absolute;
     margin-right : 0px;
     right : 0px;
-    width : 30%;
+
     font-size: 20px;
     height: 100%;
     top : 0%;
+    width: 30%;
     display: none;
     transition: margin-left .5s;
     background-color: #f5f5f5;
+    transition: 1s;
 
     /*
     TO DISPLAY PLEASE UNCOMMENT
@@ -186,6 +200,8 @@ Section 1 : Menu
     padding-top : 1px;
     padding-left : 40px;
     border : 1px solid green;
+    transition: 0.5s;
+    cursor: pointer;
 }
 
 #menusection .selection .list p{
@@ -193,8 +209,22 @@ Section 1 : Menu
 }
 
 #menusection .selection .list:hover{
-    background-color: #39ff40;
-	transition: 0.5s;
+    background-color: #dbf5b0;
+    box-shadow: inset;
+}
+
+#menusection .header h1{
+    padding-left : 10px;
+    padding-right : 20px;
+    transition: 0.5s;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+
+#menusection .header h1:hover{
+    background-color: #c8c8c8;
+    box-shadow: inset;
 }
 
 /*
@@ -232,22 +262,32 @@ Section 3 : Mylist Section
     background: none;
     border: none;
     color: #F5F5F5;
-    font-size: 24px;
+    font-size: 5vh;
     cursor: pointer;
-    outline: none;
+    border-radius: 50%;
+    padding-left : 5px;
+    padding-right : 15px;
+    transition: 0.5s;
 }
+
+#mylistsection .back-button:hover{
+    background-color: #c8c8c8;
+    box-shadow: inset;
+}
+
+
 
 #mylistsection .menu-icon {
-    display: flex;
-    flex-direction: column;
+    font-size: 5vh;
     cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
 }
 
-#mylistsection .menu-icon .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #F5F5F5;
-    margin: 3px 0;
+#mylistsection .menu-icon:hover {
+    background-color: #c4c4c4a9;
 }
 
 #mylistsection .content {
@@ -325,7 +365,6 @@ Section 3 : Mylist Section
 */
 #trackhistorysection{
 
-    //display : none;
 }
 #trackhistorysection .navbar {
     display: flex;
@@ -333,6 +372,7 @@ Section 3 : Mylist Section
     justify-content: space-between;
     background-color: #2D3142;
     color: #F5F5F5;
+    height: 10vh;
     padding: 10px 20px;
 }
 
@@ -340,23 +380,32 @@ Section 3 : Mylist Section
     background: none;
     border: none;
     color: #F5F5F5;
-    font-size: 24px;
+    font-size: 5vh;
     cursor: pointer;
-    outline: none;
+    border-radius: 50%;
+    padding-left : 5px;
+    padding-right : 15px;
+    transition: 0.5s;
+}
+
+#trackhistorysection .back-button:hover{
+    background-color: #c8c8c8;
+    box-shadow: inset;
 }
 
 #trackhistorysection .menu-icon {
-    display: flex;
-    flex-direction: column;
+    font-size: 5vh;
     cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
 }
 
-#trackhistorysection .menu-icon .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #F5F5F5;
-    margin: 3px 0;
+#trackhistorysection .menu-icon:hover {
+    background-color: #c4c4c4a9;
 }
+
 
 #trackhistorysection .content {
     width: 60%;
@@ -433,7 +482,6 @@ Section 3 : Mylist Section
 */
 #requestformtemplate{
 
-    //display : none;
 }
 
 
@@ -455,6 +503,21 @@ Section 3 : Mylist Section
     height: 15vh; /* ตั้งค่าความสูงให้เท่ากับส่วนบน */
     box-sizing: border-box; /* เพื่อให้ padding ไม่กระทบต่อความสูง */
 }
+
+#requestformtemplate .menu-icon {
+    font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+}
+
+#requestformtemplate .menu-icon:hover {
+    background-color: #c4c4c4a9;
+}
+
+
 
 #requestformtemplate h1 {
     font-size: 1.2em;
@@ -554,52 +617,75 @@ Section 3 : Mylist Section
 
 /* Section 6 sucesssend
 */
+#successend {
 
-#successend{
-
-    //display : none;
 }
 
 #successend .header {
+    background-color: #2c2c3e;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height : 10vh;
-    background-color: #2D3142;
     padding: 10px 20px;
-  }
-
-  #successend .header .back {
-    color: white;
-    font-size: 24px;
-    text-decoration: none;
-    padding: 0 100px;
-  }
-
-  #successend .header .menu {
-    color: white;
-    font-size: 24px;
-    padding: 0 100px;
-  }
-
-  #successend .content {
-    text-align: center;
-    align-items: center;
-    justify-items: center;
-    margin-top: 5%;
-  }
-
-  #successend .content h2 {
-    font-size: 1.5em;
-    color: #333;
-  }
-
-  #successend .content p {
     font-size: 1em;
-    color: #666;
-  }
+    height: 10vh;
+}
 
-  #successend .checkmark {
+#successend .back-button {
+    background: none;
+    border: none;
+    color: #F5F5F5;
+    font-size: 5vh;
+    cursor: pointer;
+    border-radius: 50%;
+    padding-left : 5px;
+    padding-right : 15px;
+    transition: 0.5s;
+}
+
+#successend .back-button:hover{
+    background-color: #c8c8c8;
+    box-shadow: inset;
+}
+
+#successend .header .profile {
+    display: flex;
+    align-items: center;
+}
+
+#successend .profile-pic {
+    width: 40px;
+    height: 40px;
+    background-color: #F5F5F5;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#successend .menu-icon {
+    font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+}
+
+#successend .menu-icon:hover {
+    background-color: #c4c4c4a9;
+}
+
+#successend .content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    align-items: center;
+    /* justify-content: center; */
+    text-align: center;
+    height: 80vh;
+}
+
+#successend .checkmark {
     width: 100px;
     height: 100px;
     background-color: #4CAF50;
@@ -608,25 +694,114 @@ Section 3 : Mylist Section
     align-items: center;
     justify-content: center;
     margin-top: 20px;
+}
 
-  }
-
-  #successend .checkmark::before {
+#successend .checkmark::before {
     content: "✔";
     font-size: 50px;
     color: white;
+}
+
+#successend h1 {
+    font-size: 24px;
+    color: #333333;
+}
+
+#successend p {
+    color: #7D7D7D;
+    font-size: 16px;
+}
+
+  #successend .return-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #E0E0E0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333333;
+    text-decoration: none;
   }
+
 
   /*
   Section 7 : checkstatus
   */
 
-  #checkstatus{
-    //display : none;
+  
+  #checkstatus {
+
   }
 
   #checkstatus .navbar {
     display: flex;
+    height : 10vh;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2D3142;
+    color: #F5F5F5;
+    padding: 10px 20px;
+    
+}
+
+
+#checkstatus .back-button {
+    background: none;
+    border: none;
+    color: #F5F5F5;
+    font-size: 5vh;
+    cursor: pointer;
+    border-radius: 50%;
+    padding-left : 5px;
+    padding-right : 15px;
+    transition: 0.5s;
+}
+
+#checkstatus .back-button:hover{
+    background-color: #c8c8c8;
+    box-shadow: inset;
+}
+
+#checkstatus .menu-icon {
+    font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+}
+
+#checkstatus .menu-icon:hover {
+    background-color: #c4c4c4a9;
+}
+
+
+
+#checkstatus .header {
+    background-color: #2c2c3e;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 1em;
+    height: 10vh;
+}
+
+#checkstatus .back-button {
+    margin-left: 5vh;
+    background: none;
+    border: none;
+    color: #F5F5F5;
+    font-size: 5vh;
+    cursor: pointer;
+    outline: none;
+}
+
+#checkstatus .header .profile {
+    display: flex;
+    height : 10vh;
     align-items: center;
     justify-content: space-between;
     background-color: #2D3142;
@@ -634,27 +809,19 @@ Section 3 : Mylist Section
     padding: 10px 20px;
 }
 
-#checkstatus .back-button {
-    background: none;
-    border: none;
-    color: #F5F5F5;
-    font-size: 24px;
-    cursor: pointer;
-    outline: none;
+#checkstatus .profile-pic {
+    width: 40px;
+    height: 40px;
+    background-color: #F5F5F5;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
 #checkstatus .menu-icon {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
+    color: #F5F5F5;
+    font-size: 5vh;
 }
 
-#checkstatus .menu-icon .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #F5F5F5;
-    margin: 3px 0;
-}
 
 #checkstatus .content {
     width: 60%;
@@ -664,63 +831,60 @@ Section 3 : Mylist Section
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-#checkstatus .item-card {
-    width: 100%;
-    background-color: #E0E0E0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-bottom: 20px;
     text-align: center;
 }
 
-#checkstatus .item-card h2 {
-    margin: 0 0 10px 0;
-    font-size: 18px;
-    font-weight: bold;
-    color: #333333;
+#checkstatus .title {
+    padding: 20px;
+}
+#checkstatus .status-card {
+    background-color: #E0E0E0;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#checkstatus .item-card p {
-    margin: 5px 0 20px;
+#checkstatus .status-card h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+#checkstatus .status-card p {
+    margin: 10px 0;
     color: #7D7D7D;
     font-size: 14px;
 }
 
-#checkstatus #checkstatus .status-flow {
+#checkstatus .progress-bar {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     margin-top: 20px;
 }
 
-.status-circle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 12px;
-    color: #333333;
-}
-
-#checkstatus .circle {
-    width: 40px;
-    height: 40px;
+#checkstatus .progress-bar .circle {
+    width: 20px;
+    height: 20px;
+    background-color: #2D3142;
     border-radius: 50%;
-    background-color: #4CAF50;
-    color: #F5F5F5;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    margin-bottom: 5px;
 }
 
-#checkstatus .line {
-    height: 2px;
-    width: 40px;
-    background-color: #4CAF50;
+#checkstatus .progress-bar .line {
+    flex: 1;
+    height: 3px;
+    background-color: #2D3142;
+    margin: 0 5px;
+}
+
+#checkstatus .progress-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #333;
 }
 
   
