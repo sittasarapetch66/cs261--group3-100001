@@ -561,7 +561,7 @@ Section 3 : Mylist Section
     justify-content: space-between;
     padding: 10px 20px;
     font-size: 1em;
-    height: 12vh;
+    height: 10vh;
 }
 
 #successend .back-button {
@@ -569,7 +569,7 @@ Section 3 : Mylist Section
     background: none;
     border: none;
     color: #F5F5F5;
-    font-size: 24px;
+    font-size: 5vh;
     cursor: pointer;
     outline: none;
 }
@@ -589,7 +589,7 @@ Section 3 : Mylist Section
 
 #successend .menu-icon {
     margin-right: 5vh;
-    font-size: 1.5em;
+    font-size: 5vh;
 }
 
 #successend .content {
