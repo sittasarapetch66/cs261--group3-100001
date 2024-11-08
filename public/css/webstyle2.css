@@ -63,6 +63,7 @@ Section 2 : Homesection
     font-size: 2vh;
     padding : 0.5vh;
     background-color : blueviolet;
+    cursor: pointer;
 }
 
 #homesection .profile-pic {
@@ -74,7 +75,17 @@ Section 2 : Homesection
 }
 
 #homesection .menu-icon {
-    font-size: 1.5em;
+    font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+
+}
+
+#homesection .menu-icon:hover {
+    background-color: #c4c4c4a9;
 }
 
 #homesection .content {
@@ -108,7 +119,7 @@ Section 2 : Homesection
     align-items: center;
     text-align: center;
     color: #333;
-    background-color: #ffffff;
+    background-color: #f5f5f5;
     border : 1px solid black;
     width : 12vw;
     padding-top: 2vw;   
@@ -148,14 +159,13 @@ Section 1 : Menu
     position : absolute;
     margin-right : 0px;
     right : 0px;
-    width : 15em;
-    
+    width : 30%;
     font-size: 20px;
     height: 100%;
     top : 0%;
     display: none;
     transition: margin-left .5s;
-    background-color: #ffffff;
+    background-color: #f5f5f5;
 
     /*
     TO DISPLAY PLEASE UNCOMMENT
@@ -173,12 +183,13 @@ Section 1 : Menu
     height : 10vh;
     background-color: #2D3142;
     padding: 10px 20px;
+    color: #F5F5F5;
 
 }
 
 #menusection .selection{
     padding-top : 30px;
-    background-color: #ffffff;
+    background-color: #f5f5f5;
 }
 
 
@@ -238,16 +249,16 @@ Section 3 : Mylist Section
 }
 
 #mylistsection .menu-icon {
-    display: flex;
-    flex-direction: column;
+    font-size: 5vh;
     cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
 }
 
-#mylistsection .menu-icon .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #F5F5F5;
-    margin: 3px 0;
+#mylistsection .menu-icon:hover {
+    background-color: #c4c4c4a9;
 }
 
 #mylistsection .content {
@@ -346,17 +357,18 @@ Section 3 : Mylist Section
 }
 
 #trackhistorysection .menu-icon {
-    display: flex;
-    flex-direction: column;
+    font-size: 5vh;
     cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
 }
 
-#trackhistorysection .menu-icon .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #F5F5F5;
-    margin: 3px 0;
+#trackhistorysection .menu-icon:hover {
+    background-color: #c4c4c4a9;
 }
+
 
 #trackhistorysection .content {
     width: 60%;
@@ -452,6 +464,21 @@ Section 3 : Mylist Section
     font-family: 'Prompt', sans-serif; /* ใช้ฟ้อนต์ Prompt กับส่วน header */
 }
 
+#requestformtemplate .menu-icon {
+    font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+}
+
+#requestformtemplate .menu-icon:hover {
+    background-color: #c4c4c4a9;
+}
+
+
+
 #requestformtemplate h1 {
     font-size: 1.2em;
     margin: 0;
@@ -519,6 +546,22 @@ Section 3 : Mylist Section
 
     //display : none;
 }
+
+#successend .menu-icon {
+    font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+}
+
+#successend .menu-icon:hover {
+    background-color: #c4c4c4a9;
+}
+
+
+
 #successend .header {
     background-color: #2c2c3e;
     color: white;
@@ -607,3 +650,111 @@ Section 3 : Mylist Section
     color: #333333;
     text-decoration: none;
   }
+  /*
+  Section 7 : checkstatus
+  */
+
+  #checkstatus{
+    //display : none;
+  }
+
+  #checkstatus .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2D3142;
+    color: #F5F5F5;
+    padding: 10px 20px;
+}
+
+#checkstatus .back-button {
+    background: none;
+    border: none;
+    color: #F5F5F5;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+}
+
+#checkstatus .menu-icon {
+    font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+}
+
+#checkstatus .menu-icon:hover {
+    background-color: #c4c4c4a9;
+}
+
+#checkstatus .content {
+    width: 60%;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#checkstatus .item-card {
+    width: 100%;
+    background-color: #E0E0E0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#checkstatus .item-card h2 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+}
+
+#checkstatus .item-card p {
+    margin: 5px 0 20px;
+    color: #7D7D7D;
+    font-size: 14px;
+}
+
+#checkstatus #checkstatus .status-flow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#checkstatus .status-circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    color: #333333;
+}
+
+#checkstatus .circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    color: #F5F5F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#checkstatus .line {
+    height: 2px;
+    width: 40px;
+    background-color: #4CAF50;
+}
+
+  
+
