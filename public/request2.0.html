@@ -233,32 +233,33 @@
 <!-- Section 7 : Request check-->
 
 <div id="checkstatus">
+    <!-- Header Section -->
+    <div class="header">
 
-    <div class="navbar">
-        <button class="back-button">&lt;</button>
-        <h1>ตรวจสอบสถานะคำร้อง</h1>
-        <div class="menu-icon" onclick="showMenu()">☰</div>
+        <div class="profile">
+            <button class="back-button">&lt;</button>
+        </div>
+        <div class="menu-icon">☰</div>
     </div>
 
     <div class="content">
-        <div class="item-card">
-            <h2>ลาออก</h2>
-            <p>ขึ้นเมื่อวันที่ XX เดือน XX ปี XX เวลา 00:00</p>
-            <div class="status-flow">
-                <div class="status-circle">
-                    <div class="circle">1</div>
-                    <span>ตรวจสอบเบื้องต้น</span>
-                </div>
+        <div class="title">
+            <h1>ตรวจสอบสถานะคำร้อง</h1>
+        </div>
+        <div class="status-card">
+            <h2>ลางาน</h2>
+            <p>ยื่นเมื่อวันที่ XX เดือน XX ปี XX เวลา 00:00</p>
+            <div class="progress-bar">
+                <div class="circle"></div>
                 <div class="line"></div>
-                <div class="status-circle">
-                    <div class="circle">2</div>
-                    <span>อนุมัติจากคณบดี</span>
-                </div>
+                <div class="circle"></div>
                 <div class="line"></div>
-                <div class="status-circle">
-                    <div class="circle">3</div>
-                    <span>อนุมัติคำร้อง</span>
-                </div>
+                <div class="circle"></div>
+            </div>
+            <div class="progress-labels">
+                <span>ตรวจสอบเบื้องต้น</span>
+                <span>อนุมัติจากคณบดี</span>
+                <span>อนุมัติสำเร็จ</span>
             </div>
         </div>
     </div>
