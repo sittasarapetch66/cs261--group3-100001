@@ -2,29 +2,37 @@
 
 function startFunction(){
   document.getElementById("homesection").style.display = "block";
-  document.getElementById("menusection").style.width = "0px";
+  //document.getElementById("menusection").style.width = "0px";
 }
 
 function toggleSomething(mode){
 
   var1 = document.getElementById("menusection");
   var2 = document.getElementById("overlaysection");
+
   var3 = document.getElementById("homesection");
 
   var1.style.display = "none";
   var2.style.display = "none";
   var3.style.display = "none";
 
+  /*
+  1 : show filter and the menu
+  2 : hide filter and the menu
+
+
+  */
 
   switch(mode){
   case 1:
-    var1.style.display = "block"
+    var1.style.display = "block";
+    var2.style.display = "block";
     break;
   case 2:
-    var2.style.display = "block"
+    
     break;
   case 3:
-    var3.style.display = "block"
+    var3.style.display = "block";
     break;
   
   }
@@ -33,7 +41,8 @@ function toggleSomething(mode){
 }
 
 function showMenu(){
-document.getElementById("menusection").style.width = "30%";
+//document.getElementById("menusection").style.width = "30%";
+document.getElementById("menusection").style.display = "block";
 
   variable2 = document.getElementById("overlaysection");
   variable2.style.display = "block";
@@ -42,14 +51,15 @@ document.getElementById("menusection").style.width = "30%";
 }
 
 function hideMenu(){
-  document.getElementById("menusection").style.width = "0px";
+  //document.getElementById("menusection").style.width = "0px";
+  document.getElementById("menusection").style.display = "none";
 
   variable2 = document.getElementById("overlaysection");
   variable2.style.display = "none";
 }
 
 function showMyListSection(){
-
+  hideMenu();
   document.getElementById("menusection").style.display = "none";
   document.getElementById("overlaysection").style.display = "none";
   document.getElementById("homesection").style.display = "none";
