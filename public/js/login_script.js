@@ -51,6 +51,8 @@ function printMessage(errorcode, messageinput){
   const normal5 = "ระบบยังไม่ได้ Implement เนื่องด้วยเกินขอบเขตที่ได้บอกไว้ใน User Story"
 
   const systemout1 = "โปรดรอสักครู่ กำลังรอการตอบกลับจาก TU API"
+  
+  const form01 = "เหตุผลในการ"
 
   /* Input Error Code
   0X - 1X : Error ->

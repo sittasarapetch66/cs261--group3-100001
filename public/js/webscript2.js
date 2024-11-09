@@ -1,5 +1,4 @@
 
-
 function startFunction(){
   var experimental = "none";
   document.getElementById("menusection").style.display = experimental;
@@ -134,6 +133,10 @@ function requestTemplate(typeinput){
   var41 = document.getElementById("inputfaculty");
   var42 = document.getElementById("inputid");
 
+  var50 = document.getElementById("inputrequesttype");
+  var51 = document.getElementById("requesttype_out");
+  
+
 
   /*
   1 -> คำร้องประเภทจดทะเบียนล่าช้า
@@ -147,22 +150,32 @@ function requestTemplate(typeinput){
 
   switch(typeinput){
     case 1:
+      var50.value = "จดทะเบียนรายวิชาล่าช้า";
+      var51.innerHTML = "วิชาที่ต้องการจดทะเบียน :";
 
     break;
 
     case 2:
+      var50.value = "ถอนรายวิชาล่าช้า";
+      var51.innerHTML = "วิชาที่ต้องการถอน :";
 
     break;
 
     case 3:
+      var50.value = "จดทะเบียนศึกษารายวิชานอกหลักสูตร";
+      var51.innerHTML = "วิชาที่ต้องการจดทะเบียน :";
 
     break;
 
     case 4:
+      var50.value = "มีความจำนงลาออก";
+      var51.innerHTML = "";
 
     break;
 
     case 5:
+      var50.value = "คำร้องประเภทอื่น ๆ";
+      var51.innerHTML = "";
 
     break;
   }
