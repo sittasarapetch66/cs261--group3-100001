@@ -1,11 +1,4 @@
 
-#requestformtemplate .container {
-    width: 100%; /* Full screen width */
-    margin: 0; /* Remove default margin */
-    padding: 0px; /* Adjust padding as needed */
-    box-sizing: border-box; /* Ensure padding doesn't affect the full width */
-}
-
 #requestformtemplate header {
 
     /*
@@ -27,6 +20,19 @@
     padding: 10px 20px;
     font-size: 1em;
     height: 10vh;
+}
+
+#requestformtemplate input[type="text"]{
+    border-radius: 5px;
+    border : 1px solid black;
+    box-shadow: 2px 2px 3px black;
+}
+
+#requestformtemplate textarea{
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px black;
+    border : 1px solid black;
+    
 }
 
 #requestformtemplate .menu-icon {
@@ -74,63 +80,119 @@
 
 
 
-#requestformtemplate h1 {
-    font-size: 1.2em;
-    margin: 0;
-}
-
-#requestformtemplate .form-section {
-    display: grid;
-  
-    gap: 20px; /* ระยะห่างระหว่างฟิลด์ */
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin: 40px;
-
+#requestformtemplate .container {
+    width: 100%; /* Full screen width */
+    margin: 0; /* Remove default margin */
+    padding: 0px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Ensure padding doesn't affect the full width */
 }
 
 
-#requestformtemplate h2 {
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    color: #333;
-    font-family: 'Prompt', sans-serif; /* ใช้ฟ้อนต์ Prompt กับหัวข้อ */
+#requestformtemplate .sectionform{
+
+    padding-top: 30px;
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    width:55%;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
-#requestformtemplate label {
-    display: block;
-    margin: 10px 0 5px;
-    color: #666;
-    font-size: 0.9em;
+#requestformtemplate .pinfo_head {
+
+    padding-top : 3vh;
+    margin-bottom: 1vh;
+    margin-left : 1vw;
+    font-family: notosans_med;
+    font-size : 1.5vw;
+}
+#requestformtemplate .pinfo_head .sub{
+
+    margin-left : 1vw;
+    font-family: notosans_med;
+    font-size : 1vw;
 }
 
-#requestformtemplate input[type="text"], input[type="file"] {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* รวม padding เข้าไปในขนาดของช่อง */
+#requestformtemplate .pinfo_input{
+    margin-left : 2vw;
+    padding-top : 3vh;
+    background-color: #E0E0E0;
+    border-radius: 5px;
+    box-shadow: 5px 5px 3px #0000007c;
+    
 }
 
+#requestformtemplate .pinfo_input label{
 
-#requestformtemplate .buttons {
-    grid-column: span 2; /* ให้ปุ่มใช้พื้นที่ทั้งสองคอลัมน์ */
-    display: flex;
-    justify-content: space-between; /* จัดปุ่มให้ชิดซ้ายและขวา */
-    margin-top: 20px; /* เพิ่มระยะห่างจากฟิลด์ฟอร์ม */
+    position: absolute;
+    margin-top: 1.5vh;
+    margin-left: 2vw;
 }
 
+#requestformtemplate .pinfo_input input{
+    padding : 1vh;
+    margin : 1vh;
+    margin-left : 15vw;
+    width : 25%;
+    font-family: notosans_med;
 
-#requestformtemplate button {
-    width: 48%; /* ทำให้ปุ่มแต่ละปุ่มมีขนาดกว้างเท่ากัน */
-    padding: 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: 'Prompt', sans-serif; /* ใช้ฟ้อนต์กับปุ่ม */
+}
+
+#requestformtemplate .pinfo_input .pinfo_addr{
+    padding : 1vh;
+    margin : 1vh;
+    margin-left : 4vw;
+
+    
+
+}
+
+#requestformtemplate .pinfo_input .pinfo_addr input{
+    padding : 1vh;
+    margin : 1vh;
+    margin-left : 12vw;
+    width : 25%;
+    
+}
+
+#requestformtemplate .pinfo_input .pinfo_addr .long{
+    width : 40%;
+}
+
+#requestformtemplate .requesttype01 {background-color: #C5C5C5;}
+#requestformtemplate .requesttype02 {background-color: #C5C5C5;}
+#requestformtemplate .requesttype03 {background-color: #C5C5C5;}
+
+#requestformtemplate .requesttype01 input{
+    margin-left : 8vw;
+}
+
+#requestformtemplate textarea{
+    resize: none;
+    margin-top :6vh;
+    margin-left : 8vw;
+    font-family: notosans_med;
+}
+
+#requestformtemplate .requesttype02 .choicedebtlabel{
+    margin-top: 3.5vh;
+    margin-left : 1vw;
+}
+
+#requestformtemplate .requesttype02 .choicedebt{
+    margin-top: 1vh;
+    margin-left : 10vw;
+    height:8vh; 
+    width:3vh;
+}
+
+#requestformtemplate .requesttype02 .moneyamountlabel{
+    margin-left : 10vw;
+}
+
+#requestformtemplate .requesttype02 .moneyamount{
+    margin-left : 15vw;
 }
 
 #requestformtemplate .save-draft {
@@ -142,29 +204,13 @@
     background-color: #4caf50;
     color: #ffffff;
 }
-#requestformtemplate .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;/* Consistent spacing between fields */
-}
 
-#requestformtemplate .form-group.personal-info,
-#requestformtemplate .form-group.address-section {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* ระยะห่างระหว่างฟิลด์ */
+#requestformtemplate button {
+    width: 49%; /* ทำให้ปุ่มแต่ละปุ่มมีขนาดกว้างเท่ากัน */
+    padding: 1%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: notosans_med;
+    font-size: 1.5em;
 }
-#requestformtemplate .form-group.personal-info{
-    margin-top: 20px;
-}
-#requestformtemplate .form-row {
-    display: flex;
-    gap: 20px;
-}
-
-#requestformtemplate .form-field {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
