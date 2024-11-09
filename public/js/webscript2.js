@@ -22,6 +22,11 @@ function startFunction(){
   document.getElementById("successend").style.border = setorginal;
   document.getElementById("checkstatus").style.border = setorginal;
   document.getElementById("loginsection").style.border = setorginal;
+
+  var30 = document.getElementById("requesttype01");
+  var31 = document.getElementById("requesttype02");
+  var32 = document.getElementById("requesttype03");
+
 }
 
 
@@ -118,4 +123,52 @@ function toggleSection(number){
 
 function whatAlert(){
   alert("คุณไม่สามารถออกได้ในอีก 98454578763423 วัน เนื่องด้วยปัญหา @*#^*&%*#(7 ");
+}
+
+function requestTemplate(typeinput){
+  var30 = document.getElementById("requesttype01");
+  var31 = document.getElementById("requesttype02");
+  var32 = document.getElementById("requesttype03");
+
+  var40 = document.getElementById("inputname");
+  var41 = document.getElementById("inputfaculty");
+  var42 = document.getElementById("inputid");
+
+
+  /*
+  1 -> คำร้องประเภทจดทะเบียนล่าช้า
+  2 -> คำร้องประเภทถอนรายวิชา
+  */
+  toggleSomething(13);
+
+  if(typeinput == 1 || typeinput == 2 || typeinput == 3)var30.style.display = "block"; else var30.style.display = "none";
+  if(typeinput == 4)var31.style.display = "block"; else var31.style.display = "none";
+  if(typeinput == 5)var32.style.display = "block"; else var32.style.display = "none";
+
+  switch(typeinput){
+    case 1:
+
+    break;
+
+    case 2:
+
+    break;
+
+    case 3:
+
+    break;
+
+    case 4:
+
+    break;
+
+    case 5:
+
+    break;
+  }
+
+  var40.value = globaljson.displayname_th;
+  var41.value = globaljson.faculty;
+  var42.value = globaljson.username;
+
 }
