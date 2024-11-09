@@ -27,17 +27,23 @@ function toggleSomething(mode){
   var1 = document.getElementById("menusection");
   var2 = document.getElementById("overlaysection");
 
-  var3 = document.getElementById("homesection");
+  var10 = document.getElementById("homesection");
+  var11 = document.getElementById("mylistsection");
+  var12 = document.getElementById("trackhistorysection");
+  var13 = document.getElementById("requestformtemplate");
+  var14 = document.getElementById("successend");
+  var15 = document.getElementById("checkstatus");
 
   /*
   1 : show filter and the menu
   2 : hide filter and the menu
 
   10 : show only homesection
-  11 : 
-  12 :
-
-
+  11 : show only mylistsection
+  12 : show only trackhistorysection
+  13 : show only requestformtemplate
+  14 : show only successend
+  15 : show only checkstatus
 
   */
 
@@ -55,11 +61,30 @@ function toggleSomething(mode){
   case 3:
     var3.style.display = "block";
     break;
+
+  default:
+    if(mode == 10)var10.style.display = "block"; else var10.style.display = "none";
+    if(mode == 11)var11.style.display = "block"; else var11.style.display = "none";
+    if(mode == 12)var12.style.display = "block"; else var12.style.display = "none";
+    if(mode == 13)var13.style.display = "block"; else var13.style.display = "none";
+    if(mode == 14)var14.style.display = "block"; else var14.style.display = "none";
+    if(mode == 15)var15.style.display = "block"; else var15.style.display = "none";
+
+    var1.style.display = "none";
+    var2.style.display = "none";
   
   }
 
+  
+
 
 }
+
+function reallyExit(){
+  if (confirm("การบันทึกที่ไม่ได้บันทึกจะหายหากคุณออกจากระบบ คุณต้องการที่จะออกจากระบบหรือไม่?") == true)
+    location.reload();
+}
+
 
 function showMenu(){
 //document.getElementById("menusection").style.width = "30%";

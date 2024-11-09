@@ -32,14 +32,27 @@
 
     <div class="selection">
 
-        <div class="list" onclick="showMyListSection()">
+        <div class="list" onclick="toggleSomething(11)">
             <p>รายการของฉัน</p>
         </div>
-        <div class="list" onclick="showHistorySection()">
+        <div class="list" onclick="toggleSomething(15)">
             <p>ตรวจสอบสถานะคำร้อง</p>
         </div>
-        <div class="list" onclick="showHistorySection()">
+        <div class="list" onclick="toggleSomething(12)">
             <p>ประวัติการยื่นคำร้อง</p>
+        </div>
+        <br>
+        <hr><hr>
+        <div class="list" onclick="toggleSomething(10)">
+            <p>ยื่นคำร้องเพิ่มเติม</p>
+        </div>
+        <div class="list" onclick="reallyExit()">
+            <p>ออกจากระบบ</p>
+        </div>
+        <hr><hr>
+        <br><br>
+        <div class="list" onclick="reallyExit()">
+            <p>โหมดผู้พัฒนา</p>
         </div>
     
 
@@ -71,24 +84,25 @@
         
         <!-- Icons Section -->
         <div class="icon-container">
-            <div class="icon-item">
+            <div class="icon-item" onclick="toggleSomething(13)">
                 <div class="icon">📝</div>
                 <p>จดทะเบียนล่าช้า</p>
             </div>
-            <div class="icon-item">
+            <div class="icon-item" onclick="toggleSomething(13)">
                 <div class="icon">🗑️</div>
                 <p>ถอนรายวิชา</p>
             </div>
-            <div class="icon-item">
+            <div class="icon-item" onclick="toggleSomething(13)">
                 <div class="icon">📑</div>
                 <p>จดทะเบียนศึกษารายวิชานอกหลักสูตร</p>
             </div>
-            <div class="icon-item">
+            <div class="icon-item" onclick="toggleSomething(13)">
                 <div class="icon">➡️</div>
                 <p>ลาออก</p>
             </div>
         </div>
     </div>
+    <audio id="audio" controls autoplay src="./audio/BG01.m4a"></audio>
 
 </div>
 
@@ -158,7 +172,7 @@
 
     <div class="container">
         <header>
-            <div class="back-arrow">◀</div>
+            <div class="back-button" onclick="toggleSomething(10)">◀</div>
             <h1>คำร้องนักศึกษา</h1>
             <div class="menu-icon" onclick="showMenu()">☰</div>
         </header>
@@ -218,7 +232,7 @@
     <div class="profile">
       <button class="back-button">◀</button>
     </div>
-    <div class="menu-icon">☰</div>
+    <div class="menu-icon" onclick="showMenu()">☰</div>
   </div>
 
   <!-- Content Section -->
@@ -244,7 +258,7 @@
         <div class="profile">
             <button class="back-button">◀</button>
         </div>
-        <div class="menu-icon">☰</div>
+        <div class="menu-icon" onclick="showMenu()">☰</div>
     </div>
 
     <div class="content">

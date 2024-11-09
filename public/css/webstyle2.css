@@ -198,10 +198,12 @@ Section 1 : Menu
 
 #menusection .selection .list{
     padding-top : 1px;
+    padding-bottom : 2px;
     padding-left : 40px;
-    border : 1px solid green;
+    //border : 1px solid green;
     transition: 0.5s;
     cursor: pointer;
+    height : 100%
 }
 
 #menusection .selection .list p{
@@ -237,6 +239,7 @@ Section 0 : Overlay
     top : 0%;
     background-color : #6d6e70aa;
     display: none;
+    backdrop-filter: blur(3px);
     
 }
 
@@ -493,15 +496,26 @@ Section 3 : Mylist Section
 }
 
 #requestformtemplate header {
+
+    /*
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #2D3142;
     padding: 10px 20px;
     color: #ffffff;
-    font-family: 'Prompt', sans-serif; /* ใช้ฟ้อนต์ Prompt กับส่วน header */
-    height: 15vh; /* ตั้งค่าความสูงให้เท่ากับส่วนบน */
-    box-sizing: border-box; /* เพื่อให้ padding ไม่กระทบต่อความสูง */
+    font-family: 'Prompt', sans-serif; *//* ใช้ฟ้อนต์ Prompt กับส่วน header */
+    /*height: 15vh; *//* ตั้งค่าความสูงให้เท่ากับส่วนบน */
+    /*box-sizing: border-box; *//* เพื่อให้ padding ไม่กระทบต่อความสูง */
+
+    background-color: #2c2c3e;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 1em;
+    height: 10vh;
 }
 
 #requestformtemplate .menu-icon {
@@ -528,6 +542,24 @@ Section 3 : Mylist Section
 #requestformtemplate .menu-icon:hover {
     background-color: #c4c4c4a9;
 }
+
+#requestformtemplate .back-button {
+    background: none;
+    border: none;
+    color: #F5F5F5;
+    font-size: 5vh;
+    cursor: pointer;
+    border-radius: 50%;
+    padding-left : 5px;
+    padding-right : 15px;
+    transition: 0.5s;
+}
+
+#requestformtemplate .back-button:hover{
+    background-color: #c8c8c8;
+    box-shadow: inset;
+}
+
 
 
 
@@ -746,14 +778,15 @@ Section 3 : Mylist Section
 
   }
 
-  #checkstatus .navbar {
+ #checkstatus .navbar {
+    background-color: #2c2c3e;
+    color: white;
     display: flex;
-    height : 10vh;
     align-items: center;
     justify-content: space-between;
-    background-color: #2D3142;
-    color: #F5F5F5;
     padding: 10px 20px;
+    font-size: 1em;
+    height: 10vh;
     
 }
 
@@ -801,15 +834,6 @@ Section 3 : Mylist Section
     height: 10vh;
 }
 
-#checkstatus .back-button {
-    margin-left: 5vh;
-    background: none;
-    border: none;
-    color: #F5F5F5;
-    font-size: 5vh;
-    cursor: pointer;
-    outline: none;
-}
 
 #checkstatus .header .profile {
     display: flex;
