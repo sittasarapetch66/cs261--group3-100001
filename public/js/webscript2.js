@@ -14,7 +14,7 @@ function startFunction(){
   document.getElementById("checkstatus").style.display = setorginal;
   document.getElementById("loginsection").style.display = setorginal;
 
-  var setorginal = "2px dashed yellow";
+  var setorginal = "none" ;/*"2px dashed yellow";*/
   document.getElementById("homesection").style.border = setorginal;
   document.getElementById("mylistsection").style.border = setorginal;
   document.getElementById("trackhistorysection").style.border = setorginal;
