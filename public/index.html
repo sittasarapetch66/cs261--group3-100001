@@ -8,31 +8,63 @@
     <meta name="description" content="Web for login to system">
     <title>TU Request Login Webpage</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./css/webstyle.css">
+    <link rel="stylesheet" href="./css/CSS_Importer.css">
     <link rel="icon" type="image/x-icon" href="./picture/favicon.jpg">
-    <script src="./js/webscript.js"></script> 
-
-    <style>
-        .checkmark {
-      width: 100px;
-      height: 100px;
-      background-color: #4CAF50;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 20px;
-    }
-
-    .checkmark::before {
-      content: "✔";
-      font-size: 50px;
-      color: white;
-    }
-    </style>
+    <script src="./js/webscript2.js"></script> 
+    <script src="./js/login_script.js"></script> 
 </head>
+
 <body onload="startFunction()">
 
+<!-- Section 0 : Overlay Section -->
+<div id="overlaysection" onclick="toggleSomething(2)">
+
+</div>
+
+
+<!-- Section 1 : Menu Section -->
+<div id="menusection">
+   
+   <div class="header">
+       <h1 onclick="toggleSomething(2)">◀
+       </h1>
+       <h2>MENU</h2>
+   </div>
+
+   <div class="selection">
+
+       <div class="list" onclick="toggleSomething(11)">
+           <p>รายการของฉัน</p>
+       </div>
+       <div class="list" onclick="toggleSomething(15)">
+           <p>ตรวจสอบสถานะคำร้อง</p>
+       </div>
+       <div class="list" onclick="toggleSomething(12)">
+           <p>ประวัติการยื่นคำร้อง</p>
+       </div>
+       <br>
+       <hr><hr>
+       <div class="list" onclick="toggleSomething(10)">
+           <p>ยื่นคำร้องเพิ่มเติม</p>
+       </div>
+       <div class="list" onclick="reallyExit()">
+           <p>ออกจากระบบ</p>
+       </div>
+       <hr><hr>
+       <br><br>
+       <div class="list" onclick="reallyExit()">
+           <p>โหมดผู้พัฒนา</p>
+       </div>
+   
+
+   </div>
+
+</div>
+
+
+<!-- Section A : Login section-->
+<div id="loginsection">
+    
     <div class="login-container">
         <div id="headlogin">
             <div id="headlogin2">
@@ -45,32 +77,263 @@
         </div>
         <br>
 
-    <div class="login-input">
+        <div class="login-input">
 
-            <input type="text" id="username" name="username" placeholder="Username">
+                <input type="text" id="username" name="username" placeholder="Username">
 
-            <div id="login-password">
-                <input type="password" id="password" name="password" placeholder="Password">
-                <svg id="hideicon" onclick="togglePass()" width="25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>eye-disabled-glyph</title><path d="M409.84,132.33l95.91-95.91A21.33,21.33,0,1,0,475.58,6.25L6.25,475.58a21.33,21.33,0,1,0,30.17,30.17L140.77,401.4A275.84,275.84,0,0,0,256,426.67c107.6,0,204.85-61.78,253.81-161.25a21.33,21.33,0,0,0,0-18.83A291,291,0,0,0,409.84,132.33ZM256,362.67a105.78,105.78,0,0,1-58.7-17.8l31.21-31.21A63.29,63.29,0,0,0,256,320a64.07,64.07,0,0,0,64-64,63.28,63.28,0,0,0-6.34-27.49l31.21-31.21A106.45,106.45,0,0,1,256,362.67ZM2.19,265.42a21.33,21.33,0,0,1,0-18.83C51.15,147.11,148.4,85.33,256,85.33a277,277,0,0,1,70.4,9.22l-55.88,55.88A105.9,105.9,0,0,0,150.44,270.52L67.88,353.08A295.2,295.2,0,0,1,2.19,265.42Z"/></svg>
-                <svg id="showicon" onclick="togglePass()" width="25" xmlns="http://www.w3.org/2000/svg" style='display: none' viewBox="0 0 512 512"><title>eye-glyph</title><path d="M320,256a64,64,0,1,1-64-64A64.07,64.07,0,0,1,320,256Zm189.81,9.42C460.86,364.89,363.6,426.67,256,426.67S51.14,364.89,2.19,265.42a21.33,21.33,0,0,1,0-18.83C51.14,147.11,148.4,85.33,256,85.33s204.86,61.78,253.81,161.25A21.33,21.33,0,0,1,509.81,265.42ZM362.67,256A106.67,106.67,0,1,0,256,362.67,106.79,106.79,0,0,0,362.67,256Z"/></svg>
+                <div id="login-password">
+                    <input type="password" id="password" name="password" placeholder="Password">
+                    <svg id="hideicon" onclick="togglePass()" width="25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><title>eye-disabled-glyph</title><path d="M409.84,132.33l95.91-95.91A21.33,21.33,0,1,0,475.58,6.25L6.25,475.58a21.33,21.33,0,1,0,30.17,30.17L140.77,401.4A275.84,275.84,0,0,0,256,426.67c107.6,0,204.85-61.78,253.81-161.25a21.33,21.33,0,0,0,0-18.83A291,291,0,0,0,409.84,132.33ZM256,362.67a105.78,105.78,0,0,1-58.7-17.8l31.21-31.21A63.29,63.29,0,0,0,256,320a64.07,64.07,0,0,0,64-64,63.28,63.28,0,0,0-6.34-27.49l31.21-31.21A106.45,106.45,0,0,1,256,362.67ZM2.19,265.42a21.33,21.33,0,0,1,0-18.83C51.15,147.11,148.4,85.33,256,85.33a277,277,0,0,1,70.4,9.22l-55.88,55.88A105.9,105.9,0,0,0,150.44,270.52L67.88,353.08A295.2,295.2,0,0,1,2.19,265.42Z"/></svg>
+                    <svg id="showicon" onclick="togglePass()" width="25" xmlns="http://www.w3.org/2000/svg" style='display: none' viewBox="0 0 512 512"><title>eye-glyph</title><path d="M320,256a64,64,0,1,1-64-64A64.07,64.07,0,0,1,320,256Zm189.81,9.42C460.86,364.89,363.6,426.67,256,426.67S51.14,364.89,2.19,265.42a21.33,21.33,0,0,1,0-18.83C51.14,147.11,148.4,85.33,256,85.33s204.86,61.78,253.81,161.25A21.33,21.33,0,0,1,509.81,265.42ZM362.67,256A106.67,106.67,0,1,0,256,362.67,106.79,106.79,0,0,0,362.67,256Z"/></svg>
 
-            </div>
+                </div>
 
-            <select name="User type" id="utype">
-                <option value="none">Select Role</option>
-                <option value="student">Student</option>
-                <option value="employee">Teacher</option>
-                <option value="sysadmin">Admin</option>
-            </select>
-    </div>
+                <select name="User type" id="utype">
+                    <option value="none">Select Role</option>
+                    <option value="student">Student</option>
+                    <option value="employee">Teacher</option>
+                    <option value="sysadmin">Admin</option>
+                </select>
+        </div>
 
             <br>
             <br>
             <button type="button" id="submitbutton" onclick="APIRequest()">Login</button>
     <p id="output"></p>
 
+    </div>
 
-    
+
+</div>
+
+
+
+<!-- Section 2 : Home Section -->
+
+<div id="homesection">
+   <!-- Header Section -->
+   <div class="header">
+       <div class="profile">
+           <div>
+               <img class="profile-pic" src="./picture/favicon.jpg">
+           </div>
+           <div class="textinfo">
+               ทรงศักดิ์ รองวิริยะพานิช<br>
+               <small onclick="whatAlert()">Log out</small>
+           </div>
+       </div>
+       <div class="menu-icon" onclick="showMenu()">☰</div>
+   </div>
+
+   <!-- Content Section -->
+   <div class="content">
+       <h1>ระบบยื่นคำร้องนักศึกษามหาวิทยาลัยธรรมศาสตร์</h1>
+       <p>โปรดเลือกประเภทคำร้อง</p>
+       
+       <!-- Icons Section -->
+       <div class="icon-container">
+           <div class="icon-item" onclick="toggleSomething(13)">
+               <div class="icon">📝</div>
+               <p>จดทะเบียนล่าช้า</p>
+           </div>
+           <div class="icon-item" onclick="toggleSomething(13)">
+               <div class="icon">🗑️</div>
+               <p>ถอนรายวิชา</p>
+           </div>
+           <div class="icon-item" onclick="toggleSomething(13)">
+               <div class="icon">📑</div>
+               <p>จดทะเบียนศึกษารายวิชานอกหลักสูตร</p>
+           </div>
+           <div class="icon-item" onclick="toggleSomething(13)">
+               <div class="icon">➡️</div>
+               <p>ลาออก</p>
+           </div>
+       </div>
+   </div>
+   <audio id="audio" controls autoplay src="./audio/BG01.m4a"></audio>
+
+</div>
+
+<!-- Section 3 : Mylist Section -->
+<div id="mylistsection">
+
+   <div class="navbar">
+       <button class="back-button" onclick="showHomeSection()">◀</button>
+       <h1>รายการ</h1>
+       <div class="menu-icon" onclick="showMenu()">☰</div>
+   </div>
+
+   <div class="content">
+       <div class="item-card">
+           <h2>ถอนรายวิชา</h2>
+           <p>แก้ไขล่าสุดวันที่ XX เดือน XX ปี XX เวลา 00:00</p>
+           <div class="buttons">
+               <button class="edit-button">แก้ไข</button>
+               <button class="cancel-button">ยกเลิก</button>
+           </div>
+       </div>
+
+       <div class="item-card">
+           <h2>จดทะเบียนล่าช้า</h2>
+           <p>แก้ไขล่าสุดวันที่ XX เดือน XX ปี XX เวลา 00:00</p>
+           <div class="buttons">
+               <button class="edit-button">แก้ไข</button>
+               <button class="cancel-button">ยกเลิก</button>
+           </div>
+       </div>
+
+   </div>
+
+</div>
+
+<!-- Section 4 : History Section -->
+<div id="trackhistorysection">
+   <div class="navbar">
+       <button class="back-button">◀</button>
+       <h1>ประวัติ</h1>
+       <div class="menu-icon" onclick="showMenu()">☰</div>
+   </div>
+
+   <div class="content">
+       <div class="item-card">
+           <h2>ถอนรายวิชา</h2>
+           <p>แก้ไขล่าสุดวันที่ XX เดือน XX ปี XX เวลา 00:00</p>
+           <div class="buttons">
+               <button class="unapprove-button">ไม่อนุมัติ</button>
+           </div>
+       </div>
+
+       <div class="item-card">
+           <h2>จดทะเบียนล่าช้า</h2>
+           <p>แก้ไขล่าสุดวันที่ XX เดือน XX ปี XX เวลา 00:00</p>
+           <div class="buttons">
+               <button class="approve-button">อนุมัติ</button>
+           </div>
+       </div>
+
+   </div>
+
+</div>
+
+<!-- Section 5 : requestformtemplate -->
+<div id="requestformtemplate">
+
+   <div class="container">
+       <header>
+           <div class="back-button" onclick="toggleSomething(10)">◀</div>
+           <h1>คำร้องนักศึกษา</h1>
+           <div class="menu-icon" onclick="showMenu()">☰</div>
+       </header>
+
+       <section class="form-section">
+           <h2>1. ข้อมูลส่วนตัว</h>
+           
+           <div class="form-group personal-info">
+               
+               <label>ชื่อ-นามสกุล</label>
+               <input type="text">
+               <label>เลขทะเบียน</label>
+               <input type="text">
+               <label>ชั้นปี</label>
+               <input type="text">
+               <label>เบอร์โทร</label>
+               <input type="text">
+               <label>เบอร์โทรผู้ปกครอง</label>
+               <input type="text">
+               
+           </div>
+               
+           <div class="form-group address-section">
+               <label>ที่อยู่</label>
+               <input type="text" placeholder="บ้านเลขที่">
+               <input type="text" placeholder="แขวง/ตำบล">
+               <input type="text" placeholder="เขต/อำเภอ">
+               <input type="text" placeholder="จังหวัด">
+           </div>
+
+           <div class="form-group request-info">
+               <h2>2. ประสงค์คำร้อง</h2>
+               <label>อาจารย์ที่ปรึกษา</label>
+               <input type="text">
+               <label>ประเภทคำร้อง</label>
+               <input type="text">
+               <label>แนบไฟล์</label>
+               <input type="file">
+           </div>
+
+           <div class="buttons">
+               <button class="save-draft">บันทึกแบบร่าง</button>
+               <button class="submit">ยืนยัน</button>
+           </div>
+       </section>
+   </div>
+
+</div>
+
+<!-- Section 6 : sucess -->
+
+<div id="successend">
+
+   <!-- Header Section -->
+ <div class="header">
+
+   <div class="profile">
+     <button class="back-button">◀</button>
+   </div>
+   <div class="menu-icon" onclick="showMenu()">☰</div>
+ </div>
+
+ <!-- Content Section -->
+ <div class="content">
+   <div class="content">
+     <h1>คำร้องของคุณได้รับการบันทึกเรียบร้อยแล้ว</h1>
+     <p>รอดำเนินการเพื่ออนุมัติคำร้อง</p>
+     <div class="checkmark"></div>
+     <a href="#" class="return-button">กลับไปยังหน้า “ตรวจสอบคำร้อง”</a>
+   </div>
+
+ </div>
+
+   
+</div>
+
+<!-- Section 7 : Request check-->
+
+<div id="checkstatus">
+   <!-- Header Section -->
+   <div class="header">
+
+       <div class="profile">
+           <button class="back-button">◀</button>
+       </div>
+       <div class="menu-icon" onclick="showMenu()">☰</div>
+   </div>
+
+   <div class="content">
+       <div class="title">
+           <h1>ตรวจสอบสถานะคำร้อง</h1>
+       </div>
+       <div class="status-card">
+           <h2>ลางาน</h2>
+           <p>ยื่นเมื่อวันที่ XX เดือน XX ปี XX เวลา 00:00</p>
+           <div class="progress-bar">
+               <div class="circle"></div>
+               <div class="line"></div>
+               <div class="circle"></div>
+               <div class="line"></div>
+               <div class="circle"></div>
+           </div>
+           <div class="progress-labels">
+               <span>ตรวจสอบเบื้องต้น</span>
+               <span>อนุมัติจากคณบดี</span>
+               <span>อนุมัติสำเร็จ</span>
+           </div>
+       </div>
+   </div>
+</div>
+
+
+<footer>Files Version 1.15.0 </footer>
 </body>
 
 </html>

@@ -12,6 +12,7 @@ function startFunction(){
   document.getElementById("requestformtemplate").style.display = setorginal;
   document.getElementById("successend").style.display = setorginal;
   document.getElementById("checkstatus").style.display = setorginal;
+  document.getElementById("loginsection").style.display = setorginal;
 
   var setorginal = "2px dashed yellow";
   document.getElementById("homesection").style.border = setorginal;
@@ -20,8 +21,13 @@ function startFunction(){
   document.getElementById("requestformtemplate").style.border = setorginal;
   document.getElementById("successend").style.border = setorginal;
   document.getElementById("checkstatus").style.border = setorginal;
+  document.getElementById("loginsection").style.border = setorginal;
 }
 
+function temp(){
+  var11 = document.getElementById("successend");
+  var1.style.display = "block";
+}
 function toggleSomething(mode){
 
   var1 = document.getElementById("menusection");
@@ -33,6 +39,7 @@ function toggleSomething(mode){
   var13 = document.getElementById("requestformtemplate");
   var14 = document.getElementById("successend");
   var15 = document.getElementById("checkstatus");
+  var16 = document.getElementById("loginsection");
 
   /*
   1 : show filter and the menu
@@ -44,6 +51,7 @@ function toggleSomething(mode){
   13 : show only requestformtemplate
   14 : show only successend
   15 : show only checkstatus
+  20 : show only login webpage
 
   */
 
@@ -69,6 +77,7 @@ function toggleSomething(mode){
     if(mode == 13)var13.style.display = "block"; else var13.style.display = "none";
     if(mode == 14)var14.style.display = "block"; else var14.style.display = "none";
     if(mode == 15)var15.style.display = "block"; else var15.style.display = "none";
+    if(mode == 16)var16.style.display = "block"; else var16.style.display = "none";
 
     var1.style.display = "none";
     var2.style.display = "none";
@@ -103,32 +112,6 @@ function hideMenu(){
   variable2 = document.getElementById("overlaysection");
   variable2.style.display = "none";
 }
-
-function showMyListSection(){
-  hideMenu();
-  document.getElementById("menusection").style.display = "none";
-  document.getElementById("overlaysection").style.display = "none";
-  document.getElementById("homesection").style.display = "none";
-  document.getElementById("mylistsection").style.display = "block";
-  document.getElementById("trackhistorysection").style.display = "none";
-}
-
-function showHomeSection(){
-  document.getElementById("menusection").style.display = "none";
-  document.getElementById("overlaysection").style.display = "none";
-  document.getElementById("homesection").style.display = "block";
-  document.getElementById("mylistsection").style.display = "none";
-  document.getElementById("trackhistorysection").style.display = "none";
-}
-
-function showHistorySection(){
-  document.getElementById("menusection").style.display = "none";
-  document.getElementById("overlaysection").style.display = "none";
-  document.getElementById("homesection").style.display = "none";
-  document.getElementById("mylistsection").style.display = "none";
-  document.getElementById("trackhistorysection").style.display = "block";
-}
-
 
 function toggleSection(number){
 

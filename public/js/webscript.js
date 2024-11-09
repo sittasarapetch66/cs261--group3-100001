@@ -8,7 +8,7 @@ function startFunction(){
 
 }
 
-  function togglePass(){
+function togglePass(){
   var hideicon = document.getElementById("hideicon");
   var showicon = document.getElementById("showicon");
   var passfield = document.getElementById("password");

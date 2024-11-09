@@ -1,0 +1,927 @@
+@font-face {
+    font-family: notosans_med;
+    src: url(../../font/notosans/NotoSansThai-Medium.ttf);
+}
+
+@font-face {
+    font-family: comic_sans;
+    src: url(../../font/comicsans/COMIC.TTF);
+}
+
+@font-face {
+    font-family: laithai;
+    src: url(../../font/laithai/sathaporn.ttf);
+}
+
+/*
+Section n : default viewport
+*/
+
+body{
+    /*background: linear-gradient(90deg, rgba(229,229,244,1) 0%, rgba(164,201,242,1) 100%);
+    */
+    /*background-image : url("../picture/bg01.jpg");
+    background-size : 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed; */
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    font-family: notosans_med;
+    
+}
+
+/*
+Section 2 : Homesection
+*/
+
+#homesection{
+    display: none;
+}
+#homesection .header {
+    background-color: #2D3142;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 1em;
+    height: 10vh;
+}
+
+#homesection .header .profile {
+    display: flex;
+    align-items: center;
+}
+
+#homesection .textinfo {
+    font-size: 3vh;
+    margin-left : 2vh;
+}
+
+#homesection .textinfo small{
+    font-size: 2vh;
+    padding : 0.5vh;
+    background-color : blueviolet;
+    cursor: pointer;
+}
+
+#homesection .profile-pic {
+    height: 8vh;
+    background-color: #c4c4c4;
+    border-radius: 50%;
+    margin-right: 10px;
+    border : 1px solid white;
+}
+
+#homesection .menu-icon {
+    font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+
+}
+
+#homesection .menu-icon:hover {
+    background-color: #c4c4c4a9;
+}
+
+#homesection .content {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+#homesection .content h1 {
+    font-size: 5vh;
+    margin-bottom: 1vh;
+}
+
+#homesection .content p {
+    font-size: 3vh;
+    color: #666;
+    margin-bottom: 8vh;
+}
+
+#homesection .icon-container {
+    width : 90%;
+    margin-left: auto;
+    margin-right: auto;
+    /*border : 1px solid black;*/
+    display: flex;
+    justify-content: space-evenly; /* ทำให้ไอคอนมีระยะห่างเท่ากัน */
+}
+
+#homesection .icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #333;
+    background-color: #f5f5f5;
+    border : 1px solid black;
+    width : 12vw;
+    padding-top: 2vw;   
+    transition: transform 0.2s;
+    transition: 0.5s;
+    cursor : pointer;
+    border-radius : 25px;
+}
+
+#homesection .icon-item:hover {
+    transform: translateY(-0.5vh);
+    background-color: #eafad1;
+    box-shadow: 10px 10px #888888;
+
+}
+
+#homesection .icon-item .icon {
+    width: 80px;
+    height: 80px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1vw;
+    font-size: 2em;
+}
+
+#homesection .icon-item p {
+    font-size: 1.2vw;
+}
+
+/*
+Section 1 : Menu
+*/
+
+#menusection{
+    position : absolute;
+    margin-right : 0px;
+    right : 0px;
+
+    font-size: 20px;
+    height: 100%;
+    top : 0%;
+    width: 30%;
+    display: none;
+    transition: margin-left .5s;
+    background-color: #f5f5f5;
+    transition: 1s;
+
+    /*
+    TO DISPLAY PLEASE UNCOMMENT
+    
+    display : none;
+    */
+
+}
+
+#menusection .header{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height : 10vh;
+    background-color: #2D3142;
+    padding: 10px 20px;
+    color: #F5F5F5;
+
+}
+
+#menusection .selection{
+    padding-top : 30px;
+    background-color: #f5f5f5;
+}
+
+
+#menusection .selection .list{
+    padding-top : 1px;
+    padding-bottom : 2px;
+    padding-left : 40px;
+    //border : 1px solid green;
+    transition: 0.5s;
+    cursor: pointer;
+    height : 100%
+}
+
+#menusection .selection .list p{
+    height : auto;
+}
+
+#menusection .selection .list:hover{
+    background-color: #dbf5b0;
+    box-shadow: inset;
+}
+
+#menusection .header h1{
+    padding-left : 10px;
+    padding-right : 20px;
+    transition: 0.5s;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+
+#menusection .header h1:hover{
+    background-color: #c8c8c8;
+    box-shadow: inset;
+}
+
+/*
+Section 0 : Overlay
+*/
+#overlaysection{
+    position : absolute;
+    width : 100%;
+    height: 100%;
+    top : 0%;
+    background-color : #6d6e70aa;
+    display: none;
+    backdrop-filter: blur(3px);
+    
+}
+
+/*
+Section 3 : Mylist Section
+*/
+
+#mylistsection{
+    display : none
+}
+
+#mylistsection .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2D3142;
+    color: #F5F5F5;
+    padding: 10px 20px;
+    max-height: 10vh;
+}
+
+#mylistsection .back-button {
+    background: none;
+    border: none;
+    color: #F5F5F5;
+    font-size: 5vh;
+    cursor: pointer;
+    border-radius: 50%;
+    padding-left : 5px;
+    padding-right : 15px;
+    transition: 0.5s;
+}
+
+#mylistsection .back-button:hover{
+    background-color: #c8c8c8;
+    box-shadow: inset;
+}
+
+
+
+#mylistsection .menu-icon {
+    font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+}
+
+#mylistsection .menu-icon:hover {
+    background-color: #c4c4c4a9;
+}
+
+#mylistsection .content {
+    width: 60%;
+    /* ปรับความกว้างให้เหมาะสมกับหน้าจอ */
+    max-width: 800px;
+    /* จำกัดความกว้างสูงสุด */
+    margin: auto;
+    /* จัดกึ่งกลาง */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mylistsection .item-card {
+    width: 100%;
+    /* ให้กล่องมีความกว้างเต็มที่ภายใน .content */
+    background-color: #E0E0E0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+}
+
+#mylistsection .item-card:hover {
+    transform: translateY(-3px);
+}
+
+#mylistsection .item-card h2 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+}
+
+#mylistsection .item-card p {
+    margin: 5px 0;
+    color: #7D7D7D;
+    font-size: 14px;
+}
+
+#mylistsection .buttons {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    /* justify-content: flex-end; */
+    gap: 10px;
+}
+
+#mylistsection .edit-button,
+.cancel-button {
+    border: none;
+    width: 120px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    outline: none;
+}
+
+#mylistsection .edit-button {
+    background-color: #7D7D7D;
+    color: #F5F5F5;
+}
+
+#mylistsection .cancel-button {
+    background-color: #F44336;
+    color: #F5F5F5;
+}
+
+
+/* Section 4 History
+*/
+#trackhistorysection{
+
+}
+#trackhistorysection .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2D3142;
+    color: #F5F5F5;
+    height: 10vh;
+    padding: 10px 20px;
+}
+
+#trackhistorysection .back-button {
+    background: none;
+    border: none;
+    color: #F5F5F5;
+    font-size: 5vh;
+    cursor: pointer;
+    border-radius: 50%;
+    padding-left : 5px;
+    padding-right : 15px;
+    transition: 0.5s;
+}
+
+#trackhistorysection .back-button:hover{
+    background-color: #c8c8c8;
+    box-shadow: inset;
+}
+
+#trackhistorysection .menu-icon {
+    font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+}
+
+#trackhistorysection .menu-icon:hover {
+    background-color: #c4c4c4a9;
+}
+
+
+#trackhistorysection .content {
+    width: 60%;
+    /* ปรับความกว้างให้เหมาะสมกับหน้าจอ */
+    max-width: 800px;
+    /* จำกัดความกว้างสูงสุด */
+    margin: auto;
+    /* จัดกึ่งกลาง */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#trackhistorysection .item-card {
+    width: 100%;
+    /* ให้กล่องมีความกว้างเต็มที่ภายใน .content */
+    background-color: #E0E0E0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+}
+
+#trackhistorysection .item-card:hover {
+    transform: translateY(-3px);
+}
+
+#trackhistorysection .item-card h2 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333333;
+}
+
+#trackhistorysection .item-card p {
+    margin: 5px 0;
+    color: #7D7D7D;
+    font-size: 14px;
+}
+
+#trackhistorysection .buttons {
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    /* justify-content: flex-end; */
+    gap: 10px;
+}
+
+#trackhistorysection .approve-button,
+#trackhistorysection .unapprove-button {
+    border: none;
+    width: 120px;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    outline: none;
+}
+
+#trackhistorysection .approve-button {
+    background-color: #4CAF50;
+    color: #F5F5F5;
+}
+
+#trackhistorysection .unapprove-button {
+    background-color: #F44336;
+    color: #F5F5F5;
+}
+
+
+/* Section 5 form template
+*/
+#requestformtemplate{
+
+}
+
+
+#requestformtemplate .container {
+    width: 100%; /* Full screen width */
+    margin: 0; /* Remove default margin */
+    padding: 0px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Ensure padding doesn't affect the full width */
+}
+
+#requestformtemplate header {
+
+    /*
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2D3142;
+    padding: 10px 20px;
+    color: #ffffff;
+    font-family: 'Prompt', sans-serif; *//* ใช้ฟ้อนต์ Prompt กับส่วน header */
+    /*height: 15vh; *//* ตั้งค่าความสูงให้เท่ากับส่วนบน */
+    /*box-sizing: border-box; *//* เพื่อให้ padding ไม่กระทบต่อความสูง */
+
+    background-color: #2c2c3e;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 1em;
+    height: 10vh;
+}
+
+#requestformtemplate .menu-icon {
+    font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+}
+
+#requestformtemplate .back-arrow {
+    background: none;
+    border: none;
+    color: #F5F5F5;
+    font-size: 5vh;
+    cursor: pointer;
+    border-radius: 50%;
+    padding-left : 5px;
+    padding-right : 15px;
+    transition: 0.5s;
+}
+
+#requestformtemplate .menu-icon:hover {
+    background-color: #c4c4c4a9;
+}
+
+#requestformtemplate .back-button {
+    background: none;
+    border: none;
+    color: #F5F5F5;
+    font-size: 5vh;
+    cursor: pointer;
+    border-radius: 50%;
+    padding-left : 5px;
+    padding-right : 15px;
+    transition: 0.5s;
+}
+
+#requestformtemplate .back-button:hover{
+    background-color: #c8c8c8;
+    box-shadow: inset;
+}
+
+
+
+
+#requestformtemplate h1 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+#requestformtemplate .form-section {
+    display: grid;
+
+    gap: 20px; /* ระยะห่างระหว่างฟิลด์ */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+
+}
+
+
+#requestformtemplate h2 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #333;
+    font-family: 'Prompt', sans-serif; /* ใช้ฟ้อนต์ Prompt กับหัวข้อ */
+}
+
+#requestformtemplate label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+#requestformtemplate input[type="text"], input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* รวม padding เข้าไปในขนาดของช่อง */
+}
+
+
+#requestformtemplate .buttons {
+    grid-column: span 2; /* ให้ปุ่มใช้พื้นที่ทั้งสองคอลัมน์ */
+    display: flex;
+    justify-content: space-between; /* จัดปุ่มให้ชิดซ้ายและขวา */
+    margin-top: 20px; /* เพิ่มระยะห่างจากฟิลด์ฟอร์ม */
+}
+
+
+#requestformtemplate button {
+    width: 48%; /* ทำให้ปุ่มแต่ละปุ่มมีขนาดกว้างเท่ากัน */
+    padding: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Prompt', sans-serif; /* ใช้ฟ้อนต์กับปุ่ม */
+}
+
+#requestformtemplate .save-draft {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+#requestformtemplate .submit {
+    background-color: #4caf50;
+    color: #ffffff;
+}
+#requestformtemplate .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Consistent spacing between fields */
+}
+
+#requestformtemplate .form-group.personal-info,
+#requestformtemplate .form-group.address-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* ระยะห่างระหว่างฟิลด์ */
+}
+
+#requestformtemplate .form-group.personal-info {
+    grid-column: 1 ; /* อยู่ฝั่งซ้าย */
+}
+
+#requestformtemplate .form-group.address-section {
+    grid-column: 2; /* ย้ายไปฝั่งขวา */
+    padding-top: 0;
+}
+
+#requestformtemplate .form-group.request-info {
+    grid-column: 1 / 3; /* ครอบคลุมสองคอลัมน์และอยู่ด้านล่าง */
+}
+
+
+
+/* Section 6 sucesssend
+*/
+#successend {
+
+}
+
+#successend .header {
+    background-color: #2c2c3e;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 1em;
+    height: 10vh;
+}
+
+#successend .back-button {
+    background: none;
+    border: none;
+    color: #F5F5F5;
+    font-size: 5vh;
+    cursor: pointer;
+    border-radius: 50%;
+    padding-left : 5px;
+    padding-right : 15px;
+    transition: 0.5s;
+}
+
+#successend .back-button:hover{
+    background-color: #c8c8c8;
+    box-shadow: inset;
+}
+
+#successend .header .profile {
+    display: flex;
+    align-items: center;
+}
+
+#successend .profile-pic {
+    width: 40px;
+    height: 40px;
+    background-color: #F5F5F5;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#successend .menu-icon {
+    font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+}
+
+#successend .menu-icon:hover {
+    background-color: #c4c4c4a9;
+}
+
+#successend .content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    align-items: center;
+    /* justify-content: center; */
+    text-align: center;
+    height: 80vh;
+}
+
+#successend .checkmark {
+    width: 100px;
+    height: 100px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#successend .checkmark::before {
+    content: "✔";
+    font-size: 50px;
+    color: white;
+}
+
+#successend h1 {
+    font-size: 24px;
+    color: #333333;
+}
+
+#successend p {
+    color: #7D7D7D;
+    font-size: 16px;
+}
+
+  #successend .return-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #E0E0E0;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333333;
+    text-decoration: none;
+  }
+
+
+  /*
+  Section 7 : checkstatus
+  */
+
+  
+  #checkstatus {
+
+  }
+
+ #checkstatus .navbar {
+    background-color: #2c2c3e;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 1em;
+    height: 10vh;
+    
+}
+
+
+#checkstatus .back-button {
+    background: none;
+    border: none;
+    color: #F5F5F5;
+    font-size: 5vh;
+    cursor: pointer;
+    border-radius: 50%;
+    padding-left : 5px;
+    padding-right : 15px;
+    transition: 0.5s;
+}
+
+#checkstatus .back-button:hover{
+    background-color: #c8c8c8;
+    box-shadow: inset;
+}
+
+#checkstatus .menu-icon {
+    font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+}
+
+#checkstatus .menu-icon:hover {
+    background-color: #c4c4c4a9;
+}
+
+
+
+#checkstatus .header {
+    background-color: #2c2c3e;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 1em;
+    height: 10vh;
+}
+
+
+#checkstatus .header .profile {
+    display: flex;
+    height : 10vh;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2D3142;
+    color: #F5F5F5;
+    padding: 10px 20px;
+}
+
+#checkstatus .profile-pic {
+    width: 40px;
+    height: 40px;
+    background-color: #F5F5F5;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#checkstatus .menu-icon {
+    color: #F5F5F5;
+    font-size: 5vh;
+}
+
+
+#checkstatus .content {
+    width: 60%;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#checkstatus .title {
+    padding: 20px;
+}
+#checkstatus .status-card {
+    background-color: #E0E0E0;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#checkstatus .status-card h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+#checkstatus .status-card p {
+    margin: 10px 0;
+    color: #7D7D7D;
+    font-size: 14px;
+}
+
+#checkstatus .progress-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#checkstatus .progress-bar .circle {
+    width: 20px;
+    height: 20px;
+    background-color: #2D3142;
+    border-radius: 50%;
+}
+
+#checkstatus .progress-bar .line {
+    flex: 1;
+    height: 3px;
+    background-color: #2D3142;
+    margin: 0 5px;
+}
+
+#checkstatus .progress-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 12px;
+    color: #333;
+}
+
+  
+
