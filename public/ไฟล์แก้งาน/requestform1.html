@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="test.css">
+<div id="requestformtemplate">
+
+    <div class="container">
+        <header>
+            <div class="back-button" onclick="toggleSomething(10)">◀</div>
+            <h1>คำร้องนักศึกษา</h1>
+            <div class="menu-icon" onclick="showMenu()">☰</div>
+        </header>
+ 
+        <section class="form-section">
+            <h2>1. ข้อมูลส่วนตัว</h>
+            
+                <div class="form-group personal-info">
+                
+                    <label>ชื่อ-นามสกุล</label>
+                    <input type="text" style="margin-left: 40px;">
+                    <label>เลขทะเบียน</label>
+                    <input type="text" style="margin-left: 40px;">
+                    <label>ชั้นปี</label>
+                    <input type="text" style="margin-left: 40px;">
+                    <label>เบอร์โทร</label>
+                    <input type="text" style="margin-left: 40px;">
+                    <label>เบอร์โทรผู้ปกครอง</label>
+                    <input type="text" style="margin-left: 40px;">
+                    
+                </div>
+                
+            <div class="form-group address-section">
+                <label>ที่อยู่</label>
+                <div class ="address-section input">
+                    <input type="text" placeholder="บ้านเลขที่">
+                    <input type="text" placeholder="แขวง/ตำบล">
+                    <input type="text" placeholder="เขต/อำเภอ">
+                    <input type="text" placeholder="จังหวัด">
+                </div> 
+            </div>
+ 
+            <div class="form-group request-info">
+                <h2>2. ประสงค์คำร้อง</h2>
+                <label>อาจารย์ที่ปรึกษา</label>
+                <input type="text" style="margin-left: 40px;">
+                <label>ประเภทคำร้อง</label>
+                <input type="text" style="margin-left: 40px;">
+                <label>รายละเอียดวิชา</label>
+                <input type="text" placeholder="รหัสวิชา" style="margin-left: 40px;">
+                <input type="text" placeholder="ชื่อวิชา" style="margin-left: 40px;">
+                <input type="text" placeholder="section" style="margin-left: 40px;">
+                <label>แนบไฟล์</label>
+                <input type="file" style="margin-left: 40px;">
+            </div>
+ 
+            <div class="buttons">
+                <button class="save-draft">บันทึกแบบร่าง</button>
+                <button class="submit">ยืนยัน</button>
+            </div>
+        </section>
+    </div>
+ 
+ </div>
