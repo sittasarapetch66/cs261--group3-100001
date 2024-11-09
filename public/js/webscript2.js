@@ -48,7 +48,7 @@ function toggleSomething(mode){
   13 : show only requestformtemplate
   14 : show only successend
   15 : show only checkstatus
-  20 : show only login webpage
+  16 : show only login webpage
 
   */
 
@@ -87,8 +87,10 @@ function toggleSomething(mode){
 }
 
 function reallyExit(){
-  if (confirm("การบันทึกที่ไม่ได้บันทึกจะหายหากคุณออกจากระบบ คุณต้องการที่จะออกจากระบบหรือไม่?") == true)
+  if (confirm("การบันทึกที่ไม่ได้บันทึกจะหายหากคุณออกจากระบบ คุณต้องการที่จะออกจากระบบหรือไม่?") == true){
+    toggleSomething(16);
     location.reload();
+  }
 }
 
 

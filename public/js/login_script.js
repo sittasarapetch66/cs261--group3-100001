@@ -45,6 +45,9 @@ function printMessage(errorcode, messageinput){
 
   const normal1 = "Welcome "
   const normal2 = "ยินดีต้อนรับ "
+  const normal3 = "ยินดีต้อนรับคุณ"
+  const normal4 = " จากคณะ"
+  const normal6 = " รหัส"
   const normal5 = "ระบบยังไม่ได้ Implement เนื่องด้วยเกินขอบเขตที่ได้บอกไว้ใน User Story"
 
   const systemout1 = "โปรดรอสักครู่ กำลังรอการตอบกลับจาก TU API"
@@ -63,6 +66,8 @@ function printMessage(errorcode, messageinput){
   5X : Normal Message ->
   0 : {messageinput print}
   1 : ยินดีต้อนรับ {messageinput print}
+  2 : Welcome {messageinput print}
+  3 : ยินดีต้อนรับคุณ{messageinput print}
   5 : ระบบยังไม่ได้ Implement เนื่องด้วยเกินขอบเขตที่ได้บอกไว้
 
   */
@@ -132,6 +137,20 @@ function printMessage(errorcode, messageinput){
       output.style.color = "black";
 
       break;
+    case 52:
+      var messagefunc = normal1 + messageinput;
+      console.log(messagefunc);
+      output.innerText = messagefunc;
+        output.style.color = "black";
+  
+      break;
+    case 53:
+      var messagefunc = normal3 + messageinput;
+      console.log(messagefunc);
+      output.innerText = messagefunc;
+      output.style.color = "black";
+    
+      break;
     case 55:
       var messagefunc = normal5;
       console.log(messagefunc);
@@ -148,6 +167,11 @@ function printMessage(errorcode, messageinput){
       console.log(messagefunc);
       output.innerText = messagefunc;
       output.style.color = "black";
+      break;
+
+    case 96:
+      var messagefunc = normal3 + messageinput;
+      alert(messagefunc)
       break;
 
     case 97:
@@ -206,17 +230,18 @@ function APIRequest(){
       // if type is the same
       if(json.type == utype){
         namenew = json.displayname_th + " จาก " + json.faculty 
-        printMessage(51,namenew);
-        printMessage(97,json.displayname_th);
+        printMessage(53,namenew);
+        printMessage(96,json.displayname_th);
         globaljson = json;
 
         if (utype == "student"){
           toggleSomething(10);
-          document.getElementById("navbarname").innerText = json.displayname_th;
+          document.getElementById("navbarname").innerText = "คุณ" + json.displayname_th + " (นักศึกษา)";
         }
 
         if (utype == "employee"){
           toggleSomething(10);
+          document.getElementById("navbarname").innerText = "คุณ" + json.displayname_th + " (บุคลากร)";
         }
         
       }
