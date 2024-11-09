@@ -230,46 +230,83 @@
        </header>
 
        <section class="form-section">
-           <h2>1. ข้อมูลส่วนตัว</h>
-           
-           <div class="form-group personal-info">
-               
-               <label>ชื่อ-นามสกุล</label>
-               <input type="text">
-               <label>เลขทะเบียน</label>
-               <input type="text">
-               <label>ชั้นปี</label>
-               <input type="text">
-               <label>เบอร์โทร</label>
-               <input type="text">
-               <label>เบอร์โทรผู้ปกครอง</label>
-               <input type="text">
-               
-           </div>
-               
-           <div class="form-group address-section">
-               <label>ที่อยู่</label>
-               <input type="text" placeholder="บ้านเลขที่">
-               <input type="text" placeholder="แขวง/ตำบล">
-               <input type="text" placeholder="เขต/อำเภอ">
-               <input type="text" placeholder="จังหวัด">
-           </div>
+            
+        <h2>1. ข้อมูลส่วนตัว</h>
+        
+        <div class="form-group personal-info">
+            
+            <div class="form-row">
+                <div class="form-field">
+                    <label>ชื่อ-นามสกุล</label>
+                    <input type="text">
+                </div>
+                
+            </div>
+            <div class="form-row">
+                <div class="form-field">
+                    <label>เลขทะเบียน</label>
+                    <input type="text">
+                </div>
+                <div class="form-field">
+                    <label>ชั้นปี</label>
+                    <input type="text">
+                </div>
+        
+            </div>
+            <div class="form-row">
+                <div class="form-field">
+                    <label>เบอร์โทร</label>
+                    <input type="text">
+                </div>
+                <div class="form-field">
+                    <label>เบอร์โทรผู้ปกครอง</label>
+                    <input type="text">
+                </div>
+            </div>
+        </div>
+            
+        <div class="form-group address-section">
+            <label>ที่อยู่</label>
+            <div class="form-row">
+                <div class="form-field">
+                    <input type="text" placeholder="บ้านเลขที่">
+                </div>
+                <div class="form-field">
+                    <input type="text" placeholder="แขวง/ตำบล">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-field">
+                    <input type="text" placeholder="เขต/อำเภอ">
+                </div>
+                <div class="form-field">
+                    <input type="text" placeholder="จังหวัด">
+                </div>
+            </div>    
+            <div class="form-row">
+                <input type="text" placeholder="รหัสไปรษณีย์">
+            </div>
+        </div>
 
-           <div class="form-group request-info">
-               <h2>2. ประสงค์คำร้อง</h2>
-               <label>อาจารย์ที่ปรึกษา</label>
-               <input type="text">
-               <label>ประเภทคำร้อง</label>
-               <input type="text">
-               <label>แนบไฟล์</label>
-               <input type="file">
-           </div>
+        <div class="form-group request-info">
+            <h2>2. ประสงค์คำร้อง</h2>
+            <label>อาจารย์ที่ปรึกษา</label>
+            <input type="text">
+            <label>ประเภทคำร้อง</label>
+            <select id="choices" name="choices">
+                <option value="option1">จดทะเบียนล่าช้า</option>
+                <option value="option2">ถอนรายวิชา</option>
+                <option value="option3">จดทะเบียนศึกษารายวิชานอกหลักสูตร</option>
+            </select>
+            <label>แนบไฟล์</label>
+            <input type="file">
+        </div>
 
-           <div class="buttons">
-               <button class="save-draft">บันทึกแบบร่าง</button>
-               <button class="submit">ยืนยัน</button>
-           </div>
-       </section>
+        <div class="buttons">
+            <button class="save-draft">บันทึกแบบร่าง</button>
+            <button class="submit">ยืนยัน</button>
+        </div>
+    </section>
    </div>
 
 </div>
