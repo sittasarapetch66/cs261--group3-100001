@@ -65,6 +65,14 @@
     padding: 20px;
     margin-left: 10px;
     margin-right: 10px;
+    transition: 0.5s;
+
+}
+#loginsection #submitbutton:hover {
+
+    transform: translateY(-0.5vh);
+    background-color: rgb(255, 160, 105);
+    box-shadow: 5px 5px #888888;
 
 }
 
@@ -165,7 +173,10 @@
 
 #loginsection #output{
     font-family: notosans_med;
+    text-shadow: 0px 0px 10px white;
     font-size:20px;
+    background-color: yellow;
+    transition: 5s;
 }
 
 #loginsection #message2{
