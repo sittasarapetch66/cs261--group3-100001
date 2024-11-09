@@ -18,12 +18,12 @@
     align-items: center;
 }
 
-#homesection .textinfo {
+#homesection .header .profile .textinfo{
     font-size: 3vh;
     margin-left : 2vh;
 }
 
-#homesection .textinfo small{
+#homesection .header .profile small{
     font-size: 2vh;
     padding : 0.5vh;
     background-color : blueviolet;

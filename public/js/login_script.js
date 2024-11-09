@@ -1,4 +1,4 @@
-
+var globaljson;
 
 // function to show or hide password field
 function togglePass(){
@@ -208,9 +208,11 @@ function APIRequest(){
         namenew = json.displayname_th + " จาก " + json.faculty 
         printMessage(51,namenew);
         printMessage(97,json.displayname_th);
+        globaljson = json;
 
         if (utype == "student"){
           toggleSomething(10);
+          document.getElementById("navbarname").innerText = json.displayname_th;
         }
 
         if (utype == "employee"){

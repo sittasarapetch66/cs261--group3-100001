@@ -24,10 +24,7 @@ function startFunction(){
   document.getElementById("loginsection").style.border = setorginal;
 }
 
-function temp(){
-  var11 = document.getElementById("successend");
-  var1.style.display = "block";
-}
+
 function toggleSomething(mode){
 
   var1 = document.getElementById("menusection");
