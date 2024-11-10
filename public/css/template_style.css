@@ -22,7 +22,7 @@
     height: 10vh;
 }
 
-#requestformtemplate input[type="text"]{
+#requestformtemplate input[type="text"], input[type="number"]{
     border-radius: 5px;
     border : 1px solid black;
     box-shadow: 2px 2px 3px black;

@@ -26,6 +26,8 @@ function startFunction(){
   var31 = document.getElementById("requesttype02");
   var32 = document.getElementById("requesttype03");
 
+  
+
 }
 
 
@@ -132,6 +134,13 @@ function requestTemplate(typeinput){
   var40 = document.getElementById("inputname");
   var41 = document.getElementById("inputfaculty");
   var42 = document.getElementById("inputid");
+  var43 = document.getElementById("inputstudentyears");
+  var44 = document.getElementById("inputnumbers");
+  var45 = document.getElementById("inputparentnumbers");
+  var46 = document.getElementById("inputaddrnumber");
+  var47 = document.getElementById("inputsubdistrict");
+  var48 = document.getElementById("inputdistrict");
+  var49 = document.getElementById("inputprovince");
 
   var50 = document.getElementById("inputrequesttype");
   var51 = document.getElementById("requesttype_out");
@@ -183,5 +192,92 @@ function requestTemplate(typeinput){
   var40.value = globaljson.displayname_th;
   var41.value = globaljson.faculty;
   var42.value = globaljson.username;
+
+  let userid = Number(globaljson.username.slice(0, 2));
+  
+  if(userid >= 100 || userid < 0){
+    userid = 0;
+  }
+
+  const currentdate = new Date();
+  let CYear = currentdate.getFullYear();
+  let CMonth = currentdate.getMonth();
+
+  let userindate = userid - 543 + 2500;
+  let studentsyears;
+
+  if (CMonth >= 8){
+    studentsyears = CYear - userindate + 1;
+  }
+  else if (CMonth < 8 && CMonth > 0){
+    studentsyears = CYear - userindate;
+  }
+  else{
+    studentsyears = "";
+  }
+
+  console.log(typeof studentsyears);
+  console.log(studentsyears);
+
+  var43.value = studentsyears;
+
+
+
+}
+
+function submitRequestForm(type){
+
+  if (type == 0){
+    alert("ยังไม่สามารถบันทึกแบบร่างได้ในขณะนี้");
+  }
+
+  if (type == 1){
+
+    if (requestFormcheckField()){
+      toggleSomething(14);
+    }
+
+  }
+
+
+
+}
+
+function requestFormcheckField(){
+
+  var40 = document.getElementById("inputname");
+  var41 = document.getElementById("inputfaculty");
+  var42 = document.getElementById("inputid");
+  var43 = document.getElementById("inputstudentyears");
+  var44 = document.getElementById("inputnumbers");
+  var45 = document.getElementById("inputparentnumbers");
+  var46 = document.getElementById("inputaddrnumber");
+  var47 = document.getElementById("inputsubdistrict");
+  var48 = document.getElementById("inputdistrict");
+  var49 = document.getElementById("inputprovince");
+
+
+  let countcheck = 0;
+  let wrongstyle = "1px solid black" ;
+  let rightstyle = "5px solid red";
+  if(var40.value == ""){countcheck++; var40.style.border = rightstyle;} else{var40.style.border = wrongstyle;}
+  if(var41.value == ""){countcheck++; var41.style.border = rightstyle;} else{var41.style.border = wrongstyle;}
+  if(var42.value == ""){countcheck++; var42.style.border = rightstyle;} else{var42.style.border = wrongstyle;}
+  if(var43.value == ""){countcheck++; var43.style.border = rightstyle;} else{var43.style.border = wrongstyle;}
+  if(var44.value == ""){countcheck++; var44.style.border = rightstyle;} else{var44.style.border = wrongstyle;}
+  if(var45.value == ""){countcheck++; var45.style.border = rightstyle;} else{var45.style.border = wrongstyle;}
+  if(var46.value == ""){countcheck++; var46.style.border = rightstyle;} else{var46.style.border = wrongstyle;}
+  if(var47.value == ""){countcheck++; var47.style.border = rightstyle;} else{var47.style.border = wrongstyle;}
+  if(var48.value == ""){countcheck++; var48.style.border = rightstyle;} else{var48.style.border = wrongstyle;}
+  if(var49.value == ""){countcheck++; var49.style.border = rightstyle;} else{var49.style.border = wrongstyle;}
+
+  console.log(countcheck)
+
+  if(countcheck > 0){
+    alert("โปรดกรอกข้อมูลให้ครบทุกช่อง")
+    window.scrollTo(0, 0);
+    return 0;
+  }
+  else{return 1;}
 
 }

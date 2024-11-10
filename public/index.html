@@ -162,7 +162,7 @@
 
    <div class="navbar">
        <button class="back-button" onclick="toggleSomething(10)">◀</button>
-       <h1>รายการ</h1>
+       <h1>รายการคำร้องของฉัน</h1>
        <div class="menu-icon" onclick="showMenu()">☰</div>
    </div>
 
@@ -194,7 +194,7 @@
     
     <div class="navbar">
         <button class="back-button" onclick="toggleSomething(10)">◀</button>
-        <h1>รายการ</h1>
+        <h1>ประวัติการยื่นคำร้อง</h1>
         <div class="menu-icon" onclick="showMenu()">☰</div>
     </div>
 
@@ -241,37 +241,37 @@
         <div class="pinfo_input">
                 
             <label>ชื่อ-นามสกุล</label>
-            <input type="text" id="inputname">
+            <input type="text" placeholder="ไม่ต้องมีคำนำหน้า เช่น ทดสอบ รันระบบ" id="inputname">
             <br>
             <label>คณะที่ศึกษา</label>
-            <input type="text" id="inputfaculty">
+            <input type="text" placeholder="เช่น คณะวิทนาศาสตร์และเทคโนโลยี" id="inputfaculty">
             <br>
             <label>เลขทะเบียน</label>
-            <input type="text" id="inputid">
+            <input type="text" placeholder="เช่น 5009612214" id="inputid">
             <br>
             <label>ชั้นปี</label>
-            <input type="text">
+            <input type="number" placeholder="ใส่เลขปีของคุณ เช่นปี 3 กรอก 3" id="inputstudentyears">
             <br>
             <label>เบอร์โทร</label>
-            <input type="text">
+            <input type="number" placeholder="หมายเลข 9-10 หลัก เช่น 021100001" id="inputnumbers">
             <br>
             <label>เบอร์โทรผู้ปกครอง</label>
-            <input type="text">
+            <input type="number" placeholder="หมายเลข 9-10 หลัก เช่น 021100001" id="inputparentnumbers">
             <br>
             <label>ที่อยู่ :</label>
             <br>
             <div class="pinfo_addr">
             <label>เลขที่บ้าน/ห้อง</label>
-            <input class="long" type="text" placeholder="บ้านเลขที่/ห้อง">
+            <input class="long" type="text" placeholder="บ้านเลขที่/ห้อง" id="inputaddrnumber">
             <br>
             <label>แขวง/ตำบล</label>
-            <input type="text" placeholder="แขวง/ตำบล">
+            <input type="text" placeholder="แขวง/ตำบล" id="inputsubdistrict">
             <br>
             <label>เขต/อำเภอ</label>
-            <input type="text" placeholder="เขต/อำเภอ">
+            <input type="text" placeholder="เขต/อำเภอ" id="inputdistrict">
             <br>
             <label>จังหวัด</label>
-            <input type="text" placeholder="จังหวัด">
+            <input type="text" placeholder="จังหวัด" id="inputprovince">
             </div>
             
         </div>
@@ -302,7 +302,7 @@
                 <input type="text" placeholder="ชื่อวิชาภาษาไทย">
                 <br>
                 <label>Section</label>
-                <input type="text" placeholder="XXXXXX เช่น 780003">
+                <input type="number" placeholder="XXXXXX เช่น 780003">
                 <br>
                 <label>เหตุผลในการ ไม่ได้กำหนด</label>
                 <textarea placeholder="โปรดอธิบายรายละเอียดของคุณ ..." rows="4" cols="60"></textarea>
@@ -350,8 +350,8 @@
         </div>
         <br>
         <div class="opearationsbuttons">
-            <button class="save-draft">บันทึกแบบร่าง</button>
-            <button class="submit">ยืนยัน</button>
+            <button class="save-draft" onclick="submitRequestForm(0)">บันทึกแบบร่าง</button>
+            <button class="submit" onclick="submitRequestForm(1)">ยืนยัน</button>
         </div>
         <br>
 
@@ -379,7 +379,7 @@
      <h1>คำร้องของคุณได้รับการบันทึกเรียบร้อยแล้ว</h1>
      <p>รอดำเนินการเพื่ออนุมัติคำร้อง</p>
      <div class="checkmark"></div>
-     <a href="#" class="return-button">กลับไปยังหน้า “ตรวจสอบคำร้อง”</a>
+     <a class="return-button" onclick="toggleSomething(15)">กลับไปยังหน้า “ตรวจสอบคำร้อง”</a>
    </div>
 
  </div>
@@ -391,18 +391,18 @@
 
 <div id="checkstatus">
    <!-- Header Section -->
-   <div class="header">
 
-       <div class="profile">
-           <button class="back-button" onclick="toggleSomething(10)">◀</button>
-       </div>
-       <div class="menu-icon" onclick="showMenu()">☰</div>
-   </div>
+
+    <div class="header">
+        <button class="back-button" onclick="toggleSomething(10)">◀</button>
+        <h1>สถานะคำร้องของคุณ</h1>
+        <div class="menu-icon" onclick="showMenu()">☰</div>
+    </div>
+
+
+
 
    <div class="content">
-       <div class="title">
-           <h1>ตรวจสอบสถานะคำร้อง</h1>
-       </div>
        <div class="status-card">
            <h2>ลางาน</h2>
            <p>ยื่นเมื่อวันที่ XX เดือน XX ปี XX เวลา 00:00</p>
