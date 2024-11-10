@@ -133,10 +133,12 @@
 #requestformtemplate .pinfo_input input{
     padding : 1vh;
     margin : 1vh;
-    margin-left : 15vw;
+    margin-left : 10vw;
     width : 25%;
     font-family: notosans_med;
-
+}
+#requestformtemplate .pinfo_input .a input{
+    margin-left : 15vw;
 }
 
 #requestformtemplate .pinfo_input .pinfo_addr{
@@ -213,4 +215,7 @@
     cursor: pointer;
     font-family: notosans_med;
     font-size: 1.5em;
+}
+#requestformtemplate .sectionform .Bot{
+    margin-left: 5.5%;
 }
