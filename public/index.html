@@ -12,6 +12,7 @@
     <link rel="icon" type="image/x-icon" href="./picture/favicon2.jpg">
     <script src="./js/webscript2.js"></script> 
     <script src="./js/login_script.js"></script> 
+    <script src="./js/startweb_func.js"></script> 
 </head>
 
 <body onload="startFunction()">
@@ -290,19 +291,19 @@
             <input type="text" id="inputrequesttype" placeholder="ใส่คำร้องของท่านตรงนี้">
             <br>
             <label>ชื่ออาจารย์ที่ปรึกษา</label>
-            <input type="text" placeholder="ใส่อาจารย์ที่ปรึกษาโดยไม่มีคำนำหน้าชื่อ">
+            <input type="text" id="inputadvisor" placeholder="ใส่อาจารย์ที่ปรึกษาโดยไม่มีคำนำหน้าชื่อ">
             <br>
             <label class="requesttype_out" id="requesttype_out">การดำเนินการคำร้องที่ไม่ได้กำหนด :</label>
             <br><br>
 
             <div id="requesttype01" class="requesttype01">
                 <label>รหัสวิชา</label>
-                <input type="text" placeholder="XXNNN เช่น CS100">
+                <input type="text" id="inputsubjectid" placeholder="XXNNN เช่น CS100">
                 <label>ชื่อวิชา</label>
-                <input type="text" placeholder="ชื่อวิชาภาษาไทย">
+                <input type="text" id="inputsubjectname" placeholder="ชื่อวิชาภาษาไทย">
                 <br>
                 <label>Section</label>
-                <input type="number" placeholder="XXXXXX เช่น 780003">
+                <input type="number" id="inputsection" placeholder="XXXXXX เช่น 780003">
                 <br>
                 <label>เหตุผลในการขอจดทะเบียน/ถอนรายวิชา</label>
                 <textarea placeholder="โปรดอธิบายรายละเอียดของคุณ ..." rows="4" cols="60"></textarea>
@@ -313,15 +314,15 @@
                 <br>
 
                 
-                <input class="choicedebt" type="radio" name="moneydebt" value=0>
+                <input class="choicedebt" id="choicedebt" type="radio" name="moneydebt" onclick="moneyDebt()" value = "0">
                 <label class="choicedebtlabel">ไม่มีคงค้าง</label>
                 <br>
                 
-                <input class="choicedebt" type="radio" name="moneydebt" value=1>
+                <input class="choicedebt" id="choicedebt" type="radio" name="moneydebt" onclick="moneyDebt()" value = "1">
                 <label class="choicedebtlabel">มีคงค้าง</label>
                 <br>
                 <label class="moneyamountlabel">จำนวนเงิน</label>
-                <input class="moneyamount" type="text" placeholder="XXX.XX บาท เช่น 20,000.00 บาท">
+                <input class="moneyamount" id="inputmoney" type="text" placeholder="XXX.XX บาท เช่น 20,000.00 บาท">
                 <br>
                 <label>เหตุผลในการลาออก</label>
                 <textarea placeholder="โปรดอธิบายรายละเอียดของคุณ ..." rows="4" cols="60"></textarea>
@@ -422,8 +423,6 @@
    </div>
 </div>
 
-
-<footer>Files Version 1.15.0 </footer>
 </body>
 
 </html>

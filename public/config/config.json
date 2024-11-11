@@ -1,0 +1,12 @@
+{
+    "config": [
+      {
+        "showAllSection": false,
+        "toggleDevBorder": false,
+        "allowMismatchUtype": false,
+        "loginPrecedents": ["admin,employee,student"],
+        "adminPassword": "admin",
+        "disableCookies": true
+      }
+    ]
+  }

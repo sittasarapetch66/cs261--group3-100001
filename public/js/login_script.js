@@ -1,20 +1,22 @@
 var globaljson;
 
+
+
 // function to show or hide password field
 function togglePass(){
-  var hideicon = document.getElementById("hideicon");
-  var showicon = document.getElementById("showicon");
-  var passfield = document.getElementById("password");
+  var hideicon = GlobalVar[3][5]; //close fa-eye
+  var showicon = GlobalVar[3][6]; //open fa-eye
+  var passfield = GlobalVar[3][1]; //password field
 
-  if (passfield.type == "password"){
+  if (GlobalVar[3][1].type == "password"){
     passfield.type = "text";
-    hideicon.style.display = "none";
-    showicon.style.display = "inline";
+    hideicon.style.display = GlobalSet[20]; //not show close fa-eye
+    showicon.style.display = GlobalSet[22]; //show open fa-eye
   }
   else{
     passfield.type = "password";
-    hideicon.style.display = "inline";
-    showicon.style.display = "none";
+    hideicon.style.display = GlobalSet[22]; //show close fa-eye
+    showicon.style.display = GlobalSet[20]; //not show open fa-eye
   }
 
 }
@@ -195,6 +197,14 @@ function printMessage(errorcode, messageinput){
 
 
 }
+
+
+
+
+
+
+
+
 
 //function to validate user by tu api
 function APIRequest(){
