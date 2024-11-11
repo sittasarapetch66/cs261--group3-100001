@@ -241,37 +241,37 @@
 
         <div class="pinfo_input">
                 
-            <label>ชื่อ-นามสกุล</label>
+            <label>ชื่อ-นามสกุล : </label>
             <input type="text" placeholder="ไม่ต้องมีคำนำหน้า เช่น ทดสอบ รันระบบ" id="inputname">
             <br>
-            <label>คณะที่ศึกษา</label>
-            <input type="text" placeholder="เช่น คณะวิทนาศาสตร์และเทคโนโลยี" id="inputfaculty">
+            <label>คณะที่ศึกษา :</label>
+            <input type="text" placeholder="เช่น คณะวิทยาศาสตร์และเทคโนโลยี" id="inputfaculty">
             <br>
-            <label>เลขทะเบียน</label>
+            <label>เลขทะเบียน :</label>
             <input type="text" placeholder="เช่น 5009612214" id="inputid">
             <br>
-            <label>ชั้นปี</label>
+            <label>ชั้นปี : </label>
             <input type="number" placeholder="ใส่เลขปีของคุณ เช่นปี 3 กรอก 3" id="inputstudentyears">
             <br>
-            <label>เบอร์โทร</label>
+            <label>เบอร์โทรศัพท์ : </label>
             <input type="number" placeholder="หมายเลข 9-10 หลัก เช่น 021100001" id="inputnumbers">
             <br>
-            <label>เบอร์โทรผู้ปกครอง</label>
+            <label>เบอร์โทรผู้ปกครอง : </label>
             <input type="number" placeholder="หมายเลข 9-10 หลัก เช่น 021100001" id="inputparentnumbers">
             <br>
             <label>ที่อยู่ :</label>
             <br>
             <div class="pinfo_addr">
-            <label>เลขที่บ้าน/ห้อง</label>
-            <input class="long" type="text" placeholder="บ้านเลขที่/ห้อง" id="inputaddrnumber">
+            <label>เลขที่บ้าน/เลขที่ห้อง : </label>
+            <input class="long" type="text" placeholder="เลขที่บ้าน/เลขที่ห้อง" id="inputaddrnumber">
             <br>
-            <label>แขวง/ตำบล</label>
+            <label>แขวง/ตำบล : </label>
             <input type="text" placeholder="แขวง/ตำบล" id="inputsubdistrict">
             <br>
-            <label>เขต/อำเภอ</label>
+            <label>เขต/อำเภอ : </label>
             <input type="text" placeholder="เขต/อำเภอ" id="inputdistrict">
             <br>
-            <label>จังหวัด</label>
+            <label>จังหวัด : </label>
             <input type="text" placeholder="จังหวัด" id="inputprovince">
             </div>
             
@@ -286,73 +286,76 @@
         </div>
 
         <div class="pinfo_input">
-                
-            <label><b>ประเภทคำร้อง</b></label>
-            <input type="text" id="inputrequesttype" placeholder="ใส่คำร้องของท่านตรงนี้">
-            <br>
-            <label>ชื่ออาจารย์ที่ปรึกษา</label>
-            <input type="text" id="inputadvisor" placeholder="ใส่อาจารย์ที่ปรึกษาโดยไม่มีคำนำหน้าชื่อ">
-            <br>
-            <label class="requesttype_out" id="requesttype_out">การดำเนินการคำร้องที่ไม่ได้กำหนด :</label>
-            <br><br>
+            <div class="a">
+                <label><b>ประเภทคำร้อง : </b></label>
+                <input type="text" id="inputrequesttype" placeholder="ใส่คำร้องของท่านตรงนี้">
+                <br>
+                <label>ชื่ออาจารย์ที่ปรึกษา : </label>
+                <input type="text" placeholder="ใส่อาจารย์ที่ปรึกษาโดยไม่มีคำนำหน้าชื่อ">
+                <br>
+                <label class="requesttype_out" id="requesttype_out">การดำเนินการคำร้องที่ไม่ได้กำหนด :</label>
+                <br><br>
 
-            <div id="requesttype01" class="requesttype01">
-                <label>รหัสวิชา</label>
-                <input type="text" id="inputsubjectid" placeholder="XXNNN เช่น CS100">
-                <label>ชื่อวิชา</label>
-                <input type="text" id="inputsubjectname" placeholder="ชื่อวิชาภาษาไทย">
-                <br>
-                <label>Section</label>
-                <input type="number" id="inputsection" placeholder="XXXXXX เช่น 780003">
-                <br>
-                <label>เหตุผลในการขอจดทะเบียน/ถอนรายวิชา</label>
-                <textarea placeholder="โปรดอธิบายรายละเอียดของคุณ ..." rows="4" cols="60"></textarea>
+                <div id="requesttype01" class="requesttype01">
+                    <label>รหัสวิชา : </label>
+                    <input type="text" id="inputsubjectid" placeholder="XXNNN เช่น CS100">
+                    <br>
+                    <label>ชื่อวิชา : </label>
+                    <input type="text" id="inputsubjectname" placeholder="ชื่อวิชาภาษาไทย">
+                    <br>
+                    <label>Section : </label>
+                    <input type="number" id="inputsection" placeholder="XXXXXX เช่น 780003">
+                    <br>
+                    <label>เหตุผลในการขอจดทะเบียน/ถอนรายวิชา : </label>
+                    <textarea placeholder="โปรดอธิบายรายละเอียดของคุณ ..." rows="4" cols="60"></textarea>
+                </div>
+
+                <div id="requesttype02" class="requesttype02">
+                    <label>คุณมีภาระหนี้สินคงค้างหรือไม่</label>
+                    <br>
+                    <input class="choicedebt" type="radio" name="moneydebt" onclick="moneyDebt()"  value=0>
+                    <label class="choicedebtlabel">ไม่มีคงค้าง</label>
+                    <br>
+                    <input class="choicedebt" type="radio" name="moneydebt" onclick="moneyDebt()" value=1>
+                    <label class="choicedebtlabel">มีคงค้าง</label>
+                    <br>
+                    <label class="moneyamountlabel">จำนวนเงิน</label>
+                    <input class="moneyamount" id="inputmoney" type="text" placeholder="XXX.XX บาท เช่น 20,000.00 บาท">
+                    <br>
+                    <label>เหตุผลในการลาออก : </label>
+                    <textarea placeholder="โปรดอธิบายรายละเอียดของคุณ ..." rows="4" cols="60"></textarea>
+                </div>
+
+                <div id="requesttype03" class="requesttype03">
+                    <label>โปรดให้รายละเอียดคำร้องของคุณ : </label>
+                    <textarea placeholder="โปรดอธิบายรายละเอียดของคุณ ..." rows="8" cols="70"></textarea>
+                </div>
             </div>
-
-            <div id="requesttype02" class="requesttype02">
-                <label>คุณมีภาระหนี้สินคงค้างหรือไม่</label>
+            
+            <div class="b">
+                <label>แนบไฟล์หลักฐานคำร้อง :</label>
+                <br><br>
+                <label>ไฟล์ที่ 1 : </label>
+                <input type="file">
                 <br>
-
-                
-                <input class="choicedebt" id="choicedebt" type="radio" name="moneydebt" onclick="moneyDebt()" value = "0">
-                <label class="choicedebtlabel">ไม่มีคงค้าง</label>
+                <label>ไฟล์ที่ 2 : </label>
+                <input type="file">
                 <br>
-                
-                <input class="choicedebt" id="choicedebt" type="radio" name="moneydebt" onclick="moneyDebt()" value = "1">
-                <label class="choicedebtlabel">มีคงค้าง</label>
+                <label>ไฟล์ที่ 3 : </label>
+                <input type="file">
                 <br>
-                <label class="moneyamountlabel">จำนวนเงิน</label>
-                <input class="moneyamount" id="inputmoney" type="text" placeholder="XXX.XX บาท เช่น 20,000.00 บาท">
-                <br>
-                <label>เหตุผลในการลาออก</label>
-                <textarea placeholder="โปรดอธิบายรายละเอียดของคุณ ..." rows="4" cols="60"></textarea>
-
+                <label>ไฟล์ที่ 4 : </label>
+                <input type="file">
             </div>
-
-            <div id="requesttype03" class="requesttype03">
-                <label>โปรดให้รายละเอียดคำร้องของคุณ</label>
-                <textarea placeholder="โปรดอธิบายรายละเอียดของคุณ ..." rows="8" cols="70"></textarea>
-            </div>
-
-            <label>การแนบไฟล์ขึ้นอยู่กับประเภทคำร้องที่ไม่ได้กำหนด :</label>
-            <br><br>
-            <label>ไฟล์แนบ 1 คำร้องที่ไม่ได้กำหนด</label>
-            <input type="file">
-            <br>
-            <label>ไฟล์แนบ 2 คำร้องที่ไม่ได้กำหนด</label>
-            <input type="file">
-            <br>
-            <label>ไฟล์แนบ 3 คำร้องที่ไม่ได้กำหนด</label>
-            <input type="file">
-            <br>
-            <label>ไฟล์แนบ 4 คำร้องที่ไม่ได้กำหนด</label>
-            <input type="file">
-
+                  
         </div>
+            
         <br>
         <div class="opearationsbuttons">
-            <button class="save-draft" onclick="submitRequestForm(0)">บันทึกแบบร่าง</button>
-            <button class="submit" onclick="submitRequestForm(1)">ยืนยัน</button>
+            <div class="Bot">
+                <button class="save-draft" onclick="submitRequestForm(0)">บันทึกแบบร่าง</button>
+                <button class="submit" onclick="submitRequestForm(1)">ยืนยัน</button> 
+            </div>
         </div>
         <br>
 
