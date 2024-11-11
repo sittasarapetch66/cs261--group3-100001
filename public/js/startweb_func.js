@@ -59,7 +59,8 @@ function assignElementsVariable(){
   GlobalVar[5][11] = document.getElementById("inputadvisor");
   GlobalVar[5][12] = document.getElementById("inputsubjectid");
   GlobalVar[5][13] = document.getElementById("inputsubjectname");
-  GlobalVar[5][14] = document.getElementById("inputmoney");
+  GlobalVar[5][14] = document.getElementById("inputsection");
+  GlobalVar[5][15] = document.getElementById("inputmoney");
 
   //Function 40 : Json Global
   GlobalVar[40][1]; //Json Login Store
@@ -77,13 +78,15 @@ function assignDataVariable(){
 
   //Border Style Setting
   GlobalSet[10] = "5px solid rgba(0, 0, 0, 0.3)";
+  GlobalSet[11] = "1px solid black" ;
+  GlobalSet[12] = "5px solid red";
   GlobalSet[19] = "2px dashed yellow"; //Debug Border to show every elements
 
   //Display setting
   GlobalSet[20] = "none"; //Toggle Visibility to not show of Display style
   GlobalSet[21] = "block"; //Toggle Visibility to show of Display style
-  GlobalSet[21] = "flex"; //Toggle Visibility to show of Display style
-  GlobalSet[22] = "inline"; //Toggle Visibility to show of Display style
+  GlobalSet[22] = "flex"; //Toggle Visibility to show of Display style
+  GlobalSet[23] = "inline"; //Toggle Visibility to show of Display style
 
   //input setting
   GlobalSet[30] = "text"; //text input
@@ -133,9 +136,10 @@ function returnWordVariable(wordID){
 function onloadSetup(){
 
   //hidden every section
+  /*
   for(i=0; GlobalVar[2][i] != null ; i++){
     GlobalVar[2][i].style.display = GlobalSet[20];
-  }
+  }*/
   //hidden menu and layers
   for(i=0; GlobalVar[1][i] != null ; i++){
     GlobalVar[1][i].style.display = GlobalSet[20];

@@ -210,23 +210,7 @@ function requestTemplate(typeinput){
 
 }
 
-function submitRequestForm(type){
 
-  if (type == 0){
-    alert("ยังไม่สามารถบันทึกแบบร่างได้ในขณะนี้");
-  }
-
-  if (type == 1){
-
-    if (requestFormcheckField()){
-      toggleSomething(14);
-    }
-
-  }
-
-
-
-}
 
 function requestFormcheckField(){
 
@@ -267,7 +251,7 @@ function requestFormcheckField(){
   console.log(countcheck)
 
   if(countcheck > 0){
-    alert("โปรดกรอกข้อมูลให้ครบทุกช่อง")
+    alert("โปรดเช็คความถูกต้องของข้อมูลทุกช่อง")
     window.scrollTo(0, 0);
     return 0;
   }
