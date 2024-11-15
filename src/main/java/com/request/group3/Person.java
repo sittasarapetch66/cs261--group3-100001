@@ -1,13 +1,12 @@
-package com.example.crud;
+package com.request.group3;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
-
 @Data
 @Entity
-@Table(name="students")
-public class students {
+@Table(name="Person")
+public class Person {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,5 +27,4 @@ public class students {
 	@Column(name = "user_name", nullable = false)
 	private String username ;
 
-	
 }
