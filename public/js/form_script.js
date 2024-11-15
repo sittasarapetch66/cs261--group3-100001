@@ -1,9 +1,10 @@
 // Form Script (JS) for group
-// Date Created : 11/10/67
+// Date Created : 10/10/67
 
-//Akawat-SKO Recommended to have other function that support
+//Akawat-SKO Recommended to have other function that have assigned variable in seperated file.
 
 
+//check form input
 function checkRequestFormInput(){
 
   let errorcount = 0; //count number of blank
@@ -63,4 +64,14 @@ function submitRequestForm(type){
 
   }
 }
-  
+
+//disable input when select debt
+function moneyDebt(){
+
+  if (GlobalVar[4][10].checked == true){
+    GlobalVar[5][15].disabled = false;
+  }
+  else{
+    GlobalVar[5][15].disabled = true;
+  }
+}
