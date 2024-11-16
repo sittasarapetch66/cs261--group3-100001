@@ -1,6 +1,5 @@
 package com.request.group3;
 
-/*
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -11,4 +10,3 @@ public class DatabaseApplication {
 		SpringApplication.run(DatabaseApplication.class, args);
 	}
 }
-*/

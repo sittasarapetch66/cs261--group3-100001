@@ -1,5 +1,6 @@
 package com.example.crud;
 
+/*
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -30,3 +31,4 @@ public class students {
 
 	
 }
+*/
