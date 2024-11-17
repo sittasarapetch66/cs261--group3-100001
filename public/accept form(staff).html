@@ -1,66 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta http-equiv="refresh" content="1000">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Web for login to system">
-    <title>TU Request Login Webpage</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./css/acceptform_style.css">
-    <link rel="icon" type="image/x-icon" href="./picture/favicon2.jpg">
-    <script src=""></script> 
+    <meta name="description" content="Welcome to our homepage">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="acceptform_style.css">
+    <!--  -->
 </head>
-
-<body onload="startFunction()">
-
-<div id="homesection">
-    <!-- Header Section -->
-    <div class="header">
-        <div class="profile">
-            <div>
-                <img class="profile-pic" src="./picture/favicon2.jpg">
+<body>
+    <div id="homesection">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="profile">
+                <div>
+                    <img class="profile-pic" src="./picture/favicon2.jpg">
+                </div>
+                <div class="textinfo">
+                    <span id="navbarname">ชื่อของคุณจะปรากฎอยู่ตรงนี้ หากคุณเห็นข้อความนี้แสดงว่าคุณได้ทำการแก้ไขไฟล์ ทำได้ดีมาก #u#</span>
+                     <br>
+                    <small onclick="reallyExit()">Log out</small>
+                </div>
             </div>
-            <div class="textinfo">
-                <span id="navbarname">ชื่อของคุณจะปรากฎอยู่ตรงนี้ หากคุณเห็นข้อความนี้แสดงว่าคุณได้ทำการแก้ไขไฟล์ ทำได้ดีมาก #u#</span>
-                 <br>
-                <small onclick="reallyExit()">Log out</small>
+            <div class="menu-icon" onclick="showMenu()">☰</div>
+        </div>
+     
+        <!-- Content Section -->
+        <div class="content">
+            <h1>ระบบยื่นคำร้องนักศึกษามหาวิทยาลัยธรรมศาสตร์</h1>
+            <p>โปรดเลือกประเภทคำร้อง</p>
+            
+            <!-- Icons Section -->
+            <div class="icon-container">
+                <div class="icon-item" onclick="requestTemplate(1)">
+                    <div class="icon">📝</div>
+                    <p>จดทะเบียนล่าช้า</p>
+                </div>
+                <div class="icon-item" onclick="requestTemplate(2)">
+                    <div class="icon">🗑️</div>
+                    <p>ถอนรายวิชา</p>
+                </div>
+                <div class="icon-item" onclick="requestTemplate(3)">
+                    <div class="icon">📑</div>
+                    <p>จดทะเบียนศึกษารายวิชานอกหลักสูตร</p>
+                </div>
+                <div class="icon-item" onclick="requestTemplate(4)">
+                    <div class="icon">➡️</div>
+                    <p>ลาออก</p>
+                </div>
+                <div class="icon-item" onclick="requestTemplate(5)">
+                 <div class="icon">➡️</div>
+                 <p>อื่น ๆ</p>
+             </div>
             </div>
         </div>
-        <div class="menu-icon" onclick="showMenu()">☰</div>
-    </div>
- 
-    <!-- Content Section -->
-    <div class="content">
-        <h1>ระบบยื่นคำร้องนักศึกษามหาวิทยาลัยธรรมศาสตร์</h1>
-        <p>โปรดเลือกประเภทคำร้อง</p>
-        
-        <!-- Icons Section -->
-        <div class="icon-container">
-            <div class="icon-item" onclick="requestTemplate(1)">
-                <div class="icon">📝</div>
-                <p>จดทะเบียนล่าช้า</p>
-            </div>
-            <div class="icon-item" onclick="requestTemplate(2)">
-                <div class="icon">🗑️</div>
-                <p>ถอนรายวิชา</p>
-            </div>
-            <div class="icon-item" onclick="requestTemplate(3)">
-                <div class="icon">📑</div>
-                <p>จดทะเบียนศึกษารายวิชานอกหลักสูตร</p>
-            </div>
-            <div class="icon-item" onclick="requestTemplate(4)">
-                <div class="icon">➡️</div>
-                <p>ลาออก</p>
-            </div>
-            <div class="icon-item" onclick="requestTemplate(5)">
-             <div class="icon">➡️</div>
-             <p>อื่น ๆ</p>
-         </div>
-        </div>
-    </div>
- 
- </div>
+     
+     </div>
 </body>
 </html>
