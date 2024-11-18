@@ -139,10 +139,12 @@ input[type="radio"] {
   
   .checkbox-style1 .check-icon,
   .checkbox-style2 .check-icon {
-    font-size: 30px;
-    padding: 5px;
-    /* Remove the border-radius for square shape */
-    border-radius: 0; /* This makes it a square */
+    font-size: 30px; /* Icon size */
+    width: 30px; /* Set the width of the background to match the icon size */
+    height: 30px; /* Set the height of the background to match the icon size */
+    display: flex;
+    align-items: center; /* Vertically center the icon */
+    justify-content: center; /* Horizontally center the icon */
     transition: background-color 0.3s, color 0.3s; /* Smooth transitions for color changes */
   }
   
