@@ -29,21 +29,21 @@
         <main>
             <!-- Form Section -->
             <section class="form-section" aria-labelledby="form-title">
-                <div class="form-group">
-                    <label for="request-type">กรุณาเลือกแบบคำร้อง</label>
-                    <select id="request-type" aria-label="Request Type">
-                        <option value="ลาออก">ลาออก</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="status">สถานะคำร้อง</label>
-                    <select id="status" aria-label="Request Status">
-                        <option value="//อนุมัติ ไม่อนุมัติ รออนุมัติ">//อนุมัติ ไม่อนุมัติ รออนุมัติ</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="student-id">เลขทะเบียนนักศึกษา</label>
-                    <input type="text" id="student-id" value="ลาออก" readonly>
+                <div class="outer-form">
+                    <div class="form-group">
+                        <label for="request-type">กรุณาเลือกแบบคำร้อง</label><br>
+                        <label for="status">สถานะคำร้อง</label><br>
+                        <label for="student-id">เลขทะเบียนนักศึกษา</label><br>
+                    </div>
+                    <div class="form-input">
+                        <select id="request-type" aria-label="Request Type">
+                            <option value="ลาออก">ลาออก</option>
+                        </select><br>
+                        <select id="status" aria-label="Request Status">
+                            <option value="//อนุมัติ ไม่อนุมัติ รออนุมัติ">//อนุมัติ ไม่อนุมัติ รออนุมัติ</option>
+                        </select><br>
+                        <input type="text" id="student-id" value="เลขทะเบียน" readonly><br>
+                    </div>
                 </div>
             </section>
 

@@ -7,11 +7,10 @@
     <meta name="description" content="Welcome to our homepage">
     <title>Home Page</title>
     <link rel="stylesheet" href="acceptform_style.css">
-    
-    <!--  -->
 </head>
 <body>
     <div id="Acceptformsection">
+        <!-- Header Section -->
         <!-- Header Section -->
         <div class="header">
             <div class="profile">
@@ -26,6 +25,62 @@
             </div>
             <div class="menu-icon" onclick="showMenu()">☰</div>
         </div>
-     </div>
+
+        <main>
+            <!-- Form Section -->
+            <section class="form-section" aria-labelledby="form-title">
+                <div class="outer-form">
+                    <div class="form-group">
+                        <label for="request-type">กรุณาเลือกแบบคำร้อง</label><br>
+                        <label for="status">สถานะคำร้อง</label><br>
+                        <label for="student-id">เลขทะเบียนนักศึกษา</label><br>
+                    </div>
+                    <div class="form-input">
+                        <select id="request-type" aria-label="Request Type">
+                            <option value="ลาออก">ลาออก</option>
+                        </select><br>
+                        <select id="status" aria-label="Request Status">
+                            <option value="//อนุมัติ ไม่อนุมัติ รออนุมัติ">//อนุมัติ ไม่อนุมัติ รออนุมัติ</option>
+                        </select><br>
+                        <input type="text" id="student-id" value="เลขทะเบียน" readonly><br>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Table Section -->
+            <section class="table-section" aria-labelledby="table-title">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">ลำดับ</th>
+                            <th scope="col">สถานะ</th>
+                            <th scope="col">เลขทะเบียน</th>
+                            <th scope="col">ชื่อ-นามสกุล</th>
+                            <th scope="col">หมายเหตุ</th>
+                            <th scope="col">อนุมัติ</th>
+                            <th scope="col">ไม่อนุมัติ</th>
+                            <th scope="col">ไฟล์แนบ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><textarea aria-label="Note"></textarea></td>
+                            <td><input type="checkbox" aria-label="Approved" checked></td>
+                            <td><input type="checkbox" aria-label="Not Approved"></td>
+                            <td>
+                                <a href="#" class="file-icon" aria-label="Attached File">
+                                    <img src="./picture/file-icon.png" alt="File Icon">
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
