@@ -144,6 +144,13 @@
     flex: 1; /* Adjust width to share available space equally */
 }
 
+#Acceptformsection .table-section{
+    width: 90%;
+    padding: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
