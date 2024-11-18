@@ -73,13 +73,22 @@
                 gap: 20px;
             }
 
+            
             .confirm {
                 width: 20%;
+                height: 30px;
                 border: none;
                 color: #F5F5F5;
                 background-color: #4CAF50;
                 border-radius: 20px;
                 cursor: pointer;
+            }
+
+            button:disabled {
+                background-color: #ccc; /* เปลี่ยนสีปุ่ม */
+                cursor: not-allowed; /* เปลี่ยนเคอร์เซอร์เป็นแบบห้าม */
+                color: #666; /* สีข้อความจางลง */
+                border: 1px solid #999;
             }
         </style>
     </head>
@@ -103,11 +112,13 @@
                 <p class="name">นายโคนัน ทวิสาร</p>
                 <p>ค้างชำระทั้งหมด <span>45</span> บาท</p>
                 <div class="slip">
-                    <label>แนบหลักฐานการโอนเงิน</label>
-                    <input type="file">
+                    <label for="fileInput">แนบหลักฐานการโอนเงิน</label>
+                    <input type="file" id="fileInput">
                 </div>
-                <button class="confirm">ยืนยัน</button>
+                <p id="message"></p>
+                <button class="confirm" id="confirm" disabled>ยืนยัน</button>
             </div>
         </main>
+        <script src="../js/payment_script.js"></script>
     </body>
 </html>
