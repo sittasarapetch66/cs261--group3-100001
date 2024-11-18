@@ -62,6 +62,13 @@
                 margin-top: 20px;
                 padding: 2%;
                 cursor: pointer;
+                transition: transform 0.5s ease, box-shadow 0.5s ease;
+            }
+
+            .card:hover {
+                transform: translateY(-10px); /* ยกกล่องขึ้น */
+                box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* เงาที่ลึกขึ้น */
+                
             }
 
             h3 {
@@ -119,7 +126,7 @@
                 <h3>Test</h3>
                 <p class="date">แก้ไขล่าสุดเมื่อ: </p>
                 <div class="status">
-                    <p class="approve">test1</p>
+                    <p class="approve">อนุมัติ</p>
                     <p class="payment">test2</p>
                 </div>
             </div>
