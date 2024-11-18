@@ -7,6 +7,7 @@
     <meta name="description" content="Welcome to our homepage">
     <title>Home Page</title>
     <link rel="stylesheet" href="acceptform_style.css">
+    <script src="acceptform_js.js"></script>
 </head>
 <body>
     <div id="Acceptformsection">
@@ -37,10 +38,16 @@
                     </div>
                     <div class="form-input">
                         <select id="request-type" aria-label="Request Type">
+                            <option value="จดทะเบียนล่าช้า">จดทะเบียนล่าช้า</option>
+                            <option value="ถอนรายวิชา">ถอนรายวิชา</option>
+                            <option value="จดทะเบียนศึกษารายวิชาข้ามหลักสูตร">จดทะเบียนศึกษารายวิชาข้ามหลักสูตร</option>
                             <option value="ลาออก">ลาออก</option>
+                            <option value="อื่นๆ">อื่นๆ</option>
                         </select><br>
                         <select id="status" aria-label="Request Status">
-                            <option value="//อนุมัติ ไม่อนุมัติ รออนุมัติ">//อนุมัติ ไม่อนุมัติ รออนุมัติ</option>
+                            <option value="อนุมัติ">อนุมัติ</option>
+                            <option value="ไม่อนุมัติ">ไม่อนุมัติ</option>
+                            <option value="รออนุมัติ">รออนุมัติ</option>
                         </select><br>
                         <input type="text" id="student-id" value="เลขทะเบียน" readonly><br>
                     </div>
@@ -65,12 +72,16 @@
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><textarea aria-label="Note"></textarea></td>
-                            <td><input type="checkbox" aria-label="Approved" checked></td>
-                            <td><input type="checkbox" aria-label="Not Approved"></td>
+                            <td><label for=""></label></td>
+                            <td><label for=""></label></td>
+                            <td><label for=""></label></td>
+                            <td><label for=""></label></td>
+                            <td>
+                                <label class="checkbox-style"><input type="radio" aria-label="Approved" value="Approved" name="check"  checked></label>
+                            </td>
+                            <td>
+                                <label class="checkbox-style"><input type="radio" aria-label="Not Approved" value="Not Approved" name="check" ></label>
+                            </td>
                             <td>
                                 <a href="#" class="file-icon" aria-label="Attached File">
                                     <img src="./picture/file-icon.png" alt="File Icon">

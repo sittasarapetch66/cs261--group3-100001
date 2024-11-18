@@ -54,70 +54,6 @@
     background-color: #c4c4c4a9;
 }
 
-#homesection .content {
-    text-align: center;
-    padding: 40px 20px;
-}
-
-#homesection .content h1 {
-    font-size: 5vh;
-    margin-bottom: 1vh;
-}
-
-#homesection .content p {
-    font-size: 3vh;
-    color: #666;
-    margin-bottom: 8vh;
-}
-
-#homesection .icon-container {
-    width : 90%;
-    margin-left: auto;
-    margin-right: auto;
-    border : 1px solid black;
-    display: flex;
-    justify-content: space-evenly; /* ทำให้ไอคอนมีระยะห่างเท่ากัน */
-}
-
-#homesection .icon-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color: #333;
-    background-color: #f5f5f5;
-    border : 1px solid black;
-    width : 12vw;
-    padding-top: 2vw;   
-    transition: transform 0.2s;
-    transition: 0.5s;
-    cursor : pointer;
-    border-radius : 25px;
-}
-
-#homesection .icon-item:hover {
-    transform: translateY(-0.5vh);
-    background-color: #eafad1;
-    box-shadow: 10px 10px #888888;
-
-}
-
-#homesection .icon-item .icon {
-    width: 80px;
-    height: 80px;
-    background-color: #e0e0e0;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1vw;
-    font-size: 2em;
-}
-
-#homesection .icon-item p {
-    font-size: 1.2vw;
-}
-
 #Acceptformsection .form-section{
     background-color: #E0E0E0;
     display: flex;
@@ -186,3 +122,48 @@ button:focus, input:focus, select:focus, textarea:focus, .menu-icon:focus {
 html {
     scroll-behavior: smooth;
 }
+
+input[type="radio"] {
+    display: none; /* Hide the original radio button */
+  }
+
+  .checkbox-style {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+    position: relative;
+  }
+
+  .checkbox-style::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 2px solid #000;
+    border-radius: 3px; /* This makes it look like a checkbox */
+    display: inline-block;
+    background: #fff;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .checkbox-style {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+  }
+
+  .checkbox-style span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #000;
+    border-radius: 3px; /* Makes it look like a checkbox */
+    background: #fff;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .checkbox-style.selected span {
+    background: #007bff;
+    border-color: #007bff;
+  }
