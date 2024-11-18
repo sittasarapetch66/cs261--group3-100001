@@ -1,7 +1,16 @@
-
-#Acceptformsection{
-    display: block;/*none*/
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
 }
+
+#Acceptformsection {
+    display: block; /* Change to 'none' if you want to hide */
+}
+
+/* Header Section */
 #Acceptformsection .header {
     background-color: #2D3142;
     color: white;
@@ -11,6 +20,7 @@
     padding: 10px 20px;
     font-size: 1em;
     height: 10vh;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 #Acceptformsection .header .profile {
@@ -18,41 +28,50 @@
     align-items: center;
 }
 
-#Acceptformsection .header .profile .textinfo{
+#Acceptformsection .header .profile .textinfo {
     font-size: 3vh;
-    margin-left : 2vh;
+    margin-left: 2vh;
+    line-height: 1.2;
 }
 
-#Acceptformsection .header .profile small{
+#Acceptformsection .header .profile small {
     font-size: 2vh;
-    padding : 0.5vh;
-    background-color : blueviolet;
+    padding: 0.5vh 1vh;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#Acceptformsection .header .profile small:hover {
+    background-color: #8a2be2;
 }
 
 #Acceptformsection .profile-pic {
     height: 8vh;
+    width: 8vh;
     background-color: #c4c4c4;
     border-radius: 50%;
     margin-right: 10px;
-    border : 1px solid white;
-    object-fit: fill;
+    border: 1px solid white;
+    object-fit: cover; /* Maintains image aspect ratio */
 }
 
 #Acceptformsection .menu-icon {
     font-size: 5vh;
     cursor: pointer;
-    padding-left : 15px;
-    padding-right : 15px;
-    border-radius : 50%;
-    transition: 0.5s;
-
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #Acceptformsection .menu-icon:hover {
-    background-color: #c4c4c4a9;
+    background-color: rgba(196, 196, 196, 0.66);
+    transform: scale(1.1);
 }
 
+/* Content Section */
 #homesection .content {
     text-align: center;
     padding: 40px 20px;
@@ -61,6 +80,7 @@
 #homesection .content h1 {
     font-size: 5vh;
     margin-bottom: 1vh;
+    color: #2D3142;
 }
 
 #homesection .content p {
@@ -69,13 +89,14 @@
     margin-bottom: 8vh;
 }
 
+/* Icon Container */
 #homesection .icon-container {
-    width : 90%;
-    margin-left: auto;
-    margin-right: auto;
-    /*border : 1px solid black;*/
+    width: 90%;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-evenly; /* ทำให้ไอคอนมีระยะห่างเท่ากัน */
+    flex-wrap: wrap; /* Responsive layout */
+    gap: 20px; /* Adds spacing between items */
+    justify-content: space-evenly; /* Equal spacing for icons */
 }
 
 #homesection .icon-item {
@@ -85,20 +106,19 @@
     text-align: center;
     color: #333;
     background-color: #f5f5f5;
-    border : 1px solid black;
-    width : 12vw;
-    padding-top: 2vw;   
-    transition: transform 0.2s;
-    transition: 0.5s;
-    cursor : pointer;
-    border-radius : 25px;
+    border: 1px solid #ddd;
+    width: 12vw;
+    min-width: 150px; /* Ensures a minimum size on smaller screens */
+    padding: 2vw;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.5s;
+    cursor: pointer;
+    border-radius: 25px;
 }
 
 #homesection .icon-item:hover {
-    transform: translateY(-0.5vh);
+    transform: translateY(-5px);
     background-color: #eafad1;
-    box-shadow: 10px 10px #888888;
-
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 #homesection .icon-item .icon {
@@ -111,8 +131,104 @@
     justify-content: center;
     margin-bottom: 1vw;
     font-size: 2em;
+    color: #555;
 }
 
 #homesection .icon-item p {
     font-size: 1.2vw;
+    margin: 0;
 }
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    #Acceptformsection .header {
+        font-size: 0.9em;
+        height: auto;
+        padding: 15px;
+    }
+
+    #Acceptformsection .profile-pic {
+        height: 6vh;
+        width: 6vh;
+    }
+
+    #Acceptformsection .menu-icon {
+        font-size: 4vh;
+    }
+
+    #homesection .icon-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    #homesection .icon-item {
+        width: 80%;
+        padding: 15px;
+    }
+
+    #homesection .icon-item .icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    #Acceptformsection .header .profile .textinfo {
+        font-size: 2vh;
+    }
+
+    #Acceptformsection .menu-icon {
+        font-size: 3.5vh;
+    }
+
+    #homesection .content h1 {
+        font-size: 4vh;
+    }
+
+    #homesection .content p {
+        font-size: 2.5vh;
+    }
+
+    #homesection .icon-item {
+        width: 90%;
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #2D3142;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+button, input, select, textarea, .menu-icon {
+    outline: none; /* Removes default outline */
+}
+
+button:focus, input:focus, select:focus, textarea:focus, .menu-icon:focus {
+    outline: 2px solid #8a2be2;
+    outline-offset: 2px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+

@@ -7,25 +7,80 @@
     <meta name="description" content="Welcome to our homepage">
     <title>Home Page</title>
     <link rel="stylesheet" href="acceptform_style.css">
-    
-    <!--  -->
 </head>
 <body>
-    <div id="Acceptformsection">
+    <div id="accept-form-section">
         <!-- Header Section -->
-        <div class="header">
+        <header class="header">
             <div class="profile">
-                <div>
-                    <img class="profile-pic" src="./picture/favicon2.jpg">
-                </div>
-                <div class="textinfo">
-                    <span id="navbarname">ชื่อของคุณจะปรากฎอยู่ตรงนี้ หากคุณเห็นข้อความนี้แสดงว่าคุณได้ทำการแก้ไขไฟล์ ทำได้ดีมาก #u#</span>
-                     <br>
-                    <small onclick="reallyExit()">Log out</small>
+                <img class="profile-pic" src="./picture/favicon2.jpg" alt="Profile Picture">
+                <div class="text-info">
+                    <p id="navbar-name">
+                        ชื่อของคุณจะปรากฎอยู่ตรงนี้ หากคุณเห็นข้อความนี้แสดงว่าคุณได้ทำการแก้ไขไฟล์ ทำได้ดีมาก #u#
+                    </p>
+                    <small role="button" onclick="reallyExit()" style="cursor: pointer;">Log out</small>
                 </div>
             </div>
-            <div class="menu-icon" onclick="showMenu()">☰</div>
-        </div>
-     </div>
+            <button class="menu-icon" aria-label="Toggle menu" onclick="showMenu()">☰</button>
+        </header>
+
+        <main>
+            <!-- Form Section -->
+            <section class="form-section" aria-labelledby="form-title">
+                <h2 id="form-title" class="visually-hidden">Approval Form</h2>
+                <div class="form-group">
+                    <label for="request-type">กรุณาเลือกแบบคำร้อง</label>
+                    <select id="request-type" aria-label="Request Type">
+                        <option value="ลาออก">ลาออก</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="status">สถานะคำร้อง</label>
+                    <select id="status" aria-label="Request Status">
+                        <option value="//อนุมัติ ไม่อนุมัติ รออนุมัติ">//อนุมัติ ไม่อนุมัติ รออนุมัติ</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="student-id">เลขทะเบียนนักศึกษา</label>
+                    <input type="text" id="student-id" value="ลาออก" readonly>
+                </div>
+            </section>
+
+            <!-- Table Section -->
+            <section class="table-section" aria-labelledby="table-title">
+                <h2 id="table-title" class="visually-hidden">Approval Table</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">ลำดับ</th>
+                            <th scope="col">สถานะ</th>
+                            <th scope="col">เลขทะเบียน</th>
+                            <th scope="col">ชื่อ-นามสกุล</th>
+                            <th scope="col">หมายเหตุ</th>
+                            <th scope="col">อนุมัติ</th>
+                            <th scope="col">ไม่อนุมัติ</th>
+                            <th scope="col">ไฟล์แนบ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><textarea aria-label="Note"></textarea></td>
+                            <td><input type="checkbox" aria-label="Approved" checked></td>
+                            <td><input type="checkbox" aria-label="Not Approved"></td>
+                            <td>
+                                <a href="#" class="file-icon" aria-label="Attached File">
+                                    <img src="./picture/file-icon.png" alt="File Icon">
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
 </body>
 </html>
