@@ -1,17 +1,15 @@
-// JavaScript to toggle "selected" class based on the clicked radio button
-document.addEventListener('click', function (event) {
-    if (event.target.type === 'radio' && event.target.name === 'check') {
-      // Remove "selected" class from all labels with the same group name
-      document.querySelectorAll('input[name="check"]').forEach(radio => {
-        radio.closest('.checkbox-style').classList.remove('selected');
-      });
-
-      // Add "selected" class to the clicked label
-      event.target.closest('.checkbox-style').classList.add('selected');
+function handleRadioClick(event) {
+    // Get the two checkboxes
+    const checkbox1 = document.querySelector('.checkbox-style1');
+    const checkbox2 = document.querySelector('.checkbox-style2');
+  
+    // Toggle the 'selected' class based on which checkbox was clicked
+    if (event.target.closest('.checkbox-style1')) {
+      checkbox1.classList.add('selected');
+      checkbox2.classList.remove('selected');
+    } else if (event.target.closest('.checkbox-style2')) {
+      checkbox2.classList.add('selected');
+      checkbox1.classList.remove('selected');
     }
-  });
-
-  // Initialize styles for the default checked radio button
-  document.querySelectorAll('input[name="check"]:checked').forEach(radio => {
-    radio.closest('.checkbox-style').classList.add('selected');
-  });
+  }
+  

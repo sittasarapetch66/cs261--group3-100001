@@ -126,44 +126,42 @@ html {
 input[type="radio"] {
     display: none; /* Hide the original radio button */
   }
-
-  .checkbox-style {
+  
+  /* Style for labels and icons */
+  .checkbox-style1,
+  .checkbox-style2 {
     display: inline-flex;
     align-items: center;
     cursor: pointer;
     gap: 10px;
     position: relative;
   }
-
-  .checkbox-style::before {
-    content: '';
-    width: 16px;
-    height: 16px;
-    border: 2px solid #000;
-    border-radius: 3px; /* This makes it look like a checkbox */
-    display: inline-block;
-    background: #fff;
-    transition: background 0.2s, border-color 0.2s;
+  
+  .checkbox-style1 .check-icon,
+  .checkbox-style2 .check-icon {
+    font-size: 30px;
+    padding: 5px;
+    /* Remove the border-radius for square shape */
+    border-radius: 0; /* This makes it a square */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions for color changes */
   }
-
-  .checkbox-style {
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
-    gap: 10px;
+  
+  /* Default state - No special styling */
+  .checkbox-style1 .check-icon,
+  .checkbox-style2 .check-icon {
+    background-color: transparent; /* No background by default */
+    color: black; /* Icon color */
   }
-
-  .checkbox-style span {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    border: 2px solid #000;
-    border-radius: 3px; /* Makes it look like a checkbox */
-    background: #fff;
-    transition: background 0.2s, border-color 0.2s;
+  
+  /* When the first checkbox is checked (Approved) */
+  .checkbox-style1.selected .check-icon {
+    background-color: green; /* Green when checked */
+    color: white; /* White icon */
   }
-
-  .checkbox-style.selected span {
-    background: #007bff;
-    border-color: #007bff;
+  
+  /* When the second checkbox is checked (Not Approved) */
+  .checkbox-style2.selected .check-icon {
+    background-color: red; /* Red when checked */
+    color: white; /* White icon */
   }
+  

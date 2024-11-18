@@ -38,6 +38,7 @@
                     </div>
                     <div class="form-input">
                         <select id="request-type" aria-label="Request Type">
+                            <option value="ทั้งหมด">ทั้งหมด</option>
                             <option value="จดทะเบียนล่าช้า">จดทะเบียนล่าช้า</option>
                             <option value="ถอนรายวิชา">ถอนรายวิชา</option>
                             <option value="จดทะเบียนศึกษารายวิชาข้ามหลักสูตร">จดทะเบียนศึกษารายวิชาข้ามหลักสูตร</option>
@@ -71,17 +72,23 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
+                            <td><label for="">1</label></td>
                             <td><label for=""></label></td>
                             <td><label for=""></label></td>
                             <td><label for=""></label></td>
                             <td><label for=""></label></td>
                             <td>
-                                <label class="checkbox-style"><input type="radio" aria-label="Approved" value="Approved" name="check"  checked></label>
-                            </td>
-                            <td>
-                                <label class="checkbox-style"><input type="radio" aria-label="Not Approved" value="Not Approved" name="check" ></label>
-                            </td>
+                                <label class="checkbox-style1" onclick="handleRadioClick(event)">
+                                  <input type="radio" aria-label="Approved" value="Approved" name="check" />
+                                  <span class="check-icon">&#9745;</span>
+                                </label>
+                              </td>
+                              <td>
+                                <label class="checkbox-style2" onclick="handleRadioClick(event)">
+                                  <input type="radio" aria-label="Not Approved" value="Not Approved" name="check" />
+                                  <span class="check-icon">&#9746;</span> 
+                                </label>
+                              </td>                              
                             <td>
                                 <a href="#" class="file-icon" aria-label="Attached File">
                                     <img src="./picture/file-icon.png" alt="File Icon">
