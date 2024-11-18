@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ข้อมูลบุคลากร</title>
+    
+    <!-- ลิงก์ฟ้อนต์จาก Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&family=Prompt:wght@400;700&family=IBM+Plex+Sans+Thai:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS */
+        * {
+            box-sizing: border-box;
+            font-family: 'IBM Plex Sans Thai', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #2c2c3e;
+            padding: 10px;
+            color: #ffffff;
+        }
+
+        h1 {
+            font-size: 1.2em;
+            margin: 0;
+            font-family: 'Prompt', sans-serif;
+        }
+
+        .form-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            font-family: 'Prompt', sans-serif;
+        }
+
+        .cancel-btn {
+            background-color: #ff7043;
+            color: #ffffff;
+        }
+
+        .submit-btn {
+            background-color: #4caf50;
+            color: #ffffff;
+        }
+    </style>
+
+    <script>
+        // JavaScript
+        function cancelForm() {
+            if (confirm("คุณต้องการยกเลิกการกรอกข้อมูลหรือไม่?")) {
+                // Clear the form fields if cancelled
+                document.querySelectorAll('input[type="text"]').forEach(input => input.value = '');
+            }
+        }
+
+        function submitForm() {
+            alert("ข้อมูลได้รับการยืนยันแล้ว!");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="back-arrow">◀</div>
+            <h1>ข้อมูลบุคลากร</h1>
+            <div class="menu-icon">☰</div>
+        </header>
+
+        <section class="form-section">
+            <div class="form-group">
+                <h2>ข้อมูลส่วนตัว</h2>
+                <input type="text" value="ณัฐพล วิริยะวงศ์">
+
+                <label>First name</label>
+                <input type="text" value="Michelle">
+    
+                <label>Last name</label>
+                <input type="text" value="Jansiri">
+
+                <label>ตำแหน่ง</label>
+                <input type="text" value="ผู้ช่วยศาสตราจารย์">
+
+                <label>เบอร์โทร</label>
+                <input type="text" value="081-234-5678">
+
+                <label>Email</label>
+                <input type="text" value="michelle@email.com">
+                
+                <label>ที่อยู่</label>
+                <input type="text" value="123 หมู่ 4">
+                <input type="text" value="แขวง/ตำบล ทุ่งครุ">
+                <input type="text" value="เขต/อำเภอ ทุ่งครุ">
+                <input type="text" value="จังหวัด กรุงเทพฯ">
+            </div>
+
+            <div class="buttons">
+                <button class="cancel-btn" onclick="cancelForm()">ยกเลิก</button>
+                <button class="submit-btn" onclick="submitForm()">ยืนยัน</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
