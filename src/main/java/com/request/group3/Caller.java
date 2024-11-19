@@ -8,20 +8,38 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api/request/group3")
-public class Caller {
+public class Caller{
 
+	//Caller Interface
 	@Autowired
 	private CallerRepository caller;
 	
+	//GetMapping to Request All Data
 	@GetMapping
-	public List<Person> getAllUsers(){
+	public List<RequestTable> getAllUsers(){
 		return caller.findAll();
 	}
 	
+	//GetMapping to Request data that match input status
+	@GetMapping("/status={status}")
+	public List<RequestTable> getByStatus(@PathVariable Long status){
+		return caller.findByRequestStatus(status);
+	}
+	
+	//GetMapping to Request data that match input type
+	@GetMapping("/type={type}")
+	public List<RequestTable> getByType(@PathVariable Long type){
+		return caller.findByRequestType(type);
+	}
+	
+	
+	//PostMapping to Insert Data to Database
 	@PostMapping
-	public Person createUser(@RequestBody Person person) {
+	public RequestTable createUser(@RequestBody RequestTable person) {
 		return caller.save(person);
 
 	}
 	
 }
+
+
