@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Page</title>
+    <title>Request Form</title>
     <style>
         body {
             font-family: notosans_med;
@@ -68,6 +68,7 @@
             background-color: #c4c4c4a9;
         }
 
+
         /* <!-- Content Section --> */
         .form-section {
             background-color: #E0E0E0;
@@ -119,47 +120,8 @@
             background-color: #333;
         }
 
-        /* <!-- Table Section --> */
-        /* table {
-            width: 100%;
-            border-collapse: collapse;
-        }
 
-        table th,
-        table td {
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: center;
-        }
 
-        table th {
-            background-color: #333;
-            color: #fff;
-        }
-
-        .action-buttons {
-            display: flex;
-            justify-content: center;
-        }
-
-        .action-buttons .cancel,
-        .action-buttons .download {
-            margin: 0 5px;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-
-        .action-buttons .cancel {
-            background-color: #ff4d4d;
-            color: #fff;
-        }
-
-        .action-buttons .download {
-            background-color: #4caf50;
-            color: #fff;
-        } */
 
         .table-section {
             width: 90%;
@@ -197,7 +159,6 @@
 <body>
     <!-- Header Section -->
     <div class="header">
-
         <div class="profile">
             <button class="back-button" onclick="toggleSomething(10)">◀</button>
         </div>
@@ -210,7 +171,7 @@
             <div class="form-group">
                 <label for="request-type">กรุณาเลือกแบบคำร้อง</label><br>
                 <label for="student-name">ชื่อ-นามสกุล</label><br>
-                <label for="student-id">เลขทะเบียนนักศึกษา</label><br>
+                <label for="role">Select role</label><br>
             </div>
             <div class="form-input">
                 <select id="request-type" aria-label="Request Type">
@@ -222,13 +183,19 @@
                     <option value="อื่นๆ">อื่นๆ</option>
                 </select><br>
                 <input type="text" id="student-name" value=""><br>
-                <input type="text" id="student-id" value=""><br>
+                <select id="role" aria-label="Request Type">
+                    <option value="student">student</option>
+                    <option value="teacher">อาจารย์</option>
+                    <option value="teacher2">คณบดี</option>
+                    <option value="admin">admin</option>
+                    <option value="it">เจ้าหน้าที่ IT</option>
+                </select><br>
                 <button id="search-btn" onclick="searchData()">ค้นหา</button>
             </div>
 
         </div>
     </section>
-    
+
     <!-- Table Section -->
     <div class="container">
         <div class="table-section" aria-labelledby="table-title">
@@ -238,10 +205,10 @@
                         <th>ลำดับ</th>
                         <th>สถานะ</th>
                         <th>ประเภทคำร้อง</th>
-                        <th>เลขทะเบียน</th>
+                        <th>Role</th>
                         <th>ชื่อ-นามสกุล</th>
-                        <th>ยกเลิก</th>
                         <th>ไฟล์แนบ</th>
+                        <th>วันที่ทำรายการ</th>
                     </tr>
                 </thead>
                 <tbody id="table-body">
@@ -251,58 +218,58 @@
         </div>
     </div>
 
+
     <script>
-        // Sample Data
-        const data = [
+        const tableData = [
             {
                 id: 1,
                 status: "รออนุมัติ",
                 requestType: "ลาออก",
-                studentId: "123456",
-                name: "โกนับ ถวาสาร"
+                role: "Student",
+                name: "โกนับ ถวาสาร",
+                file: "📄",
+                date: "19/11/2024"
+            },
+            {
+                id: 2,
+                status: "อนุมัติแล้ว",
+                requestType: "ถอนรายวิชา",
+                role: "Admin",
+                name: "สมชาย ใจดี",
+                file: "📄",
+                date: "18/11/2024"
             }
         ];
 
-        // Render Table Rows
         function renderTable() {
             const tableBody = document.getElementById("table-body");
             tableBody.innerHTML = "";
 
-            data.forEach((item) => {
+            tableData.forEach((item) => {
                 const row = document.createElement("tr");
 
                 row.innerHTML = `
                     <td>${item.id}</td>
                     <td>${item.status}</td>
                     <td>${item.requestType}</td>
-                    <td>${item.studentId}</td>
+                    <td>${item.role}</td>
                     <td>${item.name}</td>
-                    <td class="action-buttons">
-                        <button class="cancel" onclick="cancelRequest(${item.id})">X</button>
-                    </td>
-                    <td class="action-buttons">
-                        <button class="download" onclick="downloadFile(${item.id})">📄</button>
-                    </td>
+                    <td><a href="#">${item.file}</a></td>
+                    <td>${item.date}</td>
                 `;
 
                 tableBody.appendChild(row);
             });
         }
 
-        // Cancel Request
-        function cancelRequest(id) {
-            alert(`Request with ID ${id} canceled!`);
+        function goBack() {
+            alert("Going back...");
         }
 
-        // Download File
-        function downloadFile(id) {
-            alert(`Downloading file for request ID ${id}`);
-        }
-
-        // Initialize Table
+        // Initialize table
         renderTable();
 
-        //strat search
+        //start search
         function searchData() {
             // รับค่าจากฟิลด์ในฟอร์ม
             const requestType = document.getElementById("request-type").value;
@@ -336,7 +303,6 @@
                 tableBody.appendChild(row);
             });
         }
-
     </script>
 </body>
 
