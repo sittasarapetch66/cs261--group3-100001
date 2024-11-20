@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Page</title>
+    <title>Request Form</title>
     <style>
         body {
             font-family: notosans_med;
@@ -186,7 +186,7 @@
 
         </div>
     </section>
-    
+
     <!-- Table Section -->
     <div class="container">
         <div class="table-section" aria-labelledby="table-title">
@@ -210,46 +210,73 @@
     </div>
 
     <script>
-        // Sample Data
-        const data = [
-            {
-                id: 1,
-                status: "รออนุมัติ",
-                requestType: "ลาออก",
-                studentId: "123456",
-                name: "โกนับ ถวาสาร"
-            }
+        // ตัวอย่างข้อมูลในระบบ
+        const requests = [
+            { id: 1, status: "รออนุมัติ", type: "ลาออก", studentId: "123456", name: "โกนับ ถวาสาร", file: "ไฟล์แนบ" },
+            { id: 2, status: "อนุมัติแล้ว", type: "ถอนรายวิชา", studentId: "654321", name: "สมหญิง ใจดี", file: "ไฟล์แนบ" },
+            { id: 3, status: "รออนุมัติ", type: "จดทะเบียนล่าช้า", studentId: "789012", name: "สมชาย รักดี", file: "ไฟล์แนบ" }
         ];
 
-        // Render Table Rows
-        function renderTable() {
+        // ฟังก์ชันสำหรับแสดงข้อมูลในตาราง
+        function renderTable(data) {
             const tableBody = document.getElementById("table-body");
-            tableBody.innerHTML = "";
+            tableBody.innerHTML = ""; // ล้างข้อมูลในตารางก่อน
 
-            data.forEach((item) => {
+            if (data.length === 0) {
                 const row = document.createElement("tr");
-
+                row.innerHTML = `<td colspan="7">ไม่พบข้อมูล</td>`;
+                tableBody.appendChild(row);
+                return;
+            }
+            
+            data.forEach((item, index) => {
+                const row = document.createElement("tr");
                 row.innerHTML = `
-                    <td>${item.id}</td>
+                    <td>${index + 1}</td>
                     <td>${item.status}</td>
-                    <td>${item.requestType}</td>
+                    <td>${item.type}</td>
                     <td>${item.studentId}</td>
                     <td>${item.name}</td>
-                    <td class="action-buttons">
-                        <button class="cancel" onclick="cancelRequest(${item.id})">X</button>
-                    </td>
-                    <td class="action-buttons">
-                        <button class="download" onclick="downloadFile(${item.id})">📄</button>
-                    </td>
+                    <td><button class="cancel-button" onclick="deleteRequest(${item.id})">X</button></td>
+                    <td><button class="download" onclick="downloadFile(${item.id})">📄</button></td>
                 `;
-
                 tableBody.appendChild(row);
             });
         }
 
-        // Cancel Request
-        function cancelRequest(id) {
-            alert(`Request with ID ${id} canceled!`);
+        // ฟังก์ชันสำหรับค้นหาข้อมูล
+        function searchData() {
+            const requestType = document.getElementById("request-type").value;
+            const studentName = document.getElementById("student-name").value.trim().toLowerCase();
+            const studentId = document.getElementById("student-id").value.trim();
+
+            // กรองข้อมูลตามเงื่อนไข
+            const filteredRequests = requests.filter((item) => {
+                const matchType = requestType === "ทั้งหมด" || item.type === requestType;
+                const matchName = !studentName || item.name.toLowerCase().includes(studentName);
+                const matchId = !studentId || item.studentId.includes(studentId);
+                return matchType && matchName && matchId;
+            });
+
+            // แสดงข้อมูลที่กรอง
+            renderTable(filteredRequests);
+        }
+
+        // ฟังก์ชันสำหรับลบคำร้อง
+        function deleteRequest(id) {
+            if (confirm("คุณต้องการลบคำร้องนี้หรือไม่?")) {
+                // ลบข้อมูลออกจาก Array
+                const index = requests.findIndex((item) => item.id === id);
+                if (index !== -1) {
+                    requests.splice(index, 1);
+                    alert("คำร้องถูกลบเรียบร้อยแล้ว!");
+                } else {
+                    alert("ไม่พบคำร้องในระบบ");
+                }
+
+                // อัปเดตตารางใหม่
+                searchData();
+            }
         }
 
         // Download File
@@ -257,45 +284,10 @@
             alert(`Downloading file for request ID ${id}`);
         }
 
-        // Initialize Table
-        renderTable();
-
-        //start search
-        function searchData() {
-            // รับค่าจากฟิลด์ในฟอร์ม
-            const requestType = document.getElementById("request-type").value;
-            const studentName = document.getElementById("student-name").value.trim();
-            const studentId = document.getElementById("student-id").value.trim();
-
-            // กรองข้อมูลตัวอย่าง
-            const filteredData = requests.filter((item) => {
-                return (
-                    (requestType === "ทั้งหมด" || item.type === requestType) &&
-                    (!studentName || item.name.includes(studentName)) &&
-                    (!studentId || item.studentId.includes(studentId))
-                );
-            });
-
-            // อัปเดตตารางด้วยข้อมูลที่กรอง
-            const tableBody = document.getElementById("table-body");
-            tableBody.innerHTML = ""; // ล้างข้อมูลเก่าในตาราง
-
-            filteredData.forEach((item, index) => {
-                const row = document.createElement("tr");
-                row.innerHTML = `
-            <td>${index + 1}</td>
-            <td>${item.status}</td>
-            <td>${item.type}</td>
-            <td>${item.studentId}</td>
-            <td>${item.name}</td>
-            <td class="actions"><button class="cancel-button">ยกเลิก</button></td>
-            <td class="actions"><button class="download-button">ไฟล์แนบ</button></td>
-        `;
-                tableBody.appendChild(row);
-            });
-        }
-
+        // เรียกฟังก์ชันแสดงข้อมูลเริ่มต้น
+        renderTable(requests);
     </script>
+
 </body>
 
 </html>
