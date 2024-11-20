@@ -16,10 +16,10 @@
 
     <!-- Block กลาง -->
     <div class="middle-block">
-        <form>
+        <form id="teacher-form">
             <div class="form-group">
                 <label for="name">ชื่อ-นามสกุล</label>
-                <input type="text" id="name" name="name" placeholder="กรุณากรอกชื่อ">
+                <input type="text" id="name" name="name" placeholder="กรุณากรอกชื่อ" oninput="searchTeacher()">
             </div>
             <div class="form-group">
                 <label for="faculty">คณะ</label>
@@ -28,6 +28,7 @@
             <div class="form-group">
                 <label for="department">สาขา</label>
                 <select id="department" name="department">
+                    <option value="" disabled selected>--เลือกสาขาของคุณ--</option>
                     <option value="คณิตศาสตร์และสถิติ">สาขาวิชาคณิตศาสตร์และสถิติ</option>
                     <option value="เคมี">สาขาวิชาเคมี</option>
                     <option value="เทคโนโลยีการเกษตร">สาขาวิชาเทคโนโลยีการเกษตร</option>
@@ -40,7 +41,6 @@
                     <option value="สิ่งแวดล้อม">สาขาวิชาวิทยาศาสตร์สิ่งแวดล้อม</option>
                 </select>
             </div>
-            <button type="button" class="search-button">ค้นหา</button>
         </form>
     </div>
 
@@ -58,25 +58,12 @@
                     <th>ลบ</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>คอมพิวเตอร์</td>
-                    <td>ดร. สมพงษ์ พัฒนา</td>
-                    <td>sompong@example.com</td>
-                    <td><button class="edit-button">แก้ไข</button></td>
-                    <td><button class="delete-button">ลบ</button></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>อิเล็กทรอนิกส์</td>
-                    <td>ดร. สุรีรัตน์ วิจิตร</td>
-                    <td>sureerat@example.com</td>
-                    <td><button class="edit-button">แก้ไข</button></td>
-                    <td><button class="delete-button">ลบ</button></td>
-                </tr>
+            <tbody id="teacher-list">
+                <!-- ข้อมูลจะถูกแสดงที่นี่ -->
             </tbody>
         </table>
     </div>
+
+    <script src="js/addTeacher.js"></script>
 </body>
 </html>
