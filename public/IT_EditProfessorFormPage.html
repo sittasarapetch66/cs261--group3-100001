@@ -6,6 +6,7 @@
     <title>IT Edit Professor Page</title>
     <link rel="stylesheet" href="./css/itForm.css">
     <link rel="stylesheet" href="./css/CSS_Importer.css">
+    <script src="./js/Ton_ITScript.js"></script> 
 </head>
 <body>
     <div class="IT_navbar">
@@ -71,12 +72,16 @@
                 </div>
                 
                 
-                <div class="itform-buttons">
-                    <button type="button" class="itform-cancel-button">ยกเลิก</button>
-                    <button type="submit" class="itform-submit-button">ยืนยัน</button>
-                </div>
             </form>
         </div>
+        <div class="itform-buttons">
+            <button type="button" class="itform-cancel-button" onclick="handleCancel()">ยกเลิก</button>
+            <button type="submit" class="itform-submit-button" onclick="handleSubmit()">ยืนยัน</button>
+        </div>
     </main>
+
+    <!-- Notification Box -->
+    <div id="notificationBox" class="notification-box"></div>
+   
 </body>
 </html>
