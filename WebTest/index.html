@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend Web Development</title>
+    <script src="script.js"></script>
+</head>
+<body onload="startFunc()">
+    <h1>Backend Webpage Testing</h1>
+
+    <!-- Login Section -->
+    <fieldset>
+        <legend>Login Section</legend>
+
+        <h3>Warning! You must have TU-API Credentials</h3>
+        <label>Username</label>
+        <input type="text" id="Username">
+        <label>Password</label>
+        <input type="text" id="Password">
+        <button onclick="LoginFunction()">Login</button>
+        <button>Log Out</button>
+        <p id="RequestStatus">Return Status :</p>
+        <p id="NameTH">Name :</p>
+        <p id="UserType">User Type :</p>
+    </fieldset>
+
+    <br><br>
+
+    <!-- Request Management -->
+    <fieldset>
+        <legend>Request Management</legend>
+
+        <br>
+
+        <fieldset>
+            <legend>Advisor Management</legend>
+
+            <br>
+            <label>Advisor Name</label>
+            <input type="text" id="AdvisorName">
+            <br>
+            <button>Get Email</button>
+            <p>Email : </p>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Adress</legend>
+
+            <br>
+            <label>Adress Input 1</label>
+            <input type="text" id="Addr1">
+            <br><br>
+            <label>Adress Input 2</label>
+            <input type="text" id="Addr2">
+            <br><br>
+            <label>Adress Input 3</label>
+            <input type="text" id="Addr3">
+            <br><br>
+            <label>Adress Input 4</label>
+            <input type="text" id="Addr4">
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Request</legend>
+
+            <br>
+            <label>Request Type</label>
+            <select id="RequestType">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="99">99</option>
+            </select>
+
+            <br><br>
+            <label>Data Chunk 1</label>
+            <input type="text" id="DataChunk1">
+            <br><br>
+            <label>Data Chunk 2</label>
+            <input type="text" id="DataChunk2">
+            <br><br>
+            <label>Data Chunk 3</label>
+            <input type="text" id="DataChunk3">
+            <br><br>
+            <label>Data Chunk 4</label>
+            <input type="text" id="DataChunk4">
+
+            <br><br>
+            <label>File 1</label>
+            <input type="file" id="File1">
+            <br><br>
+            <label>File 2</label>
+            <input type="file" id="File2">
+            <br><br>
+            <label>File 3</label>
+            <input type="file" id="File3">
+            <br><br>
+            <label>File 4</label>
+            <input type="file" id="File4">
+
+        </fieldset>
+
+        <br>
+
+        <button onclick="callBackend()">Send Request</button>
+        <button onclick="getBase64()">TEST1</button>
+
+        <p>Status :</p>
+        <p>Date Time Send :</p>
+
+        <p id="BASE64WRITE">s</p>
+
+    </fieldset>
+    
+
+
+
+</body>
+</html>
