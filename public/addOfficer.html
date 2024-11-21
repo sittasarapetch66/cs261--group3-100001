@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เพิ่มเจ้าหน้าที่</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/addall.css"> <!-- ใช้ไฟล์ addall.css -->
+</head>
+<body>
+    <!-- Block บน -->
+    <div class="header-block">
+        <button class="back-button"></button> <!-- ปุ่มย้อนกลับ -->
+        <button class="menu-button"></button> <!-- ปุ่มเมนู -->
+    </div>
+
+    <!-- Block กลาง -->
+    <div class="middle-block">
+        <form id="officer-form">
+            <div class="form-group">
+                <label for="name">ชื่อ-นามสกุล</label>
+                <input type="text" id="name" name="name" placeholder="กรุณากรอกชื่อ">
+            </div>
+            <div class="form-group">
+                <label for="program">ภาค</label>
+                <select id="program" name="program">
+                    <option value="">--เลือกภาคของคุณ--</option>
+                    <option value="ภาคปกติ">ภาคปกติ</option>
+                    <option value="ภาคพิเศษ">ภาคพิเศษ</option>
+                </select>
+            </div>
+        </form>
+    </div>
+
+    <!-- Block ล่าง -->
+    <div class="content-block">
+        <button class="add-button">+ เพิ่มเจ้าหน้าที่</button>
+        <table class="teacher-table">
+            <thead>
+                <tr>
+                    <th>ลำดับ</th>
+                    <th>ภาค</th>
+                    <th>ชื่อ-นามสกุล</th>
+                    <th>Email</th>
+                    <th>แก้ไข</th>
+                    <th>ลบ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- ตารางจะแสดงข้อมูลจาก JavaScript -->
+            </tbody>
+        </table>
+    </div>
+    <script src="js/addOfficer.js"></script>
+</body>
+</html>
