@@ -1,7 +1,7 @@
 // Sample data: Replace with real data from your backend
 const officers = [
     { name: 'นาย สมเกียรติ แก้วใส', program: 'ภาคปกติ', email: 'somkiat@example.com' },
-    { name: 'นางสาว นัทธพงศ์ คันทมูล', program: 'ภาคพิเศษ', email: 'nattapong@example.com' },
+    { name: 'นางสาว นัทธพงศ์ คันทมูล', program: 'ภาคพิเศษ', email: 'sureerat@example.com' },
     { name: 'ดร. จิราพร สร้างสุข', program: 'ภาคปกติ', email: 'jiraporn@example.com' },
 ];
 
