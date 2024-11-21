@@ -11,12 +11,15 @@ public class DatabaseApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(DatabaseApplication.class, args);
 	}
+	
+	/*
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+		return builder.sources(Application.class);
+		
+	}*/
+	
+	
 }
 
-/*
-
-@Override
-protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-	return builder.sources(Application.class);
-	
-}*/

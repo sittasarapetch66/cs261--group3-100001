@@ -33,10 +33,10 @@ public class RequestTable {
 	
 	//Request Data2
 	
-	@Column(name = "Request Data Chunk", nullable = false) //Data Chunk Seperate by ¶
+	@Column(name = "Request Data Chunk", nullable = false, length = 2147483647) //Data Chunk Seperate by ¶
 	private String requestData ;
 	
-	@Column(name = "Requester Adress", nullable = false) //Requester Adress Seperate by ¶
+	@Column(name = "Requester Adress", nullable = false, length = 2147483647) //Requester Adress Seperate by ¶
 	private String homeAdress ;
 	
 	

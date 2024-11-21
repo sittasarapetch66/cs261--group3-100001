@@ -96,7 +96,7 @@ function callBackend(){
     })
     console.log(JSONBODY);
 
-    fetch("http://localhost:8080/api/request/group3", {
+    fetch("http://localhost:8080/api/group3/request", {
         method: "POST",
         body: JSONBODY,
         headers: {
