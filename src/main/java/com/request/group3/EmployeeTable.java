@@ -16,14 +16,11 @@ public class EmployeeTable {
 	//Request Data
 	
 	//Personal Geographic Data
-	@Column(name = "Name_th", nullable = false) //Thai ชื่อจริง
+	@Column(name = "FullName TH", nullable = false) //Thai ชื่อจริง
 	private String nameTH ;
 	
-	@Column(name = "First Name", nullable = false) //Fisrt Name EN
-	private String firstName ;
-	
-	@Column(name = "Last Name", nullable = false) //last Name EN
-	private String lastName ;
+	@Column(name = "FullName EN", nullable = false) //Fisrt Name EN
+	private String nameEN ;
 	
 	@Column(name = "Phone Number", nullable = false)//Phone Number
 	private Long phoneNumber ;
