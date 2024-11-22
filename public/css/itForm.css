@@ -66,10 +66,6 @@ body {
     align-items: center;
 }
 
-.itform-address-group {
-    margin-left: 30px; /* ระยะเยื้อง (tab) */
-}
-
 /* ตั้งค่า row สำหรับ label และ input */
 .itform-row {
     display: flex;
@@ -78,7 +74,7 @@ body {
 }
 
 .itform-row label {
-    width: 150px; /* ความกว้างของ label */
+    width: 150px ; /* ความกว้างของ label */
     font-size: 14px;
     color: #333;
     text-align: left;
@@ -92,6 +88,35 @@ body {
     border-radius: 4px;
     box-sizing: border-box;
 }
+
+.itform-address-group {
+    margin-left: 30px; /* ระยะเยื้อง (tab) */
+}
+
+
+/* จัดตำแหน่งของ Address ให้ตรงกับช่องด้านบน */
+.itform-address-group .itform-row {
+    display: flex;
+    align-items: center; /* จัดให้อยู่ตรงกลางแนวตั้ง */
+    margin-bottom: 10px; /* ระยะห่างระหว่างแถว */
+}
+
+.itform-address-group .itform-row label {
+    width: 120px; /* ความกว้างของ label ให้เท่ากับส่วนบน */
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+}
+
+.itform-address-group .itform-row input {
+    flex: 1; /* ให้ input กินพื้นที่ที่เหลือ */
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
 
 /* ปรับระยะห่างสำหรับปุ่ม */
 .itform-buttons {
