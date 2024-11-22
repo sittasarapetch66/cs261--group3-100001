@@ -1,4 +1,4 @@
-// Sample data for Deans: Replace with real data from your backend
+// Sample data for Deans
 const deans = [
     { name: 'ดร. สมพงษ์ พัฒนา', email: 'somphong@example.com' },
     { name: 'ดร. สุรีรัตน์ วิจิตร', email: 'sureerat@example.com' },
@@ -34,30 +34,18 @@ function searchDean() {
     displayDeans(filteredDeans);
 }
 
-// Function to add a new dean
-function addDean() {
-    const nameInput = document.getElementById('name').value.trim();
-    if (nameInput === '') {
-        alert('กรุณากรอกชื่อคณบดี');
-        return;
-    }
-
-    const newDean = { name: nameInput, email: `${nameInput.replace(/\s/g, '').toLowerCase()}@example.com` };
-    deans.push(newDean); // Add new dean to the array
-
-    // Display updated list of deans
-    displayDeans(deans);
-
-    // Clear the input field
-    document.getElementById('name').value = '';
+// Function to redirect to another page when clicking "เพิ่มคณบดี"
+function redirectToAddPage() {
+    window.location.href = 'addNewDean.html'; // เอาลิงก์มาใส่
 }
+    document.querySelector('.add-button').addEventListener('click', redirectToAddPage);
 
-// Initialize the table when the page loads
+// Initialize the table and event listeners when the page loads
 window.onload = function() {
     // Display all deans initially
     displayDeans(deans);
 
-    // Add event listeners for search input and add dean button
-    document.getElementById('name').addEventListener('input', searchDean); // When typing in name input
-    document.querySelector('.add-button').addEventListener('click', addDean); // When clicking on the add dean button
+    // Add event listener for search input
+    document.getElementById('name').addEventListener('input', searchDean);
+
 };

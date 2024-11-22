@@ -41,6 +41,11 @@ function searchTeacher() {
     displayTeachers(filteredTeachers);
 }
 
+function redirectToAddPage() {
+    window.location.href = 'addNewProf.html'; //เอาลิงก์มาใส่
+}
+    document.querySelector('.add-button').addEventListener('click', redirectToAddPage);
+
 // ฟังก์ชันสำหรับการเริ่มต้นเมื่อโหลดหน้าเว็บ
 window.onload = function() {
     // แสดงข้อมูลทั้งหมดเมื่อหน้าโหลด

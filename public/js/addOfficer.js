@@ -45,6 +45,12 @@ window.onload = function() {
     // Display all officers initially
     displayOfficers(officers);
 
+    // Function to redirect to another page when clicking "เพิ่มคณบดี"
+function redirectToAddPage() {
+    window.location.href = 'addNewOfficer.html'; //เอาลิงก์มาใส่
+}
+    document.querySelector('.add-button').addEventListener('click', redirectToAddPage);
+
     // Add event listeners for search inputs
     document.getElementById('name').addEventListener('input', searchOfficer);
     document.getElementById('program').addEventListener('change', searchOfficer);
