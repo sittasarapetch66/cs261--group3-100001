@@ -1,4 +1,4 @@
-#TU Online Request Backend
+# TU Online Request Backend
 ## This is a backend development branch that is managing all the database and website data transfers
 ## Please Note that this is a raw Spring Boot App project so if you want to run on tomcat you need to build your own .war files
 
@@ -27,7 +27,7 @@
 | Columns Name | Explaination | Comments | Example
 |---|---|---|---|
 | FullName_TH |
-| FullName_EN | 
+| FullName_EN |
 | Phone Number |
 | Faculty |
 | Adress |
@@ -69,23 +69,23 @@ Example : ทดสอบ1¶ทดสอบ2¶ทดสอบ3 ; ¶ is a seperat
 |-|
 | 100 | Request Draft | The requested that is saved from user when user pressed the draft button
 |-|
-| 200 | Request Save to System Successfully | Request is Saved to system and ready to increment to next code | Next Code : 210 
+| 200 | Request Save to System Successfully | Request is Saved to system and ready to increment to next code | Next Code : 210
 | 201 | Request Save Error | Request Cannot be saved because of the problem |
 | 210 | Request Send to Advisor Successfully via Email | | Next Code : 220 If approved, 221 If not approved
 | 211 | Request cannot Send to Advisor Email | |
-| 220 | Request Approved to Advisor | | Next Code : 230 
+| 220 | Request Approved to Advisor | | Next Code : 230
 | 221 | Request Declined by Advisor because not clear request | |
 | 230 | Request Send to Faculty Successfully | | Next Code : 240 If approved, 241 if declined
 | 240 | Request Approved by Faculty | |
 | 241 | Request Decline by Faculty | |
 | 250 | Request Send to คณะบดี Successfully |
-| 260 | Request Approved by คณะบดี | |Next Code : 270 
+| 260 | Request Approved by คณะบดี | |Next Code : 270
 | 261 | Request Decline by คณะบดี | |
-| 270 | Request Send to ฝ่ายที่เกี่ยวข้อง | 
-| 280 | Request Approved by ฝ่าย | | Next Code : 290 
-| 290 | Request Done Successfully | |Next Code : 300 
+| 270 | Request Send to ฝ่ายที่เกี่ยวข้อง |
+| 280 | Request Approved by ฝ่าย | | Next Code : 290
+| 290 | Request Done Successfully | |Next Code : 300
 | 300 | Request Closed || Next Code : None (Not Increment anymore if require will increment to 400)
-| 400 | Request Archive |Archive the old request| 
+| 400 | Request Archive |Archive the old request|
 
 ---
 ## Section 4 : Employee Type
@@ -97,6 +97,199 @@ Example : ทดสอบ1¶ทดสอบ2¶ทดสอบ3 ; ¶ is a seperat
 | 50 | ฝ่ายอธิการบดี
 | 60 | อธิการบดี
 
+---
+## Section 5 : API Calling
+Note :
+1. Please set Contype-Type in the http header as application/json
+2. There are 2 main methods GET and POST method which is used depending on the type of the sender
+3. Every Http Request, there will be every JSON return coressponding to the data that we sending, if the request failed to send, the status return will be 4XX - 5XX
 
+
+### 5.1 Request Type
+
+1. Store Value to Database
+
+URL : <i>Domain Name</i>/api/group3/request
+
+Method : POST
+
+Body :
+```
+{
+  "requestStatus" : $long value Non-Null$,
+  "requestType" : $long value Non-Null$,
+  "username" : $String Non-Null$,
+  "datetimeRequest" : $String Non-Null$,
+  "advisorNameTH" : $String Non-Null$,
+  "requestData" : $2147483647 MAX long String Nullable$,
+  "homeAdress" : $2147483647 MAX long String Nullable$,
+  "storefile1" : $2147483647 MaX long String Nullable$,
+  "storefile2" : $2147483647 MAX long String Nullable$,
+  "storefile3" : $2147483647 MAX long String Nullable$,
+  "storefile4" : $2147483647 MAX long String Nullable$
+}
+```
+Return Value :
+```
+{
+  "id" : $Hibernate Generated ID$,
+  "requestStatus" : $long value Non-Null$,
+  "requestType" : $long value Non-Null$,
+  "username" : $String Non-Null$,
+  "datetimeRequest" : $String Non-Null$,
+  "advisorNameTH" : $String Non-Null$,
+  "requestData" : $2147483647 MAX long String Nullable$,
+  "homeAdress" : $2147483647 MAX long String Nullable$,
+  "storefile1" : $2147483647 MAX long String Nullable$,
+  "storefile2" : $2147483647 MAX long String Nullable$,
+  "storefile3" : $2147483647 MAX long String Nullable$,
+  "storefile4" : $2147483647 MAX long String Nullable$
+}
+```
+
+2. Read All Value that store in database
+
+URL : <i>Domain Name</i>/api/group3/request
+
+Method : GET
+
+Body : <i>None</i>
+
+Return Value : (Array of JSON)
+```
+[
+  { 
+    $JSON Return 1$
+  },
+  {
+    $JSON Return 2$
+  },
+  ....
+  {
+    $JSON Return n$
+  }
+
+]
+
+```
+Note : JSON Return n is the same as return from 5.1 request type 1 except each JSON return represnts the all data rows that in the database
+
+3. Read Only Value with matching RequestType ID
+
+URL : <i>Domain Name</i>/api/group3/request/type=<i>long value indicating ID from Section 2</i>
+
+Method : GET
+
+Body : <i>None</i>
+
+Return Value : (Array of JSON)
+```
+[
+  { 
+    $JSON Return 1$
+  },
+  {
+    $JSON Return 2$
+  },
+  ....
+  {
+    $JSON Return n$
+  }
+
+]
+
+```
+* Note : JSON Return n is the same as return from 5.1 request type 1 except each JSON return represnts the all data rows that match the type in the database
+
+4. Read Only Value with matching RequestStatus ID
+
+URL : <i>Domain Name</i>/api/group3/request/status=<i>long value indicating ID from Section 3</i>
+
+Method : GET
+
+Body : <i>None</i>
+
+Return Value : (Array of JSON)
+```
+[
+  { 
+    $JSON Return 1$
+  },
+  {
+    $JSON Return 2$
+  },
+  ....
+  {
+    $JSON Return n$
+  }
+
+]
+
+```
+* Note : JSON Return n is the same as return from 5.1 request type 1 except each JSON return represnts the all data rows that match the status in the database
+
+
+## 5.2 Employee
+1. Store Value to Database
+
+URL : <i>Domain Name</i>/api/group3/employee
+
+Method : POST
+
+Body :
+```
+{
+  "nameTH" : $String Non-Null$,
+  "nameEN" : $String Non-Null$,
+  "phoneNumber" : $Long value Non-Null$,
+  "adress" : $String Non-Null$,
+  "positionID" : $Long value Non-Null$,
+  "faculty" : $String Non-Null$,
+  "employeeType" : $Long value Non-Null$
+}
+```
+Return Value :
+```
+{
+  "id" : $Hibernate Generated ID$,
+  "nameTH" : $String Non-Null$,
+  "nameEN" : $String Non-Null$,
+  "phoneNumber" : $Long value Non-Null$,
+  "adress" : $String Non-Null$,
+  "positionID" : $Long value Non-Null$,
+  "faculty" : $String Non-Null$,
+  "employeeType" : $Long value Non-Null$
+}
+```
+
+2. Read All Employee Rows that store in database
+
+URL : <i>Domain Name</i>/api/group3/request
+
+Method : GET
+
+Body : <i>None</i>
+
+Return Value : (Array of JSON)
+```
+[
+  { 
+    $JSON Return 1$
+  },
+  {
+    $JSON Return 2$
+  },
+  ....
+  {
+    $JSON Return n$
+  }
+
+]
+
+```
+Note : JSON Return n is the same as return from 5.2 request type 1 except each JSON return represnts the all data rows that in the database
+
+---
 
 ###  Protocol Version 1.2
+### Document Version 1.4.1

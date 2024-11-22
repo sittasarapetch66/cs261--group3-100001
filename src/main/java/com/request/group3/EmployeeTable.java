@@ -34,10 +34,10 @@ public class EmployeeTable {
 	//Corperate Information
 	
 	@Column(name = "ID of Position", nullable = false) //Position Id of employee
-	private int positionID;
+	private Long positionID;
 	
 	@Column(name = "EmployeeID", nullable = false) //ID type of employee
-	private int employeeType;
+	private Long employeeType;
 	
 	
 }
