@@ -1,12 +1,28 @@
+// Example data
+const tableData = [
+  {
+    number: 1,
+    status: "รอการอนุมัติ",
+    regNo: "123456",  // Student ID
+    name: "สมชาย ใจดี",
+    remark: "จดทะเบียนล่าช้า",  // Request Type
+    fileLink: "#"
+  },
+  {
+    number: 2,
+    status: "อนุมัติ",
+    regNo: "789012",  // Student ID
+    name: "สมหญิง ใจงาม",
+    remark: "ถอนรายวิชา",  // Request Type
+    fileLink: "#"
+  }
+];
+
 // Function to handle radio button clicks
 function handleRadioClick(event) {
   const row = event.target.closest("tr");
-  if (!row) return;
-
   const checkbox1 = row.querySelector(".checkbox-style1");
   const checkbox2 = row.querySelector(".checkbox-style2");
-
-  if (!checkbox1 || !checkbox2) return;
 
   if (event.target.closest(".checkbox-style1")) {
     checkbox1.classList.add("selected");
@@ -17,27 +33,7 @@ function handleRadioClick(event) {
   }
 }
 
-// Example table data
-const tableData = [
-  {
-    number: 1,
-    status: "รออนุมัติ",
-    regNo: "123456",
-    name: "สมชาย ใจดี",
-    remark: "จดทะเบียนล่าช้า",
-    fileLink: "#"
-  },
-  {
-    number: 2,
-    status: "อนุมัติ",
-    regNo: "789012",
-    name: "สมหญิง ใจงาม",
-    remark: "ถอนรายวิชา",
-    fileLink: "#"
-  }
-];
-
-// Function to dynamically populate the table
+// Function to populate the table dynamically
 function populateTable(data) {
   const tbody = document.getElementById("dynamic-table-body");
   tbody.innerHTML = ""; // Clear existing rows
@@ -69,7 +65,6 @@ function populateTable(data) {
         </a>
       </td>
     `;
-
     tbody.appendChild(tr);
   });
 }
@@ -83,18 +78,26 @@ function filterTable() {
   const filteredData = tableData.filter((row) => {
     const matchesRequestType = requestType === "ทั้งหมด" || row.remark.includes(requestType);
     const matchesStatus = status === "ทั้งหมด" || row.status === status;
-    const matchesStudentId = !studentId || row.regNo.includes(studentId);
+
+    // Exact match for Student ID
+    const matchesStudentId = !studentId || row.regNo === studentId;
 
     return matchesRequestType && matchesStatus && matchesStudentId;
   });
 
+  // Log the filtered data to check if it's correct
+  console.log(filteredData);
+
+  // Populate table with filtered data
   populateTable(filteredData);
 }
 
-// Populate the table on page load
+// Populate the table on load
 document.addEventListener("DOMContentLoaded", function () {
   populateTable(tableData);
 
-  // Add event listener to the search button
-  document.getElementById("search-btn").addEventListener("click", filterTable);
+  // Attach event listeners to search elements
+  document.getElementById("request-type").addEventListener("change", filterTable);
+  document.getElementById("status").addEventListener("change", filterTable);
+  document.getElementById("student-id").addEventListener("input", filterTable);
 });
