@@ -21,3 +21,7 @@ function handleCancel() {
 function handleSubmit() {
     showNotification('ระบบบันทึกการทำรายการเรียบร้อย');
 }
+
+function navigateTo(page) {
+    window.location.href = page;
+}
