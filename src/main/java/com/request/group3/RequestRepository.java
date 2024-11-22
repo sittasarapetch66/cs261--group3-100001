@@ -15,6 +15,11 @@ public interface RequestRepository extends JpaRepository<RequestTable, Long>{
 	//Query to find all match requestType Code
 	List<RequestTable> findByRequestType(Long requestType);
 	
+	//Return Repository for only that ID
+	List<RequestTable> findByID(Long ID);
+
+
+	
 	//Query to find...
 	
 }

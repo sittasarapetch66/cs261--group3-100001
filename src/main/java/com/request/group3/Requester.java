@@ -20,6 +20,19 @@ public class Requester{
 		return caller.findAll();
 	}
 	
+	//GetMapping to Request data that match the selected ID
+	@GetMapping("/id={id}")
+	public List<RequestTable> getByID(@PathVariable Long id){
+		return caller.findByID(id);
+	}
+	
+	
+	@GetMapping("/count")
+	public Long countAll() {
+		return caller.count();
+	}
+	
+	
 	//GetMapping to Request data that match input status
 	@GetMapping("/status={status}")
 	public List<RequestTable> getByStatus(@PathVariable Long status){
@@ -32,6 +45,14 @@ public class Requester{
 		return caller.findByRequestType(type);
 	}
 	
+	/*
+	//GetMapping of Return Data based on ID
+	@GetMapping("/type={type}/fileid={base64}")
+	public String getByType(@PathVariable Long type, Long fileid){
+		return caller.;
+	}
+	*/
+	
 	
 	//PostMapping to Insert Data to Database
 	@PostMapping
@@ -41,5 +62,7 @@ public class Requester{
 	}
 	
 }
+
+
 
 

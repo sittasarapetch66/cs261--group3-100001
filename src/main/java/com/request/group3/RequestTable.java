@@ -10,7 +10,7 @@ public class RequestTable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id ;
+	private Long ID ;
 	
 	//Request Data
 	
@@ -54,5 +54,27 @@ public class RequestTable {
 	
 	@Column(name = "Base64_File4", nullable = true, length = 2147483647)
 	private String storefile4 ;
+	
+	//Method to return file data
+	/*
+	public String returnFileData(int file) {
+		switch (file) {
+		case 1:
+			return storefile1;
+			
+		case 2:
+			return storefile2;
+			
+		case 3:
+			return storefile3;
+			
+		case 4:
+			return storefile4;
+			
+		default:
+			return null;
+		}
+	}
+	*/
 
 }

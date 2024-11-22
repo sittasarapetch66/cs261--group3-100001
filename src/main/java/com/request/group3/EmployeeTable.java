@@ -28,6 +28,9 @@ public class EmployeeTable {
 	@Column(name = "Faculty", nullable = false) //Faculty
 	private String faculty ;
 	
+	@Column(name = "Department", nullable = false) //Department
+	private String department ;
+	
 	@Column(name = "Adress", nullable = false) //Adress of the Employee
 	private String adress;
 	

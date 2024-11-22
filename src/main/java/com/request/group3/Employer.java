@@ -25,4 +25,18 @@ public class Employer {
 		return caller.findAll();
 	}
 	
+	@GetMapping("/nameTH={nameTH}")
+	public List<EmployeeTable> getByNameTH(@PathVariable String nameTH){
+		return caller.findByNameTHContaining(nameTH);
+	}
+	
+	@GetMapping("/nameEN={nameEN}")
+	public List<EmployeeTable> getByNameEN(@PathVariable String nameEN){
+		return caller.findByNameENContaining(nameEN);
+	}
+	
+	@GetMapping("/nameTH={nameTH}/faculty={faculty}")
+	public List<EmployeeTable> getByNameTHAndFaculty(@PathVariable String nameTH, String faculty){
+		return caller.findByNameTHAndFaculty(String nameTH, String faculty);
+	}
 }
