@@ -167,7 +167,7 @@ input[type="radio"] {
     color: white; /* White icon */
   }
   
-  select, option, input {
+  select, option, input, button {
     font-family: notosans_med;
   }
   

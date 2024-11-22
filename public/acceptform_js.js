@@ -1,13 +1,13 @@
 // Function to handle radio button clicks
 function handleRadioClick(event) {
-  // Find the parent row of the clicked radio button
   const row = event.target.closest("tr");
-  
-  // Get the two radio button containers in the same row
+  if (!row) return;
+
   const checkbox1 = row.querySelector(".checkbox-style1");
   const checkbox2 = row.querySelector(".checkbox-style2");
 
-  // Toggle 'selected' class based on which was clicked
+  if (!checkbox1 || !checkbox2) return;
+
   if (event.target.closest(".checkbox-style1")) {
     checkbox1.classList.add("selected");
     checkbox2.classList.remove("selected");
@@ -17,27 +17,27 @@ function handleRadioClick(event) {
   }
 }
 
-// Example data
+// Example table data
 const tableData = [
   {
     number: 1,
-    status: "รอการอนุมัติ",
+    status: "รออนุมัติ",
     regNo: "123456",
     name: "สมชาย ใจดี",
-    remark: "",
+    remark: "จดทะเบียนล่าช้า",
     fileLink: "#"
   },
   {
     number: 2,
-    status: "รอนุมัติ",
+    status: "อนุมัติ",
     regNo: "789012",
     name: "สมหญิง ใจงาม",
-    remark: "",
+    remark: "ถอนรายวิชา",
     fileLink: "#"
   }
 ];
 
-// Function to populate the table dynamically
+// Function to dynamically populate the table
 function populateTable(data) {
   const tbody = document.getElementById("dynamic-table-body");
   tbody.innerHTML = ""; // Clear existing rows
@@ -69,11 +69,32 @@ function populateTable(data) {
         </a>
       </td>
     `;
+
     tbody.appendChild(tr);
   });
 }
 
-// Populate the table on load
+// Function to filter the table based on search input
+function filterTable() {
+  const requestType = document.getElementById("request-type").value;
+  const status = document.getElementById("status").value;
+  const studentId = document.getElementById("student-id").value.trim();
+
+  const filteredData = tableData.filter((row) => {
+    const matchesRequestType = requestType === "ทั้งหมด" || row.remark.includes(requestType);
+    const matchesStatus = status === "ทั้งหมด" || row.status === status;
+    const matchesStudentId = !studentId || row.regNo.includes(studentId);
+
+    return matchesRequestType && matchesStatus && matchesStudentId;
+  });
+
+  populateTable(filteredData);
+}
+
+// Populate the table on page load
 document.addEventListener("DOMContentLoaded", function () {
   populateTable(tableData);
+
+  // Add event listener to the search button
+  document.getElementById("search-btn").addEventListener("click", filterTable);
 });
