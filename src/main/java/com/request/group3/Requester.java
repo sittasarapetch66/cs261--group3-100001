@@ -69,6 +69,8 @@ public class Requester{
 		//RequestTable Object
 		RequestTable rt1 = caller.findByID(id);
 		
+		caller.s
+		
 		//if data is null return NULL
 		if (rt1.returnFileData(file) == null)
 			return "NULL";
