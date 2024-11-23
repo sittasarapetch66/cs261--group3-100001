@@ -56,7 +56,6 @@ public class RequestTable {
 	private String storefile4 ;
 	
 	//Method to return file data
-	
 	public String returnFileData(Long file) {
 		
 		int cond = file.intValue();		
@@ -79,7 +78,7 @@ public class RequestTable {
 		}
 	}
 	
-	
+	//Method to set file data
 	public void setFileData(String word, Long file) {
 		
 		int cond = file.intValue();		
@@ -105,6 +104,10 @@ public class RequestTable {
 			break;
 		}
 		
+	}
+	
+	public void setStatus(Long status) {
+		requestStatus = status;
 	}
 	
 	

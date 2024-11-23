@@ -13,7 +13,7 @@ public class Requester{
 	//Caller Interface
 	@Autowired
 	private RequestRepository caller;
-	private RequestRepository caller2;
+	//private RequestRepository caller2;
 	
 	//GetMapping to Request All Data
 	@GetMapping
@@ -46,6 +46,16 @@ public class Requester{
 		return caller.findByRequestType(type);
 	}
 	
+	//GetMapping to Set Status
+	@GetMapping("/id={id}/setstatus={status}")
+	public RequestTable setStatus(@PathVariable("id") Long id, @PathVariable("status") Long status) {
+		RequestTable rt1 = caller.findByID(id);
+		rt1.setStatus(status);
+		caller.save(rt1);
+		System.out.printf("Id is %d, Status is %d \n",id, status);
+		return returnDataPresent(rt1);
+	}
+	
 	/*
 	//GetMapping of Return Data based on ID
 	@GetMapping("/type={type}/fileid={base64}")
@@ -69,8 +79,6 @@ public class Requester{
 		//RequestTable Object
 		RequestTable rt1 = caller.findByID(id);
 		
-		caller.s
-		
 		//if data is null return NULL
 		if (rt1.returnFileData(file) == null)
 			return "NULL";
@@ -91,18 +99,9 @@ public class Requester{
 		//System.out.printf("Id Value is : %d", id);
 		//System.out.printf("RT2 Value is : %s", rt2.returnFileData((long) 1));
 
-		for (Long i=(long) 1; i<=4; i++) {
-			if (rt2.returnFileData(i) != null) {
-				rt2.setFileData("TRUE", i);
-			}
-			else {
-				rt2.setFileData("FALSE", i);
-			}
-		}
-		
 		//System.out.printf("RT2 Value is : %s", rt2.returnFileData((long) 3));
 		
-		return rt2;
+		return returnDataPresent(rt2);
 		
 	}
 	
@@ -110,11 +109,13 @@ public class Requester{
 	public RequestTable returnDataPresent(RequestTable RT) {
 		
 		for(Long i = (long) 1; i<= 4; i++) {
-			if (RT.returnFileData(i) == null || RT.returnFileData(i) == "null")
-				RT.setFileData("TRUE", i);
+			String comp = RT.returnFileData(i);
+			System.out.printf("Value %d is %s \n", i, comp);
+			if (comp == null || comp == "null" || comp == "NULL")
+				RT.setFileData("FALSE", i);
 			
 			else
-				RT.setFileData("FALSE", i);
+				RT.setFileData("TRUE", i);
 		}
 		
 		return RT;
