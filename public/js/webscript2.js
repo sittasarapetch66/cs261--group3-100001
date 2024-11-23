@@ -145,7 +145,7 @@ function requestTemplate(typeinput){
   switch(typeinput){
     case 1:
       var50.value = "จดทะเบียนรายวิชาล่าช้า";
-      var51.innerHTML = "วิชาที่ต้องการจดทะเบียน :";
+      var51.innerHTML = "รายละเอียดวิชา :";
 
     break;
 
