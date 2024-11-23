@@ -36,7 +36,7 @@ public class Employer {
 	}
 	
 	@GetMapping("/nameth={nameTH}/faculty={faculty}")
-	public List<EmployeeTable> getByNameTHAndFaculty(@PathVariable String nameTH, String faculty){
+	public List<EmployeeTable> getByNameTHAndFaculty(@PathVariable("nameTH") String nameTH,@PathVariable("faculty") String faculty){
 		return caller.findByNameTHAndFaculty(nameTH, faculty);
 	}
 	

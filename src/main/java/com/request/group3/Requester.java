@@ -62,18 +62,35 @@ public class Requester{
 
 	}
 	
+	//return JSON File if requested
+	@GetMapping("/id={id}/file={file}")
+	public String returnFileInfo(@PathVariable("id") Long id,@PathVariable("file") Long file) {
+		
+		//RequestTable Object
+		RequestTable rt1 = caller.findByID(id);
+		
+		//if data is null return NULL
+		if (rt1.returnFileData(file) == null)
+			return "NULL";
+		
+		else if (rt1.returnFileData(file) == "null")
+			return "NULL";
+		
+		//else return data
+		return rt1.returnFileData(file);
+	}
+	
 	//Just testing get mapping
 	@GetMapping("/test/id={id}")
 	public RequestTable testReturnValue(@PathVariable Long id){
 		
 		//RequestTable rt2 = new RequestTable();
 		RequestTable rt2 = caller.findByID(id);
-		System.out.printf("Id Value is : %d", id);
-		System.out.printf("RT2 Value is : %s", rt2.returnFileData((long) 1));
-
+		//System.out.printf("Id Value is : %d", id);
+		//System.out.printf("RT2 Value is : %s", rt2.returnFileData((long) 1));
 
 		for (Long i=(long) 1; i<=4; i++) {
-			if (rt2.returnFileData(i) != "NULL") {
+			if (rt2.returnFileData(i) != null) {
 				rt2.setFileData("TRUE", i);
 			}
 			else {
@@ -81,13 +98,24 @@ public class Requester{
 			}
 		}
 		
-		System.out.printf("RT2 Value is : %s", rt2.returnFileData((long) 3));
+		//System.out.printf("RT2 Value is : %s", rt2.returnFileData((long) 3));
 		
 		return rt2;
 		
+	}
+	
+	//method to return if data is present
+	public RequestTable returnDataPresent(RequestTable RT) {
 		
+		for(Long i = (long) 1; i<= 4; i++) {
+			if (RT.returnFileData(i) == null || RT.returnFileData(i) == "null")
+				RT.setFileData("TRUE", i);
+			
+			else
+				RT.setFileData("FALSE", i);
+		}
 		
-		
+		return RT;
 	}
 	
 }
