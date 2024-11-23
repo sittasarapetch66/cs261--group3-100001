@@ -35,8 +35,16 @@ public class Employer {
 		return caller.findByNameENContaining(nameEN);
 	}
 	
-	@GetMapping("/nameTH={nameTH}/faculty={faculty}")
+	@GetMapping("/nameth={nameTH}/faculty={faculty}")
 	public List<EmployeeTable> getByNameTHAndFaculty(@PathVariable String nameTH, String faculty){
-		return caller.findByNameTHAndFaculty(String nameTH, String faculty);
+		return caller.findByNameTHAndFaculty(nameTH, faculty);
 	}
+	
+	
+	
+	/*
+	@GetMapping("/nameTH={nameTH}")
+	public List<EmployeeTable> getByNameTHAndFaculty(@PathVariable String nameTH){
+		return caller.findByNameTHAndFaculty(String nameTH, "none");
+	}*/
 }

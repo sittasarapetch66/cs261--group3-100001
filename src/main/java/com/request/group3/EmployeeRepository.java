@@ -14,8 +14,10 @@ public interface EmployeeRepository extends JpaRepository<EmployeeTable, Long> {
 	//find by name containing some part of word in EN
 	List<EmployeeTable> findByNameENContaining(String nameEN);
 	
-	//find by matching name and matching faculty name
 	List<EmployeeTable> findByNameTHAndFaculty(String nameTH, String faculty);
+	
+	//find by matching name and matching faculty name
+	//List<EmployeeTable> findByNameTHAndFaculty(String nameTH, String faculty);
 	
 	//List<EmployeeTable> findByAdvisorName(String nameTH);
 	

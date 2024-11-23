@@ -56,9 +56,12 @@ public class RequestTable {
 	private String storefile4 ;
 	
 	//Method to return file data
-	/*
-	public String returnFileData(int file) {
-		switch (file) {
+	
+	public String returnFileData(Long file) {
+		
+		int cond = file.intValue();		
+		
+		switch (cond) {
 		case 1:
 			return storefile1;
 			
@@ -72,9 +75,38 @@ public class RequestTable {
 			return storefile4;
 			
 		default:
-			return null;
+			return "NULL";
 		}
 	}
-	*/
+	
+	
+	public void setFileData(String word, Long file) {
+		
+		int cond = file.intValue();		
+		
+		switch (cond) {
+		case 1:
+			storefile1 = word;
+			break;
+			
+		case 2:
+			storefile2 = word;
+			break;
+			
+		case 3:
+			storefile3 = word;
+			break;
+			
+		case 4:
+			storefile4 = word;
+			break;
+			
+		default:
+			break;
+		}
+		
+	}
+	
+	
 
 }

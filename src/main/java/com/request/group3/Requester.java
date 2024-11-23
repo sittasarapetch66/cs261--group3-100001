@@ -13,6 +13,7 @@ public class Requester{
 	//Caller Interface
 	@Autowired
 	private RequestRepository caller;
+	private RequestRepository caller2;
 	
 	//GetMapping to Request All Data
 	@GetMapping
@@ -22,7 +23,7 @@ public class Requester{
 	
 	//GetMapping to Request data that match the selected ID
 	@GetMapping("/id={id}")
-	public List<RequestTable> getByID(@PathVariable Long id){
+	public RequestTable getByID(@PathVariable Long id){
 		return caller.findByID(id);
 	}
 	
@@ -59,6 +60,34 @@ public class Requester{
 	public RequestTable createUser(@RequestBody RequestTable person) {
 		return caller.save(person);
 
+	}
+	
+	//Just testing get mapping
+	@GetMapping("/test/id={id}")
+	public RequestTable testReturnValue(@PathVariable Long id){
+		
+		//RequestTable rt2 = new RequestTable();
+		RequestTable rt2 = caller.findByID(id);
+		System.out.printf("Id Value is : %d", id);
+		System.out.printf("RT2 Value is : %s", rt2.returnFileData((long) 1));
+
+
+		for (Long i=(long) 1; i<=4; i++) {
+			if (rt2.returnFileData(i) != "NULL") {
+				rt2.setFileData("TRUE", i);
+			}
+			else {
+				rt2.setFileData("FALSE", i);
+			}
+		}
+		
+		System.out.printf("RT2 Value is : %s", rt2.returnFileData((long) 3));
+		
+		return rt2;
+		
+		
+		
+		
 	}
 	
 }
