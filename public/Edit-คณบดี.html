@@ -23,8 +23,9 @@
         }
 
         .container {
-            max-width: 600px;
-            margin: 0 auto;
+            max-width: 900px;
+            min-width: 600px;
+            margin: 20px auto;
             padding: 20px;
         }
 
@@ -38,38 +39,39 @@
         }
 
         h1 {
-            font-size: 1.2em;
+            font-size: 1.5em;
             margin: 0;
             font-family: 'Prompt', sans-serif;
         }
 
         .form-section {
             background-color: #ffffff;
-            padding: 20px;
+            padding: 30px;
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             margin-top: 20px;
         }
 
         h2 {
-            font-size: 1.1em;
-            margin-bottom: 10px;
+            font-size: 1.3em;
+            margin-bottom: 15px;
             color: #333;
         }
 
         label {
             display: block;
-            margin: 10px 0 5px;
+            margin: 15px 0 5px;
             color: #666;
-            font-size: 0.9em;
+            font-size: 0.95em;
         }
 
         input[type="text"] {
             width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
+            padding: 10px;
+            margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            font-size: 1em;
         }
 
         .buttons {
@@ -99,16 +101,23 @@
     </style>
 
     <script>
-        // JavaScript
+        // ฟังก์ชันยกเลิก
         function cancelForm() {
             if (confirm("คุณต้องการยกเลิกการกรอกข้อมูลหรือไม่?")) {
-                // Clear the form fields if cancelled
-                document.querySelectorAll('input[type="text"]').forEach(input => input.value = '');
+                window.location.href = 'thankyou.html';
             }
         }
 
+        // ฟังก์ชันล้างข้อมูลในฟอร์ม
+        function clearForm() {
+            document.querySelectorAll('input[type="text"]').forEach(input => input.value = '');
+            alert("ข้อมูลในฟอร์มถูกล้างแล้ว!");
+        }
+
+        // ฟังก์ชันยืนยันและเปลี่ยนหน้า
         function submitForm() {
             alert("ข้อมูลได้รับการยืนยันแล้ว!");
+            window.location.href = 'thankyou.html';
         }
     </script>
 </head>
@@ -123,13 +132,11 @@
         <section class="form-section">
             <div class="form-group">
                 <h2>ข้อมูลส่วนตัว</h2>
-                <input type="text" value="ณัฐพล วิริยะวงศ์">
+                <label>ชื่อ-นามสกุล</label>
+                <input type="text" value="มิเชล จันทร์ศิริ">
 
-                <label>First name</label>
-                <input type="text" value="Michelle">
-    
-                <label>Last name</label>
-                <input type="text" value="Jansiri">
+                <label>Full Eng Name</label>
+                <input type="text" value="Michelle Jansiri">
 
                 <label>ตำแหน่ง</label>
                 <input type="text" value="ผู้ช่วยศาสตราจารย์">
@@ -149,6 +156,7 @@
 
             <div class="buttons">
                 <button class="cancel-btn" onclick="cancelForm()">ยกเลิก</button>
+                <button class="clear-btn" onclick="clearForm()">ล้างข้อมูล</button>
                 <button class="submit-btn" onclick="submitForm()">ยืนยัน</button>
             </div>
         </section>
