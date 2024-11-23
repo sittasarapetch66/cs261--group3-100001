@@ -123,51 +123,45 @@ html {
     scroll-behavior: smooth;
 }
 
-input[type="radio"] {
-    display: none; /* Hide the original radio button */
-  }
-  
-  /* Style for labels and icons */
-  .checkbox-style1,
-  .checkbox-style2 {
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
-    gap: 10px;
-    position: relative;
-  }
-  
-  .checkbox-style1 .check-icon,
-  .checkbox-style2 .check-icon {
-    font-size: 30px; /* Icon size */
-    width: 30px; /* Set the width of the background to match the icon size */
-    height: 30px; /* Set the height of the background to match the icon size */
-    display: flex;
-    align-items: center; /* Vertically center the icon */
-    justify-content: center; /* Horizontally center the icon */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transitions for color changes */
-  }
-  
-  /* Default state - No special styling */
-  .checkbox-style1 .check-icon,
-  .checkbox-style2 .check-icon {
-    background-color: transparent; /* No background by default */
-    color: black; /* Icon color */
-  }
-  
-  /* When the first checkbox is checked (Approved) */
-  .checkbox-style1.selected .check-icon {
-    background-color: green; /* Green when checked */
-    color: white; /* White icon */
-  }
-  
-  /* When the second checkbox is checked (Not Approved) */
-  .checkbox-style2.selected .check-icon {
-    background-color: red; /* Red when checked */
-    color: white; /* White icon */
-  }
-  
+button.checkbox-style1,
+button.checkbox-style2,
+a {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  border: 1px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button.checkbox-style1:hover,button.checkbox-style2:hover,a:hover {
+    background-color: #c4c4c4a9;
+}
+
+/* Approved state */
+button.checkbox-style1.approved {
+  background-color: green;
+  color: white;
+}
+
+/* Not Approved state */
+button.checkbox-style2.not-approved {
+  background-color: red;
+  color: white;
+}
+
+/* Disabled buttons */
+button:disabled {
+  background-color: #dcdcdc; /* Grey background for disabled buttons */
+  color: #8c8c8c; /* Lighter text color */
+  border: none;
+}
+
+
   select, option, input, button {
     font-family: notosans_med;
   }
+
+
   
