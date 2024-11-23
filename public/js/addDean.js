@@ -10,13 +10,14 @@ function displayDeans(filteredDeans) {
     const tableBody = document.querySelector('.teacher-table tbody');
     tableBody.innerHTML = ''; // Clear existing table rows
 
+    //เอาลิงก์ไฟล์แก้ไขมาใส่ที่นี่ ตรงบรรทัดที่ 20
     filteredDeans.forEach((dean, index) => {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${index + 1}</td>
             <td>${dean.name}</td>
             <td>${dean.email}</td>
-            <td><button class="edit-button">แก้ไข</button></td>
+            <td><a href="editDean.html" class="edit-button">แก้ไข</a></td>
             <td><button class="delete-button">ลบ</button></td>
         `;
         tableBody.appendChild(row);

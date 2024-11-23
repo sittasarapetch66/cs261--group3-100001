@@ -11,6 +11,7 @@ function displayTeachers(filteredTeachers) {
     const tableBody = document.querySelector('.teacher-table tbody');
     tableBody.innerHTML = ''; // ลบข้อมูลเก่าในตาราง
 
+     //เอาลิงก์ไฟล์แก้ไขมาใส่ที่นี่ ตรงบรรทัดที่ 22
     filteredTeachers.forEach((teacher, index) => {
         const row = document.createElement('tr');
         row.innerHTML = `
@@ -18,7 +19,7 @@ function displayTeachers(filteredTeachers) {
             <td>${teacher.department}</td>
             <td>${teacher.name}</td>
             <td>${teacher.email}</td>
-            <td><button class="edit-button">แก้ไข</button></td>
+            <td><a href="editProf.html" class="edit-button">แก้ไข</a></td>
             <td><button class="delete-button">ลบ</button></td>
         `;
         tableBody.appendChild(row);

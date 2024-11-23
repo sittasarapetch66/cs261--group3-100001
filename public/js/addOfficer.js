@@ -10,6 +10,7 @@ function displayOfficers(filteredOfficers) {
     const tableBody = document.querySelector('.teacher-table tbody');
     tableBody.innerHTML = ''; // Clear existing table rows
 
+    //เอาลิงก์ไฟล์แก้ไขมาใส่ที่นี่ ตรงบรรทัดที่ 21
     filteredOfficers.forEach((officer, index) => {
         const row = document.createElement('tr');
         row.innerHTML = `
@@ -17,7 +18,7 @@ function displayOfficers(filteredOfficers) {
             <td>${officer.program}</td>
             <td>${officer.name}</td>
             <td>${officer.email}</td>
-            <td><button class="edit-button">แก้ไข</button></td>
+            <td><a href="editOfficer.html" class="edit-button">แก้ไข</a></td>
             <td><button class="delete-button">ลบ</button></td>
         `;
         tableBody.appendChild(row);
