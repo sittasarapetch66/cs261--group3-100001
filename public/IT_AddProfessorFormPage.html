@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Edit Professor Page</title>
+    <link rel="stylesheet" href="./css/itForm.css">
+    <link rel="stylesheet" href="./css/CSS_Importer.css">
+    <link rel="stylesheet" href="./css/ITofficerAddpage.css">
+    <script src="./js/Ton_ITScript.js"></script> 
+</head>
+<body>
+    <div class="IT_navbar">
+        <span class="back-icon" onclick="navigateTo('ITOfficerAdd.html')">&lt;</span>
+        <span class="menu-icon" >&#9776;</span>
+    </div>
+    <main class="itform-main-content">
+        <h2 class="itform-title">ข้อมูลบุคลากร</h2>
+        <div class="itform-container">
+            <form>
+                <div class="itform-grid">
+                    <!-- ฟิลด์ปกติ -->
+                    <div class="itform-row">
+                        <label for="full-name">ชื่อ-นามสกุล</label>
+                        <input type="text" id="full-name" placeholder="กรอกชื่อ-นามสกุล">
+                    </div>
+                    <div class="itform-row">
+                        <label for="Eng-name">Eng name</label>
+                        <input type="text" id="Eng-name" placeholder="Eng name">
+                    </div>
+                    <div class="itform-row">
+                        <label for="position">ตำแหน่ง</label>
+                        <input type="text" id="position" placeholder="ตำแหน่ง">
+                    </div>
+                    <div class="itform-row">
+                        <label for="phone">เบอร์โทร</label>
+                        <input type="tel" id="phone" placeholder="เบอร์โทร">
+                    </div>
+                    <div class="itform-row">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Email">
+                    </div>
+                    <div class="itform-row">
+                        <label for="department">สาขา</label>
+                        <input type="text" id="department" placeholder="สาขา">
+                    </div>
+                    <div class="itform-row">
+                        <label> ที่อยู่ </label>
+                    </div>
+                    <!-- เริ่มกลุ่มที่อยู่ -->
+                    <div class="itform-address-group">
+                        <div class="itform-row">
+                            <label for="house-number">บ้านเลขที่</label>
+                            <input type="text" id="house-number" placeholder="บ้านเลขที่">
+                        </div>
+                        <div class="itform-row">
+                            <label for="subdistrict">แขวง/ตำบล</label>
+                            <input type="text" id="subdistrict" placeholder="แขวง/ตำบล">
+                        </div>
+                        <div class="itform-row">
+                            <label for="district">เขต/อำเภอ</label>
+                            <input type="text" id="district" placeholder="เขต/อำเภอ">
+                        </div>
+                        <div class="itform-row">
+                            <label for="province">จังหวัด</label>
+                            <input type="text" id="province" placeholder="จังหวัด">
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </form>
+        </div>
+        <div class="itform-buttons">
+            <button type="button" class="itform-cancel-button" onclick="handleCancel()">ยกเลิก</button>
+            <button type="submit" class="itform-submit-button" onclick="handleSubmit()">ยืนยัน</button>
+        </div>
+    </main>
+
+    <!-- Notification Box -->
+    <div id="notificationBox" class="notification-box"></div>
+   
+</body>
+</html>
