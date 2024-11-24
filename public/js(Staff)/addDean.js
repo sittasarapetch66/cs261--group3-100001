@@ -37,7 +37,7 @@ function searchDean() {
 
 // Function to redirect to another page when clicking "เพิ่มคณบดี"
 function redirectToAddPage() {
-    window.location.href = 'addNewDean.html'; // เอาลิงก์มาใส่
+    window.location.href = 'addDean.html'; // เอาลิงก์มาใส่
 }
     document.querySelector('.add-button').addEventListener('click', redirectToAddPage);
 

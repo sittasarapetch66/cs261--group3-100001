@@ -19,7 +19,7 @@ function displayTeachers(filteredTeachers) {
             <td>${teacher.department}</td>
             <td>${teacher.name}</td>
             <td>${teacher.email}</td>
-            <td><a href="editProf.html" class="edit-button">แก้ไข</a></td>
+            <td><a href="IT_EditProfessorFormPage.html" class="edit-button">แก้ไข</a></td>
             <td><button class="delete-button">ลบ</button></td>
         `;
         tableBody.appendChild(row);
@@ -43,7 +43,7 @@ function searchTeacher() {
 }
 
 function redirectToAddPage() {
-    window.location.href = 'addNewProf.html'; //เอาลิงก์มาใส่
+    window.location.href = 'IT_AddProfessorFormPage.html'; //เอาลิงก์มาใส่
 }
     document.querySelector('.add-button').addEventListener('click', redirectToAddPage);
 
