@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="refresh" content="1000">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to our homepage">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="acceptform_style.css">
+    <script src="acceptform_js.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/CSS_Importer.css">
+    <link rel="icon" type="image/x-icon" href="./picture/favicon2.jpg">
+    <script src="./js/webscript2.js"></script> 
+    <script src="./js/login_script.js"></script> 
+    <script src="./js/startweb_func.js"></script> 
+    <script src="./js/section_script.js"></script> 
+    <script src="./js/form_script.js"></script>
+</head>
+<body>
+    <div id="Acceptformsection">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="profile">
+                <div>
+                    <img class="profile-pic" src="./picture/favicon2.jpg">
+                </div>
+                <div class="textinfo">
+                    <span id="navbarname">ชื่อของคุณจะปรากฎอยู่ตรงนี้ หากคุณเห็นข้อความนี้แสดงว่าคุณได้ทำการแก้ไขไฟล์ ทำได้ดีมาก #u#</span>
+                     <br>
+                    <small onclick="reallyExit()">Log out</small>
+                </div>
+            </div>
+            <div class="menu-icon" onclick="showMenu()">☰</div>
+        </div>
+
+        <main>
+            <!-- Form Section -->
+            <section class="form-section" aria-labelledby="form-title">
+                <div class="outer-form">
+                  <div class="form-group">
+                    <label for="request-type">กรุณาเลือกแบบคำร้อง</label><br>
+                    <label for="status">สถานะคำร้อง</label><br>
+                    <label for="student-id">เลขทะเบียนนักศึกษา</label><br>
+                  </div>
+                  <div class="form-input">
+                    <select id="request-type" aria-label="Request Type">
+                      <option value="ทั้งหมด">ทั้งหมด</option>
+                      <option value="จดทะเบียนล่าช้า">จดทะเบียนล่าช้า</option>
+                      <option value="ถอนรายวิชา">ถอนรายวิชา</option>
+                      <option value="จดทะเบียนศึกษารายวิชาข้ามหลักสูตร">จดทะเบียนศึกษารายวิชาข้ามหลักสูตร</option>
+                      <option value="ลาออก">ลาออก</option>
+                      <option value="อื่นๆ">อื่นๆ</option>
+                    </select><br>
+                    <select id="status" aria-label="Request Status">
+                      <option value="ทั้งหมด">ทั้งหมด</option>
+                      <option value="อนุมัติ">อนุมัติ</option>
+                      <option value="ไม่อนุมัติ">ไม่อนุมัติ</option>
+                      <option value="รอการอนุมัติ">รอการอนุมัติ</option>
+                    </select><br>
+                    <input type="text" id="student-id" placeholder="เลขทะเบียน"><br>
+                    
+                  </div>
+                </div>
+              </section>
+
+            <!-- Table Section -->
+            <section class="table-section" aria-labelledby="table-title">
+                <table>
+                    <thead>
+                      <tr>
+                        <th scope="col">ลำดับ</th>
+                        <th scope="col">คำร้อง</th>
+                        <th scope="col">สถานะ</th>
+                        <th scope="col">เลขทะเบียน</th>
+                        <th scope="col">ชื่อ-นามสกุล</th>
+                        <th scope="col">หมายเหตุ</th>
+                        <th scope="col">อนุมัติ</th>
+                        <th scope="col">ไม่อนุมัติ</th>
+                        <th scope="col">ไฟล์แนบ</th>
+                      </tr>
+                    </thead>
+                    <tbody id="dynamic-table-body">
+                      <!-- Rows will be dynamically inserted here -->
+                    </tbody>
+                  </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
