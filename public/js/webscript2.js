@@ -1,38 +1,12 @@
 
 function startFunction(){
-  var experimental = "none";
-  document.getElementById("menusection").style.display = experimental;
-  document.getElementById("overlaysection").style.display = experimental;
 
-  var setorginal = "block";
-  document.getElementById("homesection").style.display = setorginal;
-  document.getElementById("mylistsection").style.display = setorginal;
-  document.getElementById("trackhistorysection").style.display = setorginal;
-  document.getElementById("requestformtemplate").style.display = setorginal;
-  document.getElementById("successend").style.display = setorginal;
-  document.getElementById("checkstatus").style.display = setorginal;
-  document.getElementById("loginsection").style.display = setorginal;
 
-  var setorginal = "none" ;/*"2px dashed yellow";*/
-  document.getElementById("homesection").style.border = setorginal;
-  document.getElementById("mylistsection").style.border = setorginal;
-  document.getElementById("trackhistorysection").style.border = setorginal;
-  document.getElementById("requestformtemplate").style.border = setorginal;
-  document.getElementById("successend").style.border = setorginal;
-  document.getElementById("checkstatus").style.border = setorginal;
-  document.getElementById("loginsection").style.border = setorginal;
-
-  var30 = document.getElementById("requesttype01");
-  var31 = document.getElementById("requesttype02");
-  var32 = document.getElementById("requesttype03");
-
-  
 
 }
 
 
 function toggleSomething(mode){
-
   var1 = document.getElementById("menusection");
   var2 = document.getElementById("overlaysection");
 
@@ -43,6 +17,8 @@ function toggleSomething(mode){
   var14 = document.getElementById("successend");
   var15 = document.getElementById("checkstatus");
   var16 = document.getElementById("loginsection");
+
+
 
   /*
   1 : show filter and the menu
@@ -81,6 +57,14 @@ function toggleSomething(mode){
     if(mode == 14)var14.style.display = "block"; else var14.style.display = "none";
     if(mode == 15)var15.style.display = "block"; else var15.style.display = "none";
     if(mode == 16)var16.style.display = "block"; else var16.style.display = "none";
+
+    var10 = document.getElementById("homesection");
+    var11 = document.getElementById("mylistsection");
+    var12 = document.getElementById("trackhistorysection");
+    var13 = document.getElementById("requestformtemplate");
+    var14 = document.getElementById("successend");
+    var15 = document.getElementById("checkstatus");
+    var16 = document.getElementById("loginsection");
 
     var1.style.display = "none";
     var2.style.display = "none";
@@ -144,6 +128,7 @@ function requestTemplate(typeinput){
 
   var50 = document.getElementById("inputrequesttype");
   var51 = document.getElementById("requesttype_out");
+
   
 
 
@@ -225,23 +210,7 @@ function requestTemplate(typeinput){
 
 }
 
-function submitRequestForm(type){
 
-  if (type == 0){
-    alert("ยังไม่สามารถบันทึกแบบร่างได้ในขณะนี้");
-  }
-
-  if (type == 1){
-
-    if (requestFormcheckField()){
-      toggleSomething(14);
-    }
-
-  }
-
-
-
-}
 
 function requestFormcheckField(){
 
@@ -255,6 +224,14 @@ function requestFormcheckField(){
   var47 = document.getElementById("inputsubdistrict");
   var48 = document.getElementById("inputdistrict");
   var49 = document.getElementById("inputprovince");
+
+  var50 = document.getElementById("inputrequesttype");
+  var51 = document.getElementById("requesttype_out");
+  var52 = document.getElementById("inputadvisor");
+  var53 = document.getElementById("inputsubjectid");
+  var54 = document.getElementById("inputsubjectname");
+  var55 = document.getElementById("inputmoney");
+
 
 
   let countcheck = 0;
@@ -274,10 +251,29 @@ function requestFormcheckField(){
   console.log(countcheck)
 
   if(countcheck > 0){
-    alert("โปรดกรอกข้อมูลให้ครบทุกช่อง")
+    alert("โปรดเช็คความถูกต้องของข้อมูลทุกช่อง")
     window.scrollTo(0, 0);
     return 0;
   }
   else{return 1;}
 
+}
+
+function moneyDebt(){
+
+  var50 = document.getElementById("inputrequesttype");
+  var51 = document.getElementById("requesttype_out");
+  var52 = document.getElementById("inputadvisor");
+  var53 = document.getElementById("inputsubjectid");
+  var54 = document.getElementById("inputsubjectname");
+  var55 = document.getElementById("inputmoney");
+  var56 = document.getElementById("choicedebt");
+
+
+  if (var56.checked == false){
+    var55.disabled = false;
+  }
+  else{
+    var55.disabled = true;
+  }
 }

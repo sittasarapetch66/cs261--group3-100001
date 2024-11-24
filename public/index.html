@@ -12,6 +12,9 @@
     <link rel="icon" type="image/x-icon" href="./picture/favicon2.jpg">
     <script src="./js/webscript2.js"></script> 
     <script src="./js/login_script.js"></script> 
+    <script src="./js/startweb_func.js"></script> 
+    <script src="./js/section_script.js"></script> 
+    <script src="./js/form_script.js"></script> 
 </head>
 
 <body onload="startFunction()">
@@ -153,7 +156,6 @@
         </div>
        </div>
    </div>
-   <audio id="audio" controls autoplay src="./audio/BG01.m4a"></audio>
 
 </div>
 
@@ -241,6 +243,7 @@
         <div class="pinfo_input">
                 
             <label>ชื่อ-นามสกุล :</label>
+
             <input type="text" placeholder="ไม่ต้องมีคำนำหน้า เช่น ทดสอบ รันระบบ" id="inputname">
             <br>
             <label>คณะที่ศึกษา :</label>
@@ -249,6 +252,7 @@
             <label>เลขทะเบียน :</label>
             <input type="text" placeholder="เช่น 5009612214" id="inputid">
             <br>
+
             <label>ชั้นปี :</label>
             <input type="number" placeholder="ใส่เลขปีของคุณ เช่นปี 3 กรอก 3" id="inputstudentyears">
             <br>
@@ -261,17 +265,17 @@
             <label>ที่อยู่ :</label>
             <br>
             <div class="pinfo_addr">
-            <label>เลขที่บ้าน/เลขที่ห้อง :</label>
-            <input class="long" type="text" placeholder="บ้านเลขที่/เลขที่ห้อง" id="inputaddrnumber">
-            <br>
-            <label>แขวง/ตำบล :</label>
-            <input type="text" placeholder="แขวง/ตำบล" id="inputsubdistrict">
-            <br>
-            <label>เขต/อำเภอ :</label>
-            <input type="text" placeholder="เขต/อำเภอ" id="inputdistrict">
-            <br>
-            <label>จังหวัด :</label>
-            <input type="text" placeholder="จังหวัด" id="inputprovince">
+              <label>เลขที่บ้าน/เลขที่ห้อง :</label>
+              <input class="long" type="text" placeholder="บ้านเลขที่/เลขที่ห้อง" id="inputaddrnumber">
+              <br>
+              <label>แขวง/ตำบล :</label>
+              <input type="text" placeholder="แขวง/ตำบล" id="inputsubdistrict">
+              <br>
+              <label>เขต/อำเภอ :</label>
+              <input type="text" placeholder="เขต/อำเภอ" id="inputdistrict">
+              <br>
+              <label>จังหวัด :</label>
+              <input type="text" placeholder="จังหวัด" id="inputprovince">
             </div>
             
         </div>
@@ -425,8 +429,6 @@
    </div>
 </div>
 
-
-<footer>Files Version 1.15.0 </footer>
 </body>
 
 </html>
