@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เพิ่มข้อมูลบุคลากร</title>
+    <link rel="stylesheet" href="./css/CSS_Importer.css">
+    <link rel="stylesheet" href="./css/ITofficerAddpage.css">
+    <script src="./js/Ton_ITScript.js"></script>
+</head>
+<body">
+    
+    <div class="IT_navbar">
+        <span class="back-icon">&lt;</span>
+        
+        <span class="menu-icon"">&#9776;</span>          
+    
+    </div>
+    
+
+    <main class="itofficer-main-content">
+        <h1 class="itofficer-heading">เพิ่มข้อมูลบุคลากร</h1>
+        <p class="itofficer-subheading">โปรดเลือกรายการ</p>
+        <div class="itofficer-options-container">
+            <div class="itofficer-option" onclick="navigateTo('IT_EditProfessorFormPage.html')">
+                <img src="./picture/user.png" alt="" class="itofficer-icon">
+                <span class="itofficer-label">คณบดี</span>               
+            </div>
+            <div class="itofficer-option" onclick="navigateTo('IT_EditProfessorFormPage.html')" >
+                <img src="./picture/user.png" alt="" class="itofficer-icon">
+                <span class="itofficer-label">อาจารย์</span>
+            </div>
+            <div class="itofficer-option" onclick="navigateTo('IT_EditProfessorFormPage.html')"">
+                <img src="./picture/user.png" alt="" class="itofficer-icon">
+                <span class="itofficer-label">เจ้าหน้าที่</span>
+            </div>
+        </div>
+    </main>
+        
+</body>
+</html>
