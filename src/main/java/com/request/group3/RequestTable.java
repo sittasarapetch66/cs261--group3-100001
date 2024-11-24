@@ -106,8 +106,14 @@ public class RequestTable {
 		
 	}
 	
+	//Method to set Status
 	public void setStatus(Long status) {
 		requestStatus = status;
+	}
+	
+	//Method to getID
+	public Long getID() {
+		return ID;
 	}
 	
 	

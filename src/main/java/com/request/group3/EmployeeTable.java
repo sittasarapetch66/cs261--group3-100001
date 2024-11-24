@@ -31,16 +31,20 @@ public class EmployeeTable {
 	@Column(name = "Department", nullable = false) //Department
 	private String department ;
 	
-	@Column(name = "Adress", nullable = false) //Adress of the Employee
+	@Column(name = "Adress", nullable = false, length = 2147483647) //Adress of the Employee
 	private String adress;
 	
 	//Corperate Information
 	
-	@Column(name = "ID of Position", nullable = false) //Position Id of employee
+	@Column(name = "ID of Position", nullable = true) //Position Id of employee
 	private Long positionID;
 	
 	@Column(name = "EmployeeID", nullable = false) //ID type of employee
 	private Long employeeType;
+	
+	//Picture
+	@Column(name = "Picture Data", nullable = true, length = 2147483647) //Position Id of employee
+	private String pictureData;
 	
 	
 }

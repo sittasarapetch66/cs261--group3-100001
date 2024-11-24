@@ -18,12 +18,12 @@
 | Advisor Name | Name of the Student Advisor || ลัมพาพรรณ พันชูจิตร
 | additional request data | Request Data that is coressponding to each type of request | Please Look Section 2 For more info | true¶50000¶เนื่องจากต้องการย้ายสถานศึกษา
 | adress | adress of the requestor | this is a combined adress that is seperated in the input field with seperated by ¶ | 4/3 ถนนศรีสุทัศน์¶ตำบลตลาดใหญ่¶อำเภอเมือง¶จังหวัดภูเก็ต|
-| base64_file1 | Base64 of the document files | Maximun String Length is 2 Million Character
-| base64_file2 | Base64 of the document files | Maximun String Length is 2 Million Character
-| base64_file3 | Base64 of the document files | Maximun String Length is 2 Million Character
-| base64_file4 | Base64 of the document files | Maximun String Length is 2 Million Character
+| base64_file1 | Base64 of the document files | Maximun String Length is 2147483647 (Around 2Giga Character + MAX 2 bytes char non Unicode)
+| base64_file2 | Base64 of the document files | Maximun String Length is 2147483647 (Around 2Giga Character + MAX 2 bytes char non Unicode)
+| base64_file3 | Base64 of the document files | Maximun String Length is 2147483647 (Around 2Giga Character + MAX 2 bytes char non Unicode)
+| base64_file4 | Base64 of the document files | Maximun String Length is 2147483647 (Around 2Giga Character + MAX 2 bytes char non Unicode)
 
-* Note : base64_file1-4 is not sent raw data when called list of request to avoid unnessary data transfer and filling the ram of the cilent machine. To retrived data please look at the section 5 for more info
+* Note : base64_file1-4 is not sent base64 data when called list of request to avoid unnessary data transfer and filling the ram of the cilent machine. To retrived data please look at the section 5 for more info
 
 ### Column 2 : Employee Table
 | Columns Name | Explaination | Comments | Example
@@ -111,13 +111,14 @@ Note :
 1. Please set Contype-Type in the http header as application/json
 2. There are 2 main methods GET and POST method which is used depending on the type of the sender
 3. Every Http Request, there will be every JSON return coressponding to the data that we sending, if the request failed to send, the status return will be 4XX - 5XX
+4. If JSON file is returned, storefile1-4 will not have the data in column, only String say that it has data "TRUE" and otherwise "FALSE" because to reduce memory problem and unnessary data
 
 
 ### 5.1 Request Type
 
 1. Store Value to Database
 
-URL : <i>Domain Name</i>/api/group3/request
+URL : <ins>Domain Name</ins>/api/group3/request
 
 Method : POST
 
@@ -137,7 +138,7 @@ Body :
   "storefile4" : $2147483647 MAX long String Nullable$
 }
 ```
-Return Value :
+Return Value : (JSON)
 ```
 {
   "id" : $Hibernate Generated ID$,
@@ -154,10 +155,11 @@ Return Value :
   "storefile4" : $2147483647 MAX long String Nullable$
 }
 ```
+* Note : For some reason, when send null in storefile1-4. Java is detected that it is null but it will return TRUE to the data (TRUE means there are data ready to pull). To solve the problem. you need to not have "storefile1-4" : "" in the JSON
 
 2. Read All Value that store in database
 
-URL : <i>Domain Name</i>/api/group3/request
+URL : <ins>Domain Name</ins>/api/group3/request
 
 Method : GET
 
@@ -184,7 +186,7 @@ Note : JSON Return n is the same as return from 5.1 request type 1 except each J
 
 3. Read Only Value with matching RequestType ID
 
-URL : <i>Domain Name</i>/api/group3/request/type=<i>long value indicating ID from Section 2</i>
+URL : <ins>Domain Name</ins>/api/group3/request/type=<i>long value indicating ID from Section 2</i>
 
 Method : GET
 
@@ -236,8 +238,95 @@ Return Value : (Array of JSON)
 ```
 * Note : JSON Return n is the same as return from 5.1 request type 1 except each JSON return represnts the all data rows that match the status in the database
 
+5. Read Only Value with matching ID
+
+URL : <i>Domain Name</i>/api/group3/request/id=<i>long value indicating ID</i>
+
+Method : GET
+
+Body : <i>None</i>
+
+Return Value : (JSON)
+```
+{
+  "id" : $Searched ID$,
+  "requestStatus" : $long value Non-Null$,
+  "requestType" : $long value Non-Null$,
+  "username" : $String Non-Null$,
+  "datetimeRequest" : $String Non-Null$,
+  "advisorNameTH" : $String Non-Null$,
+  "requestData" : $2147483647 MAX long String Nullable$,
+  "homeAdress" : $2147483647 MAX long String Nullable$,
+  "storefile1" : $2147483647 MAX long String Nullable$,
+  "storefile2" : $2147483647 MAX long String Nullable$,
+  "storefile3" : $2147483647 MAX long String Nullable$,
+  "storefile4" : $2147483647 MAX long String Nullable$
+}
+```
+* Note : If There are non ID that specified, Server will return status 500
+
+6. Change receive status with matching ID
+
+URL : <i>Domain Name</i>/api/group3/request/id=<i>long value indicating ID</i>/status=<i>long value indicating ID from Section 3</i>
+
+Method : GET
+
+Body : <i>None</i>
+
+Return Value : (JSON)
+```
+{
+  "id" : $Searched ID$,
+  "requestStatus" : $long value Non-Null that changed by receiving argument$,
+  "requestType" : $long value Non-Null$,
+  "username" : $String Non-Null$,
+  "datetimeRequest" : $String Non-Null$,
+  "advisorNameTH" : $String Non-Null$,
+  "requestData" : $2147483647 MAX long String Nullable$,
+  "homeAdress" : $2147483647 MAX long String Nullable$,
+  "storefile1" : $2147483647 MAX long String Nullable$,
+  "storefile2" : $2147483647 MAX long String Nullable$,
+  "storefile3" : $2147483647 MAX long String Nullable$,
+  "storefile4" : $2147483647 MAX long String Nullable$
+}
+```
+* Note : If There are non ID that specified, Server will return status 500
+
+7. Return Number of all table rows
+
+URL : <i>Domain Name</i>/api/group3/request/count
+
+Method : GET
+
+Body : <i>None</i>
+
+Return Value : (RAW)
+```
+$number of elements (rows)$
+```
+
+8. Return File Data
+
+URL : <i>Domain Name</i>/api/group3/request/id=<i>long value indicating ID</i>/file=<i>number 1-4 indicating which file do you want it to return</i>
+
+Method : GET
+
+Body : <i>None</i>
+
+Return Value : (RAW)
+```
+$String of base64 data$
+```
+
 
 ## 5.2 Employee
+Note :
+1. Please set Contype-Type in the http header as application/json
+2. There are 2 main methods GET and POST method which is used depending on the type of the sender
+3. Every Http Request, there will be every JSON return coressponding to the data that we sending, if the request failed to send, the status return will be 4XX - 5XX
+4. If JSON file is returned, storefile1-4 will not have the data in column, only String say that it has data "TRUE" and otherwise "FALSE" because to reduce memory problem and unnessary data
+
+
 1. Store Value to Database
 
 URL : <i>Domain Name</i>/api/group3/employee
@@ -254,9 +343,10 @@ Body :
   "positionID" : $Long value Non-Null$,
   "faculty" : $String Non-Null$,
   "employeeType" : $Long value Non-Null$
+  "Picture Data" : $2147483647 MAX long String Nullable$
 }
 ```
-Return Value :
+Return Value : (JSON)
 ```
 {
   "id" : $Hibernate Generated ID$,
@@ -267,6 +357,7 @@ Return Value :
   "positionID" : $Long value Non-Null$,
   "faculty" : $String Non-Null$,
   "employeeType" : $Long value Non-Null$
+  "Picture Data" : $2147483647 MAX long String Nullable$
 }
 ```
 
@@ -297,7 +388,84 @@ Return Value : (Array of JSON)
 ```
 Note : JSON Return n is the same as return from 5.2 request type 1 except each JSON return represnts the all data rows that in the database
 
+3. Find Employee by nameTH
+
+URL : <i>Domain Name</i>/api/group3/employee/nameTH=<i>Thai name of the employee that you want to search</i>
+
+Method : GET
+
+Body : <i>None</i>
+
+Return Value : (Array of JSON)
+```
+[
+  {
+    $JSON Return 1$
+  },
+  {
+    $JSON Return 2$
+  },
+  ....
+  {
+    $JSON Return n$
+  }
+
+]
+
+```
+
+4. Find Employee by nameEN
+
+URL : <i>Domain Name</i>/api/group3/employee/nameEN=<i>EN name of the employee that you want to search</i>
+
+Method : GET
+
+Body : <i>None</i>
+
+Return Value : (Array of JSON)
+```
+[
+  {
+    $JSON Return 1$
+  },
+  {
+    $JSON Return 2$
+  },
+  ....
+  {
+    $JSON Return n$
+  }
+
+]
+
+```
+
+5. Find Employee that match faculty and nameTH
+URL : <i>Domain Name</i>/api/group3/employee/nameTH=<i>TH name of the employee that you want to search</i>/faculty=<i>Faculty of the employee</i>
+
+Method : GET
+
+Body : <i>None</i>
+
+Return Value : (Array of JSON)
+```
+[
+  {
+    $JSON Return 1$
+  },
+  {
+    $JSON Return 2$
+  },
+  ....
+  {
+    $JSON Return n$
+  }
+
+]
+
+```
+
 ---
 
-###  Protocol Version 1.2
-### Document Version 1.4.5
+###  Protocol Version 1.2.3
+### Document Version 1.4.8
