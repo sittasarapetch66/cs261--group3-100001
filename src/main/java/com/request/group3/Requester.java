@@ -90,6 +90,20 @@ public class Requester{
 		return rt1.returnFileData(file);
 	}
 	
+	@GetMapping("/email={email}")
+	public String sendEmailviaSMTP(@PathVariable("email") String email) {
+		/*
+		Properties prop = new Properties();
+		prop.put("mail.smtp.auth", true);
+		prop.put("mail.smtp.starttls.enable", "true");
+		prop.put("mail.smtp.host", "sandbox.smtp.mailtrap.io");
+		prop.put("mail.smtp.port", "25");
+		prop.put("mail.smtp.ssl.trust", "sandbox.smtp.mailtrap.io");
+		
+		*/
+		return "test";
+	}
+	
 
 	
 	//method to return if data is present to avoid data overflowing
