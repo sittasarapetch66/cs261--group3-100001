@@ -23,16 +23,19 @@
 | base64_file3 | Base64 of the document files | Maximun String Length is 2 Million Character
 | base64_file4 | Base64 of the document files | Maximun String Length is 2 Million Character
 
+* Note : base64_file1-4 is not sent raw data when called list of request to avoid unnessary data transfer and filling the ram of the cilent machine. To retrived data please look at the section 5 for more info
+
 ### Column 2 : Employee Table
 | Columns Name | Explaination | Comments | Example
 |---|---|---|---|
-| FullName_TH |
-| FullName_EN |
-| Phone Number |
-| Faculty |
-| Adress |
-| Position ID |
-| Employee Type |
+| FullName_TH | Fullname of employee in Thai Language | This column is use exclusively to compare name | ลัมพาพรรณ พันชูจิต
+| FullName_EN | Fullname of employee in English Language || Lamphaphan Phanchuchit
+| Phone Number | 9 - 10 digits Phone number | Phone Number must be number only (No - in any digits)|012345698
+| Faculty | Thai Faculty Name | Faculty can be anything like PSM, TULiB| คณะวิทยาศาสตร์และเทคโนโลยี
+| Department | Thai sub-faculty name || สาขาวิทยาการคอมพิวเตอร์
+| Adress | Adress of that employee seperate by ¶ | Please Look at section ... for more info| 99 หมู่ 18 ถ.พหลโยธิน¶คลองหนึ่ง¶คลองหลวง¶ปทุมธานี
+| Position ID |-| Deprecated||
+| Employee Type | Type of the Employee | Please look at section 4 for more info | 10 |
 
 
 
@@ -91,11 +94,16 @@ Example : ทดสอบ1¶ทดสอบ2¶ทดสอบ3 ; ¶ is a seperat
 ## Section 4 : Employee Type
 | ID | Type | Explain | Comment |
 | --- | --- | --- | --- |
-| 1 | อาจารย์
-| 10 | โดเมนสาขา
-| 20 | โดเมนคณะ
-| 50 | ฝ่ายอธิการบดี
-| 60 | อธิการบดี
+| 10 | อาจารย์ผู้สอน สภาวะปกติ | | เป็นสภาวะปกติของอาจารย์ผู้สอน
+| 11 | อาจารย์ผู้สอน ลาออก
+| 12 | อาจารย์ผู้สอน ผู้ช่วยพิเศษ
+| 30 | เจ้าหน้าที่ ฝ่ายช่างอาคาร
+| 31 | เจ้าหน้าที่ ฝ่าย IT
+| 32 | เจ้าหน้าที่ ฝ่ายความปลอดภัย
+| 33 | เจ้าหน้าที่ฝ่ายเทคนิค
+| 50 | โดเมนคณะ
+| 90 | ฝ่ายอธิการบดี || ฝ่ายอธิการบดีไม่ได้กำหนดว่าใครเป็นคนอนุมัติ
+
 
 ---
 ## Section 5 : API Calling
@@ -158,7 +166,7 @@ Body : <i>None</i>
 Return Value : (Array of JSON)
 ```
 [
-  { 
+  {
     $JSON Return 1$
   },
   {
@@ -185,7 +193,7 @@ Body : <i>None</i>
 Return Value : (Array of JSON)
 ```
 [
-  { 
+  {
     $JSON Return 1$
   },
   {
@@ -212,7 +220,7 @@ Body : <i>None</i>
 Return Value : (Array of JSON)
 ```
 [
-  { 
+  {
     $JSON Return 1$
   },
   {
@@ -264,7 +272,7 @@ Return Value :
 
 2. Read All Employee Rows that store in database
 
-URL : <i>Domain Name</i>/api/group3/request
+URL : <i>Domain Name</i>/api/group3/employee
 
 Method : GET
 
@@ -273,7 +281,7 @@ Body : <i>None</i>
 Return Value : (Array of JSON)
 ```
 [
-  { 
+  {
     $JSON Return 1$
   },
   {
@@ -292,4 +300,4 @@ Note : JSON Return n is the same as return from 5.2 request type 1 except each J
 ---
 
 ###  Protocol Version 1.2
-### Document Version 1.4.1
+### Document Version 1.4.5
