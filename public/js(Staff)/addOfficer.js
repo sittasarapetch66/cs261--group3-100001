@@ -48,7 +48,7 @@ window.onload = function() {
 
     // Function to redirect to another page when clicking "เพิ่มคณบดี"
 function redirectToAddPage() {
-    window.location.href = 'ITOfficerAdd.html'; //เอาลิงก์มาใส่
+    window.location.href = 'IT_EditProfessorFormPage.html'; //เอาลิงก์มาใส่
 }
     document.querySelector('.add-button').addEventListener('click', redirectToAddPage);
 
