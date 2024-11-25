@@ -16,54 +16,31 @@ public class Employer {
 	
 	@PostMapping
 	public EmployeeTable createUser(@RequestBody EmployeeTable emp) {
-		return hiddenEmployeeCred(caller.save(emp));
+		return caller.save(emp);
 
 	}
 	
 	@GetMapping
 	public List<EmployeeTable> getAllUsers(){
-		return hiddenListEmployeeCred(caller.findAll());
-				
+		return caller.findAll();
 	}
 	
 	@GetMapping("/nameTH={nameTH}")
 	public List<EmployeeTable> getByNameTH(@PathVariable String nameTH){
-		return hiddenListEmployeeCred(caller.findByNameTHContaining(nameTH));
-				
+		return caller.findByNameTHContaining(nameTH);
 	}
 	
 	@GetMapping("/nameEN={nameEN}")
 	public List<EmployeeTable> getByNameEN(@PathVariable String nameEN){
-		return hiddenListEmployeeCred(caller.findByNameENContaining(nameEN));
+		return caller.findByNameENContaining(nameEN);
 	}
 	
 	@GetMapping("/nameth={nameTH}/faculty={faculty}")
 	public List<EmployeeTable> getByNameTHAndFaculty(@PathVariable("nameTH") String nameTH,@PathVariable("faculty") String faculty){
-		return hiddenListEmployeeCred(caller.findByNameTHAndFaculty(nameTH, faculty));
+		return caller.findByNameTHAndFaculty(nameTH, faculty);
 	}
 	
-	@GetMapping("/user={user}/pass={pass}")
-	public boolean getCredentialCorrect(@PathVariable("user") String user, @PathVariable("pass") String pass) {
-		EmployeeTable em1 = caller.findByUsernameAndPassword(user, pass);
-		if (em1 != null) {
-			return true;
-		}
-		
-		else return false;
-	}
 	
-	public EmployeeTable hiddenEmployeeCred(EmployeeTable em1) {
-		em1.hideUserPass();
-		return em1;
-	}
-	
-	public List<EmployeeTable> hiddenListEmployeeCred(List<EmployeeTable> em1) {
-		
-		for (EmployeeTable et1 : em1)
-			et1.hideUserPass();
-		
-		return em1;
-	}
 	
 	/*
 	@GetMapping("/nameTH={nameTH}")

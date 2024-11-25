@@ -342,8 +342,10 @@ Body :
   "adress" : $String Non-Null$,
   "positionID" : $Long value Non-Null$,
   "faculty" : $String Non-Null$,
-  "employeeType" : $Long value Non-Null$
-  "Picture Data" : $2147483647 MAX long String Nullable$
+  "employeeType" : $Long value Non-Null$,
+  "Picture Data" : $2147483647 MAX long String Nullable$,
+  "username" : $String Non-Null Unique$,
+  "password" : $String Non-Null$
 }
 ```
 Return Value : (JSON)
@@ -358,6 +360,8 @@ Return Value : (JSON)
   "faculty" : $String Non-Null$,
   "employeeType" : $Long value Non-Null$
   "Picture Data" : $2147483647 MAX long String Nullable$
+  "username" : "HIDDEN",
+  "password" : "HIDDEN"
 }
 ```
 
@@ -467,5 +471,21 @@ Return Value : (Array of JSON)
 
 ---
 
-###  Protocol Version 1.2.3
-### Document Version 1.4.8
+## Section 6 : Example Picture
+
+2. Image of the POST method to add employee
+![image info](Picture/02.jpg)
+* Note : As you can see, username and password is not shown by default, to avoid leakage of sensitive data
+
+![image info](Picture/03.jpg)
+* Now you can see that employee is in the database
+
+![image info](Picture/04.jpg)
+* if we search the wrong person. You can see that it return false
+
+![image info](Picture/05.jpg)
+* if we search by a newly add user and pass credential. You can see now it return true
+
+
+###  Protocol Version 1.4.1
+### Document Version 1.6.2

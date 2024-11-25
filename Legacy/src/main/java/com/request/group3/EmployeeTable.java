@@ -36,7 +36,6 @@ public class EmployeeTable {
 	
 	//Corperate Information
 	
-	//deprecated
 	@Column(name = "ID of Position", nullable = true) //Position Id of employee
 	private Long positionID;
 	
@@ -46,28 +45,6 @@ public class EmployeeTable {
 	//Picture
 	@Column(name = "Picture Data", nullable = true, length = 2147483647) //Position Id of employee
 	private String pictureData;
-	
-	//Credentials
-	@Column(name = "Username", nullable = false, unique = true)//username of employee
-	private String username;
-	
-	@Column(name = "Password", nullable = false, unique = false)//password of employee
-	private String password;
-	
-	
-	//method to hide username and password
-	
-	public void hideUserPass() {
-		
-		username = "HIDDEN";
-		password = "HIDDEN";
-		
-	}
-	
-	public String returnUser() {
-		return username;
-	}
-	
 	
 	
 }

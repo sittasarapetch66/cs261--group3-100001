@@ -16,8 +16,6 @@ public interface EmployeeRepository extends JpaRepository<EmployeeTable, Long> {
 	
 	List<EmployeeTable> findByNameTHAndFaculty(String nameTH, String faculty);
 	
-	EmployeeTable findByUsernameAndPassword(String username, String password);
-	
 	//find by matching name and matching faculty name
 	//List<EmployeeTable> findByNameTHAndFaculty(String nameTH, String faculty);
 	
