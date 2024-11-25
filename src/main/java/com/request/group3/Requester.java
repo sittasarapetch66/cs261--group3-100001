@@ -255,17 +255,6 @@ public class Requester{
 		TextReturn += "<h2>Automatic Time Range</h2>";
 		ZoneId z = ZoneId.of( "Asia/Ho_Chi_Minh" );
 		TextReturn += "<p>Time now : " + ZonedDateTime.now( z ).getHour() + ":" + ZonedDateTime.now( z ).getMinute() + "</p>";
-		TextReturn += "<table> <tr> <th> Time Range </th> <th> IsOn </th> </tr>";
-		TextReturn += "<tr> <td> 06:00 </td> <td>" + "</td> </tr>";
-		TextReturn += "<tr> <td> 08:00 </td> <td>" + "</td> </tr>";
-		TextReturn += "<tr> <td> 10:00 </td> <td>" + "</td> </tr>";
-		TextReturn += "<tr> <td> 12:00 </td> <td>" + "</td> </tr>";
-		TextReturn += "<tr> <td> 14:00 </td> <td>" + "</td> </tr>";
-		TextReturn += "<tr> <td> 16:00 </td> <td>" + "</td> </tr>";
-		TextReturn += "<tr> <td> 18:00 </td> <td>" + "</td> </tr>";
-
-		
-		TextReturn += "</table>";
 		TextReturn += "<h2>Status Detail</h2>";
 		
 		for(int i = 0; i < requestForward.length; i++) {
@@ -380,6 +369,25 @@ public class Requester{
 		String to = "sitta.sar@dome.tu.ac.th";
 		String sub = "ไม่รู้";
 		String text = "ผมอยากส่งอีเมลหาคุณ";
+
+
+		MimeMessage message = mailSender.createMimeMessage();
+		MimeMessageHelper helper = new MimeMessageHelper(message, true);
+		helper.setFrom("noreply@sko.com");
+		helper.setTo(to);
+		helper.setSubject(sub);
+		helper.setText(text);
+			
+		ByteArrayDataSource dSource = new ByteArrayDataSource(imgBytes, "image/*");
+
+		helper.addAttachment("attachment.jpg", dSource);
+
+			
+		mailSender.send(message);
+		
+		
+		System.out.println("Send");
+		
 		
 		/*
 		SimpleMailMessage mes = new SimpleMailMessage();
@@ -389,23 +397,6 @@ public class Requester{
 		mes.setText(text);
 		emailsender.send(mes);
 		 */
-
-			MimeMessage message = mailSender.createMimeMessage();
-			MimeMessageHelper helper = new MimeMessageHelper(message, true);
-			helper.setFrom("noreply@sko.com");
-			helper.setTo(to);
-			helper.setSubject(sub);
-			helper.setText(text);
-			
-			ByteArrayDataSource dSource = new ByteArrayDataSource(imgBytes, "image/*");
-
-			helper.addAttachment("attachment.jpg", dSource);
-
-			
-			mailSender.send(message);
-		
-		
-		System.out.println("Send");
 	}
 	
 
