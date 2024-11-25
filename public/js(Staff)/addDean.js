@@ -5,7 +5,7 @@ const deans = [
 ];
 
 function displayDeans(filteredDeans) {
-    const tableBody = document.querySelector('.teacher-table tbody');
+    const tableBody = document.getElementById("dean-table");
     tableBody.innerHTML = ''; // Clear existing rows
 
     if (filteredDeans.length === 0) {

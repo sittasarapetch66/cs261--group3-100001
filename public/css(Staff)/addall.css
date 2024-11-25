@@ -1,11 +1,11 @@
 
-#adddean {
+#addall {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-#adddean .navbar {
+#addall .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -15,7 +15,7 @@
     padding: 10px 20px;
 }
 
-#adddean .back-button {
+#addall .back-button {
     background: none;
     border: none;
     color: #F5F5F5;
@@ -27,12 +27,12 @@
     transition: 0.5s;
 }
 
-#adddean .back-button:hover{
+#addall .back-button:hover{
     background-color: #c8c8c8;
     box-shadow: inset;
 }
 
-#adddean .menu-icon {
+#addall .menu-icon {
     font-size: 5vh;
     cursor: pointer;
     padding-left : 15px;
@@ -41,36 +41,36 @@
     transition: 0.5s;
 }
 
-#adddean .menu-icon:hover {
+#addall .menu-icon:hover {
     background-color: #c4c4c4a9;
 }
 
 /* Block กลาง */
-#adddean .middle-block {
+#addall .middle-block {
     background-color: #E0E0E0; /* สีเทาอ่อน */
     padding: 20px;
     /*position: relative;*/
 }
 
-#adddean .middle-block form {
+#addall .middle-block form {
     display: flex;
     gap: 20px;
     justify-content: space-between;
     margin-top: 40px;
 }
 
-#adddean .middle-block .form-group {
+#addall .middle-block .form-group {
     display: flex;
     flex-direction: column; /* label และ input อยู่ในแนวตั้ง */
     width: 30%; /* กำหนดความกว้างของแต่ละช่องกรอก */
 }
 
-#adddean .middle-block label {
+#addall .middle-block label {
     font-size: 16px;
     margin-bottom: 5px;
 }
 
-#adddean .middle-block input, .middle-block select {
+#addall .middle-block input, .middle-block select {
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -79,7 +79,7 @@
 }
 
 /* ปุ่มค้นหา */
-#adddean .search-button {
+#addall .search-button {
     background-color: #007bff;
     color: white;
     border: none;
@@ -91,18 +91,18 @@
     right: 20px; /* ตำแหน่งมุมขวาบน */
 }
 
-#adddean .search-button:hover {
+#addall .search-button:hover {
     background-color: #0056b3;
 }
 
 /* Block ล่าง */
-#adddean .content-block {
+#addall .content-block {
     margin: 20px;
     padding: 10px;
 }
 
 /* ปุ่มเพิ่ม */
-#adddean .add-button {
+#addall .add-button {
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -114,12 +114,12 @@
     margin-bottom: 20px;
 }
 
-#adddean .add-button:hover {
+#addall .add-button:hover {
     background-color: #45a049;
 }
 
 /* ตาราง */
-#adddean .out_adddean{
+#addall .out_adddean{
     padding: 30px;
     padding-left: 5%;
     padding-right: 3%;
@@ -127,7 +127,7 @@
     flex-direction: row; /* Ensure items are side by side */
     gap: 10px; /* Optional: Add space between form-group and form-input */
 }
-#adddean .teacher-table {
+#addall .teacher-table {
     width: 100%;
     text-align: center;
     table-layout: auto;  /* ใช้ auto เพื่อให้ขนาดของคอลัมน์ปรับตามเนื้อหา */
@@ -136,46 +136,46 @@
     margin: 20px 0;
 }
 
-#adddean .teacher-table th, #adddean .teacher-table td {
+#addall .teacher-table th, #adddean .teacher-table td {
     padding: 8px;
     text-align: center;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-#adddean .teacher-table th {
+#addall .teacher-table th {
     background-color: #2D3142;
     font-weight: bold;
 }
 
-#adddean .teacher-table td {
+#addall .teacher-table td {
     border: 1px solid #ddd;
 }
 
 /* กำหนดขนาดขั้นต่ำของคอลัมน์ */
-#adddean .teacher-table th:nth-child(1), #adddean .teacher-table td:nth-child(1) {
+#addall .teacher-table th:nth-child(1), #addall .teacher-table td:nth-child(1) {
     min-width: 50px;  /* ช่องลำดับ */
 }
 
-#adddean .teacher-table th:nth-child(2), #adddean .teacher-table td:nth-child(2) {
+#addall .teacher-table th:nth-child(2), #addall .teacher-table td:nth-child(2) {
     min-width: 100px;  /* ช่องชื่อ-นามสกุล */
 }
 
-#adddean .teacher-table th:nth-child(3), #adddean .teacher-table td:nth-child(3) {
+#addall .teacher-table th:nth-child(3), #addall .teacher-table td:nth-child(3) {
     min-width: 150px;  /* ช่องอีเมล */
 }
 
-#adddean .teacher-table th:nth-child(4), #adddean .teacher-table td:nth-child(4) {
+#addall .teacher-table th:nth-child(4), #addall .teacher-table td:nth-child(4) {
     min-width: 100px;  /* ช่องแก้ไข */
 }
 
-#adddean .teacher-table th:nth-child(5), #adddean .teacher-table td:nth-child(5),
-#adddean .teacher-table th:nth-child(6), #adddean .teacher-table td:nth-child(6) {
+#addall .teacher-table th:nth-child(5), #addall .teacher-table td:nth-child(5),
+#addall .teacher-table th:nth-child(6), #addall .teacher-table td:nth-child(6) {
     min-width: 60px;  /* ช่องลบ */
 }
 
 /* ปรับขนาดปุ่ม */
-#adddean .edit-button, #adddean .delete-button {
+#addall .edit-button, #addall .delete-button {
     background-color: #2c2c3e;
     color: white;
     border: none;
@@ -189,16 +189,16 @@
     box-sizing: border-box;
 }
 
-#adddean .edit-button:hover {
+#addall .edit-button:hover {
     background-color: #0056b3;
 }
 
-#adddean .delete-button:hover {
+#addall .delete-button:hover {
     background-color: #d9534f;
 }
 
 /* ปุ่มเพิ่ม */
-#adddean .add-button {
+#addall .add-button {
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -210,11 +210,11 @@
     margin-bottom: 20px;
 }
 
-#adddean .add-button:hover {
+#addall .add-button:hover {
     background-color: #45a049;
 }
 
-#adddean .menu {
+#addall .menu {
     font-size: 5vh;
     cursor: pointer;
     padding-left : 15px;
