@@ -79,7 +79,7 @@ Example : ทดสอบ1¶ทดสอบ2¶ทดสอบ3 ; ¶ is a seperat
 | 220 | Request Approved to Advisor | | Next Code : 230
 | 221 | Request Declined by Advisor because not clear request | |
 | 230 | Request Send to Faculty Successfully | | Next Code : 240 If approved, 241 if declined
-| 240 | Request Approved by Faculty | |
+| 240 | Request Approved by Faculty | | Next code : 260
 | 241 | Request Decline by Faculty | |
 | 250 | Request Send to คณะบดี Successfully |
 | 260 | Request Approved by คณะบดี | |Next Code : 270
@@ -300,7 +300,7 @@ Method : GET
 
 Body : <i>None</i>
 
-Return Value : (RAW)
+Return Value : (Body Raw)
 ```
 $number of elements (rows)$
 ```
@@ -313,10 +313,39 @@ Method : GET
 
 Body : <i>None</i>
 
-Return Value : (RAW)
+Return Value : (Body Raw)
 ```
 $String of base64 data$
 ```
+
+90. Test Body Return Data
+URL : <i>Domain Name</i>/api/group3/request/testhtml
+
+Method : GET
+
+Body : <i>None</i>
+
+Return Value : (Body Raw)
+```
+Your String is Working
+```
+
+91. Test SMTP Mail Server
+URL : <i>Domain Name</i>/api/group3/request/testmail=<i>Your Email to Test Here</i>
+
+Method : GET
+
+Body : <i>None</i>
+
+Return Value : (Body Raw)
+```
+
+```
+
+* Note : Please Check your email if there are message 
+Header : SMTP Test
+Body : This is a test of SMTP Mail Service
+It is indicating that mail service is successfully sent
 
 
 ## 5.2 Employee
@@ -324,7 +353,7 @@ Note :
 1. Please set Contype-Type in the http header as application/json
 2. There are 2 main methods GET and POST method which is used depending on the type of the sender
 3. Every Http Request, there will be every JSON return coressponding to the data that we sending, if the request failed to send, the status return will be 4XX - 5XX
-4. If JSON file is returned, storefile1-4 will not have the data in column, only String say that it has data "TRUE" and otherwise "FALSE" because to reduce memory problem and unnessary data
+4. If JSON file is returned, username and password will be "HIDDEN"
 
 
 1. Store Value to Database
@@ -474,6 +503,8 @@ Return Value : (Array of JSON)
 ## Section 6 : Example Picture
 
 2. Image of the POST method to add employee
+
+
 ![image info](Picture/02.jpg)
 * Note : As you can see, username and password is not shown by default, to avoid leakage of sensitive data
 
