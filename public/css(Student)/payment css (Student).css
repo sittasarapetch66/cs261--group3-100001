@@ -1,4 +1,4 @@
-* {
+*/* {
     margin: 0;
     padding: 0;
     font-family: 'IBM Plex Sans Thai'
@@ -6,48 +6,62 @@
 
 body{
     background-color: #f5f5f5;
-}
+}*/
 
-header {
-    width: 100%;
-    height: 60px;
-    background-color: #2D3142;
+#payment .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: #2D3142;
+    color: #F5F5F5;
+    height: 10vh;
+    padding: 10px 20px;
 }
 
-.back {
-    margin-left: 5%;
+#payment .back-button {
     background: none;
     border: none;
-    font-size: 30px;
     color: #F5F5F5;
+    font-size: 5vh;
     cursor: pointer;
+    border-radius: 50%;
+    padding-left : 5px;
+    padding-right : 15px;
+    transition: 0.5s;
 }
 
-.menu {
-    margin-right: 5%;
-    background: none;
-    border: none;
-    font-size: 30px;
-    color: #F5F5F5;
-    cursor: pointer;
+#payment .back-button:hover{
+    background-color: #c8c8c8;
+    box-shadow: inset;
 }
 
-main {
+#payment .menu-icon {
+    font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+}
+
+#payment .menu-icon:hover {
+    background-color: #c4c4c4a9;
+}
+
+
+#payment main {
     justify-items: center;
     
 }
 
-.qr-section {
+#payment .qr-section {
     width: 15%;
     height: 30vh;
     background-color: #D9D9D9;   
     margin-top: 3%; 
 }
 
-.details {
+#payment .details {
     margin-top: 3%;
     display: flex;
     flex-direction: column;
@@ -55,18 +69,18 @@ main {
 
 }
 
-.update {
+#payment .update {
     display: flex;
     color: #7D7D7D;
 }
 
-.slip {
+#payment .slip {
     display: flex;
     gap: 20px;
 }
 
 
-.confirm {
+#payment .confirm {
     width: 20%;
     height: 30px;
     border: none;
@@ -76,9 +90,19 @@ main {
     cursor: pointer;
 }
 
-button:disabled {
+#payment button:disabled {
     background-color: #ccc; /* เปลี่ยนสีปุ่ม */
     cursor: not-allowed; /* เปลี่ยนเคอร์เซอร์เป็นแบบห้าม */
     color: #666; /* สีข้อความจางลง */
     border: 1px solid #999;
+}
+#payment .menu-icon {
+    font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+    color: white;
+
 }
