@@ -16,8 +16,18 @@
     <script src="./js/startweb_func.js"></script> 
     <script src="./js/section_script.js"></script> 
     <script src="./js/form_script.js"></script> 
+    <!-- add link -->
+    <script src="./js(Student)/payment_script.js"></script>
+    <link rel="stylesheet" href="./css(Student)/payment css (Student).css">
+    <link rel="stylesheet" href="./css(Student)/payment_home_css.css">
+    <link rel="stylesheet" href="./css(Teacher)/acceptform_style (Teacher).css">
+    <script src="./js(Teacher)/acceptform_js (Teacher).js"></script>
+    <link rel="stylesheet" href="./css(Dean)/acceptform_style (Dean).css">
+    <script src="./js(Dean)/acceptform_js (Dean).js"></script>
+    <script src="./js(Staff)/addDean.js"></script>
+    <link rel="stylesheet" href="./css(Staff)/addall.css">
 </head>
-
+<!-- add link -->
 <body onload="startFunction()">
 
 <!-- Section 0 : Overlay Section -->
@@ -420,6 +430,375 @@
        </div>
    </div>
 </div>
+<!--add more section-->
+<!--payment-->
+
+<div id="payment">
+    <div class="navbar">
+        <button class="back-button" onclick="toggleSomething(10)">◀</button>
+        <div class="menu-icon" onclick="showMenu()">☰</div>
+    </div>
+    <main>
+        <div class="qr-section">
+            <div class="qr-box">
+                <img src="" alt="QR ของมหาลัย">
+            </div>
+        </div>
+        <div class="details">
+            <h3>จดทะเบียนเพิ่มเติม</h3>
+            <div class="update">
+                <p>แก้ไขล่าสุด:</p>
+                <p class="date">test</p>
+            </div>
+            <p class="name">นายโคนัน ทวิสาร</p>
+            <p>ค้างชำระทั้งหมด <span>45</span> บาท</p>
+            <div class="slip">
+                <label for="fileInput">แนบหลักฐานการโอนเงิน</label>
+                <input type="file" id="fileInput">
+            </div>
+            <p id="message"></p>
+            <button class="confirm" id="confirm" disabled>ยืนยัน</button>
+        </div>
+    </main>
+    <script>
+        // Get references to elements
+        const fileInput = document.getElementById('fileInput');
+        const message = document.getElementById('message');
+        const confirmButton = document.getElementById('confirm');
+
+        // Add event listener for file input changes
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0]; // Get the selected file
+            message.textContent = ''; // Clear any previous messages
+            confirmButton.disabled = true; // Disable the button by default
+
+            if (file) {
+                const fileType = file.type; // MIME type of the file
+
+                // Check file type
+                if (fileType === 'image/png' || fileType === 'image/jpeg' || fileType === 'application/pdf') {
+                    message.textContent = `The selected file is valid.`;
+                    message.style.color = 'green';
+                    confirmButton.disabled = false; // Enable the button
+                } else {
+                    message.textContent = `Invalid file type. Please upload a PNG, JPEG, or PDF file.`;
+                    message.style.color = 'red';
+                }
+            } else {
+                message.textContent = 'No file selected.';
+            }
+        });
+
+        // Add event listener for button click
+        confirmButton.addEventListener('click', () => {
+            alert('บันทึกเรียบร้อยแล้ว');
+        });
+    </script>
+</div>
+<!--payment home-->
+<div id="paymenthome">
+    <div class="navbar">
+        <button class="back-button" onclick="toggleSomething(10)">◀</button>
+        <div class="menu-icon" onclick="showMenu()">☰</div>
+    </div>
+    <div class="container">
+        <h1>หน้าชำระเงิน</h1>
+        <div class="card">
+            <h3>Test</h3>
+            <p class="date">แก้ไขล่าสุดเมื่อ: </p>
+            <div class="status">
+                <p class="approve">อนุมัติ</p>
+                <p class="payment">test2</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--accept form teacher-->
+<div id="overlaysection" onclick="toggleSomething(2)">
+  
+</div>
+
+<!-- Menu Section -->
+<div id="menusection">
+   
+   <div class="header">
+       <h1 onclick="toggleSomething(2)">◀
+       </h1>
+       <h2>MENU</h2>
+   </div>
+
+   <div class="selection">
+
+       <div class="list" onclick="toggleSomething(11)">
+           <p>รายการของฉัน</p>
+       </div>
+       <div class="list" onclick="toggleSomething(15)">
+           <p>ตรวจสอบสถานะคำร้อง</p>
+       </div>
+       <div class="list" onclick="toggleSomething(12)">
+           <p>ประวัติการยื่นคำร้อง</p>
+       </div>
+       <br>
+       <hr><hr>
+       <div class="list" onclick="toggleSomething(10)">
+           <p>ยื่นคำร้องเพิ่มเติม</p>
+       </div>
+       <div class="list" onclick="reallyExit()">
+           <p>ออกจากระบบ</p>
+       </div>
+       <hr><hr>
+       <br><br>
+       <div class="list" onclick="reallyExit()">
+           <p>โหมดผู้พัฒนา</p>
+       </div>
+      </div>
+
+   </div>
+  <div id="Acceptformsection">
+      <!-- Header Section -->
+      <div class="header">
+          <div class="profile">
+              <div>
+                  <img class="profile-pic" src="./picture/favicon2.jpg">
+              </div>
+              <div class="textinfo">
+                  <span id="navbarname">ชื่อของคุณจะปรากฎอยู่ตรงนี้ หากคุณเห็นข้อความนี้แสดงว่าคุณได้ทำการแก้ไขไฟล์ ทำได้ดีมาก #u#</span>
+                   <br>
+                  <small onclick="reallyExit()">Log out</small>
+              </div>
+          </div>
+          <div class="menu-icon" onclick="showMenu()">☰</div>
+      </div>
+
+      <main>
+          <!-- Form Section -->
+          <section class="form-section" aria-labelledby="form-title">
+              <div class="outer-form">
+                <div class="form-group">
+                  <label for="request-type">กรุณาเลือกแบบคำร้อง</label><br>
+                  <label for="status">สถานะคำร้อง</label><br>
+                  <label for="student-id">เลขทะเบียนนักศึกษา</label><br>
+                </div>
+                <div class="form-input">
+                  <select id="request-type" aria-label="Request Type">
+                    <option value="ทั้งหมด">ทั้งหมด</option>
+                    <option value="จดทะเบียนล่าช้า">จดทะเบียนล่าช้า</option>
+                    <option value="ถอนรายวิชา">ถอนรายวิชา</option>
+                    <option value="จดทะเบียนศึกษารายวิชาข้ามหลักสูตร">จดทะเบียนศึกษารายวิชาข้ามหลักสูตร</option>
+                    <option value="ลาออก">ลาออก</option>
+                    <option value="อื่นๆ">อื่นๆ</option>
+                  </select><br>
+                  <select id="status" aria-label="Request Status">
+                    <option value="ทั้งหมด">ทั้งหมด</option>
+                    <option value="อนุมัติ">อนุมัติ</option>
+                    <option value="ไม่อนุมัติ">ไม่อนุมัติ</option>
+                    <option value="รอการอนุมัติ">รอการอนุมัติ</option>
+                  </select><br>
+                  <input type="text" id="student-id" placeholder="เลขทะเบียน"><br>
+                  
+                </div>
+              </div>
+            </section>
+
+          <!-- Table Section -->
+          <section class="table-section" aria-labelledby="table-title">
+              <table>
+                  <thead>
+                    <tr>
+                      <th scope="col">ลำดับ</th>
+                      <th scope="col">คำร้อง</th>
+                      <th scope="col">สถานะ</th>
+                      <th scope="col">เลขทะเบียน</th>
+                      <th scope="col">ชื่อ-นามสกุล</th>
+                      <th scope="col">หมายเหตุ</th>
+                      <th scope="col">อนุมัติ</th>
+                      <th scope="col">ไม่อนุมัติ</th>
+                      <th scope="col">ไฟล์แนบ</th>
+                    </tr>
+                  </thead>
+                  <tbody id="dynamic-table-body">
+                    <!-- Rows will be dynamically inserted here -->
+                  </tbody>
+                </table>
+          </section>
+      </main>
+  </div>
+  <!--accept form Dean-->
+  <div id="overlaysection" onclick="toggleSomething(2)">
+
+  </div>
+  
+  <!-- Menu Section -->
+  <div id="menusection">
+     
+     <div class="header">
+         <h1 onclick="toggleSomething(2)">◀
+         </h1>
+         <h2>MENU</h2>
+     </div>
+  
+     <div class="selection">
+  
+         <div class="list" onclick="toggleSomething(11)">
+             <p>รายการของฉัน</p>
+         </div>
+         <div class="list" onclick="toggleSomething(15)">
+             <p>ตรวจสอบสถานะคำร้อง</p>
+         </div>
+         <div class="list" onclick="toggleSomething(12)">
+             <p>ประวัติการยื่นคำร้อง</p>
+         </div>
+         <br>
+         <hr><hr>
+         <div class="list" onclick="toggleSomething(10)">
+             <p>ยื่นคำร้องเพิ่มเติม</p>
+         </div>
+         <div class="list" onclick="reallyExit()">
+             <p>ออกจากระบบ</p>
+         </div>
+         <hr><hr>
+         <br><br>
+         <div class="list" onclick="reallyExit()">
+             <p>โหมดผู้พัฒนา</p>
+         </div>
+     
+  
+     </div>
+  
+  </div>
+      <div id="Acceptformsection">
+          <!-- Header Section -->
+          <div class="header">
+              <div class="profile">
+                  <div>
+                      <img class="profile-pic" src="./picture/favicon2.jpg">
+                  </div>
+                  <div class="textinfo">
+                      <span id="navbarname">ชื่อของคุณจะปรากฎอยู่ตรงนี้ หากคุณเห็นข้อความนี้แสดงว่าคุณได้ทำการแก้ไขไฟล์ ทำได้ดีมาก #u#</span>
+                       <br>
+                      <small onclick="reallyExit()">Log out</small>
+                  </div>
+              </div>
+              <div class="menu-icon" onclick="showMenu()">☰</div>
+          </div>
+  
+          <main>
+              <!-- Form Section -->
+              <section class="form-section" aria-labelledby="form-title">
+                  <div class="outer-form">
+                    <div class="form-group">
+                      <label for="request-type">กรุณาเลือกแบบคำร้อง</label><br>
+                      <label for="status">สถานะคำร้อง</label><br>
+                      <label for="student-id">เลขทะเบียนนักศึกษา</label><br>
+                    </div>
+                    <div class="form-input">
+                      <select id="request-type" aria-label="Request Type">
+                        <option value="ทั้งหมด">ทั้งหมด</option>
+                        <option value="จดทะเบียนล่าช้า">จดทะเบียนล่าช้า</option>
+                        <option value="ถอนรายวิชา">ถอนรายวิชา</option>
+                        <option value="จดทะเบียนศึกษารายวิชาข้ามหลักสูตร">จดทะเบียนศึกษารายวิชาข้ามหลักสูตร</option>
+                        <option value="ลาออก">ลาออก</option>
+                        <option value="อื่นๆ">อื่นๆ</option>
+                      </select><br>
+                      <select id="status" aria-label="Request Status">
+                        <option value="ทั้งหมด">ทั้งหมด</option>
+                        <option value="อนุมัติ">อนุมัติ</option>
+                        <option value="ไม่อนุมัติ">ไม่อนุมัติ</option>
+                        <option value="รอการอนุมัติ">รอการอนุมัติ</option>
+                      </select><br>
+                      <input type="text" id="student-id" placeholder="เลขทะเบียน"><br>
+                      
+                    </div>
+                  </div>
+                </section>
+  
+              <!-- Table Section -->
+              <section class="table-section" aria-labelledby="table-title">
+                  <table>
+                      <thead>
+                        <tr>
+                          <th scope="col">ลำดับ</th>
+                          <th scope="col">คำร้อง</th>
+                          <th scope="col">สถานะ</th>
+                          <th scope="col">เลขทะเบียน</th>
+                          <th scope="col">ชื่อ-นามสกุล</th>
+                          <th scope="col">หมายเหตุ</th>
+                          <th scope="col">อนุมัติ</th>
+                          <th scope="col">ไม่อนุมัติ</th>
+                          <th scope="col">ไฟล์แนบ</th>
+                        </tr>
+                      </thead>
+                      <tbody id="dynamic-table-body">
+                        <!-- Rows will be dynamically inserted here -->
+                      </tbody>
+                    </table>
+              </section>
+          </main>
+      </div>
+
+      <!--addDean-->
+    <div id="adddean">
+        <div class="navbar">
+            <button class="back-button" onclick="toggleSomething(10)">◀</button>
+            <div class="menu-icon" onclick="showMenu()">☰</div>
+        </div>
+
+    <!-- Block กลาง -->
+    <div class="middle-block">
+        <form id="dean-form">
+            <div class="form-group">
+                <label for="name">ชื่อ-นามสกุล</label>
+                <input type="text" id="name" name="name" placeholder="กรุณากรอกชื่อ">
+            </div>
+        </form>
+    </div>
+
+    <!-- Block ล่าง -->
+    <div class="content-block">
+        <button class="add-button" onclick="addDean()">+ เพิ่มคณบดี</button> <!-- ปุ่มเพิ่มคณบดี -->
+        <div class="out_adddean">
+            
+            <table class="teacher-table">
+            <thead>
+                <tr>
+                    <th>ลำดับ</th>
+                    <th>ชื่อ-นามสกุล</th>
+                    <th>Email</th>
+                    <th>แก้ไข</th>
+                    <th>ลบ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- ตารางจะแสดงข้อมูลจาก JavaScript -->
+            </tbody>
+        </table>
+        </div>
+    </div>
+    </div>
+
+      <!--addOfficer-->
+
+
+      <!--addprof-->
+
+
+      <!--IT_addproform-->
+
+
+      <!--IT_editproform-->
+
+
+      <!--IT_history-->
+
+
+      <!--IT_search-->
+
+
+      <!--IT_officeradd-->
+
+
+      <!--IT_staffmenu-->
+
 
 </body>
 
