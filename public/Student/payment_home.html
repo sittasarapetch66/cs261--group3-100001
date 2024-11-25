@@ -8,6 +8,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../css(Student)/payment_home_css.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/CSS_Importer.css">
+    <link rel="icon" type="image/x-icon" href="../picture/favicon2.jpg">
+    <script src="../js/webscript2.js"></script> 
+    <script src="../js/login_script.js"></script> 
+    <script src="../js/startweb_func.js"></script> 
+    <script src="../js/section_script.js"></script> 
+    <script src="../js/form_script.js"></script>
         <!--<style>
             * {
                 margin: 0;
@@ -115,10 +123,53 @@
             }
         </style>-->
     </head>
-    <body>
+    <body onload="startFunction()">
+
+    <!-- Overlay Section -->
+    <div id="overlaysection" onclick="toggleSomething(2)">
+    
+    </div>
+    
+    <!-- Menu Section -->
+    <div id="menusection">
+       
+       <div class="header">
+           <h1 onclick="toggleSomething(2)">◀
+           </h1>
+           <h2>MENU</h2>
+       </div>
+    
+       <div class="selection">
+    
+           <div class="list" onclick="toggleSomething(11)">
+               <p>รายการของฉัน</p>
+           </div>
+           <div class="list" onclick="toggleSomething(15)">
+               <p>ตรวจสอบสถานะคำร้อง</p>
+           </div>
+           <div class="list" onclick="toggleSomething(12)">
+               <p>ประวัติการยื่นคำร้อง</p>
+           </div>
+           <br>
+           <hr><hr>
+           <div class="list" onclick="toggleSomething(10)">
+               <p>ยื่นคำร้องเพิ่มเติม</p>
+           </div>
+           <div class="list" onclick="reallyExit()">
+               <p>ออกจากระบบ</p>
+           </div>
+           <hr><hr>
+           <br><br>
+           <div class="list" onclick="reallyExit()">
+               <p>โหมดผู้พัฒนา</p>
+           </div>
+          </div>
+    
+       </div>
+    
         <header>
             <button class="back">&lt</button>
-            <button class="menu">☰</button>
+            <div class="menu" onclick="showMenu()">☰</div>
         </header>
         <div class="container">
             <h1>หน้าชำระเงิน</h1>

@@ -17,7 +17,51 @@
     <script src="../js/section_script.js"></script> 
     <script src="../js/form_script.js"></script>
 </head>
-<body>
+<body onload="startFunction()">
+
+<!-- Overlay Section -->
+<div id="overlaysection" onclick="toggleSomething(2)">
+
+</div>
+
+<!-- Menu Section -->
+<div id="menusection">
+   
+   <div class="header">
+       <h1 onclick="toggleSomething(2)">◀
+       </h1>
+       <h2>MENU</h2>
+   </div>
+
+   <div class="selection">
+
+       <div class="list" onclick="toggleSomething(11)">
+           <p>รายการของฉัน</p>
+       </div>
+       <div class="list" onclick="toggleSomething(15)">
+           <p>ตรวจสอบสถานะคำร้อง</p>
+       </div>
+       <div class="list" onclick="toggleSomething(12)">
+           <p>ประวัติการยื่นคำร้อง</p>
+       </div>
+       <br>
+       <hr><hr>
+       <div class="list" onclick="toggleSomething(10)">
+           <p>ยื่นคำร้องเพิ่มเติม</p>
+       </div>
+       <div class="list" onclick="reallyExit()">
+           <p>ออกจากระบบ</p>
+       </div>
+       <hr><hr>
+       <br><br>
+       <div class="list" onclick="reallyExit()">
+           <p>โหมดผู้พัฒนา</p>
+       </div>
+   
+
+   </div>
+
+</div>
     <div id="Acceptformsection">
         <!-- Header Section -->
         <div class="header">
