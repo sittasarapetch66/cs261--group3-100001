@@ -30,6 +30,9 @@ public class Requester{
 	//Caller Interface
 	@Autowired
 	private RequestRepository caller;
+	
+	@Autowired
+	private EmployeeRepository caller2;
 	//private RequestRepository caller2;
 	
 	//Email Interface
@@ -121,7 +124,7 @@ public class Requester{
 		RequestTable rt1 = caller.findByID(id);
 		
 		if (rt1 != null) {
-			rt1.setStatus(status);
+			rt1.setRequestStatus(status);
 			caller.save(rt1);
 			System.out.printf("Id is %d, Status is %d \n",id, status);
 			return returnDataPresent(rt1);
@@ -318,7 +321,7 @@ public class Requester{
 				
 				for(RequestTable rt2 : rt){
 					//setStatus(rt2.getID(), (long) forwardSucc[i]);
-					rt2.setStatus((long) forwardSucc[i]);
+					rt2.setRequestStatus((long) forwardSucc[i]);
 					caller.save(rt2);
 					
 					System.out.printf("ID %d is set status %d successfully",rt2.getID(), requestForward[i]);
@@ -349,7 +352,7 @@ public class Requester{
 			else {
 				
 				for(RequestTable rt2 : rt){
-					rt2.setStatus(status);
+					rt2.setRequestStatus(status);
 					caller.save(rt2);
 					System.out.printf("ID %d is set status %d successfully",rt2.getID(), requestForward[i]);
 					
@@ -411,6 +414,33 @@ public class Requester{
 		mes.setText(text);
 		emailsender.send(mes);
 		 */
+	}
+	
+	//send email based on employee id
+	public String sendMessageToAdvisor( Long id) throws MessagingException {
+		
+		
+		EmployeeTable em = caller2.findByID(id);
+		
+		
+		String subject = "มีคำร้องนักศึกษาที่ต้องการอนุมัติ";
+		String text = "";
+		String email = em.getEmail();
+		String[] fullname = em.getNameTH().split(" ");	
+		String name = fullname[0];
+		
+		text = "สวัสดีคุณ ${name} \n ทางระบบได้ส่งจดหมายฉบับนี้มาเพื่อแจ้งเตือนให้คุณอนุมัติคำร้องของนักศึกษาในระบบคำร้องนักศึกษา \n\nหากคุณไม่ทราบว่าต้องอนุมัติที่ใด โปรดกดลิงค์ ... เพื่อทำการเรียนรู้เพิ่มเติม \n\n\n ขอแสดงความนับถือ \n ระบบคำร้องนักศึกษา กลุ่ม 3";
+		
+		
+		SimpleMailMessage mes = new SimpleMailMessage();
+		mes.setFrom("noreply@sko.com");
+		mes.setTo(email);
+		mes.setSubject(subject);
+		mes.setText(text);
+		emailsender.send(mes);
+		
+		return "Send Success";
+		
 	}
 	
 

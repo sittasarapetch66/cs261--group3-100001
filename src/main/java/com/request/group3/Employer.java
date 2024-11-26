@@ -3,6 +3,8 @@ package com.request.group3;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+//import jakarta.persistence.PersistenceContext;
+
 import java.util.List;
 
 
@@ -19,6 +21,31 @@ public class Employer {
 		return hiddenEmployeeCred(caller.save(emp));
 
 	}
+	
+	@PostMapping("/editfromid={id}")
+	public EmployeeTable editUser(@RequestBody EmployeeTable emp, @PathVariable("id") Long id) {
+		EmployeeTable emt = caller.findByID(id);
+		
+			if (emt != null) {
+			emt.setAdress(emp.getAdress()); //set new adress
+			emt.setAuxData(emp.getAuxData());// set new aux data
+			emt.setNameEN(emp.getNameEN());//set new name en
+			emt.setNameTH(emp.getNameTH());//set new nameth
+			emt.setPhoneNumber(emp.getPhoneNumber());//set new phone number
+			emt.setEmail(emp.getEmail());//set new email
+			
+			EmployeeTable emh = caller.save(emt);
+			
+			return hiddenEmployeeCred(emh);
+		}
+		
+		else {
+			System.out.println("Cannot find ID that specified");
+			return null;
+		}
+
+	}
+    
 	
 	@GetMapping
 	public List<EmployeeTable> getAllUsers(){

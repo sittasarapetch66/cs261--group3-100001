@@ -106,7 +106,10 @@ public class RequestTable {
 		}
 		
 	}
+
 	
+	
+	/*
 	//Method to set Status
 	public void setStatus(Long status) {
 		requestStatus = status;
@@ -116,6 +119,58 @@ public class RequestTable {
 	public Long getID() {
 		return ID;
 	}
+	*/
+	
+	//Loads of Getter and Setter
+	
+	public Long getID() {return ID;}
+
+	public void setID(Long iD) {ID = iD;}
+
+	public Long getRequestStatus() {return requestStatus;}
+
+	public void setRequestStatus(Long requestStatus) {this.requestStatus = requestStatus;}
+
+	public Long getRequestType() {return requestType;}
+
+	public void setRequestType(Long requestType) {this.requestType = requestType;}
+
+	public String getUsername() {return username;}
+
+	public void setUsername(String username) {this.username = username;}
+
+	public String getDatetimeRequest() {return datetimeRequest;}
+
+	public void setDatetimeRequest(String datetimeRequest) {this.datetimeRequest = datetimeRequest;}
+
+	public String getAdvisorNameTH() {return advisorNameTH;}
+
+	public void setAdvisorNameTH(String advisorNameTH) {this.advisorNameTH = advisorNameTH;}
+
+	public String getRequestData() {return requestData;}
+
+	public void setRequestData(String requestData) {this.requestData = requestData;}
+
+	public String getHomeAdress() {return homeAdress;}
+
+	public void setHomeAdress(String homeAdress) {this.homeAdress = homeAdress;}
+
+	public String getStorefile1() {return storefile1;}
+
+	public void setStorefile1(String storefile1) {this.storefile1 = storefile1;}
+
+	public String getStorefile2() {return storefile2;}
+
+	public void setStorefile2(String storefile2) {this.storefile2 = storefile2;}
+
+	public String getStorefile3() {return storefile3;}
+
+	public void setStorefile3(String storefile3) {this.storefile3 = storefile3;}
+
+	public String getStorefile4() {return storefile4;}
+
+	public void setStorefile4(String storefile4) {this.storefile4 = storefile4;}
+	
 	
 	
 
