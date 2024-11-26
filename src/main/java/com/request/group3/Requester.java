@@ -189,7 +189,7 @@ public class Requester{
 		for(Long i = (long) 1; i<= 4; i++) {
 			
 			String comp = RT.returnFileData(i);
-			if (comp == null || comp == "null" || comp == "NULL" || comp == "NULLSTR")
+			if (comp == null || comp == "null" || comp == "NULL" || comp == "NULLSTR" || comp == "")
 				RT.setFileData("FALSE", i);
 			
 			else
@@ -357,6 +357,20 @@ public class Requester{
 			}
 		}
 		
+		
+	}
+	
+	@GetMapping("/deleteid={id}")
+	public String toDeleteID(@PathVariable("id") Long id) {
+		RequestTable rt1 = caller.findByID(id);
+		
+		if (rt1 == null)
+			return Long.toString(id) + " is not found! <br> Cannot Delete!";
+		
+		else {
+			caller.delete(rt1);
+			return Long.toString(id) + " is removed!";
+		}
 		
 	}
 	

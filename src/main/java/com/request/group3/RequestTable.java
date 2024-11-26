@@ -62,6 +62,7 @@ public class RequestTable {
 		
 		switch (cond) {
 		case 1:
+
 			return storefile1;
 			
 		case 2:

@@ -11,7 +11,7 @@ public class EmployeeTable {
 	//Automatic Generate ID
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id ;
+	private Long ID ;
 	
 	//Request Data
 	

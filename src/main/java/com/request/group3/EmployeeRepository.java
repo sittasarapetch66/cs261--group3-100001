@@ -18,6 +18,13 @@ public interface EmployeeRepository extends JpaRepository<EmployeeTable, Long> {
 	
 	EmployeeTable findByUsernameAndPassword(String username, String password);
 	
+	//Return Repository for only that ID
+	EmployeeTable findByID(Long ID);
+	
+	//To remove by input ID
+	EmployeeTable removeByID(Long ID);
+	
+	
 	//find by matching name and matching faculty name
 	//List<EmployeeTable> findByNameTHAndFaculty(String nameTH, String faculty);
 	

@@ -17,6 +17,9 @@ public interface RequestRepository extends JpaRepository<RequestTable, Long>{
 	//Return Repository for only that ID
 	RequestTable findByID(Long ID);
 	
+	//To remove by input ID
+	RequestTable removeByID(Long ID);
+	
 	 
 
 

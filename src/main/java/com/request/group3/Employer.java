@@ -52,6 +52,20 @@ public class Employer {
 		else return false;
 	}
 	
+	@GetMapping("/deleteid={id}")
+	public String toDeleteID(@PathVariable("id") Long id) {
+		EmployeeTable et1 = caller.findByID(id);
+		
+		if (et1 == null)
+			return Long.toString(id) + " is not found!";
+		
+		else {
+			caller.delete(et1);
+			return Long.toString(id) + " is removed!";
+		}
+		
+	}
+	
 	public EmployeeTable hiddenEmployeeCred(EmployeeTable em1) {
 		em1.hideUserPass();
 		return em1;

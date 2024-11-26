@@ -318,6 +318,28 @@ Return Value : (Body Raw)
 $String of base64 data$
 ```
 
+9. Delete Rows by ID
+
+Method Name: toDeleteID
+
+URL : <i>Domain Name</i>/api/group3/request/deleteid=<i>long ID</i>
+
+Method : GET
+
+Body : <i>None</i>
+
+Return Value : (Body Raw)
+```
+
+<i>If there are no ID that specified</i>
+$ ID is not found! <br> Cannot Delete! $
+
+<i>If there are ID that specified</i>
+$ ID is removed!$
+```
+
+
+
 90. Test Body Return Data
 URL : <i>Domain Name</i>/api/group3/request/testhtml
 
@@ -518,5 +540,5 @@ Return Value : (Array of JSON)
 * if we search by a newly add user and pass credential. You can see now it return true
 
 
-###  Protocol Version 1.4.1
-### Document Version 1.6.2
+###  Protocol Version 1.4.5
+### Document Version 1.6.6
