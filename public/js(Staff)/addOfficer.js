@@ -82,5 +82,5 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('program').addEventListener('change', searchOfficer);
 
     // Add event listener for "เพิ่มเจ้าหน้าที่" button
-    document.querySelector('.add-button').addEventListener('click', addOfficer);
+    document.querySelector('.add-button2').addEventListener('click', addOfficer);
 });

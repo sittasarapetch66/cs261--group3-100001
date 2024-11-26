@@ -23,8 +23,8 @@
     justify-content: space-between;
     background-color: #2D3142;
     color: #F5F5F5;
-    height: 10vh;
     padding: 10px 20px;
+    max-height: 10vh;
 }
 
 #addall .back-button {
@@ -33,15 +33,7 @@
     color: #F5F5F5;
     font-size: 5vh;
     cursor: pointer;
-    border-radius: 50%;
-    padding-left : 5px;
-    padding-right : 15px;
-    transition: 0.5s;
-}
-
-#addall .back-button:hover{
-    background-color: #c8c8c8;
-    box-shadow: inset;
+    outline: none;
 }
 
 #addall .menu-icon {
@@ -196,6 +188,7 @@
     border: 1px solid #ddd;
 }
 
+
 /* กำหนดขนาดขั้นต่ำของคอลัมน์ */
 #addall .teacher-table th:nth-child(1), #addall .teacher-table td:nth-child(1) {
     min-width: 50px;  /* ช่องลำดับ */
@@ -242,21 +235,6 @@
 }
 
 /* ปุ่มเพิ่ม */
-#addall .add-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 16px;
-    cursor: pointer;
-    font-size: 14px;
-    float: right;
-    margin-bottom: 20px;
-}
-
-#addall .add-button:hover {
-    background-color: #45a049;
-}
 
 #addall .menu {
     font-size: 5vh;

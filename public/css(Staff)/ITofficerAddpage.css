@@ -1,13 +1,33 @@
-.IT_navbar{
-
+#addall .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height : 10vh;
     background-color: #2D3142;
-    padding: 10px 20px;
     color: #F5F5F5;
+    padding: 10px 20px;
+    max-height: 10vh;
+}
 
+#addall .back-button {
+    background: none;
+    border: none;
+    color: #F5F5F5;
+    font-size: 5vh;
+    cursor: pointer;
+    outline: none;
+}
+
+#addall .menu-icon {
+    font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+}
+
+#addall .menu-icon:hover {
+    background-color: #c4c4c4a9;
 }
 
 /* ตั้งค่าเบื้องต้น */

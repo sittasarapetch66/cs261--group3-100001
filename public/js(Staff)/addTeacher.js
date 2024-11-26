@@ -45,7 +45,7 @@ function searchTeacher() {
 function redirectToAddPage() {
     window.location.href = 'IT_AddProfessorFormPage.html'; //เอาลิงก์มาใส่
 }
-    document.querySelector('.add-button').addEventListener('click', redirectToAddPage);
+    document.querySelector('.add-button3').addEventListener('click', redirectToAddPage);
 
 // ฟังก์ชันสำหรับการเริ่มต้นเมื่อโหลดหน้าเว็บ
 window.onload = function() {
