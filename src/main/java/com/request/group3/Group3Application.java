@@ -24,7 +24,7 @@ public class Group3Application extends SpringBootServletInitializer{
         return builder.sources(Group3Application.class);
     }
 
-	/*
+	//ห้ามปิดเด็ดขาด มิฉะนั้นโดนต้มแน่
     @Bean
     WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
@@ -33,7 +33,7 @@ public class Group3Application extends SpringBootServletInitializer{
                 registry.addMapping("/**").allowedMethods("*").allowedHeaders("*");
             }
         };
-    }*/
+    }
 	
 
 }
