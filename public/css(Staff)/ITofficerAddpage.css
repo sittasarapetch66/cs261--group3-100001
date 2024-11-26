@@ -1,4 +1,4 @@
-#addall .navbar {
+#ITprof .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -8,7 +8,7 @@
     max-height: 10vh;
 }
 
-#addall .back-button {
+#ITprof .back-button {
     background: none;
     border: none;
     color: #F5F5F5;
@@ -17,7 +17,7 @@
     outline: none;
 }
 
-#addall .menu-icon {
+#ITprof .menu-icon {
     font-size: 5vh;
     cursor: pointer;
     padding-left : 15px;
@@ -26,7 +26,7 @@
     transition: 0.5s;
 }
 
-#addall .menu-icon:hover {
+#ITprof .menu-icon:hover {
     background-color: #c4c4c4a9;
 }
 
