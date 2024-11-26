@@ -155,7 +155,7 @@
     </style>
 </head>
 
-<body>
+<body onload="LoadFunction()">
     <!-- Header Section -->
     <div class="header">
         <div class="profile">
@@ -169,17 +169,17 @@
         <div class="outer-form">
             <div class="form-group">
                 <label for="request-type">กรุณาเลือกแบบคำร้อง</label><br>
-                <label for="student-name">ชื่อ-นามสกุล</label><br>
+                <label for="student-name">อีเมลนักศึกษา</label><br>
                 <label for="student-id">เลขทะเบียนนักศึกษา</label><br>
             </div>
             <div class="form-input">
                 <select id="request-type" aria-label="Request Type">
-                    <option value="ทั้งหมด">ทั้งหมด</option>
-                    <option value="จดทะเบียนล่าช้า">จดทะเบียนล่าช้า</option>
-                    <option value="ถอนรายวิชา">ถอนรายวิชา</option>
-                    <option value="จดทะเบียนศึกษารายวิชาข้ามหลักสูตร">จดทะเบียนศึกษารายวิชาข้ามหลักสูตร</option>
-                    <option value="ลาออก">ลาออก</option>
-                    <option value="อื่นๆ">อื่นๆ</option>
+                    <option value=9999>ทั้งหมด</option>
+                    <option value=1>จดทะเบียนล่าช้า</option>
+                    <option value=2>ถอนรายวิชา</option>
+                    <option value=3>จดทะเบียนศึกษารายวิชาข้ามหลักสูตร</option>
+                    <option value=4>ลาออก</option>
+                    <option value=99>อื่นๆ</option>
                 </select><br>
                 <input type="text" id="student-name" value=""><br>
                 <input type="text" id="student-id" value=""><br>
@@ -199,7 +199,7 @@
                         <th>สถานะ</th>
                         <th>ประเภทคำร้อง</th>
                         <th>เลขทะเบียน</th>
-                        <th>ชื่อ-นามสกุล</th>
+                        <th>อีเมลอาจารย์ที่ปรึกษา</th>
                         <th>ยกเลิก</th>
                         <th>ไฟล์แนบ</th>
                     </tr>
