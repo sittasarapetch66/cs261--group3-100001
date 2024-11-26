@@ -15,21 +15,21 @@ function displayOfficers(filteredOfficers) {
         return;
     }
 
-    filteredOfficers.forEach((officer, index) => {
+    filteredOfficers.forEach((officer, index2) => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${index + 1}</td>
+            <td>${index2 + 1}</td>
             <td>${officer.program}</td>
             <td>${officer.name}</td>
             <td>${officer.email}</td>
             <td><a href="editOfficer.html" class="edit-button">แก้ไข</a></td>
-            <td><button class="delete-button" data-index="${index}">ลบ</button></td>
+            <td><button class="delete-button2" data-index="${index2}">ลบ</button></td>
         `;
         tableBody.appendChild(row);
     });
 
     // Add event listeners for delete buttons
-    document.querySelectorAll('.delete-button').forEach(button => {
+    document.querySelectorAll('.delete-button2').forEach(button => {
         button.addEventListener('click', () => deleteOfficer(button.dataset.index));
     });
 }

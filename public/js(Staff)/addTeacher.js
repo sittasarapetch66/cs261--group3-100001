@@ -88,21 +88,21 @@ function displayTeachers(filteredTeachers) {
         return;
     }
 
-    filteredTeachers.forEach((teacher, index) => {
+    filteredTeachers.forEach((teacher, index3) => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${index + 1}</td>
+            <td>${index3 + 1}</td>
             <td>${teacher.department}</td>
             <td>${teacher.name}</td>
             <td>${teacher.email}</td>
             <td><a href="IT_EditProfessorFormPage.html" class="edit-button">แก้ไข</a></td>
-            <td><button class="delete-button" data-index="${index}">ลบ</button></td>
+            <td><button class="delete-button3" data-index="${index3}">ลบ</button></td>
         `;
         tableBody.appendChild(row);
     });
 
     // Add event listeners for delete buttons
-    document.querySelectorAll('.delete-button').forEach(button => {
+    document.querySelectorAll('.delete-button3').forEach(button => {
         button.addEventListener('click', () => deleteTeacher(button.dataset.index));
     });
 }

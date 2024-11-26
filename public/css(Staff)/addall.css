@@ -212,7 +212,7 @@
 }
 
 /* ปรับขนาดปุ่ม */
-#addall .edit-button, #addall .delete-button {
+#addall .edit-button, #addall .delete-button, #addall .delete-button2, #addall .delete-button3 {
     background-color: #2c2c3e;
     color: white;
     border: none;
