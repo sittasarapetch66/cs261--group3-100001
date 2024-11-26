@@ -5,6 +5,18 @@
     box-sizing: border-box;
 }
 
+.addall1{
+    display: block;
+}
+
+.addall2{
+    display: block;
+}
+
+.addall3{
+    display: block;
+}
+
 #addall .navbar {
     display: flex;
     align-items: center;
@@ -115,6 +127,38 @@
 }
 
 #addall .add-button:hover {
+    background-color: #45a049;
+}
+
+#addall .add-button2 {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    float: right;
+    margin-bottom: 20px;
+}
+
+#addall .add-button2:hover {
+    background-color: #45a049;
+}
+
+#addall .add-button3 {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    float: right;
+    margin-bottom: 20px;
+}
+
+#addall .add-button3:hover {
     background-color: #45a049;
 }
 
