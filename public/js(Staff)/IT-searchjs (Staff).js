@@ -1,4 +1,5 @@
 // ตัวอย่างข้อมูลในระบบ
+// เป็นแค่ตัวย่างเด้อ เราดึงข้อมูลจาก Backend
 const requests = [
     { id: 1, status: "รออนุมัติ", type: "ลาออก", studentId: "123456", name: "โกนับ ถวาสาร", file: "ไฟล์แนบ" },
     { id: 2, status: "อนุมัติแล้ว", type: "ถอนรายวิชา", studentId: "654321", name: "สมหญิง ใจดี", file: "ไฟล์แนบ" },
@@ -56,14 +57,18 @@ function renderTable(data) {
 
         }
         const row = document.createElement("tr");
+        
+        var itemid = item.id;
+        console.log("ID rows is ",itemid)
+
         row.innerHTML = `
-            <td>${item.id}</td>
+            <td>${itemid}</td>
             <td>${item.requestStatus}</td>
             <td>${requestType0}</td>
             <td>${item.username}</td>
             <td>${item.advisorNameTH}</td>
-            <td><button class="cancel-button" id=${item.id} onclick="deleteRequest(${item.id})">X</button></td>
-            <td><button class="download" id=${item.id} onclick="fetchData(${item.id})">📄</button></td>
+            <td><button class="cancel-button" id=${item.id} onclick="deleteRequest(${itemid})">X</button></td>
+            <td><button class="download" id=${item.id} onclick="fetchDataToDownload(${itemid})">📄</button></td>
         `;
         tableBody.appendChild(row);
     });
@@ -91,19 +96,15 @@ function searchData() {
 
 // ฟังก์ชันสำหรับลบคำร้อง
 function deleteRequest(id) {
+    console.log("Id is ", id);
     if (confirm("คุณต้องการลบคำร้องนี้หรือไม่?")) {
         // ลบข้อมูลออกจาก Array
-        const index = requests.findIndex((item) => item.id === id);
-        if (index !== -1) {
-            requests.splice(index, 1);
+            toDeleteData(id);
             alert("คำร้องถูกลบเรียบร้อยแล้ว!");
-        } else {
-            alert("ไม่พบคำร้องในระบบ");
         }
 
         // อัปเดตตารางใหม่
-        searchData();
-    }
+        fetchData();
 }
 
 // Download File
@@ -112,11 +113,32 @@ function downloadFile(id) {
 }
 
 // เรียกฟังก์ชันแสดงข้อมูลเริ่มต้น
-renderTable(requests);
+//renderTable(requests);
 
-//
+//ส่ง Request ไปลบข้อมูล
+function toDeleteData(id){
 
+    const options = {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      };
+    
+      //fetch data
+    fetch('http://petchsko123.trueddns.com:56267/group3/api/group3/request/deleteid=' + id.toString(), options)
+    .then(response => response.text()) 
+    .then((dataStr) => {
+        console.log(dataStr);
+    })
+    .catch(error => {
+        // Handle any errors that occurred during the fetch
+        console.error('Fetch error:', error);
+    });
 
+}
+
+//ส่ง Request ไปดึงข้อมูล
 function downloadFile(id){
     const base64Input =id.trim();
     if (!base64Input) {
@@ -160,25 +182,38 @@ function downloadFile(id){
 
 }
 
-/*
-function fetchData(id) {
-    const url = "http://petchsko123.trueddns.com:56267/api/group3/request/id=" + "1" + "/file=1";
-    try {
-        const response = fetch(url);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+//ดึงข้อมูลจาก Backend มาเป็นไฟล์
+function fetchDataToDownload(id) {
+    const options = {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      };
+    
+      //fetch data
+    fetch('http://petchsko123.trueddns.com:56267/group3/api/group3/request/id=' + id.toString() + '/file=1' , options)
+    .then(response => response.text()) 
+    .then((dataStr) => {
+        //console.log(dataStr);
+        if (dataStr == "NULL" || dataStr == "NULLSTR" ||dataStr == "null" || dataStr == null || dataStr == ""){
+            console.log("No string!");
+            alert("ไม่มีไฟล์ให้ดาวน์โหลด เนื่องจากผู้ร้องไม่ได้แนบไฟล์")
         }
-        data2 = response;
-        downloadFile(data2);
-    } catch (error) {
-        console.error("Error fetching data:", error);
-    }
-}
-*/
 
-/*
-document.getElementById('convertButton').addEventListener('click', function() {
-    const base64Input = document.getElementById('base64Input').value.trim();
+        else{
+            convertAndDownloadBase64(dataStr);
+        }
+    })
+    .catch(error => {
+        // Handle any errors that occurred during the fetch
+        console.error('Fetch error:', error);
+    });
+}
+
+//เอาข้อมูล Base64 แปลงเป็นไฟล์
+function convertAndDownloadBase64(base64Input) {
+    //const base64Input = document.getElementById('base64Input').value.trim();
 
     if (!base64Input) {
         alert('Please paste a valid Base64 string.');
@@ -213,10 +248,10 @@ document.getElementById('convertButton').addEventListener('click', function() {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+        alert("ดาวน์โหลดไฟล์สำเร็จ !");
 
     } catch (error) {
         console.error('Error converting Base64:', error);
         alert('An error occurred while converting the Base64 string. Please ensure it is valid.');
     }
-});
-*/
+}
