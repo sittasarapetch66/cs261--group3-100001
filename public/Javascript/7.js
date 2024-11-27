@@ -35,3 +35,7 @@ confirmButton.addEventListener('click', () => {
 });
 
 fileInput.addEventListener('change', handleFileInputChange);
+
+function requestTemplate(typeinput){
+    parent.postMessage(typeinput, "*");
+    }

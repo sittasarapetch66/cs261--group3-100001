@@ -18,3 +18,6 @@
 
         window.location.href = 'thankyou.html';
     }
+    function requestTemplate(typeinput){
+        parent.postMessage(typeinput, "*");
+        }
