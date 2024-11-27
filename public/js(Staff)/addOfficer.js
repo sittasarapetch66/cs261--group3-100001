@@ -7,47 +7,30 @@ const officers = [
 
 // Function to display all officers in the table
 function displayOfficers(filteredOfficers) {
-    const tableBody = document.getElementById("staff-table");
+    const tableBody = document.querySelector('.teacher-table tbody');
     tableBody.innerHTML = ''; // Clear existing table rows
 
-    if (filteredOfficers.length === 0) {
-        tableBody.innerHTML = `<tr><td colspan="6">ไม่พบข้อมูล</td></tr>`;
-        return;
-    }
-
-    filteredOfficers.forEach((officer, index2) => {
+    //เอาลิงก์ไฟล์แก้ไขมาใส่ที่นี่ ตรงบรรทัดที่ 21
+    filteredOfficers.forEach((officer, index) => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${index2 + 1}</td>
+            <td>${index + 1}</td>
             <td>${officer.program}</td>
             <td>${officer.name}</td>
             <td>${officer.email}</td>
             <td><a href="editOfficer.html" class="edit-button">แก้ไข</a></td>
-            <td><button class="delete-button2" data-index="${index2}">ลบ</button></td>
+            <td><button class="delete-button">ลบ</button></td>
         `;
         tableBody.appendChild(row);
     });
-
-    // Add event listeners for delete buttons
-    document.querySelectorAll('.delete-button2').forEach(button => {
-        button.addEventListener('click', () => deleteOfficer(button.dataset.index));
-    });
-}
-
-// Function to delete an officer
-function deleteOfficer(index) {
-    if (confirm('คุณแน่ใจหรือว่าต้องการลบข้อมูลนี้?')) {
-        officers.splice(index, 1); // Remove the officer at the given index
-        displayOfficers(officers); // Update the table after deletion
-    }
 }
 
 // Function to search officers by name or program
 function searchOfficer() {
-    const nameInput = document.getElementById('name2').value.toLowerCase();
+    const nameInput = document.getElementById('name').value.toLowerCase();
     const programSelect = document.getElementById('program').value;
 
-    // Filter officers based on input 
+    // Filter officers based on input
     const filteredOfficers = officers.filter(officer => {
         const nameMatch = officer.name.toLowerCase().includes(nameInput);
         const programMatch = programSelect === '' || officer.program === programSelect;
@@ -58,26 +41,18 @@ function searchOfficer() {
     displayOfficers(filteredOfficers);
 }
 
-// Function to add a new officer
-function addOfficer() {
-    const newName = prompt('กรุณากรอกชื่อ-นามสกุล:');
-    const newProgram = prompt('ภาคการเรียน:');
-    const newEmail = prompt('กรุณากรอกอีเมล:');
-
-    if (newName && newProgram && newEmail) {
-        officers.push({ name: newName, program: newProgram, email: newEmail });
-        displayOfficers(officers);
-    } else {
-        alert('กรุณากรอกข้อมูลให้ครบถ้วน');
-    }
-}
-
-// Initialize table with officers and add event listeners when the page loads
-document.addEventListener('DOMContentLoaded', function() {
+// Initialize table on page load
+window.onload = function() {
     // Display all officers initially
     displayOfficers(officers);
 
+    // Function to redirect to another page when clicking "เพิ่มคณบดี"
+function redirectToAddPage() {
+    window.location.href = 'addNewOfficer.html'; //เอาลิงก์มาใส่
+}
+    document.querySelector('.add-button').addEventListener('click', redirectToAddPage);
+
     // Add event listeners for search inputs
-    document.getElementById('name2').addEventListener('input', searchOfficer);
+    document.getElementById('name').addEventListener('input', searchOfficer);
     document.getElementById('program').addEventListener('change', searchOfficer);
-});
+};

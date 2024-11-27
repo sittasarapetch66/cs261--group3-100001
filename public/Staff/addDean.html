@@ -6,64 +6,13 @@
     <title>เพิ่มคณบดี</title>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css(Staff)/addall.css"> <!-- ใช้ไฟล์ addall.css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/CSS_Importer.css">
-    <link rel="icon" type="image/x-icon" href="../picture/favicon2.jpg">
-    <script src="../js/webscript2.js"></script> 
-    <script src="../js/login_script.js"></script> 
-    <script src="../js/startweb_func.js"></script> 
-    <script src="../js/section_script.js"></script> 
-    <script src="../js/form_script.js"></script>
 </head>
-<body onload="startFunction()">
-
-    <!-- Overlay Section -->
-    <div id="overlaysection" onclick="toggleSomething(2)">
-    
+<body>
+    <!-- Block บน -->
+    <div class="header-block">
+        <button class="back-button"></button> <!-- ปุ่มย้อนกลับ -->
+        <button class="menu-button"></button> <!-- ปุ่มเมนู -->
     </div>
-    
-    <!-- Menu Section -->
-    <div id="menusection">
-       
-       <div class="header">
-           <h1 onclick="toggleSomething(2)">◀
-           </h1>
-           <h2>MENU</h2>
-       </div>
-    
-       <div class="selection">
-    
-           <div class="list" onclick="toggleSomething(11)">
-               <p>รายการของฉัน</p>
-           </div>
-           <div class="list" onclick="toggleSomething(15)">
-               <p>ตรวจสอบสถานะคำร้อง</p>
-           </div>
-           <div class="list" onclick="toggleSomething(12)">
-               <p>ประวัติการยื่นคำร้อง</p>
-           </div>
-           <br>
-           <hr><hr>
-           <div class="list" onclick="toggleSomething(10)">
-               <p>ยื่นคำร้องเพิ่มเติม</p>
-           </div>
-           <div class="list" onclick="reallyExit()">
-               <p>ออกจากระบบ</p>
-           </div>
-           <hr><hr>
-           <br><br>
-           <div class="list" onclick="reallyExit()">
-               <p>โหมดผู้พัฒนา</p>
-           </div>
-          </div>
-    
-       </div>
-    
-       <div id="adddean">
-        <div class="navbar">
-            <button class="back-button" onclick="toggleSomething(10)">◀</button>
-            <div class="menu-icon" onclick="showMenu()">☰</div>
-        </div>
 
     <!-- Block กลาง -->
     <div class="middle-block">
@@ -78,9 +27,7 @@
     <!-- Block ล่าง -->
     <div class="content-block">
         <button class="add-button" onclick="addDean()">+ เพิ่มคณบดี</button> <!-- ปุ่มเพิ่มคณบดี -->
-        <div class="out_adddean">
-            
-            <table class="teacher-table">
+        <table class="teacher-table">
             <thead>
                 <tr>
                     <th>ลำดับ</th>
@@ -94,9 +41,7 @@
                 <!-- ตารางจะแสดงข้อมูลจาก JavaScript -->
             </tbody>
         </table>
-        </div>
     </div>
-    </div>
-    <script src="../js(Staff)/addDean.js"></script> <!-- ลิงก์ไปยัง JavaScript -->
+    <script src="../js(staff)/addDean.js"></script> <!-- ลิงก์ไปยัง JavaScript -->
 </body>
 </html>
