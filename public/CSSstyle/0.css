@@ -41,6 +41,8 @@ Create by Akawat-SKO
 
 input {
     padding: 10px;
+    padding-top : 20px;
+    padding-bottom : 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
 }
