@@ -247,7 +247,7 @@
 
     <div class="container">
         <header>
-            <div class="back-button" onclick="toggleSomething(10)">◀</div>
+            <div class="back-button" onclick="toggleSomething(17)">◀</div>
             <h1>คำร้องนักศึกษา</h1>
             <div class="menu-icon" onclick="showMenu()">☰</div>
         </header>
@@ -639,7 +639,7 @@
   </div>
   
   <!-- Menu Section -->
-  <div id="menusection">
+  <div id="menusection" style="display: none;">
      
      <div class="header">
          <h1 onclick="toggleSomething(2)">◀
@@ -676,7 +676,7 @@
      </div>
   
   </div>
-      <div id="Acceptformsection">
+      <div id="Acceptformsection" style="display: none;">
           <!-- Header Section -->
           <div class="header">
               <div class="profile">
@@ -750,48 +750,48 @@
     <div id="addall">
         <div class="addall1">
             <div class="navbar">
-            <button class="back-button" onclick="toggleSomething(10)">◀</button>
-            <div class="menu-icon" onclick="showMenu()">☰</div>
-        </div>
-
-    <!-- Block กลาง -->
-    <div class="middle-block">
-        <form id="dean-form">
-            <div class="form-group">
-                <label for="name">ชื่อ-นามสกุล</label>
-                <input type="text" id="name" name="name" placeholder="กรุณากรอกชื่อ" oninput="searchDean()">
+                <button class="back-button" onclick="toggleSomething(10)">◀</button>
+                <div class="menu-icon" onclick="showMenu()">☰</div>
             </div>
-        </form>
-    </div>
 
-    <!-- Block ล่าง -->
-    <div class="content-block">
-        <button class="add-button" onclick="addDean()">+ เพิ่มคณบดี</button> <!-- ปุ่มเพิ่มคณบดี -->
-        <div class="out_adddean">
-            
-            <table class="teacher-table">
-            <thead>
-                <tr>
-                    <th>ลำดับ</th>
-                    <th>ชื่อ-นามสกุล</th>
-                    <th>Email</th>
-                    <th>แก้ไข</th>
-                    <th>ลบ</th>
-                </tr>
-            </thead>
-            <tbody id="dean-table">
-                <!-- ตารางจะแสดงข้อมูลจาก JavaScript -->
-            </tbody>
-        </table>
+        <!-- Block กลาง -->
+        <div class="middle-block">
+            <form id="dean-form">
+                <div class="form-group">
+                    <label for="name">ชื่อ-นามสกุล</label>
+                    <input type="text" id="name" name="name" placeholder="กรุณากรอกชื่อ" oninput="searchDean()">
+                </div>
+            </form>
         </div>
-    </div>
+
+            <!-- Block ล่าง -->
+            <div class="content-block">
+                <button class="add-button" onclick="addDean()">+ เพิ่มคณบดี</button> <!-- ปุ่มเพิ่มคณบดี -->
+                <div class="out_adddean">
+                    
+                    <table class="teacher-table">
+                    <thead>
+                        <tr>
+                            <th>ลำดับ</th>
+                            <th>ชื่อ-นามสกุล</th>
+                            <th>Email</th>
+                            <th>แก้ไข</th>
+                            <th>ลบ</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dean-table">
+                        <!-- ตารางจะแสดงข้อมูลจาก JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            </div>
         </div>
         
     </div>
 
       <!--addOfficer-->
-    <div id="addall">
-        <div class="addall2">
+    <div id="F">
+        <div class ="addall2">
             <!-- Block บน -->
         <div class="navbar">
             <button class="back-button" onclick="toggleSomething(10)">◀</button>
@@ -843,7 +843,7 @@
     </div>
 
       <!--addprof-->
-      <div id="addall">
+      <div id="addall2">
         <div class="addall3">
             <!-- Block บน -->
         <div class="navbar">
@@ -982,7 +982,7 @@
       </div>
 
       <!--IT_editproform-->
-      <div id="ITprof">
+      <div id="ITprof1">
         <div class="navbar">
             <button class="back-button" onclick="toggleSomething(10)">◀</button>
             <div class="menu-icon" onclick="showMenu()">☰</div>
@@ -1125,7 +1125,7 @@
             <!-- Header Section -->
     <div class="header">
         <div class="profile">
-            <button class="back-button" onclick="toggleSomething(10)">◀</button>
+            <button class="back-button" onclick="toggleSomething(17)">◀</button>
         </div>
         <div class="menu-icon" onclick="showMenu()">☰</div>
     </div>
@@ -1182,7 +1182,7 @@
       <!--IT_officeradd-->
       <div id="IToffadd">
         <div class="navbar">
-            <button class="back-button" onclick="toggleSomething(10)">◀</button>
+            <button class="back-button" onclick="toggleSomething(17)">◀</button>
             <div class="menu-icon" onclick="showMenu()">☰</div>
         </div>
         
@@ -1191,15 +1191,15 @@
             <h1 class="itofficer-heading">เพิ่มข้อมูลบุคลากร</h1>
             <p class="itofficer-subheading">โปรดเลือกรายการ</p>
             <div class="itofficer-options-container">
-                <div class="itofficer-option" onclick="navigateTo('IT_EditProfessorFormPage.html')">
+                <div class="itofficer-option" onclick="toggleSomething(23)">
                     <img src="./picture/user.png" alt="" class="itofficer-icon">
                     <span class="itofficer-label">คณบดี</span>               
                 </div>
-                <div class="itofficer-option" onclick="navigateTo('IT_EditProfessorFormPage.html')" >
+                <div class="itofficer-option" onclick="toggleSomething(18)" >
                     <img src="./picture/user.png" alt="" class="itofficer-icon">
                     <span class="itofficer-label">อาจารย์</span>
                 </div>
-                <div class="itofficer-option" onclick="navigateTo('IT_EditProfessorFormPage.html')"">
+                <div class="itofficer-option" onclick="toggleSomething(18)">
                     <img src="./picture/user.png" alt="" class="itofficer-icon">
                     <span class="itofficer-label">เจ้าหน้าที่</span>
                 </div>
@@ -1233,16 +1233,16 @@
         
         <!-- Icons Section -->
         <div class="icon-container">
-            <div class="icon-item" onclick="searchRequests()">
+            <div class="icon-item" onclick="toggleSomething(18)">
                 <div class="icon">🔍</div>
                 <p>สืบค้นคำร้อง</p>
             </div>
             
-            <div class="icon-item" onclick="viewHistory()">
+            <div class="icon-item" onclick="toggleSomething(19)">
                 <div class="icon"><i class="fa fa-history"></i></div>
                 <p>ประวัติการใช้งาน</p>
             </div>
-            <div class="icon-item" onclick="addStaffData()">
+            <div class="icon-item" onclick="requestTemplate('addPersonnel')">
                 <div class="icon"><img src="./picture/images-removebg-preview.png" height="50" width="50"></div>
                 <p>เพิ่มข้อมูลบุคคลากร</p>
             </div>
