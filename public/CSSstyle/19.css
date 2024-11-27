@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 900px;
+    min-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2D3142;
+    color: #F5F5F5;
+    padding: 10px 20px;
+    max-height: 10vh;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: #F5F5F5;
+    font-size: 5vh;
+    cursor: pointer;
+    outline: none;
+}
+
+.menu-icon {
+    font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+}
+
+.menu-icon:hover {
+    background-color: #c4c4c4a9;
+}
+
+h1 {
+    font-size: 1.5em;
+    margin: 0;
+    font-family: 'Prompt', sans-serif;
+}
+
+.form-section {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px;
+    color: #666;
+    font-size: 0.95em;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    font-family: 'Prompt', sans-serif;
+}
+
+.cancel-btn {
+    background-color: #ff7043;
+    color: #ffffff;
+}
+
+.submit-btn {
+    background-color: #4caf50;
+    color: #ffffff;
+}
