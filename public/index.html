@@ -247,7 +247,7 @@
 
     <div class="container">
         <header>
-            <div class="back-button" onclick="toggleSomething(10)">◀</div>
+            <div class="back-button" onclick="toggleSomething(17)">◀</div>
             <h1>คำร้องนักศึกษา</h1>
             <div class="menu-icon" onclick="showMenu()">☰</div>
         </header>
@@ -640,7 +640,7 @@
   </div>
   
   <!-- Menu Section -->
-  <div id="menusection">
+  <div id="menusection" style="display: none;">
      
      <div class="header">
          <h1 onclick="toggleSomething(2)">◀
@@ -677,7 +677,7 @@
      </div>
   
   </div>
-      <div id="Acceptformsection">
+      <div id="Acceptformsection" style="display: none;">
           <!-- Header Section -->
           <div class="header">
               <div class="profile">
@@ -751,51 +751,51 @@
     <div id="addall">
         <div class="addall1">
             <div class="navbar">
-            <button class="back-button" onclick="toggleSomething(10)">◀</button>
-            <div class="menu-icon" onclick="showMenu()">☰</div>
-        </div>
-
-    <!-- Block กลาง -->
-    <div class="middle-block">
-        <form id="dean-form">
-            <div class="form-group">
-                <label for="name">ชื่อ-นามสกุล</label>
-                <input type="text" id="name" name="name" placeholder="กรุณากรอกชื่อ">
+                <button class="back-button" onclick="toggleSomething(19)">◀</button>
+                <div class="menu-icon" onclick="showMenu()">☰</div>
             </div>
-        </form>
-    </div>
 
-    <!-- Block ล่าง -->
-    <div class="content-block">
-        <button class="add-button" onclick="addDean()">+ เพิ่มคณบดี</button> <!-- ปุ่มเพิ่มคณบดี -->
-        <div class="out_adddean">
-            
-            <table class="teacher-table">
-            <thead>
-                <tr>
-                    <th>ลำดับ</th>
-                    <th>ชื่อ-นามสกุล</th>
-                    <th>Email</th>
-                    <th>แก้ไข</th>
-                    <th>ลบ</th>
-                </tr>
-            </thead>
-            <tbody id="dean-table">
-                <!-- ตารางจะแสดงข้อมูลจาก JavaScript -->
-            </tbody>
-        </table>
+        <!-- Block กลาง -->
+        <div class="middle-block">
+            <form id="dean-form">
+                <div class="form-group">
+                    <label for="name">ชื่อ-นามสกุล</label>
+                    <input type="text" id="name" name="name" placeholder="กรุณากรอกชื่อ" oninput="searchDean()">
+                </div>
+            </form>
         </div>
-    </div>
+
+            <!-- Block ล่าง -->
+            <div class="content-block">
+                <button class="add-button" onclick="addDean()">+ เพิ่มคณบดี</button> <!-- ปุ่มเพิ่มคณบดี -->
+                <div class="out_adddean">
+                    
+                    <table class="teacher-table">
+                    <thead>
+                        <tr>
+                            <th>ลำดับ</th>
+                            <th>ชื่อ-นามสกุล</th>
+                            <th>Email</th>
+                            <th>แก้ไข</th>
+                            <th>ลบ</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dean-table">
+                        <!-- ตารางจะแสดงข้อมูลจาก JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            </div>
         </div>
         
     </div>
 
       <!--addOfficer-->
-    <div id="addall">
-        <div class="addall2">
+    <div id="F">
+        <div class ="addall2">
             <!-- Block บน -->
         <div class="navbar">
-            <button class="back-button" onclick="toggleSomething(10)">◀</button>
+            <button class="back-button" onclick="toggleSomething(19)">◀</button>
             <div class="menu-icon" onclick="showMenu()">☰</div>
         </div>
 
@@ -803,8 +803,8 @@
     <div class="middle-block">
         <form id="officer-form">
             <div class="form-group">
-                <label for="name">ชื่อ-นามสกุล</label>
-                <input type="text" id="name" name="name" placeholder="กรุณากรอกชื่อ">
+                <label for="name2">ชื่อ-นามสกุล</label>
+                <input type="text" id="name2" name="name2" placeholder="กรุณากรอกชื่อ" oninput="searchOfficer()">
             </div>
             <div class="form-group">
                 <label for="program">ภาค</label>
@@ -844,11 +844,11 @@
     </div>
 
       <!--addprof-->
-      <div id="addall">
+      <div id="addall2">
         <div class="addall3">
             <!-- Block บน -->
         <div class="navbar">
-            <button class="back-button" onclick="toggleSomething(10)">◀</button>
+            <button class="back-button" onclick="toggleSomething(19)">◀</button>
             <div class="menu-icon" onclick="showMenu()">☰</div>
         </div>
 
@@ -856,8 +856,8 @@
     <div class="middle-block">
         <form id="teacher-form">
             <div class="form-group">
-                <label for="name">ชื่อ-นามสกุล</label>
-                <input type="text" id="name" name="name" placeholder="กรุณากรอกชื่อ" oninput="searchTeacher()">
+                <label for="name3">ชื่อ-นามสกุล</label>
+                <input type="text" id="name3" name="name3" placeholder="กรุณากรอกชื่อ" oninput="searchTeacher()">
             </div>
             <div class="form-group">
                 <label for="faculty">คณะ</label>
@@ -912,7 +912,7 @@
       <!--IT_addproform-->
       <div id="ITprof">
         <div class="navbar">
-            <button class="back-button" onclick="toggleSomething(10)">◀</button>
+            <button class="back-button" onclick="toggleSomething(19)">◀</button>
             <div class="menu-icon" onclick="showMenu()">☰</div>
         </div>
         <main class="itform-main-content">
@@ -983,7 +983,7 @@
       </div>
 
       <!--IT_editproform-->
-      <div id="ITprof">
+      <div id="ITprof1">
         <div class="navbar">
             <button class="back-button" onclick="toggleSomething(10)">◀</button>
             <div class="menu-icon" onclick="showMenu()">☰</div>
@@ -1061,7 +1061,7 @@
             <!-- Header Section -->
     <div class="header">
         <div class="profile">
-            <button class="back-button" onclick="toggleSomething(10)">◀</button>
+            <button class="back-button" onclick="toggleSomething(17)">◀</button>
         </div>
         <div class="menu-icon" onclick="showMenu()">☰</div>
     </div>
@@ -1122,31 +1122,32 @@
       </div>
 
       <!--IT_search-->
-      <div id="ITsearch">
+      <div id="ITsearch" onload="LoadFunction()">
             <!-- Header Section -->
     <div class="header">
         <div class="profile">
-            <button class="back-button" onclick="toggleSomething(10)">◀</button>
+            <button class="back-button" onclick="toggleSomething(17)">◀</button>
         </div>
         <div class="menu-icon" onclick="showMenu()">☰</div>
     </div>
 
     <!-- Form Section -->
+    <!-- Form Section -->
     <section class="form-section" aria-labelledby="form-title">
         <div class="outer-form">
             <div class="form-group">
                 <label for="request-type">กรุณาเลือกแบบคำร้อง</label><br>
-                <label for="student-name">ชื่อ-นามสกุล</label><br>
+                <label for="student-name">อีเมลนักศึกษา</label><br>
                 <label for="student-id">เลขทะเบียนนักศึกษา</label><br>
             </div>
             <div class="form-input">
                 <select id="request-type" aria-label="Request Type">
-                    <option value="ทั้งหมด">ทั้งหมด</option>
-                    <option value="จดทะเบียนล่าช้า">จดทะเบียนล่าช้า</option>
-                    <option value="ถอนรายวิชา">ถอนรายวิชา</option>
-                    <option value="จดทะเบียนศึกษารายวิชาข้ามหลักสูตร">จดทะเบียนศึกษารายวิชาข้ามหลักสูตร</option>
-                    <option value="ลาออก">ลาออก</option>
-                    <option value="อื่นๆ">อื่นๆ</option>
+                    <option value=9999>ทั้งหมด</option>
+                    <option value=1>จดทะเบียนล่าช้า</option>
+                    <option value=2>ถอนรายวิชา</option>
+                    <option value=3>จดทะเบียนศึกษารายวิชาข้ามหลักสูตร</option>
+                    <option value=4>ลาออก</option>
+                    <option value=99>อื่นๆ</option>
                 </select><br>
                 <input type="text" id="student-name" value=""><br>
                 <input type="text" id="student-id" value=""><br>
@@ -1166,7 +1167,7 @@
                         <th>สถานะ</th>
                         <th>ประเภทคำร้อง</th>
                         <th>เลขทะเบียน</th>
-                        <th>ชื่อ-นามสกุล</th>
+                        <th>อีเมลอาจารย์ที่ปรึกษา</th>
                         <th>ยกเลิก</th>
                         <th>ไฟล์แนบ</th>
                     </tr>
@@ -1182,7 +1183,7 @@
       <!--IT_officeradd-->
       <div id="IToffadd">
         <div class="navbar">
-            <button class="back-button" onclick="toggleSomething(10)">◀</button>
+            <button class="back-button" onclick="toggleSomething(17)">◀</button>
             <div class="menu-icon" onclick="showMenu()">☰</div>
         </div>
         
@@ -1191,15 +1192,15 @@
             <h1 class="itofficer-heading">เพิ่มข้อมูลบุคลากร</h1>
             <p class="itofficer-subheading">โปรดเลือกรายการ</p>
             <div class="itofficer-options-container">
-                <div class="itofficer-option" onclick="navigateTo('IT_EditProfessorFormPage.html')">
+                <div class="itofficer-option" onclick="toggleSomething(23)">
                     <img src="./picture/user.png" alt="" class="itofficer-icon">
                     <span class="itofficer-label">คณบดี</span>               
                 </div>
-                <div class="itofficer-option" onclick="navigateTo('IT_EditProfessorFormPage.html')" >
+                <div class="itofficer-option" onclick="toggleSomething(26)" >
                     <img src="./picture/user.png" alt="" class="itofficer-icon">
                     <span class="itofficer-label">อาจารย์</span>
                 </div>
-                <div class="itofficer-option" onclick="navigateTo('IT_EditProfessorFormPage.html')"">
+                <div class="itofficer-option" onclick="toggleSomething(24)">
                     <img src="./picture/user.png" alt="" class="itofficer-icon">
                     <span class="itofficer-label">เจ้าหน้าที่</span>
                 </div>

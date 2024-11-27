@@ -15,21 +15,21 @@ function displayOfficers(filteredOfficers) {
         return;
     }
 
-    filteredOfficers.forEach((officer, index) => {
+    filteredOfficers.forEach((officer, index2) => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${index + 1}</td>
+            <td>${index2 + 1}</td>
             <td>${officer.program}</td>
             <td>${officer.name}</td>
             <td>${officer.email}</td>
             <td><a href="editOfficer.html" class="edit-button">แก้ไข</a></td>
-            <td><button class="delete-button" data-index="${index}">ลบ</button></td>
+            <td><button class="delete-button2" data-index="${index2}">ลบ</button></td>
         `;
         tableBody.appendChild(row);
     });
 
     // Add event listeners for delete buttons
-    document.querySelectorAll('.delete-button').forEach(button => {
+    document.querySelectorAll('.delete-button2').forEach(button => {
         button.addEventListener('click', () => deleteOfficer(button.dataset.index));
     });
 }
@@ -44,10 +44,10 @@ function deleteOfficer(index) {
 
 // Function to search officers by name or program
 function searchOfficer() {
-    const nameInput = document.getElementById('name').value.toLowerCase();
+    const nameInput = document.getElementById('name2').value.toLowerCase();
     const programSelect = document.getElementById('program').value;
 
-    // Filter officers based on input
+    // Filter officers based on input 
     const filteredOfficers = officers.filter(officer => {
         const nameMatch = officer.name.toLowerCase().includes(nameInput);
         const programMatch = programSelect === '' || officer.program === programSelect;
@@ -61,7 +61,7 @@ function searchOfficer() {
 // Function to add a new officer
 function addOfficer() {
     const newName = prompt('กรุณากรอกชื่อ-นามสกุล:');
-    const newProgram = prompt('กรุณากรอกสาขาวิชา/ภาคการเรียน:');
+    const newProgram = prompt('ภาคการเรียน:');
     const newEmail = prompt('กรุณากรอกอีเมล:');
 
     if (newName && newProgram && newEmail) {
@@ -78,9 +78,6 @@ document.addEventListener('DOMContentLoaded', function() {
     displayOfficers(officers);
 
     // Add event listeners for search inputs
-    document.getElementById('name').addEventListener('input', searchOfficer);
+    document.getElementById('name2').addEventListener('input', searchOfficer);
     document.getElementById('program').addEventListener('change', searchOfficer);
-
-    // Add event listener for "เพิ่มเจ้าหน้าที่" button
-    document.querySelector('.add-button2').addEventListener('click', addOfficer);
 });
