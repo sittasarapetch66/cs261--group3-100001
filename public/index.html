@@ -7,59 +7,59 @@
     <title>TU Online Requester</title>
 </head>
 
-<body>
+<body onload="onloadMain()">
 
-    <!-- Login Section -->
-    <iframe src="login.html" class="section1" id="1"></iframe>
-    <!-- Menu -->
-    <iframe src="" class="" id=""></iframe>
-    <!-- Home student -->
-    <iframe src="" class="" id=""></iframe>
-    <!-- Mylist Section -->
-    <iframe src="" class="" id=""></iframe>
-    <!-- History Section -->
-    <iframe src="" class="" id=""></iframe>
-    <!-- requestformtemplate -->
-    <iframe src="" class="" id=""></iframe>
-    <!-- success -->
-    <iframe src="" class="" id=""></iframe>
-    <!-- Request check -->
-    <iframe src="" class="" id=""></iframe>
-    <!-- payment -->
-    <iframe src="" class="" id=""></iframe>
-    <!-- payment home -->
-    <iframe src="" class="" id=""></iframe>
-    <!-- -accept form -->
-    <iframe src="./Teacher/accept form(teacher).html" class="section11" id="11"></iframe>
-    <!-- addDean -->
-    <iframe src="" class="" id=""></iframe>
-    <!-- addOfficer -->
-    <iframe src="" class="" id=""></iframe>
-    <!-- addprof -->
-    <iframe src="" class="" id=""></iframe>
-    <!-- IT_addproform -->
-    <iframe src="" class="" id=""></iframe>
-    <!-- IT_editproform -->
-    <iframe src="" class="" id=""></iframe>
-    <!-- IT_history -->
-    <iframe src="" class="" id=""></iframe>
-    <!-- IT_search -->
-    <iframe src="" class="" id=""></iframe>
-    <!-- IT_officeradd -->
-    <iframe src="" class="" id=""></iframe>
-    <!-- IT_staffmenu -->
-    <iframe src="" class="" id=""></iframe>
-    <!--  -->
-    <iframe src="" class="" id=""></iframe>
-    <!--  -->
-    <iframe src="" class="" id=""></iframe>
-    <!--  -->
-    <iframe src="" class="" id=""></iframe>
+    <!--0 : Login Section -->
+    <iframe src="./HTML/0.html" class="websection" id="1">Your Browser not support iframe</iframe>
+    <!--1 : Home student -->
+    <iframe src="" class="websection" id=""></iframe>
+    <!--2 :  Mylist Section -->
+    <iframe src="" class="websection" id=""></iframe>
+    <!--3 History Section -->
+    <iframe src="" class="websection" id=""></iframe>
+    <!--4 requestformtemplate -->
+    <iframe src="" class="websection" id=""></iframe>
+    <!--5 success -->
+    <iframe src="" class="websection" id=""></iframe>
+    <!--6 Request check -->
+    <iframe src="" class="websection" id=""></iframe>
+    <!--7 payment -->
+    <iframe src="" class="websection" id=""></iframe>
+    <!--8 payment home -->
+    <iframe src="" class="websection" id=""></iframe>
+    <!--9 -accept form -->
+    <iframe src="./Teacher/accept form(teacher).html" class="websection" class="section11" id="11"></iframe>
+    <!--10 addDean -->
+    <iframe src="" class="websection" id=""></iframe>
+    <!--11 addOfficer -->
+    <iframe src="" class="websection" id=""></iframe>
+    <!--12 addprof -->
+    <iframe src="" class="websection" id=""></iframe>
+    <!--13 IT_addproform -->
+    <iframe src="" class="websection" id=""></iframe>
+    <!--14 IT_editproform -->
+    <iframe src="" class="websection" id=""></iframe>
+    <!--15 IT_history -->
+    <iframe src="" class="websection" id=""></iframe>
+    <!--16 IT_search -->
+    <iframe src="" class="websection" id=""></iframe>
+    <!--17 IT_officeradd -->
+    <iframe src="" class="websection" id=""></iframe>
+    <!--18 IT_staffmenu -->
+    <iframe src="" class="websection" id=""></iframe>
+    <!--19  -->
+    <iframe src="" class="websection" id=""></iframe>
+    <!--20  -->
+    <iframe src="" class="websection" id=""></iframe>
+    <!--21  -->
+    <iframe src="" class="websection" id=""></iframe>
+
 </body>
 
 <style>
  
-/*
+/* 
+Set iframe to fit the device width and height (viewport fit)
 */
 html, body, div, iframe 
 {
@@ -68,10 +68,47 @@ html, body, div, iframe
  width: 100%;
  height: 100%;
  border: 1px solid black;
- overflow: hidden;}
+ /* Experimental on All Section */
+ //overflow: hidden;
+}
 
 
 </style>
 <script>
+
+    function toggleSection(idsec){
+
+        //define class name definition
+        let Section = document.getElementsByClassName("websection");
+
+        //function to set display to none in all class name
+        for(let i = 0; i < Section.length; i++){
+            Section[i].style.display = "none";
+        }
+
+        //to set attribute we want it to show
+        Section[idsec].style.display = "block";
+
+    }
+
+    function onloadMain(){
+
+        //Toggle the initial value
+        //toggleSection(9);
+    }
+
+    //eventlistener to receive message to do others functions
+    window.addEventListener("message", function(event) {
+        //use even.data to extract data
+        var recv = event.data;
+
+        //check id in range
+        if(typeof recv == "number"){
+            if (recv >= 0 && recv <= 25){
+                toggleSection(recv);
+            }
+        }
+});
+
     
 </script>
