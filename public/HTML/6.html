@@ -2,29 +2,35 @@
 <link rel="stylesheet" href="../CSSstyle/6.css" />
 <script src="../Javascript/6.js"></script>
 <link rel="stylesheet" href="../CSSstyle/Global.css" />
-<!-- Section 6 : sucess -->
-
-<div id="successend">
-
+<div id="checkstatus">
     <!-- Header Section -->
-  <div class="header">
  
-    <div class="profile">
-      <button class="back-button" onclick="toggleSomething(10)">◀</button>
-    </div>
-    <div class="menu-icon" onclick="showMenu()">☰</div>
-  </div>
  
-  <!-- Content Section -->
-  <div class="content">
+     <div class="header">
+         <button class="back-button" onclick="toggleSomething(10)">◀</button>
+         <h1>สถานะคำร้องของคุณ</h1>
+         <div class="menu-icon" onclick="showMenu()">☰</div>
+     </div>
+ 
+ 
+ 
+ 
     <div class="content">
-      <h1>คำร้องของคุณได้รับการบันทึกเรียบร้อยแล้ว</h1>
-      <p>รอดำเนินการเพื่ออนุมัติคำร้อง</p>
-      <div class="checkmark"></div>
-      <a class="return-button" onclick="toggleSomething(15)">กลับไปยังหน้า “ตรวจสอบคำร้อง”</a>
+        <div class="status-card">
+            <h2>ลางาน</h2>
+            <p>ยื่นเมื่อวันที่ XX เดือน XX ปี XX เวลา 00:00</p>
+            <div class="progress-bar">
+                <div class="circle"></div>
+                <div class="line"></div>
+                <div class="circle"></div>
+                <div class="line"></div>
+                <div class="circle"></div>
+            </div>
+            <div class="progress-labels">
+                <span>ตรวจสอบเบื้องต้น</span>
+                <span>อนุมัติจากคณบดี</span>
+                <span>อนุมัติสำเร็จ</span>
+            </div>
+        </div>
     </div>
- 
-  </div>
- 
-    
  </div>
