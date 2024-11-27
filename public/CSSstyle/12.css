@@ -169,6 +169,8 @@
     border-collapse: collapse;
     word-wrap: break-word;
     margin: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 #addall2 .teacher-table th, #adddean .teacher-table td {
@@ -181,10 +183,13 @@
 #addall2 .teacher-table th {
     background-color: #2D3142;
     font-weight: bold;
+    color: white;
 }
 
 #addall2 .teacher-table td {
     border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
 }
 
 
@@ -211,7 +216,7 @@
 }
 
 /* ปรับขนาดปุ่ม */
-#addall2 .edit-button, #addall2 .delete-button, #addall2 .delete-button2, #addall2 .delete-button3 {
+#addall2 .edit-button, #addall2 .delete-button3 {
     background-color: #2c2c3e;
     color: white;
     border: none;
@@ -223,13 +228,14 @@
     text-align: center;
     display: inline-block;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 #addall2 .edit-button:hover {
     background-color: #0056b3;
 }
 
-#addall2 .delete-button:hover {
+#addall2 .delete-button3:hover {
     background-color: #d9534f;
 }
 
