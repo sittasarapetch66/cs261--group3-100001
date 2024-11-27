@@ -1,0 +1,50 @@
+
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../CSSstyle/10.css" />
+<link rel="stylesheet" href="../CSSstyle/Global.css" />
+<script src="/Javascript/10.js"></script>
+
+
+
+
+<div id="addall">
+    <div class="addall1">
+        <div class="navbar">
+            <button class="back-button" onclick="toggleSomething(19)">◀</button>
+            <div class="menu-icon" onclick="showMenu()">☰</div>
+        </div>
+
+    <!-- Block กลาง -->
+    <div class="middle-block">
+        <form id="dean-form">
+            <div class="form-group">
+                <label for="name">ชื่อ-นามสกุล</label>
+                <input type="text" id="name" name="name" placeholder="กรุณากรอกชื่อ" oninput="searchDean()">
+            </div>
+        </form>
+    </div>
+
+        <!-- Block ล่าง -->
+        <div class="content-block">
+            <button class="add-button" onclick="addDean()">+ เพิ่มคณบดี</button> <!-- ปุ่มเพิ่มคณบดี -->
+            <div class="out_adddean">
+                
+                <table class="teacher-table">
+                <thead>
+                    <tr>
+                        <th>ลำดับ</th>
+                        <th>ชื่อ-นามสกุล</th>
+                        <th>Email</th>
+                        <th>แก้ไข</th>
+                        <th>ลบ</th>
+                    </tr>
+                </thead>
+                <tbody id="dean-table">
+                    <!-- ตารางจะแสดงข้อมูลจาก JavaScript -->
+                </tbody>
+            </table>
+        </div>
+        </div>
+    </div>
+    
+</div>
