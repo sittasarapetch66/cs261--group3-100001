@@ -1,20 +1,7 @@
-
-@font-face {
-    font-family: notosans_med;
-    src: url(../font/notosans/NotoSansThai-Medium.ttf);
-}
-
-
-@font-face {
-    font-family: comic_sans;
-    src: url(../font/comicsans/COMIC.TTF);
-}
-
-@font-face {
-    font-family: laithai;
-    src: url(../font/laithai/sathaporn.ttf);
-}
-
+/*
+Login Webpage
+Create by Akawat-SKO
+*/
 
 .login-container {
     margin: auto;
