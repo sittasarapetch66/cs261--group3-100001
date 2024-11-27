@@ -579,13 +579,6 @@ Section 3 : Mylist Section
     height: 12vh;
 }
 
-<<<<<<< HEAD
-  #successend .header .back {
-    color: white;
-    font-size: 5vh;
-    text-decoration: none;
-  }
-=======
 #successend .back-button {
     margin-left: 5vh;
     background: none;
@@ -613,7 +606,6 @@ Section 3 : Mylist Section
     margin-right: 5vh;
     font-size: 1.5em;
 }
->>>>>>> f73008777896a34cc8be81567bb5ded1a2a6d476
 
 
   #successend .content {
