@@ -355,11 +355,12 @@
                 </div>
             </div>
             
-            <div class="b">
+            <div>
                 <label>แนบไฟล์หลักฐานคำร้อง :</label>
                 <br><br>
                 <label>ไฟล์ที่ 1 : </label>
-                <input type="file">
+                <input type="file" id="checkFile">
+                <p id="message_f"></p>
           
             </div>
                   
@@ -1208,45 +1209,49 @@
 
       <!--IT_staffmenu-->
       <div id="ITstaffmenu">
-            <!-- Section : Home Section (IT Staff Menu) -->
-<div id="homesection" style="display: block;">
-    <!-- Header Section -->
-    <div class="header">
-        <div class="profile">
-            <div>
-                <img class="profile-pic" src="./picture/favicon2.jpg">
+        
+        <!-- Section : Home Section (IT Staff Menu) -->
+        <div id="homesection" style="display: block;">
+            <!-- Header Section -->
+            <div class="header">
+                <div class="profile">
+                    <div>
+                        <img class="profile-pic" src="./picture/favicon2.jpg">
+                    </div>
+                    <div class="textinfo">
+                        <span>ชื่อเจ้าหน้าที่: แสดงที่นี่</span>
+                        <br>
+                        <small onclick="reallyExit()">Log out</small>
+                    </div>
+                </div>
+                <div class="menu-icon" onclick="showMenu()">☰</div>
             </div>
-            <div class="textinfo">
-                <span>ชื่อเจ้าหน้าที่: แสดงที่นี่</span>
-                <br>
-                <small onclick="reallyExit()">Log out</small>
+
+        <!-- Content Section -->
+        <div class="content">
+            <h1>หน้าทำรายการสำหรับเจ้าหน้าที่ IT</h1>
+            <p>โปรดเลือกรายการ</p>
+            
+            <!-- Icons Section -->
+            <div class="icon-container">
+                <div class="icon-item" onclick="searchRequests()">
+                    <div class="icon">🔍</div>
+                    <p>สืบค้นคำร้อง</p>
+                </div>
+                
+                <div class="icon-item" onclick="viewHistory()">
+                    <div class="icon"><i class="fa fa-history"></i></div>
+                    <p>ประวัติการใช้งาน</p>
+                </div>
+                <div class="icon-item" onclick="addStaffData()">
+                    <div class="icon"><img src="./picture/images-removebg-preview.png" height="50" width="50"></div>
+                    <p>เพิ่มข้อมูลบุคคลากร</p>
+                </div>
             </div>
-        </div>
-        <div class="menu-icon" onclick="showMenu()">☰</div>
+
     </div>
 
-    <!-- Content Section -->
-    <div class="content">
-        <h1>หน้าทำรายการสำหรับเจ้าหน้าที่ IT</h1>
-        <p>โปรดเลือกรายการ</p>
-        
-        <!-- Icons Section -->
-        <div class="icon-container">
-            <div class="icon-item" onclick="searchRequests()">
-                <div class="icon">🔍</div>
-                <p>สืบค้นคำร้อง</p>
-            </div>
-            
-            <div class="icon-item" onclick="viewHistory()">
-                <div class="icon"><i class="fa fa-history"></i></div>
-                <p>ประวัติการใช้งาน</p>
-            </div>
-            <div class="icon-item" onclick="addStaffData()">
-                <div class="icon"><img src="./picture/images-removebg-preview.png" height="50" width="50"></div>
-                <p>เพิ่มข้อมูลบุคคลากร</p>
-            </div>
-        </div>
-    </div>
+
 </div>
       </div>
 

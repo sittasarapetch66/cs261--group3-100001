@@ -7,9 +7,11 @@ function startFunction(){
 
 
 function toggleSomething(mode){
+  //menu ด้านขวาอ่ะ
   var1 = document.getElementById("menusection");
   var2 = document.getElementById("overlaysection");
 
+  //section
   var10 = document.getElementById("homesection");
   var11 = document.getElementById("mylistsection");
   var12 = document.getElementById("trackhistorysection");
@@ -35,6 +37,7 @@ function toggleSomething(mode){
   */
 
   switch(mode){
+    //Menu
   case 1:
     var1.style.display = "block";
     var2.style.display = "block";
@@ -49,6 +52,7 @@ function toggleSomething(mode){
     var3.style.display = "block";
     break;
 
+    //Toggle แต่ละส่วน
   default:
     if(mode == 10)var10.style.display = "block"; else var10.style.display = "none";
     if(mode == 11)var11.style.display = "block"; else var11.style.display = "none";
