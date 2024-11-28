@@ -28,7 +28,7 @@
     <!--8 payment home -->
     <iframe src="./HTML/8.html" class="websection" id=""></iframe>
     <!--9 -accept form -->
-    <iframe src="./HTML/9.html" class="websection" class="" id=""></iframe>
+    <iframe src="./HTML/9.html" class="websection" id=""></iframe>
     <!-- 10 addDean -->
     <iframe src="./HTML/10.html" class="websection" id=""></iframe>
     <!--11 addOfficer -->
@@ -70,46 +70,92 @@ html, body, div, iframe
  height: 100%;
  border: 1px solid black;
  /* Experimental on All Section */
- //overflow: hidden;
+}
+
+body{
+    /*overflow : hidden;*/
+}
+
+iframe{
+    /*visibility: hidden;*/
+    /*display: none;*/
 }
 
 
 </style>
 <script>
 
+GLOBALJSON = {};
+Destination = -1;
+
     function toggleSection(idsec){
 
         //define class name definition
         let Section = document.getElementsByClassName("websection");
 
+        //Update! I will tell to not load all section in css to avoid data leak!
+        /*
         //function to set display to none in all class name
         for(let i = 0; i < Section.length; i++){
-            Section[i].style.display = "none";
+            //Section[i].style.display = "none";
+            //Section[i].style.visibility = "hidden";
         }
+        */ 
+
+        //Newer method
+        document.querySelectorAll("iframe").forEach(iframe =>{
+            iframe.style.display = 'none';
+        });
+
+        // Load iframe content only if not already loaded
+
 
         //to set attribute we want it to show
         Section[idsec].style.display = "block";
+        //Section[i].style.visibility = "visible";
 
     }
 
     function onloadMain(){
 
         //Toggle the initial value
-        //toggleSection(9);
+        //toggleSection(0);
     }
 
     //eventlistener to receive message to do others functions
-    window.addEventListener("message", function(event) {
+    window.addEventListener("message", setValueOnListener);
+    
+    function setValueOnListener(event){
         //use even.data to extract data
         var recv = event.data;
+        console.log(recv, typeof recv);
 
         //check id in range
         if(typeof recv == "number"){
             if (recv >= 0 && recv <= 25){
                 toggleSection(recv);
+                let Section = document.getElementsByClassName("websection");
+                //if(GLOBALJSON != null) 
+                //console.log("gJSOn,",this.GLOBALJSON);
+                if (Destination != -1) Section[recv].contentWindow.postMessage(Destination, "*");
+                
+                Section[recv].contentWindow.postMessage(GLOBALJSON, "*");
+            }
+            if(recv == 30){
+                location.reload();
+            }
+
+            if(recv >= 100 && recv <= 110){
+                Destination = recv-100;
             }
         }
-});
+
+        if(typeof recv == "object"){
+            GLOBALJSON = recv;
+        }
+    }
+
+
 
     
 </script>

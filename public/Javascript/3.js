@@ -1,9 +1,29 @@
+var GLOBALJSON;
+
+//send to parent
 function requestTemplate(typeinput){
     parent.postMessage(typeinput, "*");
     }
-myRequestStatus(1)
 
-var myjson;
+    window.addEventListener("message", setValueOnListener);
+    
+function setValueOnListener(event){
+    //use even.data to extract data
+    var recv = event.data;
+    console.log(recv, typeof recv);
+
+    //check id in range
+    if(typeof recv == "number"){
+        
+    }
+
+    if(typeof recv == "object"){
+        GLOBALJSON = recv;
+        myRequestStatus(GLOBALJSON.username);
+    }
+}
+
+myRequestStatus(6609681231);
 
 
 function myRequestStatus(username){
@@ -25,7 +45,11 @@ function myRequestStatus(username){
             let obj = json[i];
 
             console.log(obj);
-            populateItems("content", obj);
+            if (obj.username == username){
+                populateItems("content", obj);
+                //console.log(obj.username);
+            }
+               
         }
     })
     .catch(error => {
@@ -63,11 +87,11 @@ function populateItems(containerId, item) {
         switch(item.requestType){
             case 0: requestname = "ไม่มีคำร้อง"; break;
             case 1: requestname = "จดทะเบียนรายวิชาล่าช้า"; break;
-            case 2: requestname = "ลาออก"; break;
-            case 3: requestname = "ลาออก"; break;
-            //case : requestname = "จดทะเบียนรายวิชาล่าช้า"; break;
+            case 2: requestname = "ถอนรายวิชาล่าช้า"; break;
+            case 3: requestname = "จดทะเบียนรายวิชานอกหลักสูตร"; break;
+            case 4: requestname = "ลาออก"; break;
             case 99: requestname = "ไม่มีคำร้อง"; break;
-            default: requestname = "คำร้องที่ไม่ระบุ"
+            default: requestname = "คำร้องอื่น ๆ"
         }
 
             const container = document.getElementById(containerId);
