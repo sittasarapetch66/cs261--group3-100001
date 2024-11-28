@@ -5,18 +5,6 @@
     box-sizing: border-box;
 }
 
-.addall1{
-    display: block;
-}
-
-.addall2{
-    display: block;
-}
-
-.addall3{
-    display: block;
-}
-
 #addall .navbar {
     display: flex;
     align-items: center;
