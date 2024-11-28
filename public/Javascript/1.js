@@ -50,4 +50,6 @@ function requestTemplate(desc){
     document.getElementById("navbarname").innerHTML = `ยินดีต้อนรับ ${GLOBALJSON.displayname_th}`;
   }
 
-  <script src="public/Javascript/menu.js"></script>
+  function menu(mode){
+    parent.postMessage(mode, "*");
+}
