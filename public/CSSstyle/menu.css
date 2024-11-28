@@ -1,0 +1,63 @@
+#menusection{
+    position : absolute;
+    margin-right : 0px;
+    right : 0px;
+    width : 30%;
+    font-size: 20px;
+    height: 100%;
+    top : 0%;
+    transition: margin-left .5s;
+    background-color: #f5f5f5;
+    display : none;
+    /*
+    TO DISPLAY PLEASE UNCOMMENT
+    
+    
+    */
+
+}
+
+#menusection .header{
+    border : none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+    background-color: #2D3142;
+    color: #F5F5F5;
+
+}
+
+#menusection .selection{
+    border : none;
+    padding-top : 30px;
+    background-color: #f5f5f5;
+}
+
+
+#menusection .selection .list{
+    height: auto;
+    padding-top : 1px;
+    padding-left : 40px;
+    border : none;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+#menusection .selection .list p{
+    height : auto;
+	padding-bottom: 10px;
+}
+
+#menusection .selection .list:hover{
+    background-color: #dbf5b0;
+	
+    box-shadow: inset;
+}
+
+.but{
+    padding-left: 10px;
+}
+.meu{
+    padding-right: 20px;
+}
