@@ -5,10 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Web for login to system">
     <title>TU Online Requester</title>
+    <link rel="stylesheet" href="./CSSstyle/menu.css" />
+    <link rel="stylesheet" href="./CSSstyle/Global.css" />
+    <script src="./Javascript/menu.js"></script>
+    
 </head>
-
+<!-- menu -->
+    <div id="menusection">
+   
+        <div class="header">
+            <h1 class="but" onclick="toggleSomething(2)">◀
+            </h1>
+            <h2 class="meu" >MENU</h2>
+        </div>
+     
+        <div class="selection">
+     
+            <div class="list" onclick="toggleSomething(11)">
+                <p>รายการของฉัน</p>
+            </div>
+            <div class="list" onclick="toggleSomething(15)">
+                <p>ตรวจสอบสถานะคำร้อง</p>
+            </div>
+            <div class="list" onclick="toggleSomething(12)">
+                <p>ประวัติการยื่นคำร้อง</p>
+            </div>
+            <br>
+            <hr><hr>
+            <div class="list" onclick="toggleSomething(10)">
+                <p>ยื่นคำร้องเพิ่มเติม</p>
+            </div>
+            <div class="list" onclick="reallyExit()">
+                <p>ออกจากระบบ</p>
+            </div>
+            <hr><hr>
+            <br><br>
+            <div class="list" onclick="reallyExit()">
+                <p>โหมดผู้พัฒนา</p>
+            </div>
+        
+     
+        </div>
+     
+     </div>
 <body onload="onloadMain()">
-
+    
     <!--0 : Login Section -->
     <iframe src="./HTML/0.html" class="websection" id="">Your Browser not support iframe</iframe>
     <!--1 : Home student -->
