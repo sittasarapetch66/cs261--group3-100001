@@ -1,17 +1,15 @@
 function requestTemplate(typeinput){
   
-  if (confirm("การบันทึกที่ไม่ได้บันทึกจะหายหากคุณออกจากระบบ คุณต้องการที่จะออกจากระบบหรือไม่?") == true){
     parent.postMessage(typeinput, "*");
-    location.reload();
-  }
   }
 
-  function reallyExit(){
+  function exit(typeinput){
+  
     if (confirm("การบันทึกที่ไม่ได้บันทึกจะหายหากคุณออกจากระบบ คุณต้องการที่จะออกจากระบบหรือไม่?") == true){
-      toggleSomething(16);
-      location.reload();
+        parent.postMessage(typeinput, "*");
+        location.reload();
     }
-  }
+}
   
   
   function showMenu(){
