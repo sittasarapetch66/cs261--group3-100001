@@ -1,9 +1,3 @@
-const deans = [
-    { name: 'ดร. สมพงษ์ พัฒนา', email: 'somphong@example.com' },
-    { name: 'ดร. สุรีรัตน์ วิจิตร', email: 'sureerat@example.com' },
-    { name: 'ดร. จิราพร ยอดใจ', email: 'jiraporn@example.com' },
-];
-
 function displayDeans(filteredDeans) {
     const tableBody = document.getElementById("dean-table");
     tableBody.innerHTML = ''; // Clear existing rows
@@ -25,7 +19,6 @@ function displayDeans(filteredDeans) {
         tableBody.appendChild(row);
     });
 
-    // Add event listeners for delete buttons
     document.querySelectorAll('.delete-button').forEach(button => {
         button.addEventListener('click', () => deleteDean(button.dataset.index));
     });
@@ -33,8 +26,23 @@ function displayDeans(filteredDeans) {
 
 function deleteDean(index) {
     if (confirm('คุณแน่ใจหรือว่าต้องการลบข้อมูลนี้?')) {
-        deans.splice(index, 1); // Remove the dean at the given index
-        displayDeans(deans); // Update the table after deletion
+        const deanId = deans[index].id;  // ใช้ ID ของคณบดีที่ต้องการลบ
+
+        // ส่งคำขอลบข้อมูลไปยัง Backend
+        fetch(`http://petchsko123.trueddns.com:56267/group3/api/group3/employee/deleteid=${deanId}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then((data) => {
+            console.log('ลบคณบดีสำเร็จ:', data);
+            fetchData();  // โหลดข้อมูลใหม่
+        })
+        .catch(error => {
+            console.error('Error deleting dean:', error);
+        });
     }
 }
 
@@ -45,18 +53,12 @@ function searchDean() {
 }
 
 function addDean() {
-    const newName = prompt('กรุณากรอกชื่อ-นามสกุล:');
-    const newEmail = prompt('กรุณากรอกอีเมล:');
+    const employeeType = 90;
+    sessionStorage.setItem('employeeType', employeeType); // เก็บใน sessionStorage
 
-    if (newName && newEmail) {
-        deans.push({ name: newName, email: newEmail });
-        displayDeans(deans);
-    } else {
-        alert('กรุณากรอกข้อมูลให้ครบถ้วน');
-    }
+    window.location.href = '13.html';  // ไปที่หน้า 13.html เพื่อกรอกข้อมูลเพิ่มเติม
 }
 
-// Initialize the table with all deans when the page loads
 document.addEventListener('DOMContentLoaded', function() {
     displayDeans(deans); // Display deans when the page loads
     document.getElementById('name').addEventListener('input', searchDean);
