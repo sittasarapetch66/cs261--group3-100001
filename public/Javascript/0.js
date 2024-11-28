@@ -226,6 +226,11 @@ function togglePass(){
   
           if (utype == "employee"){
             //CRUDAPI(json)
+            parent.postMessage(9, "*");
+          }
+
+          if (utype == "sysadmin"){
+            parent.postMessage(18, "*");
           }
           
         }
