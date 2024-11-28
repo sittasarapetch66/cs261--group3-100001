@@ -2,44 +2,70 @@
 <link rel="stylesheet" href="../CSSstyle/15.css" />
 <link rel="stylesheet" href="../CSSstyle/Global.css" />
 <script src="../js/webscript2.js"></script>
+<script src="../Javascript/15.js"></script>
 
 
+<!--IT_history-->
 <div id="IThistory">
-            <!-- Header Section -->
-    <div class="header">
-        <div class="profile">
-            <button class="back-button" onclick="toggleSomething(17)">◀</button>
-        </div>
-        <div class="menu-icon" onclick="showMenu()">☰</div>
+    <!-- Header Section -->
+<div class="header">
+<div class="profile">
+    <button class="back-button" onclick="requestTemplate(18)">◀</button>
+</div>
+<div class="menu-icon" onclick="showMenu()">☰</div>
+</div>
+
+<!-- Form Section -->
+<section class="form-section" aria-labelledby="form-title">
+<div class="outer-form">
+    <div class="form-group">
+        <label for="request-type">กรุณาเลือกแบบคำร้อง</label><br>
+        <label for="student-name">ชื่อ-นามสกุล</label><br>
+        <label for="role">Select role</label><br>
+    </div>
+    <div class="form-input">
+        <select id="request-type" aria-label="Request Type">
+            <option value="ทั้งหมด">ทั้งหมด</option>
+            <option value="จดทะเบียนล่าช้า">จดทะเบียนล่าช้า</option>
+            <option value="ถอนรายวิชา">ถอนรายวิชา</option>
+            <option value="จดทะเบียนศึกษารายวิชาข้ามหลักสูตร">จดทะเบียนศึกษารายวิชาข้ามหลักสูตร</option>
+            <option value="ลาออก">ลาออก</option>
+            <option value="อื่นๆ">อื่นๆ</option>
+        </select><br>
+        <input type="text" id="student-name" value=""><br>
+        <select id="role" aria-label="Role">
+            <option value="ทั้งหมด">ทั้งหมด</option>
+            <option value="student">Student</option>
+            <option value="teacher">อาจารย์</option>
+            <option value="teacher2">คณบดี</option>
+            <option value="admin">admin</option>
+            <option value="it-service">เจ้าหน้าที่ IT</option>
+        </select><br>
+        <button id="search-btn" onclick="searchData()">ค้นหา</button>
     </div>
 
-    <!-- Form Section -->
-    <section class="form-section" aria-labelledby="form-title">
-        <div class="outer-form">
-            <div class="form-group">
-                <label for="request-type">กรุณาเลือกแบบคำร้อง</label><br>
-                <label for="student-name">ชื่อ-นามสกุล</label><br>
-                <label for="role">Select role</label><br>
-            </div>
-            <div class="form-input">
-                <select id="request-type" aria-label="Request Type">
-                    <option value="ทั้งหมด">ทั้งหมด</option>
-                    <option value="จดทะเบียนล่าช้า">จดทะเบียนล่าช้า</option>
-                    <option value="ถอนรายวิชา">ถอนรายวิชา</option>
-                    <option value="จดทะเบียนศึกษารายวิชาข้ามหลักสูตร">จดทะเบียนศึกษารายวิชาข้ามหลักสูตร</option>
-                    <option value="ลาออก">ลาออก</option>
-                    <option value="อื่นๆ">อื่นๆ</option>
-                </select><br>
-                <input type="text" id="student-name" value=""><br>
-                <select id="role" aria-label="Role">
-                    <option value="ทั้งหมด">ทั้งหมด</option>
-                    <option value="student">Student</option>
-                    <option value="teacher">อาจารย์</option>
-                    <option value="teacher2">คณบดี</option>
-                    <option value="admin">admin</option>
-                    <option value="it-service">เจ้าหน้าที่ IT</option>
-                </select><br>
-                <button id="search-btn" onclick="searchData()">ค้นหา</button>
-            </div>
+</div>
+</section>
 
-        </div>
+<!-- Table Section -->
+<div class="container">
+<div class="table-section" aria-labelledby="table-title">
+    <table>
+        <thead>
+            <tr>
+                <th>ลำดับ</th>
+                <th>สถานะ</th>
+                <th>ประเภทคำร้อง</th>
+                <th>Role</th>
+                <th>ชื่อ-นามสกุล</th>
+                <th>ไฟล์แนบ</th>
+                <th>วันที่ทำรายการ</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <!-- Rows will be dynamically added -->
+        </tbody>
+    </table>
+</div>
+</div>
+</div>

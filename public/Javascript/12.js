@@ -85,3 +85,6 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.add-button3').addEventListener('click', redirectToAddPage);
 });
 
+function requestTemplate(typeinput){
+    parent.postMessage(typeinput, "*");
+    }

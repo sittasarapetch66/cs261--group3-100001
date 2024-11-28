@@ -1,4 +1,6 @@
-
+function requestTemplate(typeinput){
+    parent.postMessage(typeinput, "*");
+    }
 myRequestStatus(1)
 
 var myjson;

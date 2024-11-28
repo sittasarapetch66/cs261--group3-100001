@@ -221,11 +221,16 @@ function togglePass(){
           printMessage(97,json.displayname_th);
   
           if (utype == "student"){
-            parent.postMessage(1, "*");
+            parent.postMessage(1, "*");// 1 = idหน้าที่จะเปิด
           }
   
           if (utype == "employee"){
             //CRUDAPI(json)
+            parent.postMessage(9, "*");
+          }
+
+          if (utype == "sysadmin"){
+            parent.postMessage(18, "*");
           }
           
         }

@@ -16,3 +16,7 @@ function submitForm() {
     alert("ข้อมูลได้รับการยืนยันแล้ว!");
     window.location.href = 'thankyou.html';
 }
+
+function requestTemplate(typeinput){
+    parent.postMessage(typeinput, "*");
+    }

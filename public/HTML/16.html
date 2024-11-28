@@ -1,0 +1,62 @@
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../CSSstyle/16.css" />
+<link rel="stylesheet" href="../CSSstyle/Global.css" />
+<script src="../Javascript/16.js"></script>
+<!--IT_search-->
+<div id="ITsearch">
+    <!-- Header Section -->
+<div class="header">
+<div class="profile">
+    <button class="back-button" onclick="requestTemplate(18)">◀</button>
+</div>
+<div class="menu-icon" onclick="showMenu()">☰</div>
+</div>
+
+<!-- Form Section -->
+<!-- Form Section -->
+<section class="form-section" aria-labelledby="form-title">
+<div class="outer-form">
+    <div class="form-group">
+        <label for="request-type">กรุณาเลือกแบบคำร้อง</label><br>
+        <label for="student-name">อีเมลนักศึกษา</label><br>
+        <label for="student-id">เลขทะเบียนนักศึกษา</label><br>
+    </div>
+    <div class="form-input">
+        <select id="request-type" aria-label="Request Type">
+            <option value=9999>ทั้งหมด</option>
+            <option value=1>จดทะเบียนล่าช้า</option>
+            <option value=2>ถอนรายวิชา</option>
+            <option value=3>จดทะเบียนศึกษารายวิชาข้ามหลักสูตร</option>
+            <option value=4>ลาออก</option>
+            <option value=99>อื่นๆ</option>
+        </select><br>
+        <input type="text" id="student-name" value=""><br>
+        <input type="text" id="student-id" value=""><br>
+        <button id="search-btn" onclick="searchData()">ค้นหา</button>
+    </div>
+
+</div>
+</section>
+
+<!-- Table Section -->
+<div class="container">
+<div class="table-section" aria-labelledby="table-title">
+    <table>
+        <thead>
+            <tr>
+                <th>ลำดับ</th>
+                <th>สถานะ</th>
+                <th>ประเภทคำร้อง</th>
+                <th>เลขทะเบียน</th>
+                <th>อีเมลอาจารย์ที่ปรึกษา</th>
+                <th>ยกเลิก</th>
+                <th>ไฟล์แนบ</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            <!-- Rows will be dynamically added -->
+        </tbody>
+    </table>
+</div>
+</div>
+</div>

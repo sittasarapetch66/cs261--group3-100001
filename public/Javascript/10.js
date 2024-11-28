@@ -61,3 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
     displayDeans(deans); // Display deans when the page loads
     document.getElementById('name').addEventListener('input', searchDean);
 });
+
+function requestTemplate(typeinput){
+    parent.postMessage(typeinput, "*");
+    }

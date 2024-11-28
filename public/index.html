@@ -5,10 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Web for login to system">
     <title>TU Online Requester</title>
+    <link rel="stylesheet" href="./CSSstyle/menu.css" />
+    <link rel="stylesheet" href="./CSSstyle/Global.css" />
+    <script src="./Javascript/menu.js"></script>
+    
 </head>
-
+<!-- menu -->
+    <div id="menusection">
+   
+        <div class="header">
+            <h1 class="but" onclick="toggleSomething(2)">◀
+            </h1>
+            <h2 class="meu" >MENU</h2>
+        </div>
+     
+        <div class="selection">
+     
+            <div class="list" onclick="toggleSomething(11)">
+                <p>รายการของฉัน</p>
+            </div>
+            <div class="list" onclick="toggleSomething(15)">
+                <p>ตรวจสอบสถานะคำร้อง</p>
+            </div>
+            <div class="list" onclick="toggleSomething(12)">
+                <p>ประวัติการยื่นคำร้อง</p>
+            </div>
+            <br>
+            <hr><hr>
+            <div class="list" onclick="toggleSomething(10)">
+                <p>ยื่นคำร้องเพิ่มเติม</p>
+            </div>
+            <div class="list" onclick="reallyExit()">
+                <p>ออกจากระบบ</p>
+            </div>
+            <hr><hr>
+            <br><br>
+            <div class="list" onclick="reallyExit()">
+                <p>โหมดผู้พัฒนา</p>
+            </div>
+        
+     
+        </div>
+     
+     </div>
 <body onload="onloadMain()">
-
+    
     <!--0 : Login Section -->
     <iframe src="./HTML/0.html" class="websection" id="">Your Browser not support iframe</iframe>
     <!--1 : Home student -->
@@ -28,7 +69,7 @@
     <!--8 payment home -->
     <iframe src="./HTML/8.html" class="websection" id=""></iframe>
     <!--9 -accept form -->
-    <iframe src="./HTML/9.html" class="websection" class="section11" id="11">
+    <iframe src="./HTML/9.html" class="websection" id=""></iframe>
     <!-- 10 addDean -->
     <iframe src="./HTML/10.html" class="websection" id=""></iframe>
     <!--11 addOfficer -->
@@ -40,20 +81,20 @@
     <!--14 IT_editproform -->
     <iframe src="./HTML/14.html" class="websection" id=""></iframe>
     <!--15 IT_history -->
-    <iframe src="" class="websection" id=""></iframe>
+    <iframe src="./HTML/15.html" class="websection" id=""></iframe>
     <!--16 IT_search -->
-    <iframe src="" class="websection" id=""></iframe>
+    <iframe src="./HTML/16.html" class="websection" id=""></iframe>
     <!--17 IT_officeradd -->
-    <iframe src="" class="websection" id=""></iframe>
+    <iframe src="./HTML/17.html" class="websection" id=""></iframe>
     <!--18 IT_staffmenu -->
-    <iframe src="" class="websection" id=""></iframe>
+    <iframe src="./HTML/18.html" class="websection" id=""></iframe>
     <!--19 nichapat dean -->
     <iframe src="./HTML/19.html" class="websection" id=""></iframe>
     <!--20 nichapat staff -->
     <iframe src="./HTML/20.html" class="websection" id=""></iframe>
     <!--21  -->
     <!-- <iframe src="" class="websection" id=""></iframe> -->
-    
+    <iframe src="./HTML/pagetest.htm" class="" id=""></iframe><!--test-->
 
 </body>
 

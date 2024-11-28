@@ -148,3 +148,6 @@ const tableData = [
     document.getElementById("student-id").addEventListener("input", filterTable);
   });
   
+  function requestTemplate(typeinput){
+    parent.postMessage(typeinput, "*");
+    }
