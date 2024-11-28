@@ -23,9 +23,9 @@ function displayTeachers(filteredTeachers) {
     filteredTeachers.forEach((teacher, index3) => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${index3 + 1}</td>
+            <td>${teacher.id}</td>
             <td>${teacher.department}</td>
-            <td>${teacher.name}</td>
+            <td>${teacher.nameTH}</td>
             <td>${teacher.email}</td>
             <td><a href="IT_EditProfessorFormPage.html" class="edit-button">แก้ไข</a></td>
             <td><button class="delete-button3" data-index="${index3}">ลบ</button></td>
@@ -42,8 +42,10 @@ function displayTeachers(filteredTeachers) {
 // Function to delete a teacher
 function deleteTeacher(index) {
     if (confirm('คุณแน่ใจหรือว่าต้องการลบข้อมูลนี้?')) {
-        teachers.splice(index, 1); // Remove the teacher at the given index
-        displayTeachers(teachers); // Update the table after deletion
+        //teachers.splice(index, 1); // Remove the teacher at the given index
+        //displayTeachers(teachers); // Update the table after deletion
+
+        deletebyID(index);
     }
 }
 
@@ -103,9 +105,33 @@ function fetchData(id){
     
       //fetch data
     fetch('http://petchsko123.trueddns.com:56267/group3/api/group3/employee', options)
-    .then(response => response.text()) 
-    .then((dataStr) => {
-        console.log(dataStr);
+    .then(response => response.json()) 
+    .then((JSON) => {
+        console.log(JSON);
+        displayTeachers(JSON);
+    })
+    .catch(error => {
+        // Handle any errors that occurred during the fetch
+        console.error('Fetch error:', error);
+    });
+
+}
+
+function deletebyID(id){
+
+    const options = {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      };
+    
+      //fetch data
+    fetch(`http://petchsko123.trueddns.com:56267/group3/api/group3/employee/deleteid=${id}`, options)
+    .then(response => response.json()) 
+    .then((JSON) => {
+        console.log(JSON);
+        displayTeachers(JSON);
     })
     .catch(error => {
         // Handle any errors that occurred during the fetch

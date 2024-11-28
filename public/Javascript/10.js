@@ -17,7 +17,7 @@ function displayDeans(filteredDeans) {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${index + 1}</td>
-            <td>${dean.name}</td>
+            <td>${dean.nameTH}</td>
             <td>${dean.email}</td>
             <td><a href="editDean.html" class="edit-button">แก้ไข</a></td>
             <td><button class="delete-button" data-index="${index}">ลบ</button></td>
@@ -65,3 +65,53 @@ document.addEventListener('DOMContentLoaded', function() {
 function requestTemplate(typeinput){
     parent.postMessage(typeinput, "*");
     }
+
+
+    fetchData()
+
+    function fetchData(id){
+    
+        const options = {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+          };
+        
+          //fetch data
+        fetch('http://petchsko123.trueddns.com:56267/group3/api/group3/employee', options)
+        .then(response => response.json()) 
+        .then((JSON) => {
+            console.log(JSON);
+            displayDeans(JSON);
+        })
+        .catch(error => {
+            // Handle any errors that occurred during the fetch
+            console.error('Fetch error:', error);
+        });
+    
+    }
+    
+    function deletebyID(id){
+    
+        const options = {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+          };
+        
+          //fetch data
+        fetch(`http://petchsko123.trueddns.com:56267/group3/api/group3/employee/deleteid=${id}`, options)
+        .then(response => response.json()) 
+        .then((JSON) => {
+            console.log(JSON);
+            displayTeachers(JSON);
+        })
+        .catch(error => {
+            // Handle any errors that occurred during the fetch
+            console.error('Fetch error:', error);
+        });
+    
+    }
+    
