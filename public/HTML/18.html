@@ -14,12 +14,12 @@
             <div class="header">
                 <div class="profile">
                     <div>
-                        <img class="profile-pic" src="./picture/favicon2.jpg">
+                        <img class="profile-pic" src="../picture/favicon2.jpg">
                     </div>
                     <div class="textinfo">
                         <span>ชื่อเจ้าหน้าที่: แสดงที่นี่</span>
                         <br>
-                        <small onclick="reallyExit()">Log out</small>
+                        <small onclick="exit(0)">Log out</small>
                     </div>
                 </div>
                 <div class="menu-icon" onclick="showMenu()">☰</div>
@@ -32,17 +32,17 @@
             
             <!-- Icons Section -->
             <div class="icon-container">
-                <div class="icon-item" onclick="searchRequests()">
+                <div class="icon-item" onclick="requestTemplate(16)">
                     <div class="icon">🔍</div>
                     <p>สืบค้นคำร้อง</p>
                 </div>
                 
-                <div class="icon-item" onclick="viewHistory()">
+                <div class="icon-item" onclick="requestTemplate(15)">
                     <div class="icon"><i class="fa fa-history"></i></div>
                     <p>ประวัติการใช้งาน</p>
                 </div>
-                <div class="icon-item" onclick="addStaffData()">
-                    <div class="icon"><img src="./picture/images-removebg-preview.png" height="50" width="50"></div>
+                <div class="icon-item" onclick="requestTemplate(17)">
+                    <div class="icon"><img src="../picture/images-removebg-preview.png" height="50" width="50"></div>
                     <p>เพิ่มข้อมูลบุคคลากร</p>
                 </div>
             </div>
