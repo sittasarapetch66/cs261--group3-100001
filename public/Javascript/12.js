@@ -1,3 +1,8 @@
+function requestTemplate(typeinput){
+    parent.postMessage(typeinput, "*");
+}
+
+
 // Sample data: Replace with real data from your backend
 const teachers = [
     { name: 'ดร. สมพงษ์ พัฒนา', faculty: 'คณะวิทยาศาสตร์และเทคโนโลยี', department: 'คณิตศาสตร์และสถิติ', email: 'sompong@example.com' },
@@ -85,6 +90,26 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.add-button3').addEventListener('click', redirectToAddPage);
 });
 
-function requestTemplate(typeinput){
-    parent.postMessage(typeinput, "*");
-    }
+fetchData()
+
+function fetchData(id){
+
+    const options = {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      };
+    
+      //fetch data
+    fetch('http://petchsko123.trueddns.com:56267/group3/api/group3/employee', options)
+    .then(response => response.text()) 
+    .then((dataStr) => {
+        console.log(dataStr);
+    })
+    .catch(error => {
+        // Handle any errors that occurred during the fetch
+        console.error('Fetch error:', error);
+    });
+
+}
