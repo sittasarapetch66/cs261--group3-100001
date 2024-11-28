@@ -6,11 +6,12 @@ function exit(typeinput){
     }
 }
 
-function requestTemplate(typeinput){
-    parent.postMessage(typeinput, "*");
-    }
-
 function menu(mode){
     if(mode==1)parent.postMessage(26, "*");
     if(mode==0)parent.postMessage(27, "*");
 }
+
+function requestTemplate(desc){
+  
+    parent.postMessage(desc, "*");
+  }

@@ -8,34 +8,34 @@
     <link rel="stylesheet" href="./CSSstyle/menu.css" />
     <link rel="stylesheet" href="./CSSstyle/Global.css" />
     <script src="./Javascript/menu.js"></script>
-    
 </head>
 <!-- menu -->
     <div id="menusection">
-        <div id="overlaysection">
-
-        </div>
+        
    
         <div class="header">
-            <h1 class="but" onclick="menu(0)">◀
+            <h1 class="but" onclick="menu(27)">◀
             </h1>
             <h2 class="meu" >MENU</h2>
         </div>
      
         <div class="selection">
      
-            <div class="list" onclick="toggleSomething(11)">
+            <div class="list" onclick="requestTemplate(2)">
                 <p>รายการของฉัน</p>
             </div>
-            <div class="list" onclick="toggleSomething(15)">
+            <div class="list" onclick="requestTemplate(3)">
                 <p>ตรวจสอบสถานะคำร้อง</p>
             </div>
-            <div class="list" onclick="toggleSomething(12)">
+            <div class="list" onclick="requestTemplate(6)">
                 <p>ประวัติการยื่นคำร้อง</p>
+            </div>
+            <div class="list" onclick="requestTemplate(8)">
+                <p>ชำระเงิน</p>
             </div>
             <br>
             <hr><hr>
-            <div class="list" onclick="toggleSomething(10)">
+            <div class="list" onclick="requestTemplate(4)">
                 <p>ยื่นคำร้องเพิ่มเติม</p>
             </div>
             <div class="list" onclick="exit()">
@@ -48,7 +48,6 @@
      
      </div>
 <body onload="onloadMain()">
-    
     <!--0 : Login Section -->
     <iframe src="./HTML/0.html" class="websection" id="">Your Browser not support iframe</iframe>
     <!--1 : Home student -->
@@ -113,7 +112,7 @@ html, body, div, iframe
 }
 
 body{
-    /*overflow : hidden;*/
+    /**/overflow : hidden;
 }
 
 iframe{
@@ -127,33 +126,51 @@ iframe{
 
 GLOBALJSON = {};
 Destination = -1;
-MENUSEC = "";
+
+function menu(mode){
+    parent.postMessage(mode, "*");
+}
+    /*
+    function meu(mode){
+        MENUSEC = mode;
+        if(MENUSEC == 1||MENUSEC == 0){
+        if (MENUSEC == 1) {
+            myDiv.style.display = 'block';  // Show the menu
+            MENUSEC = 5;
+        } else if (MENUSEC == 0) {
+            myDiv.style.display = 'none';   // Hide the menu
+            MENUSEC = 5;
+        }
+    }
+    }*/
+   // Function to send message to toggle the menu section
 
     function toggleSection(idsec){
 
         //define class name definition
         let Section = document.getElementsByClassName("websection");
-
+        
         //Update! I will tell to not load all section in css to avoid data leak!
         /*
-        //function to set display to none in all class name
+        //function to set display to none in all class name*/
         for(let i = 0; i < Section.length; i++){
-            //Section[i].style.display = "none";
-            //Section[i].style.visibility = "hidden";
+            Section[i].style.display = "none";
+            Section[i].style.visibility = "visible"
         }
-        */ 
-
+         //Section[i].style.visibility = "hidden";
+        
         //Newer method
+        /*
         document.querySelectorAll("iframe").forEach(iframe =>{
             iframe.style.display = 'none';
-        });
+        });*/
 
         // Load iframe content only if not already loaded
 
-
+        
         //to set attribute we want it to show
         Section[idsec].style.display = "block";
-        //Section[i].style.visibility = "visible";
+        //;
 
     }
 
@@ -165,15 +182,15 @@ MENUSEC = "";
 
     //eventlistener to receive message to do others functions
     window.addEventListener("message", setValueOnListener);
-    
-    function setValueOnListener(event){
+    let myDiv = document.getElementById("menusection");
+    /*function setValueOnListener(event){
         //use even.data to extract data
         var recv = event.data;
         console.log(recv, typeof recv);
 
         //check id in range
         if(typeof recv == "number"){
-            if (recv >= 0 && recv <= 27){
+            if (recv >= 0 && recv <= 25){
                 toggleSection(recv);
                 let Section = document.getElementsByClassName("websection");
                 //if(GLOBALJSON != null) 
@@ -189,16 +206,13 @@ MENUSEC = "";
             if(recv >= 100 && recv <= 110){
                 Destination = recv-100;
             }
-
-            if(recv == 26){
-                const myDiv = document.getElementById("menusection");
-                myDiv.style.display = 'block'
+            if (message === 26) {
+                myDiv.style.display = 'block'; // Show the menu
+            } else if (message === 27) {
+                myDiv.style.display = 'none'; // Hide the menu
             }
+    
 
-            if(recv == 27){
-                const myDiv = document.getElementById("menusection");
-                myDiv.style.display = 'none'
-            }
         }
 
         if(typeof recv == "object"){
@@ -206,8 +220,51 @@ MENUSEC = "";
         }
 
 
+    }*/
+    function setValueOnListener(event){
+    // Use event.data to extract data
+    var recv = event.data;
+    console.log(recv, typeof recv);
+
+    // Check if recv is a number
+    if (typeof recv == "number") {
+        // Handle section toggling (0-25)
+        if (recv >= 0 && recv <= 25) {
+            toggleSection(recv);
+            let Section = document.getElementsByClassName("websection");
+
+            // If Destination is set, send it to the iframe
+            if (Destination != -1) {
+                Section[recv].contentWindow.postMessage(Destination, "*");
+            }
+
+            // Send the GLOBALJSON object to the iframe
+            Section[recv].contentWindow.postMessage(GLOBALJSON, "*");
+        }
+
+        // Reload the page if recv is 30
+        if (recv == 30) {
+            location.reload();
+        }
+
+        // Handle Destination for messages between 100-110
+        if (recv >= 100 && recv <= 110) {
+            Destination = recv - 100;
+        }
+
+        // Toggle the menu visibility based on recv
+        if (recv === 26) {
+            myDiv.style.display = 'block'; // Show the menu
+        } else if (recv === 27) {
+            myDiv.style.display = 'none'; // Hide the menu
+        }
     }
 
+    // If recv is an object, store it in GLOBALJSON
+    if (typeof recv == "object") {
+        GLOBALJSON = recv;
+    }
+}/**/
 
 
     
