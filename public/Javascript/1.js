@@ -49,3 +49,5 @@ function requestTemplate(desc){
   function populateText(){
     document.getElementById("navbarname").innerHTML = `ยินดีต้อนรับ ${GLOBALJSON.displayname_th}`;
   }
+
+  <script src="public/Javascript/menu.js"></script>

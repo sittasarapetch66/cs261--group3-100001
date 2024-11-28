@@ -33,6 +33,10 @@ window.addEventListener("message", function(event){
   }
 });
 
+function requestTemplate(desc){
+  
+  parent.postMessage(desc, "*");
+}
 
 
 function populateData(){

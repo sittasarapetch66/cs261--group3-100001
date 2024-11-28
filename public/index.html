@@ -12,9 +12,12 @@
 </head>
 <!-- menu -->
     <div id="menusection">
+        <div id="overlaysection">
+
+        </div>
    
         <div class="header">
-            <h1 class="but" onclick="toggleSomething(2)">◀
+            <h1 class="but" onclick="menu(0)">◀
             </h1>
             <h2 class="meu" >MENU</h2>
         </div>
@@ -35,14 +38,10 @@
             <div class="list" onclick="toggleSomething(10)">
                 <p>ยื่นคำร้องเพิ่มเติม</p>
             </div>
-            <div class="list" onclick="reallyExit()">
+            <div class="list" onclick="exit()">
                 <p>ออกจากระบบ</p>
             </div>
             <hr><hr>
-            <br><br>
-            <div class="list" onclick="reallyExit()">
-                <p>โหมดผู้พัฒนา</p>
-            </div>
         
      
         </div>
@@ -128,6 +127,7 @@ iframe{
 
 GLOBALJSON = {};
 Destination = -1;
+MENUSEC = "";
 
     function toggleSection(idsec){
 
@@ -173,7 +173,7 @@ Destination = -1;
 
         //check id in range
         if(typeof recv == "number"){
-            if (recv >= 0 && recv <= 25){
+            if (recv >= 0 && recv <= 27){
                 toggleSection(recv);
                 let Section = document.getElementsByClassName("websection");
                 //if(GLOBALJSON != null) 
@@ -189,11 +189,23 @@ Destination = -1;
             if(recv >= 100 && recv <= 110){
                 Destination = recv-100;
             }
+
+            if(recv == 26){
+                const myDiv = document.getElementById("menusection");
+                myDiv.style.display = 'block'
+            }
+
+            if(recv == 27){
+                const myDiv = document.getElementById("menusection");
+                myDiv.style.display = 'none'
+            }
         }
 
         if(typeof recv == "object"){
             GLOBALJSON = recv;
         }
+
+
     }
 
 
