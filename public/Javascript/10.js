@@ -1,3 +1,4 @@
+// ฟังก์ชันแสดงข้อมูลคณบดี
 function displayDeans(filteredDeans) {
     const tableBody = document.getElementById("dean-table");
     tableBody.innerHTML = ''; // Clear existing rows
@@ -13,17 +14,27 @@ function displayDeans(filteredDeans) {
             <td>${index + 1}</td>
             <td>${dean.nameTH}</td>
             <td>${dean.email}</td>
-            <td><a href="editDean.html" class="edit-button">แก้ไข</a></td>
+            <td><a href="javascript:void(0);" class="edit-button" data-id="${dean.id}">แก้ไข</a></td>
             <td><button class="delete-button" data-index="${index}">ลบ</button></td>
         `;
         tableBody.appendChild(row);
     });
 
+    // จัดการปุ่มลบ
     document.querySelectorAll('.delete-button').forEach(button => {
         button.addEventListener('click', () => deleteDean(button.dataset.index));
     });
+
+    // จัดการปุ่มแก้ไข
+    document.querySelectorAll('.edit-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const deanId = this.getAttribute('data-id');
+            editDean(deanId);  // เรียกฟังก์ชัน editDean ส่ง ID ไปที่ 14.html
+        });
+    });
 }
 
+// ฟังก์ชันลบคณบดี
 function deleteDean(index) {
     if (confirm('คุณแน่ใจหรือว่าต้องการลบข้อมูลนี้?')) {
         const deanId = deans[index].id;  // ใช้ ID ของคณบดีที่ต้องการลบ
@@ -46,12 +57,14 @@ function deleteDean(index) {
     }
 }
 
+// ฟังก์ชันค้นหาคณบดี
 function searchDean() {
     const nameInput = document.getElementById('name').value.toLowerCase();
     const filteredDeans = deans.filter(dean => dean.name.toLowerCase().includes(nameInput));
     displayDeans(filteredDeans);
 }
 
+// ฟังก์ชันเพิ่มคณบดี
 function addDean() {
     const employeeType = 90;
     sessionStorage.setItem('employeeType', employeeType); // เก็บใน sessionStorage
@@ -59,17 +72,18 @@ function addDean() {
     window.location.href = '13.html';  // ไปที่หน้า 13.html เพื่อกรอกข้อมูลเพิ่มเติม
 }
 
+// ฟังก์ชันแก้ไขคณบดี
+function editDean(id) {
+    // ส่งไปที่หน้า 14.html โดยใช้ URL ที่มี query string
+    window.location.href = '14.html?id=' + id;  // เปลี่ยนหน้าไปที่ 14.html พร้อมส่ง ID
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     displayDeans(deans); // Display deans when the page loads
     document.getElementById('name').addEventListener('input', searchDean);
 });
 
-function requestTemplate(typeinput){
-    parent.postMessage(typeinput, "*");
-    }
-
-
-    fetchData()
+fetchData()
 
     function fetchData() {
         const options = {
@@ -90,27 +104,23 @@ function requestTemplate(typeinput){
                 console.error('Fetch error:', error);
             });
     }
-    
-    function deletebyID(id){
-    
-        const options = {
-            method: 'GET',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-          };
-        
-          //fetch data
-        fetch(`http://petchsko123.trueddns.com:56267/group3/api/group3/employee/deleteid=${id}`, options)
-        .then(response => response.json()) 
-        .then((JSON) => {
-            console.log(JSON);
-            displayTeachers(JSON);
-        })
-        .catch(error => {
-            // Handle any errors that occurred during the fetch
-            console.error('Fetch error:', error);
-        });
-    
-    }
-    
+
+// ฟังก์ชันลบตาม ID
+function deletebyID(id) {
+    const options = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    };
+
+    fetch(`http://petchsko123.trueddns.com:56267/group3/api/group3/employee/deleteid=${id}`, options)
+    .then(response => response.json()) 
+    .then((JSON) => {
+        console.log(JSON);
+        displayTeachers(JSON); // ใช้ฟังก์ชัน displayTeachers แสดงข้อมูลที่อัพเดตแล้ว
+    })
+    .catch(error => {
+        console.error('Fetch error:', error);
+    });
+}

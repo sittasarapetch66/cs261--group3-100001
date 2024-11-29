@@ -255,7 +255,7 @@ function menu(mode){
         }
 
         // Handle Destination for messages between 100-110
-        if (recv >= 100 && recv <= 110) {
+        if (recv >= 100) {
             Destination = recv - 100;
         }
 
@@ -264,6 +264,10 @@ function menu(mode){
             myDiv.style.display = 'block'; // Show the menu
         } else if (recv === 27) {
             myDiv.style.display = 'none'; // Hide the menu
+        }
+
+        if (recv >= 1000){
+
         }
     }
 

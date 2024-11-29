@@ -1,3 +1,4 @@
+// ฟังก์ชันแสดงข้อมูลเจ้าหน้าที่
 function displayOfficers(filteredOfficers) {
     const tableBody = document.getElementById("officer-table");
     tableBody.innerHTML = ''; // Clear existing rows
@@ -11,20 +12,29 @@ function displayOfficers(filteredOfficers) {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${index + 1}</td>
-            <td>${officer.department}</td>
             <td>${officer.nameTH}</td>
             <td>${officer.email}</td>
-            <td><a href="editOfficer.html" class="edit-button">แก้ไข</a></td>
+            <td><a href="javascript:void(0);" class="edit-button" data-id="${officer.id}">แก้ไข</a></td>
             <td><button class="delete-button" data-index="${index}">ลบ</button></td>
         `;
         tableBody.appendChild(row);
     });
 
+    // จัดการปุ่มลบ
     document.querySelectorAll('.delete-button').forEach(button => {
         button.addEventListener('click', () => deleteOfficer(button.dataset.index));
     });
+
+    // จัดการปุ่มแก้ไข
+    document.querySelectorAll('.edit-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const officerId = this.getAttribute('data-id');
+            editOfficer(officerId);  // เรียกฟังก์ชัน editOfficer ส่ง ID ไปที่ 14.html
+        });
+    });
 }
 
+// ฟังก์ชันลบเจ้าหน้าที่
 function deleteOfficer(index) {
     if (confirm('คุณแน่ใจหรือว่าต้องการลบข้อมูลนี้?')) {
         const officerId = officers[index].id;  // ใช้ ID ของเจ้าหน้าที่ที่ต้องการลบ
@@ -47,17 +57,25 @@ function deleteOfficer(index) {
     }
 }
 
+// ฟังก์ชันค้นหาผู้ใช้ (เจ้าหน้าที่)
 function searchOfficer() {
     const nameInput = document.getElementById('name').value.toLowerCase();
     const filteredOfficers = officers.filter(officer => officer.name.toLowerCase().includes(nameInput));
     displayOfficers(filteredOfficers);
 }
 
+// ฟังก์ชันเพิ่มเจ้าหน้าที่
 function addOfficer() {
-    const employeeType = 30; // ตัวอย่าง ID สำหรับเจ้าหน้าที่
+    const employeeType = 30;  // เปลี่ยนไปเป็นประเภทเจ้าหน้าที่
     sessionStorage.setItem('employeeType', employeeType); // เก็บใน sessionStorage
 
     window.location.href = '13.html';  // ไปที่หน้า 13.html เพื่อกรอกข้อมูลเพิ่มเติม
+}
+
+// ฟังก์ชันแก้ไขเจ้าหน้าที่
+function editOfficer(id) {
+    // ส่งไปที่หน้า 14.html โดยใช้ URL ที่มี query string
+    window.location.href = '14.html?id=' + id;  // เปลี่ยนหน้าไปที่ 14.html พร้อมส่ง ID
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -65,10 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('name').addEventListener('input', searchOfficer);
 });
 
-function requestTemplate(typeinput){
-    parent.postMessage(typeinput, "*");
-}
-
+// ดึงข้อมูลจาก Backend
 fetchData()
 
 function fetchData() {
@@ -82,32 +97,11 @@ function fetchData() {
     fetch('http://petchsko123.trueddns.com:56267/group3/api/group3/employee', options)
         .then(response => response.json())
         .then((data) => {
-            // กรองเฉพาะ employeeType ที่เป็นเจ้าหน้าที่ (30-33)
-            const filteredOfficers = data.filter(officer => [30, 31, 32, 33].includes(officer.employeeType));
-            displayOfficers(filteredOfficers); // ส่งข้อมูลที่กรองแล้วไปแสดงในตาราง
+            // กรองข้อมูลเฉพาะ employeeType = 30 (เจ้าหน้าที่)
+            const filteredOfficers = data.filter(officer => officer.employeeType === 30);
+            displayOfficers(filteredOfficers); // ส่งข้อมูลที่กรองแล้วไปแสดงผล
         })
         .catch(error => {
             console.error('Fetch error:', error);
         });
-}
-
-function deletebyID(id){
-    const options = {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-    };
-
-    //fetch data
-    fetch(`http://petchsko123.trueddns.com:56267/group3/api/group3/employee/deleteid=${id}`, options)
-    .then(response => response.json()) 
-    .then((JSON) => {
-        console.log(JSON);
-        displayTeachers(JSON);
-    })
-    .catch(error => {
-        // Handle any errors that occurred during the fetch
-        console.error('Fetch error:', error);
-    });
 }
