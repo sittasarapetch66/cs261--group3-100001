@@ -1,6 +1,10 @@
-function requestTemplate(typeinput) {
+function requestTemplate(typeinput){
     parent.postMessage(typeinput, "*");
-}
+    menu(29)
+    }
+    function menu(mode){
+      parent.postMessage(mode, "*");
+  }
 
 function handleSubmit() {
     // ดึงข้อมูลจากฟอร์ม

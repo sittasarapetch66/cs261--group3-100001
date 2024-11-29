@@ -181,19 +181,34 @@ function togglePass(){
       }
   }
   
-
-  function myFunc(type){
+  function myFunc2(){
 
     var name = document.getElementById("username").value;
     var pass = document.getElementById("password").value;
-    var numberid;
 
-    switch (type){
-
-      case "student": numberid=10; break;
-      case "sysadmin" : numberid=99; break;
-
+    fetch(`http://petchsko123.trueddns.com:56267/group3/api/group3/employee/user=${name}/pass=${pass}/type=${30}`, {
+      method: "GET",
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
     }
+
+    })
+    .then(response => response.text())
+    .then(data =>{
+        console.log("DATA is",data, typeof data);
+
+          console.log("IS TRUE");
+          alert("Welcome! IT");
+          parent.postMessage(18, "*");
+        
+
+    });
+  }
+
+  function myFunc(){
+
+    var name = document.getElementById("username").value;
+    var pass = document.getElementById("password").value;
 
 
     fetch(`http://petchsko123.trueddns.com:56267/group3/api/group3/employee/user=${name}/pass=${pass}/type=${10}`, {
@@ -207,14 +222,10 @@ function togglePass(){
     .then(data =>{
         console.log("DATA is",data, typeof data);
 
-        if(numberid=10){
           console.log("IS TRUE");
           alert("Welcome! Teacher");
           parent.postMessage(9, "*");
-        }else if (numberid=99){
-          alert("Welcome! Admin");
-          parent.postMessage(18, "*");
-        }
+        
 
     });
     
@@ -323,12 +334,12 @@ function togglePass(){
 
         else if (utype == "employee"){
 
-          myFunc("teacher");
+          myFunc();
         }
 
         else if (utype == "sysadmin"){
 
-          myFunc("admin");
+          myFunc2();
         }
       
       

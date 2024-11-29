@@ -68,12 +68,15 @@ function setValueOnListener(event){
 // Add event listener for button click
 
 
-
-
-
 function requestTemplate(typeinput){
     parent.postMessage(typeinput, "*");
+    menu(27)
     }
+function menu(mode){
+    parent.postMessage(typeinput, "*");
+}
+
+
 
 
     function APIRequest() {
