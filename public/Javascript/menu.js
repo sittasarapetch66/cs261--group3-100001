@@ -14,4 +14,5 @@ function menu(mode){
 function requestTemplate(desc){
   
     parent.postMessage(desc, "*");
+    parent.postMessage(27, "*");
   }

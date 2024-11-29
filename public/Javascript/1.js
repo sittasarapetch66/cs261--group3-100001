@@ -5,6 +5,7 @@ function requestTemplate(desc){
     parent.postMessage(desc+100, "*");
     
     parent.postMessage(4, "*");
+    menu(27)
 }
 
   function exit(typeinput){

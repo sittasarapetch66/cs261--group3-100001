@@ -35,7 +35,7 @@
             </div>
             <br>
             <hr><hr>
-            <div class="list" onclick="requestTemplate(4)">
+            <div class="list" onclick="requestmenu(99)">
                 <p>ยื่นคำร้องเพิ่มเติม</p>
             </div>
             <div class="list" onclick="exit()">
@@ -221,6 +221,13 @@ function menu(mode){
 
 
     }*/
+    function requestmenu(desc){
+  
+  parent.postMessage(desc+100, "*");
+  
+  parent.postMessage(4, "*");
+  parent.postMessage(27, "*");
+}
     function setValueOnListener(event){
     // Use event.data to extract data
     var recv = event.data;
