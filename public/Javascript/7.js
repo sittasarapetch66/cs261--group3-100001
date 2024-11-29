@@ -47,6 +47,13 @@ function setValueOnListener(event){
     var recv = event.data;
     console.log(recv, typeof recv);
 
+    const { displayname_th } = event.data;
+    if (displayname_th) {
+        // แสดง username ในหน้า HTML
+        const usernameElement = document.getElementById("username");
+        usernameElement.textContent = `ชื่อผู้ใช้: ${displayname_th}`;
+    }
+
     //check id in range
     if(typeof recv == "number"){
     }
@@ -70,7 +77,7 @@ function requestTemplate(typeinput){
 
 
     function APIRequest() {
-        usernameContainer.innerHTML = GLOBALJSON;
+        username.innerHTML = GLOBALJSON;
     }
     
     // เรียกใช้ฟังก์ชันเมื่อโหลดหน้าเสร็จ
