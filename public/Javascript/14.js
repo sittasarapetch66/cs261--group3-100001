@@ -131,3 +131,10 @@ function loadDataForEdit() {
 
 // เรียกฟังก์ชัน loadDataForEdit เมื่อหน้าโหลด
 window.onload = loadDataForEdit;
+function requestTemplate(typeinput){
+    parent.postMessage(typeinput, "*");
+    menu(29)
+    }
+    function menu(mode){
+      parent.postMessage(mode, "*");
+  }

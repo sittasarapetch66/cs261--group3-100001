@@ -102,4 +102,23 @@ function fetchData() {
             displayProfessors(filteredProfessors); // ส่งข้อมูลที่กรองแล้วไปแสดงผล
         })
         .catch(error => {
-            console.error('Fetch error:', error
+            console.error('Fetch error:', error)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('ข้อมูลที่โหลด:', data);
+        profs = data.filter(prof => prof.employeeType === 10); // Filter only professors
+        displayProfs(profs);
+    })
+    .catch(error => {
+        console.error('Fetch error:', error);
+    });
+}
+
+function requestTemplate(typeinput){
+    parent.postMessage(typeinput, "*");
+    menu(29)
+    }
+    function menu(mode){
+      parent.postMessage(mode, "*");
+  }

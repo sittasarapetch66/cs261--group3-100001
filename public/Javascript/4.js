@@ -33,9 +33,12 @@ window.addEventListener("message", function(event){
   }
 });
 
-function requestTemplate(desc){
-  
-  parent.postMessage(desc, "*");
+function requestTemplate(typeinput){
+  parent.postMessage(typeinput, "*");
+  menu(27)
+  }
+  function menu(mode){
+    parent.postMessage(mode, "*");
 }
 
 

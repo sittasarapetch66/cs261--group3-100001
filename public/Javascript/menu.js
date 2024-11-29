@@ -15,4 +15,5 @@ function requestTemplate(desc){
   
     parent.postMessage(desc, "*");
     parent.postMessage(27, "*");
+    parent.postMessage(29, "*");
   }

@@ -84,6 +84,14 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ดึงข้อมูลจาก Backend
+function requestTemplate(typeinput){
+    parent.postMessage(typeinput, "*");
+    menu(29)
+    }
+    function menu(mode){
+      parent.postMessage(mode, "*");
+  }
+
 fetchData()
 
 function fetchData() {

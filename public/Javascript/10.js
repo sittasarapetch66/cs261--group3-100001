@@ -38,7 +38,7 @@ function displayDeans(filteredDeans) {
 function deleteDean(index) {
     if (confirm('คุณแน่ใจหรือว่าต้องการลบข้อมูลนี้?')) {
         const deanId = deans[index].id;  // ใช้ ID ของคณบดีที่ต้องการลบ
-
+        
         // ส่งคำขอลบข้อมูลไปยัง Backend
         fetch(`http://petchsko123.trueddns.com:56267/group3/api/group3/employee/deleteid=${deanId}`, {
             method: 'DELETE',
@@ -84,6 +84,16 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 fetchData()
+function requestTemplate(typeinput){
+    parent.postMessage(typeinput, "*");
+    menu(29)
+    }
+    function menu(mode){
+      parent.postMessage(mode, "*");
+  }
+
+
+    fetchData()
 
     function fetchData() {
         const options = {

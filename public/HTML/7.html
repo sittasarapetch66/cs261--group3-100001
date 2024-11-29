@@ -5,7 +5,7 @@
 <div id="payment">
     <div class="navbar">
         <button class="back-button" onclick="requestTemplate(8)">◀</button>
-        <div class="menu-icon" onclick="requestTemplate(26)">☰</div>
+        <div class="menu-icon" onclick="menu(26)">☰</div>
     </div>
     <main>
         <div class="qr-section">
@@ -17,9 +17,9 @@
             <h3>จดทะเบียนเพิ่มเติม</h3>
             <div class="update">
                 <p>แก้ไขล่าสุด:</p>
-                <p class="date">test</p>
+                <p class="date"></p>
             </div>
-            <p class="name">นายโคนัน ทวิสาร</p>
+            <p class="uesrname" id="username"></p>
             <p>ค้างชำระทั้งหมด <span>45</span> บาท</p>
             <div class="slip">
                 <label for="fileInput">แนบหลักฐานการโอนเงิน</label>

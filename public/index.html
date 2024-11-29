@@ -47,6 +47,41 @@
         </div>
      
      </div>
+     <div id="menusectionit">
+        
+   
+        <div class="header">
+            <h1 class="but" onclick="menu(29)">◀
+            </h1>
+            <h2 class="meu" >MENU</h2>
+        </div>
+     
+        <div class="selection">
+            <div class="list" onclick="requestTemplate(18)">
+                <p>เมนูเจ้าหน้าที่</p>
+            </div>
+            <div class="list" onclick="requestTemplate(16)">
+                <p>สืบค้นคำร้อง</p>
+            </div>
+            <div class="list" onclick="requestTemplate(15)">
+                <p>ประวัติการใช้งาน</p>
+            </div>
+            <div class="list" onclick="requestTemplate(17)">
+                <p>เพิ่มข้อมูลบุคคลากร</p>
+            </div>
+            
+            <br>
+            <hr><hr>
+            <div class="list" onclick="exit()">
+                <p>ออกจากระบบ</p>
+            </div>
+            <hr><hr>
+        
+     
+        </div>
+     
+     </div>
+     
 <body onload="onloadMain()">
     <!--0 : Login Section -->
     <iframe src="./HTML/0.html" class="websection" id="">Your Browser not support iframe</iframe>
@@ -183,6 +218,7 @@ function menu(mode){
     //eventlistener to receive message to do others functions
     window.addEventListener("message", setValueOnListener);
     let myDiv = document.getElementById("menusection");
+    let myDivit = document.getElementById("menusectionit");
     /*function setValueOnListener(event){
         //use even.data to extract data
         var recv = event.data;
@@ -262,8 +298,14 @@ function menu(mode){
         // Toggle the menu visibility based on recv
         if (recv === 26) {
             myDiv.style.display = 'block'; // Show the menu
+            myDivit.style.display = 'none';
         } else if (recv === 27) {
             myDiv.style.display = 'none'; // Hide the menu
+        } else if (recv === 28) {
+            myDivit.style.display = 'block';// Show the menu
+            myDiv.style.display = 'none'; 
+        } else if (recv === 29) {
+            myDivit.style.display = 'none'; // Hide the menu
         }
 
         if (recv >= 1000){

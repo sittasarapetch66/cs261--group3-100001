@@ -1,6 +1,10 @@
 function requestTemplate(typeinput){
     parent.postMessage(typeinput, "*");
+    menu(29)
     }
+    function menu(mode){
+      parent.postMessage(mode, "*");
+  }
 
 // ตัวอย่างข้อมูลในระบบ
 // เป็นแค่ตัวย่างเด้อ เราดึงข้อมูลจาก Backend
