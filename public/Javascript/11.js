@@ -11,8 +11,8 @@ function displayOfficers(filteredOfficers) {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${index + 1}</td>
-            <td>${officer.program}</td>
-            <td>${officer.name}</td>
+            <td>${officer.department}</td>
+            <td>${officer.nameTH}</td>
             <td>${officer.email}</td>
             <td><a href="editOfficer.html" class="edit-button">แก้ไข</a></td>
             <td><button class="delete-button" data-index="${index}">ลบ</button></td>
@@ -71,25 +71,24 @@ function requestTemplate(typeinput){
 
 fetchData()
 
-function fetchData(id){
+function fetchData() {
     const options = {
         method: 'GET',
         headers: {
-          'Content-Type': 'application/json'
+            'Content-Type': 'application/json'
         },
     };
 
-    //fetch data
     fetch('http://petchsko123.trueddns.com:56267/group3/api/group3/employee', options)
-    .then(response => response.json()) 
-    .then((JSON) => {
-        console.log(JSON);
-        displayOfficers(JSON);
-    })
-    .catch(error => {
-        // Handle any errors that occurred during the fetch
-        console.error('Fetch error:', error);
-    });
+        .then(response => response.json())
+        .then((data) => {
+            // กรองเฉพาะ employeeType ที่เป็นเจ้าหน้าที่ (30-33)
+            const filteredOfficers = data.filter(officer => [30, 31, 32, 33].includes(officer.employeeType));
+            displayOfficers(filteredOfficers); // ส่งข้อมูลที่กรองแล้วไปแสดงในตาราง
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+        });
 }
 
 function deletebyID(id){
