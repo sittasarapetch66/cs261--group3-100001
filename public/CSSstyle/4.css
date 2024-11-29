@@ -1,0 +1,248 @@
+/*
+Reuqest Template
+Create by Akawat-SKO
+*/
+
+
+header {
+
+    /*
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2D3142;
+    padding: 10px 20px;
+    color: #ffffff;
+    font-family: 'Prompt', sans-serif; *//* ใช้ฟ้อนต์ Prompt กับส่วน header */
+    /*height: 15vh; *//* ตั้งค่าความสูงให้เท่ากับส่วนบน */
+    /*box-sizing: border-box; *//* เพื่อให้ padding ไม่กระทบต่อความสูง */
+
+    background-color: #2c2c3e;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 1em;
+    height: 10vh;
+}
+
+ input[type="text"], input[type="number"]{
+    border-radius: 5px;
+    border : 1px solid black;
+    box-shadow: 2px 2px 3px black;
+}
+
+ textarea{
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px black;
+    border : 1px solid black;
+    
+}
+
+ .menu-icon {
+    font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+}
+
+
+
+
+ .back-arrow {
+    background: none;
+    border: none;
+    color: #F5F5F5;
+    font-size: 5vh;
+    cursor: pointer;
+    border-radius: 50%;
+    padding-left : 5px;
+    padding-right : 15px;
+    transition: 0.5s;
+}
+
+ .menu-icon:hover {
+    background-color: #c4c4c4a9;
+}
+
+ .back-button {
+    background: none;
+    border: none;
+    color: #F5F5F5;
+    font-size: 5vh;
+    cursor: pointer;
+    border-radius: 50%;
+    padding-left : 5px;
+    padding-right : 15px;
+    transition: 0.5s;
+}
+
+ .back-button:hover{
+    background-color: #c8c8c8;
+    box-shadow: inset;
+}
+
+
+
+
+ .container {
+    width: 100%; /* Full screen width */
+    margin: 0; /* Remove default margin */
+    padding: 0px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Ensure padding doesn't affect the full width */
+}
+
+
+ .sectionform{
+
+    padding-top: 30px;
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    width:55%;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+ .pinfo_head {
+
+    padding-top : 3vh;
+    margin-bottom: 1vh;
+    margin-left : 1vw;
+    font-family: notosans_med;
+    font-size : 1.5vw;
+}
+ .pinfo_head .sub{
+
+    margin-left : 1vw;
+    font-family: notosans_med;
+    font-size : 1vw;
+}
+
+ .pinfo_input{
+    margin-left : 2vw;
+    padding-top : 3vh;
+    background-color: #E0E0E0;
+    border-radius: 5px;
+    box-shadow: 5px 5px 3px #0000007c;
+    
+}
+
+ .pinfo_input label{
+
+    position: absolute;
+    margin-top: 1.5vh;
+    margin-left: 2vw;
+}
+
+ .pinfo_input input{
+    padding : 1vh;
+    margin : 1vh;
+    margin-left : 10vw;
+    width : 25%;
+    font-family: notosans_med;
+}
+ .pinfo_input .a input{
+    margin-left : 15vw;
+}
+
+ .pinfo_input .pinfo_addr{
+    padding : 1vh;
+    margin : 1vh;
+    margin-left : 4vw;
+
+    
+
+}
+
+ .pinfo_input .pinfo_addr input{
+    padding : 1vh;
+    margin : 1vh;
+    margin-left : 12vw;
+    width : 25%;
+    
+}
+
+ .pinfo_input .pinfo_addr .long{
+    width : 40%;
+}
+
+ .requesttype01 {background-color: #C5C5C5;}
+ .requesttype02 {background-color: #C5C5C5;}
+ .requesttype03 {background-color: #C5C5C5;}
+
+ .requesttype01 input{
+    margin-left : 8vw;
+}
+
+ textarea{
+    resize: none;
+    margin-top :6vh;
+    margin-left : 8vw;
+    font-family: notosans_med;
+}
+
+ .requesttype02 .choicedebtlabel{
+    margin-top: 3.5vh;
+    margin-left : 1vw;
+}
+
+ .requesttype02 .choicedebt{
+    margin-top: 1vh;
+    margin-left : 10vw;
+    height:8vh; 
+    width:3vh;
+}
+
+ .requesttype02 .moneyamountlabel{
+    margin-left : 10vw;
+}
+
+ .requesttype02 .moneyamount{
+    margin-left : 15vw;
+}
+
+ .sectionform .Bot {
+    display: flex; /* ใช้ Flexbox ในการจัดตำแหน่ง */
+    justify-content: flex-end; /* จัดตำแหน่งปุ่มไปทางขวา */
+    margin-right: 2%; /* เพิ่มระยะห่างจากขอบขวาของฟอร์ม */
+    margin-top: 20px; /* เพิ่มระยะห่างจากส่วนบน */
+}
+
+ button {
+    width: 25%; /* ลดขนาดความกว้างของปุ่ม */
+    padding: 0.5%; /* ลด Padding เพื่อให้ปุ่มเล็กลง */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: notosans_med;
+    font-size: 1em; /* ลดขนาดตัวอักษร */
+    margin-left: 10px; /* เพิ่มระยะห่างระหว่างปุ่ม */
+    transition: all 0.3s ease; /* เพิ่มเอฟเฟกต์การเปลี่ยนแบบ smooth */
+}
+
+ button.submit:hover {
+    transform: scale(1.1); /* ขยายขนาดปุ่มเล็กน้อยเมื่อโฮเวอร์ */
+    background-color: #3e8e41; /* เปลี่ยนสีพื้นหลังเมื่อโฮเวอร์ */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* เพิ่มเงาให้ดูนูน */
+}
+
+ button.save-draft:hover {
+    transform: scale(1.1); /* ขยายขนาดปุ่ม */
+    background-color: white; /* คงไว้เป็นสีขาว */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* เพิ่มเงา */
+}
+
+ button:active {
+    transform: scale(0.95); /* ลดขนาดปุ่มเล็กน้อยเมื่อกด */
+    background-color: #2e6e31; /* เปลี่ยนสีพื้นหลังให้เข้มขึ้นเมื่อคลิก */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* ลดเงาลงเมื่อกด */
+}
+
+ .submit {
+    background-color: #4caf50;
+    color: #ffffff;
+}

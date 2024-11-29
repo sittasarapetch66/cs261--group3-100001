@@ -1,0 +1,55 @@
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../CSSstyle/1.css" />
+<script src="../Javascript/1.js"></script>
+<link rel="stylesheet" href="../CSSstyle/Global.css" />
+<div id="overlaysection" onclick="menu(27)">
+
+</div>
+   <!-- Header Section -->
+<div id="homesection">
+    <div class="header">
+        <div class="profile">
+            <div>
+                <img class="profile-pic" src="../picture/favicon2.jpg">
+            </div>
+            <div class="textinfo">
+                <span id="navbarname">ชื่อของคุณจะปรากฎอยู่ตรงนี้ หากคุณเห็นข้อความนี้แสดงว่าคุณได้ทำการแก้ไขไฟล์ ทำได้ดีมาก #u#</span>
+                <br>
+                <small onclick="exit(30)">Log out</small>
+            </div>
+        </div>
+        <div class="menu-icon" onclick="menu(26)">☰</div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content">
+        <h1>ระบบยื่นคำร้องนักศึกษามหาวิทยาลัยธรรมศาสตร์</h1>
+        <p>โปรดเลือกประเภทคำร้อง</p>
+        
+        <!-- Icons Section -->
+        <div class="icon-container">
+            <div class="icon-item" onclick="requestTemplate(1)">
+                <div class="icon">📝</div>
+                <p>จดทะเบียนล่าช้า</p>
+            </div>
+            <div class="icon-item" onclick="requestTemplate(2)">
+                <div class="icon">🗑️</div>
+                <p>ถอนรายวิชา</p>
+            </div>
+            <div class="icon-item" onclick="requestTemplate(3)">
+                <div class="icon">📑</div>
+                <p>จดทะเบียนศึกษารายวิชานอกหลักสูตร</p>
+            </div>
+            <div class="icon-item" onclick="requestTemplate(4)">
+                <div class="icon">➡️</div>
+                <p>ลาออก</p>
+            </div>
+            <div class="icon-item" onclick="requestTemplate(99)">
+            <div class="icon">➡️</div>
+            <p>อื่น ๆ</p>
+        </div>
+        </div>
+    </div> 
+
+</div>
+

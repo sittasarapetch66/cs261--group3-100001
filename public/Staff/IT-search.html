@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Form</title>
+    <link rel="stylesheet" href="../css(Staff)/IT-search (Staff).css">
+    <script src="../js(Staff)/IT-searchjs (Staff).js"></script>
+    <style> /*
+        body {
+            font-family: notosans_med;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        
+        .header {
+            background-color: #2c2c3e;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            font-size: 1em;
+            height: 10vh;
+        }
+
+        .back-button {
+            background: none;
+            border: none;
+            color: #F5F5F5;
+            font-size: 5vh;
+            cursor: pointer;
+            border-radius: 50%;
+            padding-left: 5px;
+            padding-right: 15px;
+            transition: 0.5s;
+        }
+
+        .back-button:hover {
+            background-color: #c8c8c8;
+            box-shadow: inset;
+        }
+
+        .header .profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            background-color: #F5F5F5;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .menu-icon {
+            font-size: 5vh;
+            cursor: pointer;
+            padding-left: 15px;
+            padding-right: 15px;
+            border-radius: 50%;
+            transition: 0.5s;
+        }
+
+        .menu-icon:hover {
+            background-color: #c4c4c4a9;
+        }
+
+
+        
+        .form-section {
+            background-color: #E0E0E0;
+            display: flex;
+        }
+
+        .form-section .outer-form {
+            width: 30%;
+            padding-right: 70%;
+            padding: 30px;
+            padding-left: 5%;
+            padding-right: 5%;
+            display: flex;
+            flex-direction: row;
+            
+            gap: 20px;
+            
+        }
+
+        .form-section .outer-form .form-group {
+            display: flex;
+            flex-direction: column;
+            
+            flex: 1;
+            
+        }
+
+        .form-section .outer-form .form-input {
+            display: flex;
+            flex-direction: column;
+            
+            flex: 1;
+            
+        }
+
+        button#search-btn {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #1f1f33;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button#search-btn:hover {
+            background-color: #333;
+        }
+
+        .table-section {
+            width: 90%;
+            padding: 30px;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #2D3142;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }*/
+    </style>
+</head>
+
+<body onload="LoadFunction()">
+    <!-- Header Section -->
+    <div class="header">
+        <div class="profile">
+            <button class="back-button" onclick="toggleSomething(10)">◀</button>
+        </div>
+        <div class="menu-icon" onclick="showMenu()">☰</div>
+    </div>
+
+    <!-- Form Section -->
+    <section class="form-section" aria-labelledby="form-title">
+        <div class="outer-form">
+            <div class="form-group">
+                <label for="request-type">กรุณาเลือกแบบคำร้อง</label><br>
+                <label for="student-name">อีเมลนักศึกษา</label><br>
+                <label for="student-id">เลขทะเบียนนักศึกษา</label><br>
+            </div>
+            <div class="form-input">
+                <select id="request-type" aria-label="Request Type">
+                    <option value=9999>ทั้งหมด</option>
+                    <option value=1>จดทะเบียนล่าช้า</option>
+                    <option value=2>ถอนรายวิชา</option>
+                    <option value=3>จดทะเบียนศึกษารายวิชาข้ามหลักสูตร</option>
+                    <option value=4>ลาออก</option>
+                    <option value=99>อื่นๆ</option>
+                </select><br>
+                <input type="text" id="student-name" value=""><br>
+                <input type="text" id="student-id" value=""><br>
+                <button id="search-btn" onclick="searchData()">ค้นหา</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Table Section -->
+    <div class="container">
+        <div class="table-section" aria-labelledby="table-title">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ลำดับ</th>
+                        <th>สถานะ</th>
+                        <th>ประเภทคำร้อง</th>
+                        <th>เลขทะเบียน</th>
+                        <th>อีเมลอาจารย์ที่ปรึกษา</th>
+                        <th>ยกเลิก</th>
+                        <th>ไฟล์แนบ</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- Rows will be dynamically added -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!--<script>
+        // ตัวอย่างข้อมูลในระบบ
+        const requests = [
+            { id: 1, status: "รออนุมัติ", type: "ลาออก", studentId: "123456", name: "โกนับ ถวาสาร", file: "ไฟล์แนบ" },
+            { id: 2, status: "อนุมัติแล้ว", type: "ถอนรายวิชา", studentId: "654321", name: "สมหญิง ใจดี", file: "ไฟล์แนบ" },
+            { id: 3, status: "รออนุมัติ", type: "จดทะเบียนล่าช้า", studentId: "789012", name: "สมชาย รักดี", file: "ไฟล์แนบ" }
+        ];
+
+        // ฟังก์ชันสำหรับแสดงข้อมูลในตาราง
+        function renderTable(data) {
+            const tableBody = document.getElementById("table-body");
+            tableBody.innerHTML = ""; // ล้างข้อมูลในตารางก่อน
+
+            if (data.length === 0) {
+                const row = document.createElement("tr");
+                row.innerHTML = `<td colspan="7">ไม่พบข้อมูล</td>`;
+                tableBody.appendChild(row);
+                return;
+            }
+            
+            data.forEach((item, index) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${item.status}</td>
+                    <td>${item.type}</td>
+                    <td>${item.studentId}</td>
+                    <td>${item.name}</td>
+                    <td><button class="cancel-button" onclick="deleteRequest(${item.id})">X</button></td>
+                    <td><button class="download" onclick="downloadFile(${item.id})">📄</button></td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // ฟังก์ชันสำหรับค้นหาข้อมูล
+        function searchData() {
+            const requestType = document.getElementById("request-type").value;
+            const studentName = document.getElementById("student-name").value.trim().toLowerCase();
+            const studentId = document.getElementById("student-id").value.trim();
+
+            // กรองข้อมูลตามเงื่อนไข
+            const filteredRequests = requests.filter((item) => {
+                const matchType = requestType === "ทั้งหมด" || item.type === requestType;
+                const matchName = !studentName || item.name.toLowerCase().includes(studentName);
+                const matchId = !studentId || item.studentId.includes(studentId);
+                return matchType && matchName && matchId;
+            });
+
+            // แสดงข้อมูลที่กรอง
+            renderTable(filteredRequests);
+        }
+
+        // ฟังก์ชันสำหรับลบคำร้อง
+        function deleteRequest(id) {
+            if (confirm("คุณต้องการลบคำร้องนี้หรือไม่?")) {
+                // ลบข้อมูลออกจาก Array
+                const index = requests.findIndex((item) => item.id === id);
+                if (index !== -1) {
+                    requests.splice(index, 1);
+                    alert("คำร้องถูกลบเรียบร้อยแล้ว!");
+                } else {
+                    alert("ไม่พบคำร้องในระบบ");
+                }
+
+                // อัปเดตตารางใหม่
+                searchData();
+            }
+        }
+
+        // Download File
+        function downloadFile(id) {
+            alert(`Downloading file for request ID ${id}`);
+        }
+
+        // เรียกฟังก์ชันแสดงข้อมูลเริ่มต้น
+        renderTable(requests);
+    </script>-->
+
+</body>
+
+</html>

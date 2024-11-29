@@ -44,6 +44,9 @@
     transition: 0.5s;
 }
 
+
+
+
 #requestformtemplate .back-arrow {
     background: none;
     border: none;
@@ -197,25 +200,44 @@
     margin-left : 15vw;
 }
 
-#requestformtemplate .save-draft {
-    background-color: #e0e0e0;
-    color: #333;
+#requestformtemplate .sectionform .Bot {
+    display: flex; /* ใช้ Flexbox ในการจัดตำแหน่ง */
+    justify-content: flex-end; /* จัดตำแหน่งปุ่มไปทางขวา */
+    margin-right: 2%; /* เพิ่มระยะห่างจากขอบขวาของฟอร์ม */
+    margin-top: 20px; /* เพิ่มระยะห่างจากส่วนบน */
+}
+
+#requestformtemplate button {
+    width: 25%; /* ลดขนาดความกว้างของปุ่ม */
+    padding: 0.5%; /* ลด Padding เพื่อให้ปุ่มเล็กลง */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: notosans_med;
+    font-size: 1em; /* ลดขนาดตัวอักษร */
+    margin-left: 10px; /* เพิ่มระยะห่างระหว่างปุ่ม */
+    transition: all 0.3s ease; /* เพิ่มเอฟเฟกต์การเปลี่ยนแบบ smooth */
+}
+
+#requestformtemplate button.submit:hover {
+    transform: scale(1.1); /* ขยายขนาดปุ่มเล็กน้อยเมื่อโฮเวอร์ */
+    background-color: #3e8e41; /* เปลี่ยนสีพื้นหลังเมื่อโฮเวอร์ */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* เพิ่มเงาให้ดูนูน */
+}
+
+#requestformtemplate button.save-draft:hover {
+    transform: scale(1.1); /* ขยายขนาดปุ่ม */
+    background-color: white; /* คงไว้เป็นสีขาว */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* เพิ่มเงา */
+}
+
+#requestformtemplate button:active {
+    transform: scale(0.95); /* ลดขนาดปุ่มเล็กน้อยเมื่อกด */
+    background-color: #2e6e31; /* เปลี่ยนสีพื้นหลังให้เข้มขึ้นเมื่อคลิก */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* ลดเงาลงเมื่อกด */
 }
 
 #requestformtemplate .submit {
     background-color: #4caf50;
     color: #ffffff;
-}
-
-#requestformtemplate button {
-    width: 49%; /* ทำให้ปุ่มแต่ละปุ่มมีขนาดกว้างเท่ากัน */
-    padding: 1%;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: notosans_med;
-    font-size: 1.5em;
-}
-#requestformtemplate .sectionform .Bot{
-    margin-left: 5.5%;
 }

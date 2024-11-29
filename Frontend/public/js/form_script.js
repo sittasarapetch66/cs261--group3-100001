@@ -75,3 +75,37 @@ function moneyDebt(){
     GlobalVar[5][15].disabled = true;
   }
 }
+
+const file = document.getElementById('checkFile');
+const message = document.getElementById('message_f');
+
+document.getElementById('checkFile').addEventListener('change', function() {
+  console.log("Change!!");
+  var file = event.target.files[0]; // ดึงไฟล์ที่เลือก
+  var message = document.getElementById('message_f'); // เอาไว้แสดงข้อความ
+
+  if (file) {
+      var fileType = file.type; // ประเภทไฟล์ เช่น image/jpeg
+      var fileSize = file.size; // ขนาดไฟล์ (หน่วยเป็นไบต์)
+
+      // เช็คประเภทไฟล์
+      var allowedTypes = ['image/jpeg', 'application/pdf']; // กำหนดประเภทไฟล์ที่อนุญาต
+      if (!allowedTypes.includes(fileType)) {
+          message.textContent = "ไฟล์ต้องเป็นประเภท JPG หรือ PDF เท่านั้น";
+          message.style.color = 'red';
+          return; // ถ้าไฟล์ไม่ตรงตามประเภทจะหยุดการทำงาน
+      }
+
+      // เช็คขนาดไฟล์
+      var maxSize = 100 * 1024; // กำหนดขนาดไฟล์สูงสุด (5 MB)
+      if (fileSize > maxSize) {
+          message.textContent = "ขนาดไฟล์ต้องไม่เกิน 5MB";
+          message.style.color = 'red';
+          return; // ถ้าขนาดไฟล์เกินจะหยุดการทำงาน
+      }
+
+      // ถ้าไฟล์ตรงตามเงื่อนไข
+      message.textContent = "ไฟล์ถูกต้อง!";
+      message.style.color = 'green';
+  }
+});

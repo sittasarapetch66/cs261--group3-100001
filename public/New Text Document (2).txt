@@ -1,0 +1,263 @@
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="refresh" content="1000">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to our homepage">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="acceptform_style.css">
+    <script src="acceptform_js.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/CSS_Importer.css">
+    <link rel="icon" type="image/x-icon" href="./picture/favicon2.jpg">
+    <script src="./js/webscript2.js"></script> 
+    <script src="./js/login_script.js"></script> 
+    <script src="./js/startweb_func.js"></script> 
+    <script src="./js/section_script.js"></script> 
+    <script src="./js/form_script.js"></script>
+</head>
+<body>
+    <div id="Acceptformsection">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="profile">
+                <div>
+                    <img class="profile-pic" src="./picture/favicon2.jpg">
+                </div>
+                <div class="textinfo">
+                    <span id="navbarname">ชื่อของคุณจะปรากฎอยู่ตรงนี้ หากคุณเห็นข้อความนี้แสดงว่าคุณได้ทำการแก้ไขไฟล์ ทำได้ดีมาก #u#</span>
+                     <br>
+                    <small onclick="reallyExit()">Log out</small>
+                </div>
+            </div>
+            <div class="menu-icon" onclick="showMenu()">☰</div>
+        </div>
+
+        <main>
+            <!-- Form Section -->
+            <section class="form-section" aria-labelledby="form-title">
+                <div class="outer-form">
+                  <div class="form-group">
+                    <label for="request-type">กรุณาเลือกแบบคำร้อง</label><br>
+                    <label for="status">สถานะคำร้อง</label><br>
+                    <label for="student-id">เลขทะเบียนนักศึกษา</label><br>
+                  </div>
+                  <div class="form-input">
+                    <select id="request-type" aria-label="Request Type">
+                      <option value="ทั้งหมด">ทั้งหมด</option>
+                      <option value="จดทะเบียนล่าช้า">จดทะเบียนล่าช้า</option>
+                      <option value="ถอนรายวิชา">ถอนรายวิชา</option>
+                      <option value="จดทะเบียนศึกษารายวิชาข้ามหลักสูตร">จดทะเบียนศึกษารายวิชาข้ามหลักสูตร</option>
+                      <option value="ลาออก">ลาออก</option>
+                      <option value="อื่นๆ">อื่นๆ</option>
+                    </select><br>
+                    <select id="status" aria-label="Request Status">
+                      <option value="ทั้งหมด">ทั้งหมด</option>
+                      <option value="อนุมัติ">อนุมัติ</option>
+                      <option value="ไม่อนุมัติ">ไม่อนุมัติ</option>
+                      <option value="รอการอนุมัติ">รอการอนุมัติ</option>
+                    </select><br>
+                    <input type="text" id="student-id" placeholder="เลขทะเบียน"><br>
+                    
+                  </div>
+                </div>
+              </section>
+
+            <!-- Table Section -->
+            <section class="table-section" aria-labelledby="table-title">
+                <table>
+                    <thead>
+                      <tr>
+                        <th scope="col">ลำดับ</th>
+                        <th scope="col">คำร้อง</th>
+                        <th scope="col">สถานะ</th>
+                        <th scope="col">เลขทะเบียน</th>
+                        <th scope="col">ชื่อ-นามสกุล</th>
+                        <th scope="col">หมายเหตุ</th>
+                        <th scope="col">อนุมัติ</th>
+                        <th scope="col">ไม่อนุมัติ</th>
+                        <th scope="col">ไฟล์แนบ</th>
+                      </tr>
+                    </thead>
+                    <tbody id="dynamic-table-body">
+                      <!-- Rows will be dynamically inserted here -->
+                    </tbody>
+                  </table>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
+>>>>>>> Frontend
+
+
+=======
+
+#Acceptformsection{
+    display: block;
+}
+#Acceptformsection .header {
+    background-color: #2D3142;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 1em;
+    height: 10vh;
+}
+
+#Acceptformsection .header .profile {
+    display: flex;
+    align-items: center;
+}
+
+#Acceptformsection .header .profile .textinfo{
+    font-size: 3vh;
+    margin-left : 2vh;
+}
+
+#Acceptformsection .header .profile small{
+    font-size: 2vh;
+    padding : 0.5vh;
+    background-color : blueviolet;
+    cursor: pointer;
+}
+
+#Acceptformsection .profile-pic {
+    height: 8vh;
+    background-color: #c4c4c4;
+    border-radius: 50%;
+    margin-right: 10px;
+    border : 1px solid white;
+    object-fit: fill;
+}
+
+#Acceptformsection .menu-icon {
+    font-size: 5vh;
+    cursor: pointer;
+    padding-left : 15px;
+    padding-right : 15px;
+    border-radius : 50%;
+    transition: 0.5s;
+    color: white;
+
+}
+
+#Acceptformsection .menu-icon:hover {
+    background-color: #c4c4c4a9;
+}
+
+#Acceptformsection .form-section{
+    background-color: #E0E0E0;
+    display: flex;
+}
+#Acceptformsection .form-section .outer-form {
+    width: 30%;
+    padding-right: 70%;
+    padding: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: flex;
+    flex-direction: row; /* Ensure items are side by side */
+    gap: 20px; /* Optional: Add space between form-group and form-input */
+}
+
+#Acceptformsection .form-section .outer-form .form-group{
+    display: flex;
+    flex-direction: column; /* Keep labels and inputs stacked vertically */
+    flex: 1; /* Adjust width to share available space equally */
+}
+#Acceptformsection .form-section .outer-form .form-input {
+    display: flex;
+    flex-direction: column; /* Keep labels and inputs stacked vertically */
+    flex: 1; /* Adjust width to share available space equally */
+}
+
+#Acceptformsection .table-section{
+    width: 90%;
+    padding: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #2D3142;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+button, input, select, textarea, .menu-icon {
+    outline: none; /* Removes default outline */
+}
+
+button:focus, input:focus, select:focus, textarea:focus, .menu-icon:focus {
+    outline: 2px solid #8a2be2;
+    outline-offset: 2px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+button.checkbox-style1,
+button.checkbox-style2,
+a {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  border: 1px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button.checkbox-style1:hover,button.checkbox-style2:hover,a:hover {
+    background-color: #c4c4c4a9;
+}
+
+/* Approved state */
+button.checkbox-style1.approved {
+  background-color: green;
+  color: white;
+}
+
+/* Not Approved state */
+button.checkbox-style2.not-approved {
+  background-color: red;
+  color: white;
+}
+
+/* Disabled buttons */
+button:disabled {
+  background-color: #dcdcdc; /* Grey background for disabled buttons */
+  color: #8c8c8c; /* Lighter text color */
+  border: none;
+}
+
+
+  select, option, input, button {
+    font-family: notosans_med;
+  }
+
+
+>>>>>>> Frontend

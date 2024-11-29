@@ -1,0 +1,59 @@
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../CSSstyle/11.css" />
+<script src="../Javascript/11.js"></script>
+<body>
+    <!-- Block บน -->
+<div id="addall">
+    <div class="addall1">
+        <div class="navbar">
+            <button class="back-button" onclick="requestTemplate(17)">◀</button>
+            <div class="menu-icon" onclick="menu(28)">☰</div>
+        </div>
+
+    <!-- Block กลาง -->
+    <div class="middle-block">
+        <form id="officer-form">
+            <div class="form-group">
+                <label for="name">ชื่อ-นามสกุล</label>
+                <input type="text" id="name" name="name" placeholder="กรุณากรอกชื่อ" oninput="searchOfficer()">
+            </div>
+            <div class="form-group">
+                <label for="program">ภาค</label>
+                <select id="program" name="program">
+                    <option value="">--สาขา--</option>
+                    <option value="คณิตศาสตร์และสถิติ">สาขาวิชาคณิตศาสตร์และสถิติ</option>
+                    <option value="เคมี">สาขาวิชาเคมี</option>
+                    <option value="เทคโนโลยีการเกษตร">สาขาวิชาเทคโนโลยีการเกษตร</option>
+                    <option value="เทคโนโลยีเพื่อการพัฒนาและยั่งยืน">สาขาวิชาเทคโนโลยีเพื่อการพัฒนาและยั่งยืน</option>
+                    <option value="ชีวภาพ">สาขาเทคโนโลยีชีวภาพ</option>
+                    <option value="ฟิสิกส์">สาขาวิชาฟิสิกส์</option>
+                    <option value="วิทยาการคอมพิวเตอร์">สาขาวิชาวิทยาการคอมพิวเตอร์</option>
+                    <option value="วิทยาศาสตร์การอาหาร">สาขาวิชาวิทยาศาสตร์และเทคโนโลยีการอาหาร</option>
+                    <option value="สิ่งทอ">สาขาวิชาวิทยาศาสตร์และเทคโนโลยีสิ่งทอ</option>
+                    <option value="สิ่งแวดล้อม">สาขาวิชาวิทยาศาสตร์สิ่งแวดล้อม</option>
+                </select>
+            </div>
+        </form>
+    </div>
+
+    <!-- Block ล่าง -->
+    <div class="content-block">
+        <button class="add-button" onclick="addOfficer()">+ เพิ่มเจ้าหน้าที่</button>
+        <table class="teacher-table">
+            <thead>
+                <tr>
+                    <th>ลำดับ</th>
+                    <th>สาขา</th>
+                    <th>ชื่อ-นามสกุล</th>
+                    <th>Email</th>
+                    <th>แก้ไข</th>
+                    <th>ลบ</th>
+                </tr>
+            </thead>
+            <tbody id="officer-table">
+                <!-- ตารางจะแสดงข้อมูลจาก JavaScript -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

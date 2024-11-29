@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เพิ่มอาจารย์</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css(Staff)/addall.css">
+</head>
+<body>
+    <!-- Block บน -->
+    <div class="header-block">
+        <button class="back-button"></button> <!-- ปุ่มสามเหลี่ยม -->
+        <button class="menu-button"></button> <!-- ปุ่มเมนูขีด -->
+    </div>
+
+    <!-- Block กลาง -->
+    <div class="middle-block">
+        <form id="teacher-form">
+            <div class="form-group">
+                <label for="name">ชื่อ-นามสกุล</label>
+                <input type="text" id="name" name="name" placeholder="กรุณากรอกชื่อ" oninput="searchTeacher()">
+            </div>
+            <div class="form-group">
+                <label for="faculty">คณะ</label>
+                <input type="text" id="faculty" name="faculty" value="คณะวิทยาศาสตร์และเทคโนโลยี" readonly>
+            </div>
+            <div class="form-group">
+                <label for="department">สาขา</label>
+                <select id="department" name="department">
+                    <option value="">--เลือกสาขาของคุณ--</option>
+                    <option value="คณิตศาสตร์และสถิติ">สาขาวิชาคณิตศาสตร์และสถิติ</option>
+                    <option value="เคมี">สาขาวิชาเคมี</option>
+                    <option value="เทคโนโลยีการเกษตร">สาขาวิชาเทคโนโลยีการเกษตร</option>
+                    <option value="เทคโนโลยีเพื่อการพัฒนาและยั่งยืน">สาขาวิชาเทคโนโลยีเพื่อการพัฒนาและยั่งยืน</option>
+                    <option value="ชีวภาพ">สาขาเทคโนโลยีชีวภาพ</option>
+                    <option value="ฟิสิกส์">สาขาวิชาฟิสิกส์</option>
+                    <option value="วิทยาการคอมพิวเตอร์">สาขาวิชาวิทยาการคอมพิวเตอร์</option>
+                    <option value="วิทยาศาสตร์การอาหาร">สาขาวิชาวิทยาศาสตร์และเทคโนโลยีการอาหาร</option>
+                    <option value="สิ่งทอ">สาขาวิชาวิทยาศาสตร์และเทคโนโลยีสิ่งทอ</option>
+                    <option value="สิ่งแวดล้อม">สาขาวิชาวิทยาศาสตร์สิ่งแวดล้อม</option>
+                </select>
+            </div>
+        </form>
+    </div>
+
+    <!-- Block ล่าง -->
+    <div class="content-block">
+        <button class="add-button" onclick="addProf()">+ เพิ่มอาจารย์</button>
+        <table class="teacher-table">
+            <thead>
+                <tr>
+                    <th>ลำดับ</th>
+                    <th>สาขา</th>
+                    <th>ชื่อ-นามสกุล</th>
+                    <th>Email</th>
+                    <th>แก้ไข</th>
+                    <th>ลบ</th>
+                </tr>
+            </thead>
+            <tbody id="teacher-list">
+                <!-- ข้อมูลจะถูกแสดงที่นี่ -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="../js(staff)/addDean.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+    <div id="studentlogin">
+
+        <tr>
+            <td>
+                <button type="button" id="noneimp" onclick="unImplement()">My Dashboard</button>
+            </td>
+            <td>
+                <button type="button" id="noneimp" onclick="unImplement()">New Request</button>
+            </td>
+            <td>
+                <button type="button" onclick="logOut()">User Logout</button>
+            </td>
+        </tr>
+
+    <p id="message2"></p>
+        
+    </div>
+    <div id="teacherlogin">
+        <tr>
+            <td>
+                <button type="button" id="noneimp" onclick="unImplement()">My Dashboard</button>
+            </td>
+            <td>
+                <button type="button" id="noneimp" onclick="unImplement()">Incoming Form</button>
+            </td>
+            <td>
+                <button type="button" onclick="logOut()">User Logout</button>
+            </td>
+        </tr>
+
+    <p id="message3"></p>
+    </div>
+    
+    <div id="adminlogin">
+                <input type="checkbox">Enable Mismatch User Type (Except 'Select Role')</input>
+                <br>
+                <input type="checkbox">Show All User Element on startup</input>
+                <br>
+                <label>admin Password</label>
+                <input type="text"></input>
+                <br>
+                <button type="button">Save Setting</button>
+                <button type="button" onclick="reload()">Reload</button>
+    </div>
+    </div>

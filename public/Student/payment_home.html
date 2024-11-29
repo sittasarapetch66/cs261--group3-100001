@@ -1,0 +1,186 @@
+<!--PAYMENT-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Payment</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../css(Student)/payment_home_css.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/CSS_Importer.css">
+    <link rel="icon" type="image/x-icon" href="../picture/favicon2.jpg">
+    <script src="../js/webscript2.js"></script> 
+    <script src="../js/login_script.js"></script> 
+    <script src="../js/startweb_func.js"></script> 
+    <script src="../js/section_script.js"></script> 
+    <script src="../js/form_script.js"></script>
+        <!--<style>
+            * {
+                margin: 0;
+                padding: 0;
+                font-family: 'IBM Plex Sans Thai'
+            }
+            body {
+                background-color: #F5F5F5;
+            }
+            header {
+                width: 100%;
+                height: 60px;
+                background-color: #2D3142;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                
+            }
+
+            .back {
+                margin-left: 5%;
+                background: none;
+                border: none;
+                font-size: 30px;
+                color: #F5F5F5;
+                cursor: pointer;
+            }
+
+            .menu {
+                margin-right: 5%;
+                background: none;
+                border: none;
+                font-size: 30px;
+                color: #F5F5F5;
+                cursor: pointer;
+            }
+
+            .container {
+                justify-items: center;
+            }
+
+            h1 {
+                margin-top: 3%;
+                color: #333333;
+            }
+
+            .card {
+                width: 45%;
+                height: 120px;
+                background-color: #E0E0E0;
+                border-radius: 10px;
+                margin-top: 20px;
+                padding: 2%;
+                cursor: pointer;
+                transition: transform 0.5s ease, box-shadow 0.5s ease;
+            }
+
+            .card:hover {
+                transform: translateY(-10px); /* ยกกล่องขึ้น */
+                box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* เงาที่ลึกขึ้น */
+                
+            }
+
+            h3 {
+                font-size: 30px;
+                
+            }
+
+            .date {
+                margin-top: 5px;
+                color: #7D7D7D;
+                font-size: 14px;
+                display: flex;
+
+            }
+
+            .status {
+                display: flex;
+                margin-top:20px ;
+            }
+
+            .approve {
+                width: 80px;
+                height: 30px;
+                background-color: #4CAF50;
+                border-radius: 20px;
+                text-align: center;
+                color: #F5F5F5;
+                line-height: 30px; 
+                font-size: 16px; 
+                display: inline-block; 
+            }
+
+            .payment {
+                width: 80px;
+                height: 30px;
+                background-color: #B0B0B0;
+                border-radius: 20px;
+                text-align: center;
+                color: #F5F5F5;
+                line-height: 30px; 
+                font-size: 16px; 
+                display: inline-block; 
+                margin-left: 10px;
+            }
+        </style>-->
+    </head>
+    <body onload="startFunction()">
+
+    <!-- Overlay Section -->
+    <div id="overlaysection" onclick="toggleSomething(2)">
+    
+    </div>
+    
+    <!-- Menu Section -->
+    <div id="menusection">
+       
+       <div class="header">
+           <h1 onclick="toggleSomething(2)">◀
+           </h1>
+           <h2>MENU</h2>
+       </div>
+    
+       <div class="selection">
+    
+           <div class="list" onclick="toggleSomething(11)">
+               <p>รายการของฉัน</p>
+           </div>
+           <div class="list" onclick="toggleSomething(15)">
+               <p>ตรวจสอบสถานะคำร้อง</p>
+           </div>
+           <div class="list" onclick="toggleSomething(12)">
+               <p>ประวัติการยื่นคำร้อง</p>
+           </div>
+           <br>
+           <hr><hr>
+           <div class="list" onclick="toggleSomething(10)">
+               <p>ยื่นคำร้องเพิ่มเติม</p>
+           </div>
+           <div class="list" onclick="reallyExit()">
+               <p>ออกจากระบบ</p>
+           </div>
+           <hr><hr>
+           <br><br>
+           <div class="list" onclick="reallyExit()">
+               <p>โหมดผู้พัฒนา</p>
+           </div>
+          </div>
+    
+       </div>
+    
+        <header>
+            <button class="back">&lt</button>
+            <div class="menu" onclick="showMenu()">☰</div>
+        </header>
+        <div class="container">
+            <h1>หน้าชำระเงิน</h1>
+            <div class="card">
+                <h3>Test</h3>
+                <p class="date">แก้ไขล่าสุดเมื่อ: </p>
+                <div class="status">
+                    <p class="approve">อนุมัติ</p>
+                    <p class="payment">test2</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

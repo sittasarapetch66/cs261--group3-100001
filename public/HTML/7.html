@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../CSSstyle/7.css" />
+<script src="../Javascript/7.js"></script>
+<link rel="stylesheet" href="../CSSstyle/Global.css" />
+<div id="payment">
+    <div class="navbar">
+        <button class="back-button" onclick="requestTemplate(8)">◀</button>
+        <div class="menu-icon" onclick="menu(26)">☰</div>
+    </div>
+    <main>
+        <div class="qr-section">
+            <div class="qr-box">
+                <img src="" alt="QR ของมหาลัย">
+            </div>
+        </div>
+        <div class="details">
+            <h3>จดทะเบียนเพิ่มเติม</h3>
+            <div class="update">
+                <p>แก้ไขล่าสุด:</p>
+                <p class="date"></p>
+            </div>
+            <p class="uesrname" id="username"></p>
+            <p>ค้างชำระทั้งหมด <span>45</span> บาท</p>
+            <div class="slip">
+                <label for="fileInput">แนบหลักฐานการโอนเงิน</label>
+                <input type="file" id="fileInput" >
+            </div>
+            <p id="message"></p>
+            <button class="confirm" id="confirm" disabled>ยืนยัน</button>
+        </div>
+    </main>
+</div>

@@ -1,0 +1,26 @@
+Subpage Info
+
+In this subpage that do every page will load to the index.html by using iframe elements and running on the
+index of class name websection. In order to know which index is corresponding to each pages.
+
+I will rename to the index of the class name by corresponding id
+
+0 : Login Section
+1 : Home Page (Student)
+2 : List Section (Student)
+3 : History Section (Student)
+4 : Template of Request (Student)
+5 : Success (Student)
+6 : Check (Student)
+7 : Payment (Student)
+8 : Payment-Home (Student)
+9 : Accept Form (Teacher)
+10 : Add Dean User (IT)
+11 : Add Officer User (IT)
+12 : Add Professor User (IT)
+13 : Add Professor Form (IT)
+14 : Add Professor Edit (IT)
+15 : Find Request History (IT)
+16 : Find Request Search (IT)
+17 : Add Officer (IT)
+18 : Menu (IT)

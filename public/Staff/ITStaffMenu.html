@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web for IT Staff">
+    <title>IT Staff Menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/CSS_Importer.css">
+    <link rel="icon" type="image/x-icon" href="../picture/favicon2.jpg">
+    <script src="../js/webscript2.js"></script> 
+</head>
+<body>
+<!-- Section : Home Section (IT Staff Menu) -->
+<div id="homesection" style="display: block;">
+    <!-- Header Section -->
+    <div class="header">
+        <div class="profile">
+            <div>
+                <img class="profile-pic" src="../picture/favicon2.jpg">
+            </div>
+            <div class="textinfo">
+                <span>ชื่อเจ้าหน้าที่: แสดงที่นี่</span>
+                <br>
+                <small onclick="reallyExit()">Log out</small>
+            </div>
+        </div>
+        <div class="menu-icon" onclick="showMenu()">☰</div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content">
+        <h1>หน้าทำรายการสำหรับเจ้าหน้าที่ IT</h1>
+        <p>โปรดเลือกรายการ</p>
+        
+        <!-- Icons Section -->
+        <div class="icon-container">
+            <div class="icon-item" onclick="searchRequests()">
+                <div class="icon">🔍</div>
+                <p>สืบค้นคำร้อง</p>
+            </div>
+            
+            <div class="icon-item" onclick="viewHistory()">
+                <div class="icon"><i class="fa fa-history"></i></div>
+                <p>ประวัติการใช้งาน</p>
+            </div>
+            <div class="icon-item" onclick="addStaffData()">
+                <div class="icon"><img src="../picture/images-removebg-preview.png" height="50" width="50"></div>
+                <p>เพิ่มข้อมูลบุคคลากร</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
