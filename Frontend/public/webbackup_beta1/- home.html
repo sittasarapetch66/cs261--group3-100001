@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คำร้องนักศึกษา</title>
+
+    <!-- ลิงก์ฟ้อนต์จาก Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS */
+        * {
+            box-sizing: border-box;
+            font-family: 'IBM Plex Sans Thai', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        .header {
+            background-color: #2c2c3e;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            font-size: 1em;
+        }
+
+        .header .profile {
+            display: flex;
+            align-items: center;
+        }
+
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            background-color: #c4c4c4;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .menu-icon {
+            font-size: 1.5em;
+        }
+
+        .content {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .content h1 {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+
+        .content p {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .icon-container {
+            display: flex;
+            justify-content: space-evenly; /* ทำให้ไอคอนมีระยะห่างเท่ากัน */
+        }
+
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            color: #333;
+        }
+
+        .icon-item .icon {
+            width: 80px;
+            height: 80px;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+
+        .icon-item p {
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <div class="profile">
+            <div class="profile-pic"></div>
+            <div>
+                ชื่อ นามสกุล<br>
+                <small>Log out</small>
+            </div>
+        </div>
+        <div class="menu-icon">☰</div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content">
+        <h1>คำร้องสำหรับนักศึกษามหาวิทยาลัยธรรมศาสตร์</h1>
+        <p>โปรดเลือกประเภทคำร้อง</p>
+        
+        <!-- Icons Section -->
+        <div class="icon-container">
+            <div class="icon-item">
+                <div class="icon">📝</div>
+                <p>จดทะเบียนล่าช้า</p>
+            </div>
+            <div class="icon-item">
+                <div class="icon">🗑️</div>
+                <p>ถอนรายวิชา</p>
+            </div>
+            <div class="icon-item">
+                <div class="icon">📑</div>
+                <p>จดทะเบียนศึกษารายวิชานอกหลักสูตร</p>
+            </div>
+            <div class="icon-item">
+                <div class="icon">➡️</div>
+                <p>ลาออก</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

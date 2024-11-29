@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web for login to system">
+    <title>TU Online Requester</title>
+    <link rel="stylesheet" href="./CSSstyle/menu.css" />
+    <link rel="stylesheet" href="./CSSstyle/Global.css" />
+    <script src="./Javascript/menu.js"></script>
+</head>
+<!-- menu -->
+    <div id="menusection">
+        
+   
+        <div class="header">
+            <h1 class="but" onclick="menu(27)">◀
+            </h1>
+            <h2 class="meu" >MENU</h2>
+        </div>
+     
+        <div class="selection">
+     
+            <div class="list" onclick="requestTemplate(2)">
+                <p>รายการของฉัน</p>
+            </div>
+            <div class="list" onclick="requestTemplate(3)">
+                <p>ตรวจสอบสถานะคำร้อง</p>
+            </div>
+            <div class="list" onclick="requestTemplate(6)">
+                <p>ประวัติการยื่นคำร้อง</p>
+            </div>
+            <div class="list" onclick="requestTemplate(8)">
+                <p>ชำระเงิน</p>
+            </div>
+            <br>
+            <hr><hr>
+            <div class="list" onclick="requestmenu(99)">
+                <p>ยื่นคำร้องเพิ่มเติม</p>
+            </div>
+            <div class="list" onclick="exit()">
+                <p>ออกจากระบบ</p>
+            </div>
+            <hr><hr>
+        
+     
+        </div>
+     
+     </div>
+     <div id="menusectionit">
+        
+   
+        <div class="header">
+            <h1 class="but" onclick="menu(29)">◀
+            </h1>
+            <h2 class="meu" >MENU</h2>
+        </div>
+     
+        <div class="selection">
+            <div class="list" onclick="requestTemplate(18)">
+                <p>เมนูเจ้าหน้าที่</p>
+            </div>
+            <div class="list" onclick="requestTemplate(16)">
+                <p>สืบค้นคำร้อง</p>
+            </div>
+            <div class="list" onclick="requestTemplate(15)">
+                <p>ประวัติการใช้งาน</p>
+            </div>
+            <div class="list" onclick="requestTemplate(17)">
+                <p>เพิ่มข้อมูลบุคคลากร</p>
+            </div>
+            
+            <br>
+            <hr><hr>
+            <div class="list" onclick="exit()">
+                <p>ออกจากระบบ</p>
+            </div>
+            <hr><hr>
+        
+     
+        </div>
+     
+     </div>
+     
+<body onload="onloadMain()">
+    <!--0 : Login Section -->
+    <iframe src="./HTML/0.html" class="websection" id="">Your Browser not support iframe</iframe>
+    <!--1 : Home student -->
+    <iframe src="./HTML/1.html" class="websection" id=""></iframe>
+    <!--2 :  Mylist Section -->
+    <iframe src="./HTML/2.html" class="websection" id=""></iframe>
+    <!--3 History Section -->
+    <iframe src="./HTML/3.html" class="websection" id=""></iframe>
+    <!--4 requestformtemplate -->
+    <iframe src="./HTML/4.html" class="websection" id=""></iframe>
+    <!--5 success -->
+    <iframe src="./HTML/5.html" class="websection" id=""></iframe>
+    <!--6 Request check -->
+    <iframe src="./HTML/6.html" class="websection" id=""></iframe>
+    <!--7 payment -->
+    <iframe src="./HTML/7.html" class="websection" id=""></iframe>
+    <!--8 payment home -->
+    <iframe src="./HTML/8.html" class="websection" id=""></iframe>
+    <!--9 -accept form -->
+    <iframe src="./HTML/9.html" class="websection" id=""></iframe>
+    <!-- 10 addDean -->
+    <iframe src="./HTML/10.html" class="websection" id=""></iframe>
+    <!--11 addOfficer -->
+    <iframe src="./HTML/11.html" class="websection" id=""></iframe>
+    <!--12 addprof -->
+    <iframe src="./HTML/12.html" class="websection" id=""></iframe>
+    <!--13 IT_addproform -->
+    <iframe src="./HTML/13.html" class="websection" id=""></iframe>
+    <!--14 IT_editproform -->
+    <iframe src="./HTML/14.html" class="websection" id=""></iframe>
+    <!--15 IT_history -->
+    <iframe src="./HTML/15.html" class="websection" id=""></iframe>
+    <!--16 IT_search -->
+    <iframe src="./HTML/16.html" class="websection" id=""></iframe>
+    <!--17 IT_officeradd -->
+    <iframe src="./HTML/17.html" class="websection" id=""></iframe>
+    <!--18 IT_staffmenu -->
+    <iframe src="./HTML/18.html" class="websection" id=""></iframe>
+    <!--19 nichapat dean -->
+    <iframe src="./HTML/19.html" class="websection" id=""></iframe>
+    <!--20 nichapat staff -->
+    <iframe src="./HTML/20.html" class="websection" id=""></iframe>
+    <!--21  -->
+    <!-- <iframe src="" class="websection" id=""></iframe> -->
+    <iframe src="./HTML/pagetest.htm" class="" id=""></iframe><!--test-->
+
+</body>
+
+<style>
+ 
+/* 
+Set iframe to fit the device width and height (viewport fit)
+*/
+html, body, div, iframe 
+{
+ margin: 0px; 
+ padding: 0px;
+ width: 100%;
+ height: 100%;
+ border: 1px solid black;
+ /* Experimental on All Section */
+}
+
+body{
+    /**/overflow : hidden;
+}
+
+iframe{
+    /*visibility: hidden;*/
+    /*display: none;*/
+}
+
+
+</style>
+<script>
+
+GLOBALJSON = {};
+Destination = -1;
+
+function menu(mode){
+    parent.postMessage(mode, "*");
+}
+    /*
+    function meu(mode){
+        MENUSEC = mode;
+        if(MENUSEC == 1||MENUSEC == 0){
+        if (MENUSEC == 1) {
+            myDiv.style.display = 'block';  // Show the menu
+            MENUSEC = 5;
+        } else if (MENUSEC == 0) {
+            myDiv.style.display = 'none';   // Hide the menu
+            MENUSEC = 5;
+        }
+    }
+    }*/
+   // Function to send message to toggle the menu section
+
+    function toggleSection(idsec){
+
+        //define class name definition
+        let Section = document.getElementsByClassName("websection");
+        
+        //Update! I will tell to not load all section in css to avoid data leak!
+        /*
+        //function to set display to none in all class name*/
+        for(let i = 0; i < Section.length; i++){
+            Section[i].style.display = "none";
+            Section[i].style.visibility = "visible"
+        }
+         //Section[i].style.visibility = "hidden";
+        
+        //Newer method
+        /*
+        document.querySelectorAll("iframe").forEach(iframe =>{
+            iframe.style.display = 'none';
+        });*/
+
+        // Load iframe content only if not already loaded
+
+        
+        //to set attribute we want it to show
+        Section[idsec].style.display = "block";
+        //;
+
+    }
+
+    function onloadMain(){
+
+        //Toggle the initial value
+        //toggleSection(0);
+    }
+
+    //eventlistener to receive message to do others functions
+    window.addEventListener("message", setValueOnListener);
+    let myDiv = document.getElementById("menusection");
+    let myDivit = document.getElementById("menusectionit");
+    /*function setValueOnListener(event){
+        //use even.data to extract data
+        var recv = event.data;
+        console.log(recv, typeof recv);
+
+        //check id in range
+        if(typeof recv == "number"){
+            if (recv >= 0 && recv <= 25){
+                toggleSection(recv);
+                let Section = document.getElementsByClassName("websection");
+                //if(GLOBALJSON != null) 
+                //console.log("gJSOn,",this.GLOBALJSON);
+                if (Destination != -1) Section[recv].contentWindow.postMessage(Destination, "*");
+                
+                Section[recv].contentWindow.postMessage(GLOBALJSON, "*");
+            }
+            if(recv == 30){
+                location.reload();
+            }
+
+            if(recv >= 100 && recv <= 110){
+                Destination = recv-100;
+            }
+            if (message === 26) {
+                myDiv.style.display = 'block'; // Show the menu
+            } else if (message === 27) {
+                myDiv.style.display = 'none'; // Hide the menu
+            }
+    
+
+        }
+
+        if(typeof recv == "object"){
+            GLOBALJSON = recv;
+        }
+
+
+    }*/
+    function requestmenu(desc){
+  
+  parent.postMessage(desc+100, "*");
+  
+  parent.postMessage(4, "*");
+  parent.postMessage(27, "*");
+}
+    function setValueOnListener(event){
+    // Use event.data to extract data
+    var recv = event.data;
+    console.log(recv, typeof recv);
+
+    // Check if recv is a number
+    if (typeof recv == "number") {
+        // Handle section toggling (0-25)
+        if (recv >= 0 && recv <= 25) {
+            toggleSection(recv);
+            let Section = document.getElementsByClassName("websection");
+
+            // If Destination is set, send it to the iframe
+            if (Destination != -1) {
+                Section[recv].contentWindow.postMessage(Destination, "*");
+            }
+
+            // Send the GLOBALJSON object to the iframe
+            Section[recv].contentWindow.postMessage(GLOBALJSON, "*");
+        }
+
+        // Reload the page if recv is 30
+        if (recv == 30) {
+            location.reload();
+        }
+
+        // Handle Destination for messages between 100-110
+        if (recv >= 100) {
+            Destination = recv - 100;
+        }
+
+        // Toggle the menu visibility based on recv
+        if (recv === 26) {
+            myDiv.style.display = 'block'; // Show the menu
+            myDivit.style.display = 'none';
+        } else if (recv === 27) {
+            myDiv.style.display = 'none'; // Hide the menu
+        } else if (recv === 28) {
+            myDivit.style.display = 'block';// Show the menu
+            myDiv.style.display = 'none'; 
+        } else if (recv === 29) {
+            myDivit.style.display = 'none'; // Hide the menu
+        }
+
+        if (recv >= 1000){
+
+        }
+    }
+
+    // If recv is an object, store it in GLOBALJSON
+    if (typeof recv == "object") {
+        GLOBALJSON = recv;
+    }
+}/**/
+
+
+    
+</script>
