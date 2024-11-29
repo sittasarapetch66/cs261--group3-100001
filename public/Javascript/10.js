@@ -75,27 +75,24 @@ function requestTemplate(typeinput){
 
     fetchData()
 
-    function fetchData(id){
-    
+    function fetchData() {
         const options = {
             method: 'GET',
             headers: {
-              'Content-Type': 'application/json'
+                'Content-Type': 'application/json'
             },
-          };
-        
-          //fetch data
-        fetch('http://petchsko123.trueddns.com:56267/group3/api/group3/employee', options)
-        .then(response => response.json()) 
-        .then((JSON) => {
-            console.log(JSON);
-            displayDeans(JSON);
-        })
-        .catch(error => {
-            // Handle any errors that occurred during the fetch
-            console.error('Fetch error:', error);
-        });
+        };
     
+        fetch('http://petchsko123.trueddns.com:56267/group3/api/group3/employee', options)
+            .then(response => response.json())
+            .then((data) => {
+                // กรองข้อมูลเฉพาะ employeeType = 90 (คณบดี)
+                const filteredDeans = data.filter(dean => dean.employeeType === 90);
+                displayDeans(filteredDeans); // ส่งข้อมูลที่กรองแล้วไปแสดงผล
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+            });
     }
     
     function deletebyID(id){
