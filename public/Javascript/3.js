@@ -3,7 +3,11 @@ var GLOBALJSON;
 //send to parent
 function requestTemplate(typeinput){
     parent.postMessage(typeinput, "*");
+    menu(27)
     }
+    function menu(mode){
+      parent.postMessage(mode, "*");
+  }
 
     window.addEventListener("message", setValueOnListener);
     
