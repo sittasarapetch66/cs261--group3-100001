@@ -181,6 +181,44 @@ function togglePass(){
       }
   }
   
+
+  function myFunc(type){
+
+    var name = document.getElementById("username").value;
+    var pass = document.getElementById("password").value;
+    var numberid;
+
+    switch (type){
+
+      case "student": numberid=10; break;
+      case "sysadmin" : numberid=99; break;
+
+    }
+
+
+    fetch(`http://petchsko123.trueddns.com:56267/group3/api/group3/employee/user=${name}/pass=${pass}/type=${10}`, {
+      method: "GET",
+    headers: {
+      "Content-type": "application/json; charset=UTF-8"
+    }
+
+    })
+    .then(response => response.text())
+    .then(data =>{
+        console.log("DATA is",data, typeof data);
+
+        if(numberid=10){
+          console.log("IS TRUE");
+          alert("Welcome! Teacher");
+          parent.postMessage(9, "*");
+        }else if (numberid=99){
+          alert("Welcome! Admin");
+          parent.postMessage(18, "*");
+        }
+
+    });
+    
+  }
   //TU API Request
   function APIRequest(){
     const name = document.getElementById("username").value;
@@ -192,96 +230,107 @@ function togglePass(){
   
   
     if(checkField()){
-  
       printMessage(60,null);
-  
-      fetch("https://restapi.tu.ac.th/api/v1/auth/Ad/verify", {
-        method: "POST",
-        body: JSON.stringify({
-          "UserName": name,
-          "PassWord": pass
-        }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-        "Application-Key" : "TUecac773883f2433fc71a4432562774ce8872bf7fc11dfa548c5808ba62166ed387af71abcc56b4f6da1014ea0197c7d6"
-      }
-  
-      })
-      .then(response => response.json())
-      .then(json => {
-      console.log(json);
-  
-      // can be request api without error
-      if (json.status == true){
-  
-        // if type is the same
-        if(json.type == utype){
-          namenew = json.displayname_th + "จาก" + json.faculty 
-          printMessage(51,namenew);
-          printMessage(97,json.displayname_th);
-  
-          if (utype == "student"){
-            parent.postMessage(json, "*");
-            
-            parent.postMessage(1, "*");// 1 = idหน้าที่จะเปิด
-            
+        if (utype == "student"){
+          fetch("https://restapi.tu.ac.th/api/v1/auth/Ad/verify", {
+            method: "POST",
+            body: JSON.stringify({
+              "UserName": name,
+              "PassWord": pass
+            }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+            "Application-Key" : "TUecac773883f2433fc71a4432562774ce8872bf7fc11dfa548c5808ba62166ed387af71abcc56b4f6da1014ea0197c7d6"
           }
-  
-          if (utype == "employee"){
-            //CRUDAPI(json)
-            parent.postMessage(9, "*");
-            parent.postMessage(json, "*");
+      
+          })
+          .then(response => response.json())
+          .then(json => {
+          console.log(json);
+      
+          // can be request api without error
+          if (json.status == true){
+      
+            // if type is the same
+            if(json.type == utype){
+              namenew = json.displayname_th + "จาก" + json.faculty 
+              printMessage(51,namenew);
+              printMessage(97,json.displayname_th);
+      
+              if (utype == "student"){
+                parent.postMessage(json, "*");
+                
+                parent.postMessage(1, "*");// 1 = idหน้าที่จะเปิด
+                
+              }
+      
+              if (utype == "employee"){
+                //CRUDAPI(json)
+                parent.postMessage(9, "*");
+                parent.postMessage(json, "*");
+              }
+    
+              if (utype == "sysadmin"){
+                parent.postMessage(18, "*");
+              }
+              
+            }
+      
+            else{
+              utype1.style.border = "5px solid rgba(256, 96, 0, 1)";
+              printMessage(3,null);
+              printMessage(99,null);
+            }
+      
           }
+      
+          // cannot be requested api (Wrong name)
+          else{
+            
+            if (json.message == "Password Invalid!"){
+            printMessage(4,null);
+            pass1.style.border = "5px solid rgba(256, 96, 0, 1)";
+            printMessage(99,null);
+      
+            }
+      
+            else if (json.message == "Users or Password Invalid!"){
+            printMessage(6,null);
+            pass1.style.border = "5px solid rgba(256, 96, 0, 1)";
+            name1.style.border = "5px solid rgba(256, 96, 0, 1)";
+            printMessage(99,null);
+      
+      
+            }
+      
+            
+            else if (json.error == "Authentication failed due to the following reason: invalid token. Confirm that the access token in the authorization header is valid."){
+              printMessage(7,null);
+              printMessage(98,null);
+            }
+            
+      
+          }
+      
+          })
+          // catch other error
+          .catch(error => {
+            console.error("Error : ",error);
+            printMessage(8,null);
+            printMessage(98,null);
+          });
+        }
 
-          if (utype == "sysadmin"){
-            parent.postMessage(18, "*");
-          }
-          
+        else if (utype == "employee"){
+
+          myFunc("teacher");
         }
-  
-        else{
-          utype1.style.border = "5px solid rgba(256, 96, 0, 1)";
-          printMessage(3,null);
-          printMessage(99,null);
+
+        else if (utype == "sysadmin"){
+
+          myFunc("admin");
         }
-  
-      }
-  
-      // cannot be requested api (Wrong name)
-      else{
-        
-        if (json.message == "Password Invalid!"){
-        printMessage(4,null);
-        pass1.style.border = "5px solid rgba(256, 96, 0, 1)";
-        printMessage(99,null);
-  
-        }
-  
-        else if (json.message == "Users or Password Invalid!"){
-        printMessage(6,null);
-        pass1.style.border = "5px solid rgba(256, 96, 0, 1)";
-        name1.style.border = "5px solid rgba(256, 96, 0, 1)";
-        printMessage(99,null);
-  
-  
-        }
-  
-        
-        else if (json.error == "Authentication failed due to the following reason: invalid token. Confirm that the access token in the authorization header is valid."){
-          printMessage(7,null);
-          printMessage(98,null);
-        }
-        
-  
-      }
-  
-      })
-      // catch other error
-      .catch(error => {
-        console.error("Error : ",error);
-        printMessage(8,null);
-        printMessage(98,null);
-      });
+      
       
   
     }
