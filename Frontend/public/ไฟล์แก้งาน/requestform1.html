@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="test.css">
+</head>
+
+<body>
+
+
+<div id="requestformtemplate">
+
+    <div class="container">
+        <header>
+            <div class="back-button" onclick="toggleSomething(10)">◀</div>
+            <h1>คำร้องนักศึกษา</h1>
+            <div class="menu-icon" onclick="showMenu()">☰</div>
+        </header>
+    </div>
+
+    <div class="sectionform">
+
+        <div class="pinfo_head">
+            <span><b>1. ข้อมูลส่วนตัว</b></span>
+            <br>
+            <span class="sub">โปรดกรอกรายละเอียดให้ครบถ้วน</span>
+        </div>
+
+        <div class="pinfo_input">
+                
+            <label>ชื่อ-นามสกุล</label>
+            <input type="text">
+            <br>
+            <label>คณะที่ศึกษา</label>
+            <input type="text">
+            <br>
+            <label>เลขทะเบียน</label>
+            <input type="text">
+            <br>
+            <label>ชั้นปี</label>
+            <input type="text">
+            <br>
+            <label>เบอร์โทร</label>
+            <input type="text">
+            <br>
+            <label>เบอร์โทรผู้ปกครอง</label>
+            <input type="text">
+            <br>
+            <label>ที่อยู่ :</label>
+            <br>
+            <div class="pinfo_addr">
+            <label>เลขที่บ้าน/ห้อง</label>
+            <input class="long" type="text" placeholder="บ้านเลขที่/ห้อง">
+            <br>
+            <label>แขวง/ตำบล</label>
+            <input type="text" placeholder="แขวง/ตำบล">
+            <br>
+            <label>เขต/อำเภอ</label>
+            <input type="text" placeholder="เขต/อำเภอ">
+            <br>
+            <label>จังหวัด</label>
+            <input type="text" placeholder="จังหวัด">
+            </div>
+            
+        </div>
+
+        <hr>
+
+        <div class="pinfo_head">
+            <span><b>2. ประเภทคำร้อง</b></span>
+            <br>
+            <span class="sub">โปรดกรอกรายละเอียดให้ครบถ้วนตามคำร้องที่ได้ยื่นไว้ เพื่อลดเวลาในการดำเนินการเพิ่มเติม</span>
+        </div>
+
+        <div class="pinfo_input">
+                
+            <label><b>ประเภทคำร้อง</b></label>
+            <input type="text">
+            <br>
+            <label>ชื่ออาจารย์ที่ปรึกษา</label>
+            <input type="text">
+            <br>
+            <label class="requesttype_out">การดำเนินการคำร้องที่ไม่ได้กำหนด :</label>
+            <br><br>
+
+            <div class="requesttype01">
+                <label>รหัสวิชา</label>
+                <input type="text" placeholder="XXNNN เช่น CS100">
+                <label>ชื่อวิชา</label>
+                <input type="text" placeholder="ชื่อวิชาภาษาไทย">
+                <br>
+                <label>Section</label>
+                <input type="text" placeholder="XXXXXX เช่น 780003">
+                <br>
+                <label>เหตุผลในการ ไม่ได้กำหนด</label>
+                <textarea placeholder="โปรดอธิบายรายละเอียดของคุณ ..." rows="4" cols="60"></textarea>
+            </div>
+
+            <div class="requesttype02">
+                <label>คุณมีภาระหนี้สินคงค้างหรือไม่</label>
+                <br>
+
+                
+                <input class="choicedebt" type="radio" name="moneydebt" value=0>
+                <label class="choicedebtlabel">ไม่มีคงค้าง</label>
+                <br>
+                
+                <input class="choicedebt" type="radio" name="moneydebt" value=1>
+                <label class="choicedebtlabel">มีคงค้าง</label>
+                <br>
+                <label class="moneyamountlabel">จำนวนเงิน</label>
+                <input class="moneyamount" type="text" placeholder="XXX.XX บาท เช่น 20,000.00 บาท">
+                <br>
+                <label>เหตุผลในการ ไม่ได้กำหนด</label>
+                <textarea placeholder="โปรดอธิบายรายละเอียดของคุณ ..." rows="4" cols="60"></textarea>
+
+            </div>
+
+            <div class="requesttype03">
+                <label>โปรดให้รายละเอียดคำร้องของคุณ</label>
+                <textarea placeholder="โปรดอธิบายรายละเอียดของคุณ ..." rows="8" cols="70"></textarea>
+            </div>
+
+            <label>การแนบไฟล์ขึ้นอยู่กับประเภทคำร้องที่ไม่ได้กำหนด :</label>
+            <br><br>
+            <label>ไฟล์แนบ 1 คำร้องที่ไม่ได้กำหนด</label>
+            <input type="file">
+            <br>
+            <label>ไฟล์แนบ 2 คำร้องที่ไม่ได้กำหนด</label>
+            <input type="file">
+            <br>
+            <label>ไฟล์แนบ 3 คำร้องที่ไม่ได้กำหนด</label>
+            <input type="file">
+            <br>
+            <label>ไฟล์แนบ 4 คำร้องที่ไม่ได้กำหนด</label>
+            <input type="file">
+
+        </div>
+        <br>
+        <div class="opearationsbuttons">
+            <button class="save-draft">บันทึกแบบร่าง</button>
+            <button class="submit">ยืนยัน</button>
+        </div>
+        <br>
+
+
+    </div>
+    
+ </div>
+
+</body>
+
+</html>
