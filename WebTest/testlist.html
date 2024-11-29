@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display JSON Data</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1>JSON Data Display</h1>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <!-- Table headers will be dynamically added -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table data will be dynamically added -->
+        </tbody>
+    </table>
+
+    <script>
+        // Fetch data from the JSON endpoint
+        async function fetchData() {
+            const url = "http://petchsko123.trueddns.com:56267/group3/api/group3/request";
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                displayData(data);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        }
+
+        // Function to display data in the table
+        function displayData(data) {
+            const tableHead = document.querySelector("#data-table thead tr");
+            const tableBody = document.querySelector("#data-table tbody");
+
+            // Clear existing content
+            tableHead.innerHTML = "";
+            tableBody.innerHTML = "";
+
+            // Add table headers dynamically based on the keys in the JSON
+            const keys = Object.keys(data[0]);
+            keys.forEach(key => {
+                const th = document.createElement("th");
+                th.textContent = key;
+                tableHead.appendChild(th);
+            });
+
+            // Add table rows dynamically based on the data
+            data.forEach(item => {
+                const tr = document.createElement("tr");
+                keys.forEach(key => {
+                    const td = document.createElement("td");
+                    td.textContent = item[key];
+                    tr.appendChild(td);
+                });
+                tableBody.appendChild(tr);
+            });
+        }
+
+        // Call fetchData when the page loads
+        fetchData();
+    </script>
+</body>
+</html>
