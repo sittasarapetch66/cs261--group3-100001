@@ -5,6 +5,7 @@ function requestTemplate(desc){
     parent.postMessage(desc+100, "*");
     
     parent.postMessage(4, "*");
+    menu(27)
 }
 
   function exit(typeinput){
@@ -50,4 +51,6 @@ function requestTemplate(desc){
     document.getElementById("navbarname").innerHTML = `ยินดีต้อนรับ ${GLOBALJSON.displayname_th}`;
   }
 
-  <script src="public/Javascript/menu.js"></script>
+  function menu(mode){
+    parent.postMessage(mode, "*");
+}

@@ -6,8 +6,8 @@
 <div id="addall">
     <div class="addall1">
         <div class="navbar">
-            <button class="back-button" onclick="toggleSomething(19)">◀</button>
-            <div class="menu-icon" onclick="showMenu()">☰</div>
+            <button class="back-button" onclick="requestTemplate(17)">◀</button>
+            <div class="menu-icon" onclick="requestTemplate(26)">☰</div>
         </div>
 
     <!-- Block กลาง -->
@@ -20,9 +20,17 @@
             <div class="form-group">
                 <label for="program">ภาค</label>
                 <select id="program" name="program">
-                    <option value="">--เลือกภาคของคุณ--</option>
-                    <option value="ภาคปกติ">ภาคปกติ</option>
-                    <option value="ภาคพิเศษ">ภาคพิเศษ</option>
+                    <option value="">--สาขา--</option>
+                    <option value="คณิตศาสตร์และสถิติ">สาขาวิชาคณิตศาสตร์และสถิติ</option>
+                    <option value="เคมี">สาขาวิชาเคมี</option>
+                    <option value="เทคโนโลยีการเกษตร">สาขาวิชาเทคโนโลยีการเกษตร</option>
+                    <option value="เทคโนโลยีเพื่อการพัฒนาและยั่งยืน">สาขาวิชาเทคโนโลยีเพื่อการพัฒนาและยั่งยืน</option>
+                    <option value="ชีวภาพ">สาขาเทคโนโลยีชีวภาพ</option>
+                    <option value="ฟิสิกส์">สาขาวิชาฟิสิกส์</option>
+                    <option value="วิทยาการคอมพิวเตอร์">สาขาวิชาวิทยาการคอมพิวเตอร์</option>
+                    <option value="วิทยาศาสตร์การอาหาร">สาขาวิชาวิทยาศาสตร์และเทคโนโลยีการอาหาร</option>
+                    <option value="สิ่งทอ">สาขาวิชาวิทยาศาสตร์และเทคโนโลยีสิ่งทอ</option>
+                    <option value="สิ่งแวดล้อม">สาขาวิชาวิทยาศาสตร์สิ่งแวดล้อม</option>
                 </select>
             </div>
         </form>
@@ -35,14 +43,14 @@
             <thead>
                 <tr>
                     <th>ลำดับ</th>
-                    <th>ภาค</th>
+                    <th>สาขา</th>
                     <th>ชื่อ-นามสกุล</th>
                     <th>Email</th>
                     <th>แก้ไข</th>
                     <th>ลบ</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="officer-table">
                 <!-- ตารางจะแสดงข้อมูลจาก JavaScript -->
             </tbody>
         </table>

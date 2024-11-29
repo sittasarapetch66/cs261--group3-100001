@@ -5,8 +5,8 @@
 <!--IT_addproform-->
 <div id="IToffadd">
     <div class="navbar">
-        <button class="back-button" onclick="toggleSomething(19)">◀</button>
-        <div class="menu-icon" onclick="showMenu()">☰</div>
+        <button class="back-button" onclick="toggleSomething(17)">◀</button>
+        <div class="menu-icon" onclick="requestTemplate(26)">☰</div>
     </div>
     <main class="itform-main-content">
         <h2 class="itform-title">ข้อมูลบุคลากร</h2>
@@ -24,7 +24,12 @@
                     </div>
                     <div class="itform-row">
                         <label for="position">ตำแหน่ง</label>
-                        <input type="text" id="position" placeholder="ตำแหน่ง">
+                        <!-- Dropdown สำหรับตำแหน่ง -->
+                        <select id="position" placeholder="ตำแหน่ง">
+                            <option value=10>อาจารย์</option>
+                            <option value=30>เจ้าหน้าที่</option>
+                            <option value=90>คณบดี</option>
+                        </select>
                     </div>
                     <div class="itform-row">
                         <label for="phone">เบอร์โทร</label>
@@ -60,6 +65,14 @@
                             <input type="text" id="province" placeholder="จังหวัด">
                         </div>
                     </div>
+                    <div class="itform-row">
+                        <label for="phone">username</label>
+                        <input type="tel" id="username" placeholder="ชื่อผู้ใช้">
+                    </div>
+                    <div class="itform-row">
+                        <label for="phone">password</label>
+                        <input type="tel" id="password" placeholder="กรอกรหัสผ่าน">
+                    </div>
                 </div>
                 
                 
@@ -67,10 +80,12 @@
         </div>
         <div class="itform-buttons">
             <button type="button" class="itform-cancel-button" onclick="handleCancel()">ยกเลิก</button>
-            <button type="submit" class="itform-submit-button" onclick="handleSubmit()">ยืนยัน</button>
+            <button type="button" class="itform-submit-button" onclick="handleSubmit()">ยืนยัน</button>
         </div>
     </main>
 
     <!-- Notification Box -->
     <div id="notificationBox" class="notification-box"></div>
   </div>
+
+  
